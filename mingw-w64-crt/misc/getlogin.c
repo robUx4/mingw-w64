@@ -3,6 +3,7 @@
  * This file is part of the mingw-w64 runtime package.
  * No warranty is given; refer to the file DISCLAIMER.PD within this package.
  */
+#define WINSTORECOMPAT /* for GetUserName */
 #include <stddef.h>
 #include <errno.h>
 #include <unistd.h>

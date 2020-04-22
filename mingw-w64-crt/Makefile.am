@@ -21,6 +21,7 @@ endif
 
 AM_CPPFLAGS=$(sysincludes)
 AM_CFLAGS=-pipe -std=gnu99 -D_CRTBLD -D_WIN32_WINNT=0x0f00 -D__MSVCRT_VERSION__=0x700 @ADD_C_CXX_WARNING_FLAGS@ @ADD_C_ONLY_WARNING_FLAGS@
+UWP_CPPFLAGS= -DWINAPI_FAMILY=WINAPI_FAMILY_APP -Werror-implicit-function-declaration -Wno-expansion-to-defined
 AM_CXXFLAGS=@ADD_C_CXX_WARNING_FLAGS@ @ADD_CXX_ONLY_WARNING_FLAGS@
 CPPFLAGSARM32=-mfpu=vfpv3
 CPPFLAGS32=-m32
@@ -656,16 +657,16 @@ lib32_libshell32_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
 lib32_LIBRARIES += lib32/libdinput.a
 lib32_libdinput_a_SOURCES = $(src_libdinput)
 lib32_libdinput_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
-lib32_libdinput_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libdinput_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libdinput8.a
 lib32_libdinput8_a_SOURCES = $(src_libdinput8)
 lib32_libdinput8_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
-lib32_libdinput8_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libdinput8_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libdmoguids.a
 lib32_libdmoguids_a_SOURCES = $(src_libdmoguids)
-lib32_libdmoguids_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libdmoguids_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libdxerr8.a
 lib32_libdxerr8_a_SOURCES = $(src_libdxerr8)
@@ -698,45 +699,45 @@ lib32_libwbemuuid_a_CPPFLAGS = $(CPPFLAGS32) $(sysincludes)
 
 lib32_LIBRARIES += lib32/libdxguid.a
 lib32_libdxguid_a_SOURCES = $(src_libdxguid)
-lib32_libdxguid_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libdxguid_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libksuser.a
 lib32_libksuser_a_SOURCES = $(src_libksuser)
-lib32_libksuser_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libksuser_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 lib32_libksuser_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
 
 lib32_LIBRARIES += lib32/libksguid.a
 lib32_libksguid_a_SOURCES = $(src_libksguid)
-lib32_libksguid_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libksguid_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/liblocationapi.a
 lib32_liblocationapi_a_SOURCES = $(src_liblocationapi)
-lib32_liblocationapi_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_liblocationapi_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libsapi.a
 lib32_libsapi_a_SOURCES = $(src_libsapi)
-lib32_libsapi_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libsapi_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libsensorsapi.a
 lib32_libsensorsapi_a_SOURCES = $(src_libsensorsapi)
-lib32_libsensorsapi_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libsensorsapi_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libportabledeviceguids.a
 lib32_libportabledeviceguids_a_SOURCES = $(src_libportabledeviceguids)
-lib32_libportabledeviceguids_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libportabledeviceguids_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libscrnsave.a
 lib32_libscrnsave_a_SOURCES = $(src_libscrnsave)
-lib32_libscrnsave_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libscrnsave_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libscrnsavw.a
 lib32_libscrnsavw_a_SOURCES = $(src_libscrnsavw)
-lib32_libscrnsavw_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libscrnsavw_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 lib32_libscrnsavw_a_CFLAGS = -DUNICODE
 
 lib32_LIBRARIES += lib32/libstrmiids.a
 lib32_libstrmiids_a_SOURCES = $(src_libstrmiids)
-lib32_libstrmiids_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libstrmiids_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libuuid.a
 lib32_libuuid_a_SOURCES = $(src_libuuid)
@@ -744,21 +745,21 @@ lib32_libuuid_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
 
 lib32_LIBRARIES += lib32/libgdiplus.a
 lib32_libgdiplus_a_SOURCES = $(src_libgdiplus)
-lib32_libgdiplus_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libgdiplus_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 lib32_libgdiplus_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
 
 lib32_LIBRARIES += lib32/libws2_32.a
 lib32_libws2_32_a_SOURCES = $(src_libws2_32)
-lib32_libws2_32_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libws2_32_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 lib32_libws2_32_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
 
 lib32_LIBRARIES += lib32/libtaskschd.a
 lib32_libtaskschd_a_SOURCES = $(src_libtaskschd)
-lib32_libtaskschd_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libtaskschd_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libntoskrnl.a
 lib32_libntoskrnl_a_SOURCES = $(src_libntoskrnl)
-lib32_libntoskrnl_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
+lib32_libntoskrnl_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes) $(UWP_CPPFLAGS)
 lib32_libntoskrnl_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
 
 if !W32API
@@ -814,7 +815,7 @@ lib32_DATA += lib32/libglut.a lib32/libmsvcp60.a lib32/libmsvcp120_app.a
 lib32_LIBRARIES += lib32/libcrtdll.a
 lib32_libcrtdll_a_SOURCES = $(src_msvcrt_common)
 lib32_libcrtdll_a_AR = $(DTDEF32) $(top_srcdir)/lib32/crtdll.def && $(AR) $(ARFLAGS)
-lib32_libcrtdll_a_CPPFLAGS=$(CPPFLAGS32) -D__LIBMSVCRT__ $(extra_include) $(sysincludes)
+lib32_libcrtdll_a_CPPFLAGS=$(CPPFLAGS32) -D__LIBMSVCRT__ $(extra_include) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_LIBRARIES += lib32/libmsvcr80.a
 lib32_libmsvcr80_a_SOURCES = $(src_msvcrt_common) lib32/msvcr80.def.in
@@ -867,13 +868,13 @@ EXTRA_lib32_libmsvcr120_app_a_DEPENDENCIES=lib32/msvcr120_app.def
 lib32_LIBRARIES += lib32/libucrtbase.a
 lib32_libucrtbase_a_SOURCES = $(src_ucrtbase) lib-common/ucrtbase.def.in
 lib32_libucrtbase_a_AR = $(DTDEF32) lib32/ucrtbase.def && $(AR) $(ARFLAGS)
-lib32_libucrtbase_a_CPPFLAGS=$(CPPFLAGS32) -D__LIBMSVCRT__ $(extra_include) $(sysincludes)
+lib32_libucrtbase_a_CPPFLAGS=$(CPPFLAGS32) -D__LIBMSVCRT__ $(extra_include) $(sysincludes) $(UWP_CPPFLAGS)
 EXTRA_lib32_libucrtbase_a_DEPENDENCIES=lib32/ucrtbase.def
 
 lib32_LIBRARIES += lib32/libucrt.a
 noinst_LIBRARIES += lib32/libucrt_extra.a
 lib32_libucrt_extra_a_SOURCES = $(src_ucrtbase)
-lib32_libucrt_extra_a_CPPFLAGS=$(CPPFLAGS32) -D__LIBMSVCRT__ $(extra_include) $(sysincludes)
+lib32_libucrt_extra_a_CPPFLAGS=$(CPPFLAGS32) -D__LIBMSVCRT__ $(extra_include) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib32_DATA += lib32/libvcruntime140_app.a
 endif
@@ -991,22 +992,22 @@ endif
 
 lib64_LIBRARIES += lib64/libshell32.a
 lib64_libshell32_a_SOURCES = $(src_libshell32)
-lib64_libshell32_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libshell32_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libshell32_a_AR = $(DTDEF64) $(top_srcdir)/lib-common/shell32.def && $(AR) $(ARFLAGS)
 
 lib64_LIBRARIES += lib64/libdinput.a
 lib64_libdinput_a_SOURCES = $(src_libdinput)
-lib64_libdinput_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libdinput_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libdinput_a_AR = $(DTDEF64) $(top_srcdir)/lib-common/dinput.def && $(AR) $(ARFLAGS)
 
 lib64_LIBRARIES += lib64/libdinput8.a
 lib64_libdinput8_a_SOURCES = $(src_libdinput8)
-lib64_libdinput8_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libdinput8_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libdinput8_a_AR = $(DTDEF64) $(top_srcdir)/lib-common/dinput8.def && $(AR) $(ARFLAGS)
 
 lib64_LIBRARIES += lib64/libdmoguids.a
 lib64_libdmoguids_a_SOURCES = $(src_libdmoguids)
-lib64_libdmoguids_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libdmoguids_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libdxerr8.a
 lib64_libdxerr8_a_SOURCES = $(src_libdxerr8)
@@ -1039,45 +1040,45 @@ lib64_libwbemuuid_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
 
 lib64_LIBRARIES += lib64/libdxguid.a
 lib64_libdxguid_a_SOURCES = $(src_libdxguid)
-lib64_libdxguid_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libdxguid_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/liblocationapi.a
 lib64_liblocationapi_a_SOURCES = $(src_liblocationapi)
-lib64_liblocationapi_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_liblocationapi_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libsapi.a
 lib64_libsapi_a_SOURCES = $(src_libsapi)
-lib64_libsapi_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libsapi_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libsensorsapi.a
 lib64_libsensorsapi_a_SOURCES = $(src_libsensorsapi)
-lib64_libsensorsapi_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libsensorsapi_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libportabledeviceguids.a
 lib64_libportabledeviceguids_a_SOURCES = $(src_libportabledeviceguids)
-lib64_libportabledeviceguids_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libportabledeviceguids_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libksuser.a
 lib64_libksuser_a_SOURCES = $(src_libksuser)
-lib64_libksuser_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libksuser_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libksuser_a_AR = $(DTDEF64) $(top_srcdir)/lib-common/ksuser.def && $(AR) $(ARFLAGS)
 
 lib64_LIBRARIES += lib64/libksguid.a
 lib64_libksguid_a_SOURCES = $(src_libksguid)
-lib64_libksguid_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libksguid_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libscrnsave.a
 lib64_libscrnsave_a_SOURCES = $(src_libscrnsave)
-lib64_libscrnsave_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libscrnsave_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libscrnsavw.a
 lib64_libscrnsavw_a_SOURCES = libsrc/scrnsave.c
-lib64_libscrnsavw_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libscrnsavw_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libscrnsavw_a_CFLAGS = -DUNICODE
 
 lib64_LIBRARIES += lib64/libstrmiids.a
 lib64_libstrmiids_a_SOURCES = $(src_libstrmiids)
-lib64_libstrmiids_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libstrmiids_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libuuid.a
 lib64_libuuid_a_SOURCES = $(src_libuuid)
@@ -1085,12 +1086,12 @@ lib64_libuuid_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
 
 lib64_LIBRARIES += lib64/libgdiplus.a
 lib64_libgdiplus_a_SOURCES = $(src_libgdiplus)
-lib64_libgdiplus_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libgdiplus_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libgdiplus_a_AR = $(DTDEF64) $(top_srcdir)/lib-common/gdiplus.def && $(AR) $(ARFLAGS)
 
 lib64_LIBRARIES += lib64/libws2_32.a
 lib64_libws2_32_a_SOURCES = $(src_libws2_32) lib-common/ws2_32.def.in
-lib64_libws2_32_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libws2_32_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 lib64_libws2_32_a_AR = $(DTDEF64) lib64/ws2_32.def && $(AR) $(ARFLAGS)
 EXTRA_lib64_libws2_32_a_DEPENDENCIES=lib64/ws2_32.def
 
@@ -1107,25 +1108,25 @@ endif
 
 lib64_LIBRARIES += lib64/libm.a
 nodist_lib64_libm_a_SOURCES = $(src_libm)
-lib64_libm_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libm_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libgmon.a
 lib64_libgmon_a_SOURCES = profile/mcount.c \
   profile/profil.h profile/profil.c        \
   profile/gmon.h   profile/gmon.c \
   profile/mcountFunc.S
-lib64_libgmon_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libgmon_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/liblargeint.a
 lib64_liblargeint_a_SOURCES = $(src_liblargeint)
-lib64_liblargeint_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_liblargeint_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libmingw32.a
-lib64_libmingw32_a_CPPFLAGS=$(CPPFLAGS64) -D_SYSCRT=1 -DCRTDLL=1 $(extra_include) $(AM_CPPFLAGS)
+lib64_libmingw32_a_CPPFLAGS=$(CPPFLAGS64) -D_SYSCRT=1 -DCRTDLL=1 $(extra_include) $(AM_CPPFLAGS) $(UWP_CPPFLAGS)
 lib64_libmingw32_a_SOURCES = $(src_libmingw32)
 
 lib64_LIBRARIES += lib64/libmingwex.a
-lib64_libmingwex_a_CPPFLAGS=$(CPPFLAGS64) $(extra_include) $(AM_CPPFLAGS)
+lib64_libmingwex_a_CPPFLAGS=$(CPPFLAGS64) $(extra_include) $(AM_CPPFLAGS) $(UWP_CPPFLAGS)
 lib64_libmingwex_a_SOURCES = $(src_libmingwex) $(src_libmingwex64) $(src_dfp_math)
 
 lib64_LIBRARIES += lib64/libmoldname.a
@@ -1134,7 +1135,7 @@ lib64_libmoldname_a_SOURCES = $(src_libm)
 
 lib64_LIBRARIES += lib64/libmingwthrd.a
 lib64_libmingwthrd_a_SOURCES = $(src_libmingwthrd)
-lib64_libmingwthrd_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
+lib64_libmingwthrd_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes) $(UWP_CPPFLAGS)
 
 processed_defs += lib64/msvcrt.def lib64/msvcr80.def lib64/msvcr90.def lib64/msvcr90d.def \
 				  lib64/msvcr100.def lib64/msvcr110.def lib64/msvcr120.def lib64/msvcr120d.def \
@@ -1154,7 +1155,7 @@ lib64_DATA += lib64/libmsvcp60.a lib64/libmsvcp120_app.a
 lib64_LIBRARIES += lib64/libcrtdll.a
 lib64_libcrtdll_a_SOURCES = $(src_msvcrt_common)
 lib64_libcrtdll_a_AR = $(DTDEF64) $(top_srcdir)/lib64/crtdll.def && $(AR) $(ARFLAGS)
-lib64_libcrtdll_a_CPPFLAGS=$(CPPFLAGS64) -D__LIBMSVCRT__ $(extra_include) $(sysincludes)
+lib64_libcrtdll_a_CPPFLAGS=$(CPPFLAGS64) -D__LIBMSVCRT__ $(extra_include) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_LIBRARIES += lib64/libmsvcr80.a
 lib64_libmsvcr80_a_SOURCES = $(src_msvcr80_64) lib64/msvcr80.def.in
@@ -1207,13 +1208,13 @@ EXTRA_lib64_libmsvcr120_app_a_DEPENDENCIES=lib64/msvcr120_app.def
 lib64_LIBRARIES += lib64/libucrtbase.a
 lib64_libucrtbase_a_SOURCES = $(src_ucrtbase) lib-common/ucrtbase.def.in
 lib64_libucrtbase_a_AR = $(DTDEF64) lib64/ucrtbase.def && $(AR) $(ARFLAGS)
-lib64_libucrtbase_a_CPPFLAGS=$(CPPFLAGS64) -D__LIBMSVCRT__ $(extra_include) $(sysincludes)
+lib64_libucrtbase_a_CPPFLAGS=$(CPPFLAGS64) -D__LIBMSVCRT__ $(extra_include) $(sysincludes) $(UWP_CPPFLAGS)
 EXTRA_lib64_libucrtbase_a_DEPENDENCIES=lib64/ucrtbase.def
 
 lib64_LIBRARIES += lib64/libucrt.a
 noinst_LIBRARIES += lib64/libucrt_extra.a
 lib64_libucrt_extra_a_SOURCES = $(src_ucrtbase)
-lib64_libucrt_extra_a_CPPFLAGS=$(CPPFLAGS64) -D__LIBMSVCRT__ $(extra_include) $(sysincludes)
+lib64_libucrt_extra_a_CPPFLAGS=$(CPPFLAGS64) -D__LIBMSVCRT__ $(extra_include) $(sysincludes) $(UWP_CPPFLAGS)
 
 lib64_DATA += lib64/libvcruntime140_app.a
 endif

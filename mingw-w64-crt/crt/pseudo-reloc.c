@@ -15,6 +15,8 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#define WINSTORECOMPAT /* for VirtualProtect */
+
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
