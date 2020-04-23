@@ -22,6 +22,10 @@
     DEALINGS IN THE SOFTWARE.
 */
 
+#ifdef HAVE_CONFIG_H
+# include "config.h"
+#endif
+
 #define VirtualProtect __VirtualProtect
 #include <windef.h>
 #include <winbase.h>
@@ -30,8 +34,17 @@
 
 BOOL WINAPI VirtualProtect(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)
 {
+#if defined(HAVE_CODE_GENERATION) && _WIN32_WINNT >= _WIN32_WINNT_WIN10
+    ULONG OldProtection;
+    BOOL res = VirtualProtectFromApp(lpAddress, dwSize, flNewProtect,
+                                     lpflOldProtect ? &OldProtection : NULL);
+    if (lpflOldProtect)
+        *lpflOldProtect = OldProtection;
+    return res;
+#else /* !HAVE_CODE_GENERATION */
     SetLastError(ERROR_ACCESS_DENIED);
     return FALSE;
+#endif /* !HAVE_CODE_GENERATION */
 }
 
 #ifdef _X86_
