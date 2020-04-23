@@ -44,7 +44,8 @@ libwinstorecompat_a_SOURCES = \
   src/RtlRestoreContext.c \
   src/GetUserName.c \
   $(NULL)
-libwinstorecompat_a_CPPFLAGS = $(AM_CPPFLAGS) -D_WIN32_WINNT=_WIN32_WINNT_WIN8
+libwinstorecompat_a_CPPFLAGS = $(AM_CPPFLAGS) -DWINAPI_FAMILY=WINAPI_FAMILY_APP -DUNICODE \
+  -DWINSTORECOMPAT -D_WIN32_WINNT=_WIN32_WINNT_WIN8
 
 libwinstorecompatapp_a_SOURCES = \
   src/GetModuleHandle.c \
@@ -65,4 +66,5 @@ libwinstorecompatapp_a_SOURCES = \
   src/RtlRestoreContext.c \
   src/GetUserName.c \
   $(NULL)
-libwinstorecompatapp_a_CPPFLAGS = $(AM_CPPFLAGS) -D_WIN32_WINNT=_WIN32_WINNT_WIN10
+libwinstorecompatapp_a_CPPFLAGS = $(AM_CPPFLAGS) -DWINAPI_FAMILY=WINAPI_FAMILY_APP -DUNICODE \
+  -DWINSTORECOMPAT -D_WIN32_WINNT=_WIN32_WINNT_WIN10
