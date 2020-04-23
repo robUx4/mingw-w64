@@ -14,5 +14,16 @@ AC_PROG_CC
 AC_PROG_RANLIB
 AC_CHECK_TOOLS([AR], [ar], [:])
 
+AC_CONFIG_HEADERS([config.h])
+
+AC_ARG_ENABLE([code-generation],
+  AS_HELP_STRING([--enable-code-generation],
+        [build with codeGeneration capability (default disabled)]),,
+  [enable_code_generation="no"]
+)
+AS_IF([test "${enable_code_generation}" != "no"], [
+  AC_DEFINE([HAVE_CODE_GENERATION], [1], [Allow code requiring the codeGeneration capability.])
+])
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
