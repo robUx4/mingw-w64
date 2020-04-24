@@ -134,9 +134,7 @@ checkfreespace (const HANDLE f, const ULONGLONG requiredspace)
   LPWSTR dirpath, volumeid, volumepath;
   ULARGE_INTEGER freespace;
   LARGE_INTEGER currentsize;
-  DWORD check, volumeserial;
-  BY_HANDLE_FILE_INFORMATION fileinfo;
-  HANDLE vol;
+  DWORD check;
 
   /* Get current size */
   check = GetFileSizeEx (f, &currentsize);
@@ -191,34 +189,29 @@ checkfreespace (const HANDLE f, const ULONGLONG requiredspace)
 #endif /* _CHECK_SPACE_BY_PSAPI_METHOD_ */
 
 #if _CHECK_SPACE_BY_VOLUME_METHOD_
-  if(!GetFileInformationByHandle(f,&fileinfo)) {
+  DWORD size_needed = GetFinalPathNameByHandleW(f, NULL, 0, FILE_NAME_OPENED|VOLUME_NAME_GUID);
+  if (!size_needed) {
     _set_errno(EINVAL);
     return -1; /* Resolution failure */
   }
 
-  volumeid = calloc(51,sizeof(wchar_t));
-  volumepath = calloc(MAX_PATH+2,sizeof(wchar_t));
-  if(!volumeid || !volumepath) {
+  volumeid = malloc(size_needed*sizeof(wchar_t));
+  if(!volumeid) {
   _set_errno(EBADF);
     return -1; /* Out of memory */
   }
 
   dirpath = NULL;
 
-  vol = FindFirstVolumeW(volumeid,50);
-  /* wprintf(L"%d - %ws\n",wcslen(volumeid),volumeid); */
-  do {
-    check = GetVolumeInformationW(volumeid,volumepath,MAX_PATH+1,&volumeserial,NULL,NULL,NULL,0);
-    /* wprintf(L"GetVolumeInformationW %d id %ws path %ws error %d\n",check,volumeid,volumepath,GetLastError()); */
-    if(volumeserial == fileinfo.dwVolumeSerialNumber) {
-      dirpath = volumeid; 
-      break;
+  if (GetFinalPathNameByHandleW(f, volumeid, size_needed, FILE_NAME_OPENED|VOLUME_NAME_GUID)) {
+    volumepath = wcsstr(volumeid, L"}\\");
+    if(volumepath) {
+      volumepath[2] = 0;
+      dirpath = volumeid;
     }
-  } while (FindNextVolumeW(vol,volumeid,50));
-  FindVolumeClose(vol);
+  }
 
   if(!dirpath) free(volumeid); /* we found the volume */
-  free(volumepath);
 #endif /* _CHECK_SPACE_BY_VOLUME_METHOD_ */
 
   /* Get available free space */
