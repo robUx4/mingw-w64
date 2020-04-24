@@ -22,13 +22,13 @@ WspiapiLoad (WORD wFunction)
 
   for (;;)
     {
-	CHAR systemdir[MAX_PATH + 1], path[MAX_PATH + 8];
+	WCHAR systemdir[MAX_PATH + 1], path[MAX_PATH + 8];
 
-	if (GetSystemDirectoryA (systemdir, MAX_PATH) == 0)
+	if (GetSystemDirectoryW (systemdir, MAX_PATH) == 0)
 	  break;
-	strcpy (path, systemdir);
-	strcat (path, "\\ws2_32");
-	hlib = LoadLibraryA (path);
+	wcscpy (path, systemdir);
+	wcscat (path, L"\\ws2_32");
+	hlib = LoadLibraryW (path);
 	if(hlib != NULL)
 	  {
 	    fScratch = GetProcAddress (hlib, "getaddrinfo");
@@ -40,9 +40,9 @@ WspiapiLoad (WORD wFunction)
 	  }
 	if (hlib != NULL)
 	  break;
-	strcpy (path, systemdir);
-	strcat (path, "\\wship6");
-	hlib = LoadLibraryA (path);
+	wcscpy (path, systemdir);
+	wcscat (path, L"\\wship6");
+	hlib = LoadLibraryW (path);
 	if (hlib != NULL)
 	  {
 	    if ((fScratch = GetProcAddress (hlib, "getaddrinfo")) == NULL)
