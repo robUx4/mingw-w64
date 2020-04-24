@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = foreign subdir-objects
 
-AM_CFLAGS = -Wall -Wstrict-aliasing=2 -pedantic
+AM_CFLAGS = -Wall -Wstrict-aliasing=2 -pedantic -Wno-expansion-to-defined
 
 lib_LIBRARIES = libwinstorecompat.a \
   libwinstorecompatapp.a

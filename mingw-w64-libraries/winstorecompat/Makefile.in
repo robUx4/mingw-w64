@@ -371,7 +371,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign subdir-objects
-AM_CFLAGS = -Wall -Wstrict-aliasing=2 -pedantic
+AM_CFLAGS = -Wall -Wstrict-aliasing=2 -pedantic -Wno-expansion-to-defined
 lib_LIBRARIES = libwinstorecompat.a \
   libwinstorecompatapp.a
 
