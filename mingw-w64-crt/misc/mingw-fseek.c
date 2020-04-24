@@ -39,30 +39,26 @@ __mingw_fwrite (const void *buffer, size_t size, size_t count, FILE *fp)
 # undef fwrite 
   if ((_osver & 0x8000) &&  __mingw_fseek_called)
     {
-      ULARGE_INTEGER actual_length;
+      LARGE_INTEGER actual_length;
       LARGE_INTEGER current_position;
 
       memset (&current_position, 0, sizeof (LARGE_INTEGER));
       __mingw_fseek_called = 0;
       fflush (fp);
-      actual_length.LowPart = GetFileSize ((HANDLE) _get_osfhandle (fileno (fp)), 
-					   &actual_length.HighPart);
-      if (actual_length.LowPart == 0xFFFFFFFF 
-          && GetLastError() != NO_ERROR )
+      if (!GetFileSizeEx ((HANDLE) _get_osfhandle (fileno (fp)), &actual_length))
         return -1;
-      current_position.LowPart = SetFilePointer ((HANDLE) _get_osfhandle (fileno (fp)),
-                                         	 current_position.LowPart,
-					 	 &current_position.HighPart,
+      BOOL ok = SetFilePointerEx ((HANDLE) _get_osfhandle (fileno (fp)),
+                                         	 current_position,
+					 	 NULL,
 						 FILE_CURRENT);
-      if (current_position.LowPart == 0xFFFFFFFF
-          && GetLastError() != NO_ERROR )
+      if (!ok)
         return -1;
 
 #ifdef DEBUG
       printf ("__mingw_fwrite: current %I64u, actual %I64u\n", 
 	      current_position.QuadPart, actual_length.QuadPart);
 #endif /* DEBUG */
-      if ((size_t)current_position.QuadPart > (size_t)actual_length.QuadPart)
+      if (current_position.QuadPart > actual_length.QuadPart)
 	{
 	  static char __mingw_zeros[ZEROBLOCKSIZE];
 	  long long numleft;
