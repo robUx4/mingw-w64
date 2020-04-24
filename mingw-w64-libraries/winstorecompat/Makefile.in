@@ -136,29 +136,65 @@ am__v_AR_1 =
 libwinstorecompat_a_AR = $(AR) $(ARFLAGS)
 libwinstorecompat_a_LIBADD =
 am__dirstamp = $(am__leading_dot)dirstamp
-am_libwinstorecompat_a_OBJECTS = src/beginthread.$(OBJEXT) \
-	src/GetModuleHandle.$(OBJEXT) src/CreateEventW.$(OBJEXT) \
-	src/CreateMutexW.$(OBJEXT) src/CreateSemaphoreW.$(OBJEXT) \
-	src/InitializeCriticalSection.$(OBJEXT) \
-	src/GetFileAttributes.$(OBJEXT) \
-	src/WaitForSingleObject.$(OBJEXT) src/LoadLibraryW.$(OBJEXT) \
-	src/CreateFileW.$(OBJEXT) src/GetTickCount.$(OBJEXT) \
-	src/SetUnhandledExceptionFilter.$(OBJEXT) \
-	src/UnhandledExceptionFilter.$(OBJEXT) \
-	src/TerminateProcess.$(OBJEXT) src/IsDBCSLeadByteEx.$(OBJEXT) \
-	src/SetErrorMode.$(OBJEXT) src/GetACP.$(OBJEXT) \
-	src/VirtualProtect.$(OBJEXT) src/getenv.$(OBJEXT) \
-	src/LocalAlloc.$(OBJEXT) src/LocalFree.$(OBJEXT) \
-	src/Sleep.$(OBJEXT) src/SleepEx.$(OBJEXT) \
-	src/SetFilePointer.$(OBJEXT) src/GetFileSize.$(OBJEXT) \
-	src/Tls.$(OBJEXT) src/SHGetFolderPathW.$(OBJEXT) \
-	src/QueueTimer.$(OBJEXT) src/Crypto.$(OBJEXT) \
-	src/GetStartupInfo.$(OBJEXT) src/GetConsoleOutputCP.$(OBJEXT) \
-	src/EnumProcessModules.$(OBJEXT) \
-	src/RtlAddFunctionTable.$(OBJEXT) \
-	src/RtlCaptureContext.$(OBJEXT) src/RtlVirtualUnwind.$(OBJEXT) \
-	src/RtlRestoreContext.$(OBJEXT) src/GetUserName.$(OBJEXT)
+am_libwinstorecompat_a_OBJECTS =  \
+	src/libwinstorecompat_a-beginthread.$(OBJEXT) \
+	src/libwinstorecompat_a-GetModuleHandle.$(OBJEXT) \
+	src/libwinstorecompat_a-CreateEventW.$(OBJEXT) \
+	src/libwinstorecompat_a-CreateMutexW.$(OBJEXT) \
+	src/libwinstorecompat_a-CreateSemaphoreW.$(OBJEXT) \
+	src/libwinstorecompat_a-InitializeCriticalSection.$(OBJEXT) \
+	src/libwinstorecompat_a-GetFileAttributes.$(OBJEXT) \
+	src/libwinstorecompat_a-WaitForSingleObject.$(OBJEXT) \
+	src/libwinstorecompat_a-LoadLibraryW.$(OBJEXT) \
+	src/libwinstorecompat_a-CreateFileW.$(OBJEXT) \
+	src/libwinstorecompat_a-GetTickCount.$(OBJEXT) \
+	src/libwinstorecompat_a-SetUnhandledExceptionFilter.$(OBJEXT) \
+	src/libwinstorecompat_a-UnhandledExceptionFilter.$(OBJEXT) \
+	src/libwinstorecompat_a-TerminateProcess.$(OBJEXT) \
+	src/libwinstorecompat_a-IsDBCSLeadByteEx.$(OBJEXT) \
+	src/libwinstorecompat_a-SetErrorMode.$(OBJEXT) \
+	src/libwinstorecompat_a-GetACP.$(OBJEXT) \
+	src/libwinstorecompat_a-VirtualProtect.$(OBJEXT) \
+	src/libwinstorecompat_a-getenv.$(OBJEXT) \
+	src/libwinstorecompat_a-LocalAlloc.$(OBJEXT) \
+	src/libwinstorecompat_a-LocalFree.$(OBJEXT) \
+	src/libwinstorecompat_a-Sleep.$(OBJEXT) \
+	src/libwinstorecompat_a-SleepEx.$(OBJEXT) \
+	src/libwinstorecompat_a-SetFilePointer.$(OBJEXT) \
+	src/libwinstorecompat_a-GetFileSize.$(OBJEXT) \
+	src/libwinstorecompat_a-Tls.$(OBJEXT) \
+	src/libwinstorecompat_a-SHGetFolderPathW.$(OBJEXT) \
+	src/libwinstorecompat_a-QueueTimer.$(OBJEXT) \
+	src/libwinstorecompat_a-Crypto.$(OBJEXT) \
+	src/libwinstorecompat_a-GetStartupInfo.$(OBJEXT) \
+	src/libwinstorecompat_a-GetConsoleOutputCP.$(OBJEXT) \
+	src/libwinstorecompat_a-EnumProcessModules.$(OBJEXT) \
+	src/libwinstorecompat_a-RtlAddFunctionTable.$(OBJEXT) \
+	src/libwinstorecompat_a-RtlCaptureContext.$(OBJEXT) \
+	src/libwinstorecompat_a-RtlVirtualUnwind.$(OBJEXT) \
+	src/libwinstorecompat_a-RtlRestoreContext.$(OBJEXT) \
+	src/libwinstorecompat_a-GetUserName.$(OBJEXT)
 libwinstorecompat_a_OBJECTS = $(am_libwinstorecompat_a_OBJECTS)
+libwinstorecompatapp_a_AR = $(AR) $(ARFLAGS)
+libwinstorecompatapp_a_LIBADD =
+am_libwinstorecompatapp_a_OBJECTS =  \
+	src/libwinstorecompatapp_a-GetModuleHandle.$(OBJEXT) \
+	src/libwinstorecompatapp_a-LoadLibraryW.$(OBJEXT) \
+	src/libwinstorecompatapp_a-CreateFileW.$(OBJEXT) \
+	src/libwinstorecompatapp_a-UnhandledExceptionFilter.$(OBJEXT) \
+	src/libwinstorecompatapp_a-VirtualProtect.$(OBJEXT) \
+	src/libwinstorecompatapp_a-getenv.$(OBJEXT) \
+	src/libwinstorecompatapp_a-GetFileSize.$(OBJEXT) \
+	src/libwinstorecompatapp_a-SHGetFolderPathW.$(OBJEXT) \
+	src/libwinstorecompatapp_a-QueueTimer.$(OBJEXT) \
+	src/libwinstorecompatapp_a-GetStartupInfo.$(OBJEXT) \
+	src/libwinstorecompatapp_a-EnumProcessModules.$(OBJEXT) \
+	src/libwinstorecompatapp_a-RtlAddFunctionTable.$(OBJEXT) \
+	src/libwinstorecompatapp_a-RtlCaptureContext.$(OBJEXT) \
+	src/libwinstorecompatapp_a-RtlVirtualUnwind.$(OBJEXT) \
+	src/libwinstorecompatapp_a-RtlRestoreContext.$(OBJEXT) \
+	src/libwinstorecompatapp_a-GetUserName.$(OBJEXT)
+libwinstorecompatapp_a_OBJECTS = $(am_libwinstorecompatapp_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -175,6 +211,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -187,8 +227,10 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libwinstorecompat_a_SOURCES)
-DIST_SOURCES = $(libwinstorecompat_a_SOURCES)
+SOURCES = $(libwinstorecompat_a_SOURCES) \
+	$(libwinstorecompatapp_a_SOURCES)
+DIST_SOURCES = $(libwinstorecompat_a_SOURCES) \
+	$(libwinstorecompatapp_a_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -330,7 +372,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign subdir-objects
 AM_CFLAGS = -Wall -Wstrict-aliasing=2 -pedantic
-lib_LIBRARIES = libwinstorecompat.a
+lib_LIBRARIES = libwinstorecompat.a \
+  libwinstorecompatapp.a
+
 libwinstorecompat_a_SOURCES = \
   src/beginthread.c \
   src/GetModuleHandle.c \
@@ -371,6 +415,27 @@ libwinstorecompat_a_SOURCES = \
   src/GetUserName.c \
   $(NULL)
 
+libwinstorecompat_a_CPPFLAGS = $(AM_CPPFLAGS) -D_WIN32_WINNT=_WIN32_WINNT_WIN8
+libwinstorecompatapp_a_SOURCES = \
+  src/GetModuleHandle.c \
+  src/LoadLibraryW.c \
+  src/CreateFileW.c \
+  src/UnhandledExceptionFilter.c \
+  src/VirtualProtect.c \
+  src/getenv.c \
+  src/GetFileSize.c \
+  src/SHGetFolderPathW.c \
+  src/QueueTimer.c \
+  src/GetStartupInfo.c \
+  src/EnumProcessModules.c \
+  src/RtlAddFunctionTable.c \
+  src/RtlCaptureContext.c \
+  src/RtlVirtualUnwind.c \
+  src/RtlRestoreContext.c \
+  src/GetUserName.c \
+  $(NULL)
+
+libwinstorecompatapp_a_CPPFLAGS = $(AM_CPPFLAGS) -D_WIN32_WINNT=_WIN32_WINNT_WIN10
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -461,83 +526,122 @@ src/$(am__dirstamp):
 src/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/$(DEPDIR)
 	@: > src/$(DEPDIR)/$(am__dirstamp)
-src/beginthread.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-beginthread.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/GetModuleHandle.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-GetModuleHandle.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-CreateEventW.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/CreateEventW.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-CreateMutexW.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/CreateMutexW.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-CreateSemaphoreW.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-InitializeCriticalSection.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-GetFileAttributes.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-WaitForSingleObject.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-LoadLibraryW.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/CreateSemaphoreW.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-CreateFileW.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/InitializeCriticalSection.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-GetTickCount.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/GetFileAttributes.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-SetUnhandledExceptionFilter.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-UnhandledExceptionFilter.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-TerminateProcess.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-IsDBCSLeadByteEx.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-SetErrorMode.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/WaitForSingleObject.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-GetACP.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/LoadLibraryW.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-VirtualProtect.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/CreateFileW.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-getenv.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/GetTickCount.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-LocalAlloc.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/SetUnhandledExceptionFilter.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-LocalFree.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/UnhandledExceptionFilter.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-Sleep.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/TerminateProcess.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-SleepEx.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/IsDBCSLeadByteEx.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-SetFilePointer.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/SetErrorMode.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-GetFileSize.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/GetACP.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-Tls.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/VirtualProtect.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-SHGetFolderPathW.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-QueueTimer.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/getenv.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-Crypto.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/LocalAlloc.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-GetStartupInfo.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
-src/LocalFree.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/Sleep.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/SleepEx.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/SetFilePointer.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/GetFileSize.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/Tls.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/SHGetFolderPathW.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/QueueTimer.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/Crypto.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/GetStartupInfo.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/GetConsoleOutputCP.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/EnumProcessModules.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/RtlAddFunctionTable.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/RtlCaptureContext.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/RtlVirtualUnwind.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/RtlRestoreContext.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
-src/GetUserName.$(OBJEXT): src/$(am__dirstamp) \
+src/libwinstorecompat_a-GetConsoleOutputCP.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-EnumProcessModules.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-RtlAddFunctionTable.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-RtlCaptureContext.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-RtlVirtualUnwind.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-RtlRestoreContext.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompat_a-GetUserName.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 
 libwinstorecompat.a: $(libwinstorecompat_a_OBJECTS) $(libwinstorecompat_a_DEPENDENCIES) $(EXTRA_libwinstorecompat_a_DEPENDENCIES) 
 	$(AM_V_at)-rm -f libwinstorecompat.a
 	$(AM_V_AR)$(libwinstorecompat_a_AR) libwinstorecompat.a $(libwinstorecompat_a_OBJECTS) $(libwinstorecompat_a_LIBADD)
 	$(AM_V_at)$(RANLIB) libwinstorecompat.a
+src/libwinstorecompatapp_a-GetModuleHandle.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-LoadLibraryW.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-CreateFileW.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-UnhandledExceptionFilter.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-VirtualProtect.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-getenv.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-GetFileSize.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-SHGetFolderPathW.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-QueueTimer.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-GetStartupInfo.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-EnumProcessModules.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-RtlAddFunctionTable.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-RtlCaptureContext.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-RtlVirtualUnwind.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-RtlRestoreContext.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/libwinstorecompatapp_a-GetUserName.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+
+libwinstorecompatapp.a: $(libwinstorecompatapp_a_OBJECTS) $(libwinstorecompatapp_a_DEPENDENCIES) $(EXTRA_libwinstorecompatapp_a_DEPENDENCIES) 
+	$(AM_V_at)-rm -f libwinstorecompatapp.a
+	$(AM_V_AR)$(libwinstorecompatapp_a_AR) libwinstorecompatapp.a $(libwinstorecompatapp_a_OBJECTS) $(libwinstorecompatapp_a_LIBADD)
+	$(AM_V_at)$(RANLIB) libwinstorecompatapp.a
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -546,43 +650,59 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/CreateEventW.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/CreateFileW.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/CreateMutexW.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/CreateSemaphoreW.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/Crypto.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/EnumProcessModules.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetACP.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetConsoleOutputCP.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetFileAttributes.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetFileSize.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetModuleHandle.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetStartupInfo.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetTickCount.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/GetUserName.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/InitializeCriticalSection.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/IsDBCSLeadByteEx.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/LoadLibraryW.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/LocalAlloc.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/LocalFree.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/QueueTimer.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/RtlAddFunctionTable.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/RtlCaptureContext.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/RtlRestoreContext.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/RtlVirtualUnwind.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/SHGetFolderPathW.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/SetErrorMode.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/SetFilePointer.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/SetUnhandledExceptionFilter.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/Sleep.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/SleepEx.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/TerminateProcess.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/Tls.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/UnhandledExceptionFilter.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/VirtualProtect.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/WaitForSingleObject.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/beginthread.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/getenv.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-Crypto.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetACP.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-Sleep.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-Tls.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-beginthread.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompat_a-getenv.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -599,6 +719,748 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+src/libwinstorecompat_a-beginthread.o: src/beginthread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-beginthread.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-beginthread.Tpo -c -o src/libwinstorecompat_a-beginthread.o `test -f 'src/beginthread.c' || echo '$(srcdir)/'`src/beginthread.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-beginthread.Tpo src/$(DEPDIR)/libwinstorecompat_a-beginthread.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/beginthread.c' object='src/libwinstorecompat_a-beginthread.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-beginthread.o `test -f 'src/beginthread.c' || echo '$(srcdir)/'`src/beginthread.c
+
+src/libwinstorecompat_a-beginthread.obj: src/beginthread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-beginthread.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-beginthread.Tpo -c -o src/libwinstorecompat_a-beginthread.obj `if test -f 'src/beginthread.c'; then $(CYGPATH_W) 'src/beginthread.c'; else $(CYGPATH_W) '$(srcdir)/src/beginthread.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-beginthread.Tpo src/$(DEPDIR)/libwinstorecompat_a-beginthread.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/beginthread.c' object='src/libwinstorecompat_a-beginthread.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-beginthread.obj `if test -f 'src/beginthread.c'; then $(CYGPATH_W) 'src/beginthread.c'; else $(CYGPATH_W) '$(srcdir)/src/beginthread.c'; fi`
+
+src/libwinstorecompat_a-GetModuleHandle.o: src/GetModuleHandle.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetModuleHandle.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Tpo -c -o src/libwinstorecompat_a-GetModuleHandle.o `test -f 'src/GetModuleHandle.c' || echo '$(srcdir)/'`src/GetModuleHandle.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetModuleHandle.c' object='src/libwinstorecompat_a-GetModuleHandle.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetModuleHandle.o `test -f 'src/GetModuleHandle.c' || echo '$(srcdir)/'`src/GetModuleHandle.c
+
+src/libwinstorecompat_a-GetModuleHandle.obj: src/GetModuleHandle.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetModuleHandle.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Tpo -c -o src/libwinstorecompat_a-GetModuleHandle.obj `if test -f 'src/GetModuleHandle.c'; then $(CYGPATH_W) 'src/GetModuleHandle.c'; else $(CYGPATH_W) '$(srcdir)/src/GetModuleHandle.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetModuleHandle.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetModuleHandle.c' object='src/libwinstorecompat_a-GetModuleHandle.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetModuleHandle.obj `if test -f 'src/GetModuleHandle.c'; then $(CYGPATH_W) 'src/GetModuleHandle.c'; else $(CYGPATH_W) '$(srcdir)/src/GetModuleHandle.c'; fi`
+
+src/libwinstorecompat_a-CreateEventW.o: src/CreateEventW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateEventW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Tpo -c -o src/libwinstorecompat_a-CreateEventW.o `test -f 'src/CreateEventW.c' || echo '$(srcdir)/'`src/CreateEventW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateEventW.c' object='src/libwinstorecompat_a-CreateEventW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateEventW.o `test -f 'src/CreateEventW.c' || echo '$(srcdir)/'`src/CreateEventW.c
+
+src/libwinstorecompat_a-CreateEventW.obj: src/CreateEventW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateEventW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Tpo -c -o src/libwinstorecompat_a-CreateEventW.obj `if test -f 'src/CreateEventW.c'; then $(CYGPATH_W) 'src/CreateEventW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateEventW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateEventW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateEventW.c' object='src/libwinstorecompat_a-CreateEventW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateEventW.obj `if test -f 'src/CreateEventW.c'; then $(CYGPATH_W) 'src/CreateEventW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateEventW.c'; fi`
+
+src/libwinstorecompat_a-CreateMutexW.o: src/CreateMutexW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateMutexW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Tpo -c -o src/libwinstorecompat_a-CreateMutexW.o `test -f 'src/CreateMutexW.c' || echo '$(srcdir)/'`src/CreateMutexW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateMutexW.c' object='src/libwinstorecompat_a-CreateMutexW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateMutexW.o `test -f 'src/CreateMutexW.c' || echo '$(srcdir)/'`src/CreateMutexW.c
+
+src/libwinstorecompat_a-CreateMutexW.obj: src/CreateMutexW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateMutexW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Tpo -c -o src/libwinstorecompat_a-CreateMutexW.obj `if test -f 'src/CreateMutexW.c'; then $(CYGPATH_W) 'src/CreateMutexW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateMutexW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateMutexW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateMutexW.c' object='src/libwinstorecompat_a-CreateMutexW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateMutexW.obj `if test -f 'src/CreateMutexW.c'; then $(CYGPATH_W) 'src/CreateMutexW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateMutexW.c'; fi`
+
+src/libwinstorecompat_a-CreateSemaphoreW.o: src/CreateSemaphoreW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateSemaphoreW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Tpo -c -o src/libwinstorecompat_a-CreateSemaphoreW.o `test -f 'src/CreateSemaphoreW.c' || echo '$(srcdir)/'`src/CreateSemaphoreW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateSemaphoreW.c' object='src/libwinstorecompat_a-CreateSemaphoreW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateSemaphoreW.o `test -f 'src/CreateSemaphoreW.c' || echo '$(srcdir)/'`src/CreateSemaphoreW.c
+
+src/libwinstorecompat_a-CreateSemaphoreW.obj: src/CreateSemaphoreW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateSemaphoreW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Tpo -c -o src/libwinstorecompat_a-CreateSemaphoreW.obj `if test -f 'src/CreateSemaphoreW.c'; then $(CYGPATH_W) 'src/CreateSemaphoreW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateSemaphoreW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateSemaphoreW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateSemaphoreW.c' object='src/libwinstorecompat_a-CreateSemaphoreW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateSemaphoreW.obj `if test -f 'src/CreateSemaphoreW.c'; then $(CYGPATH_W) 'src/CreateSemaphoreW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateSemaphoreW.c'; fi`
+
+src/libwinstorecompat_a-InitializeCriticalSection.o: src/InitializeCriticalSection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-InitializeCriticalSection.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Tpo -c -o src/libwinstorecompat_a-InitializeCriticalSection.o `test -f 'src/InitializeCriticalSection.c' || echo '$(srcdir)/'`src/InitializeCriticalSection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Tpo src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/InitializeCriticalSection.c' object='src/libwinstorecompat_a-InitializeCriticalSection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-InitializeCriticalSection.o `test -f 'src/InitializeCriticalSection.c' || echo '$(srcdir)/'`src/InitializeCriticalSection.c
+
+src/libwinstorecompat_a-InitializeCriticalSection.obj: src/InitializeCriticalSection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-InitializeCriticalSection.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Tpo -c -o src/libwinstorecompat_a-InitializeCriticalSection.obj `if test -f 'src/InitializeCriticalSection.c'; then $(CYGPATH_W) 'src/InitializeCriticalSection.c'; else $(CYGPATH_W) '$(srcdir)/src/InitializeCriticalSection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Tpo src/$(DEPDIR)/libwinstorecompat_a-InitializeCriticalSection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/InitializeCriticalSection.c' object='src/libwinstorecompat_a-InitializeCriticalSection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-InitializeCriticalSection.obj `if test -f 'src/InitializeCriticalSection.c'; then $(CYGPATH_W) 'src/InitializeCriticalSection.c'; else $(CYGPATH_W) '$(srcdir)/src/InitializeCriticalSection.c'; fi`
+
+src/libwinstorecompat_a-GetFileAttributes.o: src/GetFileAttributes.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetFileAttributes.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Tpo -c -o src/libwinstorecompat_a-GetFileAttributes.o `test -f 'src/GetFileAttributes.c' || echo '$(srcdir)/'`src/GetFileAttributes.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetFileAttributes.c' object='src/libwinstorecompat_a-GetFileAttributes.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetFileAttributes.o `test -f 'src/GetFileAttributes.c' || echo '$(srcdir)/'`src/GetFileAttributes.c
+
+src/libwinstorecompat_a-GetFileAttributes.obj: src/GetFileAttributes.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetFileAttributes.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Tpo -c -o src/libwinstorecompat_a-GetFileAttributes.obj `if test -f 'src/GetFileAttributes.c'; then $(CYGPATH_W) 'src/GetFileAttributes.c'; else $(CYGPATH_W) '$(srcdir)/src/GetFileAttributes.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetFileAttributes.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetFileAttributes.c' object='src/libwinstorecompat_a-GetFileAttributes.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetFileAttributes.obj `if test -f 'src/GetFileAttributes.c'; then $(CYGPATH_W) 'src/GetFileAttributes.c'; else $(CYGPATH_W) '$(srcdir)/src/GetFileAttributes.c'; fi`
+
+src/libwinstorecompat_a-WaitForSingleObject.o: src/WaitForSingleObject.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-WaitForSingleObject.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Tpo -c -o src/libwinstorecompat_a-WaitForSingleObject.o `test -f 'src/WaitForSingleObject.c' || echo '$(srcdir)/'`src/WaitForSingleObject.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Tpo src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/WaitForSingleObject.c' object='src/libwinstorecompat_a-WaitForSingleObject.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-WaitForSingleObject.o `test -f 'src/WaitForSingleObject.c' || echo '$(srcdir)/'`src/WaitForSingleObject.c
+
+src/libwinstorecompat_a-WaitForSingleObject.obj: src/WaitForSingleObject.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-WaitForSingleObject.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Tpo -c -o src/libwinstorecompat_a-WaitForSingleObject.obj `if test -f 'src/WaitForSingleObject.c'; then $(CYGPATH_W) 'src/WaitForSingleObject.c'; else $(CYGPATH_W) '$(srcdir)/src/WaitForSingleObject.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Tpo src/$(DEPDIR)/libwinstorecompat_a-WaitForSingleObject.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/WaitForSingleObject.c' object='src/libwinstorecompat_a-WaitForSingleObject.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-WaitForSingleObject.obj `if test -f 'src/WaitForSingleObject.c'; then $(CYGPATH_W) 'src/WaitForSingleObject.c'; else $(CYGPATH_W) '$(srcdir)/src/WaitForSingleObject.c'; fi`
+
+src/libwinstorecompat_a-LoadLibraryW.o: src/LoadLibraryW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-LoadLibraryW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Tpo -c -o src/libwinstorecompat_a-LoadLibraryW.o `test -f 'src/LoadLibraryW.c' || echo '$(srcdir)/'`src/LoadLibraryW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Tpo src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LoadLibraryW.c' object='src/libwinstorecompat_a-LoadLibraryW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-LoadLibraryW.o `test -f 'src/LoadLibraryW.c' || echo '$(srcdir)/'`src/LoadLibraryW.c
+
+src/libwinstorecompat_a-LoadLibraryW.obj: src/LoadLibraryW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-LoadLibraryW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Tpo -c -o src/libwinstorecompat_a-LoadLibraryW.obj `if test -f 'src/LoadLibraryW.c'; then $(CYGPATH_W) 'src/LoadLibraryW.c'; else $(CYGPATH_W) '$(srcdir)/src/LoadLibraryW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Tpo src/$(DEPDIR)/libwinstorecompat_a-LoadLibraryW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LoadLibraryW.c' object='src/libwinstorecompat_a-LoadLibraryW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-LoadLibraryW.obj `if test -f 'src/LoadLibraryW.c'; then $(CYGPATH_W) 'src/LoadLibraryW.c'; else $(CYGPATH_W) '$(srcdir)/src/LoadLibraryW.c'; fi`
+
+src/libwinstorecompat_a-CreateFileW.o: src/CreateFileW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateFileW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Tpo -c -o src/libwinstorecompat_a-CreateFileW.o `test -f 'src/CreateFileW.c' || echo '$(srcdir)/'`src/CreateFileW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateFileW.c' object='src/libwinstorecompat_a-CreateFileW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateFileW.o `test -f 'src/CreateFileW.c' || echo '$(srcdir)/'`src/CreateFileW.c
+
+src/libwinstorecompat_a-CreateFileW.obj: src/CreateFileW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-CreateFileW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Tpo -c -o src/libwinstorecompat_a-CreateFileW.obj `if test -f 'src/CreateFileW.c'; then $(CYGPATH_W) 'src/CreateFileW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateFileW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Tpo src/$(DEPDIR)/libwinstorecompat_a-CreateFileW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateFileW.c' object='src/libwinstorecompat_a-CreateFileW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-CreateFileW.obj `if test -f 'src/CreateFileW.c'; then $(CYGPATH_W) 'src/CreateFileW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateFileW.c'; fi`
+
+src/libwinstorecompat_a-GetTickCount.o: src/GetTickCount.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetTickCount.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Tpo -c -o src/libwinstorecompat_a-GetTickCount.o `test -f 'src/GetTickCount.c' || echo '$(srcdir)/'`src/GetTickCount.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetTickCount.c' object='src/libwinstorecompat_a-GetTickCount.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetTickCount.o `test -f 'src/GetTickCount.c' || echo '$(srcdir)/'`src/GetTickCount.c
+
+src/libwinstorecompat_a-GetTickCount.obj: src/GetTickCount.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetTickCount.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Tpo -c -o src/libwinstorecompat_a-GetTickCount.obj `if test -f 'src/GetTickCount.c'; then $(CYGPATH_W) 'src/GetTickCount.c'; else $(CYGPATH_W) '$(srcdir)/src/GetTickCount.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetTickCount.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetTickCount.c' object='src/libwinstorecompat_a-GetTickCount.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetTickCount.obj `if test -f 'src/GetTickCount.c'; then $(CYGPATH_W) 'src/GetTickCount.c'; else $(CYGPATH_W) '$(srcdir)/src/GetTickCount.c'; fi`
+
+src/libwinstorecompat_a-SetUnhandledExceptionFilter.o: src/SetUnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SetUnhandledExceptionFilter.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Tpo -c -o src/libwinstorecompat_a-SetUnhandledExceptionFilter.o `test -f 'src/SetUnhandledExceptionFilter.c' || echo '$(srcdir)/'`src/SetUnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Tpo src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SetUnhandledExceptionFilter.c' object='src/libwinstorecompat_a-SetUnhandledExceptionFilter.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SetUnhandledExceptionFilter.o `test -f 'src/SetUnhandledExceptionFilter.c' || echo '$(srcdir)/'`src/SetUnhandledExceptionFilter.c
+
+src/libwinstorecompat_a-SetUnhandledExceptionFilter.obj: src/SetUnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SetUnhandledExceptionFilter.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Tpo -c -o src/libwinstorecompat_a-SetUnhandledExceptionFilter.obj `if test -f 'src/SetUnhandledExceptionFilter.c'; then $(CYGPATH_W) 'src/SetUnhandledExceptionFilter.c'; else $(CYGPATH_W) '$(srcdir)/src/SetUnhandledExceptionFilter.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Tpo src/$(DEPDIR)/libwinstorecompat_a-SetUnhandledExceptionFilter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SetUnhandledExceptionFilter.c' object='src/libwinstorecompat_a-SetUnhandledExceptionFilter.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SetUnhandledExceptionFilter.obj `if test -f 'src/SetUnhandledExceptionFilter.c'; then $(CYGPATH_W) 'src/SetUnhandledExceptionFilter.c'; else $(CYGPATH_W) '$(srcdir)/src/SetUnhandledExceptionFilter.c'; fi`
+
+src/libwinstorecompat_a-UnhandledExceptionFilter.o: src/UnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-UnhandledExceptionFilter.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Tpo -c -o src/libwinstorecompat_a-UnhandledExceptionFilter.o `test -f 'src/UnhandledExceptionFilter.c' || echo '$(srcdir)/'`src/UnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Tpo src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/UnhandledExceptionFilter.c' object='src/libwinstorecompat_a-UnhandledExceptionFilter.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-UnhandledExceptionFilter.o `test -f 'src/UnhandledExceptionFilter.c' || echo '$(srcdir)/'`src/UnhandledExceptionFilter.c
+
+src/libwinstorecompat_a-UnhandledExceptionFilter.obj: src/UnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-UnhandledExceptionFilter.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Tpo -c -o src/libwinstorecompat_a-UnhandledExceptionFilter.obj `if test -f 'src/UnhandledExceptionFilter.c'; then $(CYGPATH_W) 'src/UnhandledExceptionFilter.c'; else $(CYGPATH_W) '$(srcdir)/src/UnhandledExceptionFilter.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Tpo src/$(DEPDIR)/libwinstorecompat_a-UnhandledExceptionFilter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/UnhandledExceptionFilter.c' object='src/libwinstorecompat_a-UnhandledExceptionFilter.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-UnhandledExceptionFilter.obj `if test -f 'src/UnhandledExceptionFilter.c'; then $(CYGPATH_W) 'src/UnhandledExceptionFilter.c'; else $(CYGPATH_W) '$(srcdir)/src/UnhandledExceptionFilter.c'; fi`
+
+src/libwinstorecompat_a-TerminateProcess.o: src/TerminateProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-TerminateProcess.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Tpo -c -o src/libwinstorecompat_a-TerminateProcess.o `test -f 'src/TerminateProcess.c' || echo '$(srcdir)/'`src/TerminateProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Tpo src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/TerminateProcess.c' object='src/libwinstorecompat_a-TerminateProcess.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-TerminateProcess.o `test -f 'src/TerminateProcess.c' || echo '$(srcdir)/'`src/TerminateProcess.c
+
+src/libwinstorecompat_a-TerminateProcess.obj: src/TerminateProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-TerminateProcess.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Tpo -c -o src/libwinstorecompat_a-TerminateProcess.obj `if test -f 'src/TerminateProcess.c'; then $(CYGPATH_W) 'src/TerminateProcess.c'; else $(CYGPATH_W) '$(srcdir)/src/TerminateProcess.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Tpo src/$(DEPDIR)/libwinstorecompat_a-TerminateProcess.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/TerminateProcess.c' object='src/libwinstorecompat_a-TerminateProcess.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-TerminateProcess.obj `if test -f 'src/TerminateProcess.c'; then $(CYGPATH_W) 'src/TerminateProcess.c'; else $(CYGPATH_W) '$(srcdir)/src/TerminateProcess.c'; fi`
+
+src/libwinstorecompat_a-IsDBCSLeadByteEx.o: src/IsDBCSLeadByteEx.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-IsDBCSLeadByteEx.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Tpo -c -o src/libwinstorecompat_a-IsDBCSLeadByteEx.o `test -f 'src/IsDBCSLeadByteEx.c' || echo '$(srcdir)/'`src/IsDBCSLeadByteEx.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Tpo src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/IsDBCSLeadByteEx.c' object='src/libwinstorecompat_a-IsDBCSLeadByteEx.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-IsDBCSLeadByteEx.o `test -f 'src/IsDBCSLeadByteEx.c' || echo '$(srcdir)/'`src/IsDBCSLeadByteEx.c
+
+src/libwinstorecompat_a-IsDBCSLeadByteEx.obj: src/IsDBCSLeadByteEx.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-IsDBCSLeadByteEx.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Tpo -c -o src/libwinstorecompat_a-IsDBCSLeadByteEx.obj `if test -f 'src/IsDBCSLeadByteEx.c'; then $(CYGPATH_W) 'src/IsDBCSLeadByteEx.c'; else $(CYGPATH_W) '$(srcdir)/src/IsDBCSLeadByteEx.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Tpo src/$(DEPDIR)/libwinstorecompat_a-IsDBCSLeadByteEx.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/IsDBCSLeadByteEx.c' object='src/libwinstorecompat_a-IsDBCSLeadByteEx.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-IsDBCSLeadByteEx.obj `if test -f 'src/IsDBCSLeadByteEx.c'; then $(CYGPATH_W) 'src/IsDBCSLeadByteEx.c'; else $(CYGPATH_W) '$(srcdir)/src/IsDBCSLeadByteEx.c'; fi`
+
+src/libwinstorecompat_a-SetErrorMode.o: src/SetErrorMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SetErrorMode.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Tpo -c -o src/libwinstorecompat_a-SetErrorMode.o `test -f 'src/SetErrorMode.c' || echo '$(srcdir)/'`src/SetErrorMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Tpo src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SetErrorMode.c' object='src/libwinstorecompat_a-SetErrorMode.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SetErrorMode.o `test -f 'src/SetErrorMode.c' || echo '$(srcdir)/'`src/SetErrorMode.c
+
+src/libwinstorecompat_a-SetErrorMode.obj: src/SetErrorMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SetErrorMode.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Tpo -c -o src/libwinstorecompat_a-SetErrorMode.obj `if test -f 'src/SetErrorMode.c'; then $(CYGPATH_W) 'src/SetErrorMode.c'; else $(CYGPATH_W) '$(srcdir)/src/SetErrorMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Tpo src/$(DEPDIR)/libwinstorecompat_a-SetErrorMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SetErrorMode.c' object='src/libwinstorecompat_a-SetErrorMode.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SetErrorMode.obj `if test -f 'src/SetErrorMode.c'; then $(CYGPATH_W) 'src/SetErrorMode.c'; else $(CYGPATH_W) '$(srcdir)/src/SetErrorMode.c'; fi`
+
+src/libwinstorecompat_a-GetACP.o: src/GetACP.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetACP.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetACP.Tpo -c -o src/libwinstorecompat_a-GetACP.o `test -f 'src/GetACP.c' || echo '$(srcdir)/'`src/GetACP.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetACP.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetACP.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetACP.c' object='src/libwinstorecompat_a-GetACP.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetACP.o `test -f 'src/GetACP.c' || echo '$(srcdir)/'`src/GetACP.c
+
+src/libwinstorecompat_a-GetACP.obj: src/GetACP.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetACP.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetACP.Tpo -c -o src/libwinstorecompat_a-GetACP.obj `if test -f 'src/GetACP.c'; then $(CYGPATH_W) 'src/GetACP.c'; else $(CYGPATH_W) '$(srcdir)/src/GetACP.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetACP.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetACP.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetACP.c' object='src/libwinstorecompat_a-GetACP.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetACP.obj `if test -f 'src/GetACP.c'; then $(CYGPATH_W) 'src/GetACP.c'; else $(CYGPATH_W) '$(srcdir)/src/GetACP.c'; fi`
+
+src/libwinstorecompat_a-VirtualProtect.o: src/VirtualProtect.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-VirtualProtect.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Tpo -c -o src/libwinstorecompat_a-VirtualProtect.o `test -f 'src/VirtualProtect.c' || echo '$(srcdir)/'`src/VirtualProtect.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Tpo src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/VirtualProtect.c' object='src/libwinstorecompat_a-VirtualProtect.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-VirtualProtect.o `test -f 'src/VirtualProtect.c' || echo '$(srcdir)/'`src/VirtualProtect.c
+
+src/libwinstorecompat_a-VirtualProtect.obj: src/VirtualProtect.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-VirtualProtect.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Tpo -c -o src/libwinstorecompat_a-VirtualProtect.obj `if test -f 'src/VirtualProtect.c'; then $(CYGPATH_W) 'src/VirtualProtect.c'; else $(CYGPATH_W) '$(srcdir)/src/VirtualProtect.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Tpo src/$(DEPDIR)/libwinstorecompat_a-VirtualProtect.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/VirtualProtect.c' object='src/libwinstorecompat_a-VirtualProtect.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-VirtualProtect.obj `if test -f 'src/VirtualProtect.c'; then $(CYGPATH_W) 'src/VirtualProtect.c'; else $(CYGPATH_W) '$(srcdir)/src/VirtualProtect.c'; fi`
+
+src/libwinstorecompat_a-getenv.o: src/getenv.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-getenv.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-getenv.Tpo -c -o src/libwinstorecompat_a-getenv.o `test -f 'src/getenv.c' || echo '$(srcdir)/'`src/getenv.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-getenv.Tpo src/$(DEPDIR)/libwinstorecompat_a-getenv.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/getenv.c' object='src/libwinstorecompat_a-getenv.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-getenv.o `test -f 'src/getenv.c' || echo '$(srcdir)/'`src/getenv.c
+
+src/libwinstorecompat_a-getenv.obj: src/getenv.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-getenv.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-getenv.Tpo -c -o src/libwinstorecompat_a-getenv.obj `if test -f 'src/getenv.c'; then $(CYGPATH_W) 'src/getenv.c'; else $(CYGPATH_W) '$(srcdir)/src/getenv.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-getenv.Tpo src/$(DEPDIR)/libwinstorecompat_a-getenv.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/getenv.c' object='src/libwinstorecompat_a-getenv.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-getenv.obj `if test -f 'src/getenv.c'; then $(CYGPATH_W) 'src/getenv.c'; else $(CYGPATH_W) '$(srcdir)/src/getenv.c'; fi`
+
+src/libwinstorecompat_a-LocalAlloc.o: src/LocalAlloc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-LocalAlloc.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Tpo -c -o src/libwinstorecompat_a-LocalAlloc.o `test -f 'src/LocalAlloc.c' || echo '$(srcdir)/'`src/LocalAlloc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Tpo src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LocalAlloc.c' object='src/libwinstorecompat_a-LocalAlloc.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-LocalAlloc.o `test -f 'src/LocalAlloc.c' || echo '$(srcdir)/'`src/LocalAlloc.c
+
+src/libwinstorecompat_a-LocalAlloc.obj: src/LocalAlloc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-LocalAlloc.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Tpo -c -o src/libwinstorecompat_a-LocalAlloc.obj `if test -f 'src/LocalAlloc.c'; then $(CYGPATH_W) 'src/LocalAlloc.c'; else $(CYGPATH_W) '$(srcdir)/src/LocalAlloc.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Tpo src/$(DEPDIR)/libwinstorecompat_a-LocalAlloc.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LocalAlloc.c' object='src/libwinstorecompat_a-LocalAlloc.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-LocalAlloc.obj `if test -f 'src/LocalAlloc.c'; then $(CYGPATH_W) 'src/LocalAlloc.c'; else $(CYGPATH_W) '$(srcdir)/src/LocalAlloc.c'; fi`
+
+src/libwinstorecompat_a-LocalFree.o: src/LocalFree.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-LocalFree.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Tpo -c -o src/libwinstorecompat_a-LocalFree.o `test -f 'src/LocalFree.c' || echo '$(srcdir)/'`src/LocalFree.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Tpo src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LocalFree.c' object='src/libwinstorecompat_a-LocalFree.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-LocalFree.o `test -f 'src/LocalFree.c' || echo '$(srcdir)/'`src/LocalFree.c
+
+src/libwinstorecompat_a-LocalFree.obj: src/LocalFree.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-LocalFree.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Tpo -c -o src/libwinstorecompat_a-LocalFree.obj `if test -f 'src/LocalFree.c'; then $(CYGPATH_W) 'src/LocalFree.c'; else $(CYGPATH_W) '$(srcdir)/src/LocalFree.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Tpo src/$(DEPDIR)/libwinstorecompat_a-LocalFree.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LocalFree.c' object='src/libwinstorecompat_a-LocalFree.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-LocalFree.obj `if test -f 'src/LocalFree.c'; then $(CYGPATH_W) 'src/LocalFree.c'; else $(CYGPATH_W) '$(srcdir)/src/LocalFree.c'; fi`
+
+src/libwinstorecompat_a-Sleep.o: src/Sleep.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-Sleep.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-Sleep.Tpo -c -o src/libwinstorecompat_a-Sleep.o `test -f 'src/Sleep.c' || echo '$(srcdir)/'`src/Sleep.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-Sleep.Tpo src/$(DEPDIR)/libwinstorecompat_a-Sleep.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/Sleep.c' object='src/libwinstorecompat_a-Sleep.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-Sleep.o `test -f 'src/Sleep.c' || echo '$(srcdir)/'`src/Sleep.c
+
+src/libwinstorecompat_a-Sleep.obj: src/Sleep.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-Sleep.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-Sleep.Tpo -c -o src/libwinstorecompat_a-Sleep.obj `if test -f 'src/Sleep.c'; then $(CYGPATH_W) 'src/Sleep.c'; else $(CYGPATH_W) '$(srcdir)/src/Sleep.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-Sleep.Tpo src/$(DEPDIR)/libwinstorecompat_a-Sleep.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/Sleep.c' object='src/libwinstorecompat_a-Sleep.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-Sleep.obj `if test -f 'src/Sleep.c'; then $(CYGPATH_W) 'src/Sleep.c'; else $(CYGPATH_W) '$(srcdir)/src/Sleep.c'; fi`
+
+src/libwinstorecompat_a-SleepEx.o: src/SleepEx.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SleepEx.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Tpo -c -o src/libwinstorecompat_a-SleepEx.o `test -f 'src/SleepEx.c' || echo '$(srcdir)/'`src/SleepEx.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Tpo src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SleepEx.c' object='src/libwinstorecompat_a-SleepEx.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SleepEx.o `test -f 'src/SleepEx.c' || echo '$(srcdir)/'`src/SleepEx.c
+
+src/libwinstorecompat_a-SleepEx.obj: src/SleepEx.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SleepEx.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Tpo -c -o src/libwinstorecompat_a-SleepEx.obj `if test -f 'src/SleepEx.c'; then $(CYGPATH_W) 'src/SleepEx.c'; else $(CYGPATH_W) '$(srcdir)/src/SleepEx.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Tpo src/$(DEPDIR)/libwinstorecompat_a-SleepEx.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SleepEx.c' object='src/libwinstorecompat_a-SleepEx.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SleepEx.obj `if test -f 'src/SleepEx.c'; then $(CYGPATH_W) 'src/SleepEx.c'; else $(CYGPATH_W) '$(srcdir)/src/SleepEx.c'; fi`
+
+src/libwinstorecompat_a-SetFilePointer.o: src/SetFilePointer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SetFilePointer.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Tpo -c -o src/libwinstorecompat_a-SetFilePointer.o `test -f 'src/SetFilePointer.c' || echo '$(srcdir)/'`src/SetFilePointer.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Tpo src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SetFilePointer.c' object='src/libwinstorecompat_a-SetFilePointer.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SetFilePointer.o `test -f 'src/SetFilePointer.c' || echo '$(srcdir)/'`src/SetFilePointer.c
+
+src/libwinstorecompat_a-SetFilePointer.obj: src/SetFilePointer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SetFilePointer.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Tpo -c -o src/libwinstorecompat_a-SetFilePointer.obj `if test -f 'src/SetFilePointer.c'; then $(CYGPATH_W) 'src/SetFilePointer.c'; else $(CYGPATH_W) '$(srcdir)/src/SetFilePointer.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Tpo src/$(DEPDIR)/libwinstorecompat_a-SetFilePointer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SetFilePointer.c' object='src/libwinstorecompat_a-SetFilePointer.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SetFilePointer.obj `if test -f 'src/SetFilePointer.c'; then $(CYGPATH_W) 'src/SetFilePointer.c'; else $(CYGPATH_W) '$(srcdir)/src/SetFilePointer.c'; fi`
+
+src/libwinstorecompat_a-GetFileSize.o: src/GetFileSize.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetFileSize.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Tpo -c -o src/libwinstorecompat_a-GetFileSize.o `test -f 'src/GetFileSize.c' || echo '$(srcdir)/'`src/GetFileSize.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetFileSize.c' object='src/libwinstorecompat_a-GetFileSize.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetFileSize.o `test -f 'src/GetFileSize.c' || echo '$(srcdir)/'`src/GetFileSize.c
+
+src/libwinstorecompat_a-GetFileSize.obj: src/GetFileSize.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetFileSize.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Tpo -c -o src/libwinstorecompat_a-GetFileSize.obj `if test -f 'src/GetFileSize.c'; then $(CYGPATH_W) 'src/GetFileSize.c'; else $(CYGPATH_W) '$(srcdir)/src/GetFileSize.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetFileSize.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetFileSize.c' object='src/libwinstorecompat_a-GetFileSize.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetFileSize.obj `if test -f 'src/GetFileSize.c'; then $(CYGPATH_W) 'src/GetFileSize.c'; else $(CYGPATH_W) '$(srcdir)/src/GetFileSize.c'; fi`
+
+src/libwinstorecompat_a-Tls.o: src/Tls.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-Tls.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-Tls.Tpo -c -o src/libwinstorecompat_a-Tls.o `test -f 'src/Tls.c' || echo '$(srcdir)/'`src/Tls.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-Tls.Tpo src/$(DEPDIR)/libwinstorecompat_a-Tls.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/Tls.c' object='src/libwinstorecompat_a-Tls.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-Tls.o `test -f 'src/Tls.c' || echo '$(srcdir)/'`src/Tls.c
+
+src/libwinstorecompat_a-Tls.obj: src/Tls.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-Tls.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-Tls.Tpo -c -o src/libwinstorecompat_a-Tls.obj `if test -f 'src/Tls.c'; then $(CYGPATH_W) 'src/Tls.c'; else $(CYGPATH_W) '$(srcdir)/src/Tls.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-Tls.Tpo src/$(DEPDIR)/libwinstorecompat_a-Tls.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/Tls.c' object='src/libwinstorecompat_a-Tls.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-Tls.obj `if test -f 'src/Tls.c'; then $(CYGPATH_W) 'src/Tls.c'; else $(CYGPATH_W) '$(srcdir)/src/Tls.c'; fi`
+
+src/libwinstorecompat_a-SHGetFolderPathW.o: src/SHGetFolderPathW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SHGetFolderPathW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Tpo -c -o src/libwinstorecompat_a-SHGetFolderPathW.o `test -f 'src/SHGetFolderPathW.c' || echo '$(srcdir)/'`src/SHGetFolderPathW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Tpo src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SHGetFolderPathW.c' object='src/libwinstorecompat_a-SHGetFolderPathW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SHGetFolderPathW.o `test -f 'src/SHGetFolderPathW.c' || echo '$(srcdir)/'`src/SHGetFolderPathW.c
+
+src/libwinstorecompat_a-SHGetFolderPathW.obj: src/SHGetFolderPathW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-SHGetFolderPathW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Tpo -c -o src/libwinstorecompat_a-SHGetFolderPathW.obj `if test -f 'src/SHGetFolderPathW.c'; then $(CYGPATH_W) 'src/SHGetFolderPathW.c'; else $(CYGPATH_W) '$(srcdir)/src/SHGetFolderPathW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Tpo src/$(DEPDIR)/libwinstorecompat_a-SHGetFolderPathW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SHGetFolderPathW.c' object='src/libwinstorecompat_a-SHGetFolderPathW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-SHGetFolderPathW.obj `if test -f 'src/SHGetFolderPathW.c'; then $(CYGPATH_W) 'src/SHGetFolderPathW.c'; else $(CYGPATH_W) '$(srcdir)/src/SHGetFolderPathW.c'; fi`
+
+src/libwinstorecompat_a-QueueTimer.o: src/QueueTimer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-QueueTimer.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Tpo -c -o src/libwinstorecompat_a-QueueTimer.o `test -f 'src/QueueTimer.c' || echo '$(srcdir)/'`src/QueueTimer.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Tpo src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/QueueTimer.c' object='src/libwinstorecompat_a-QueueTimer.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-QueueTimer.o `test -f 'src/QueueTimer.c' || echo '$(srcdir)/'`src/QueueTimer.c
+
+src/libwinstorecompat_a-QueueTimer.obj: src/QueueTimer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-QueueTimer.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Tpo -c -o src/libwinstorecompat_a-QueueTimer.obj `if test -f 'src/QueueTimer.c'; then $(CYGPATH_W) 'src/QueueTimer.c'; else $(CYGPATH_W) '$(srcdir)/src/QueueTimer.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Tpo src/$(DEPDIR)/libwinstorecompat_a-QueueTimer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/QueueTimer.c' object='src/libwinstorecompat_a-QueueTimer.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-QueueTimer.obj `if test -f 'src/QueueTimer.c'; then $(CYGPATH_W) 'src/QueueTimer.c'; else $(CYGPATH_W) '$(srcdir)/src/QueueTimer.c'; fi`
+
+src/libwinstorecompat_a-Crypto.o: src/Crypto.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-Crypto.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-Crypto.Tpo -c -o src/libwinstorecompat_a-Crypto.o `test -f 'src/Crypto.c' || echo '$(srcdir)/'`src/Crypto.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-Crypto.Tpo src/$(DEPDIR)/libwinstorecompat_a-Crypto.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/Crypto.c' object='src/libwinstorecompat_a-Crypto.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-Crypto.o `test -f 'src/Crypto.c' || echo '$(srcdir)/'`src/Crypto.c
+
+src/libwinstorecompat_a-Crypto.obj: src/Crypto.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-Crypto.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-Crypto.Tpo -c -o src/libwinstorecompat_a-Crypto.obj `if test -f 'src/Crypto.c'; then $(CYGPATH_W) 'src/Crypto.c'; else $(CYGPATH_W) '$(srcdir)/src/Crypto.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-Crypto.Tpo src/$(DEPDIR)/libwinstorecompat_a-Crypto.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/Crypto.c' object='src/libwinstorecompat_a-Crypto.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-Crypto.obj `if test -f 'src/Crypto.c'; then $(CYGPATH_W) 'src/Crypto.c'; else $(CYGPATH_W) '$(srcdir)/src/Crypto.c'; fi`
+
+src/libwinstorecompat_a-GetStartupInfo.o: src/GetStartupInfo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetStartupInfo.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Tpo -c -o src/libwinstorecompat_a-GetStartupInfo.o `test -f 'src/GetStartupInfo.c' || echo '$(srcdir)/'`src/GetStartupInfo.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetStartupInfo.c' object='src/libwinstorecompat_a-GetStartupInfo.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetStartupInfo.o `test -f 'src/GetStartupInfo.c' || echo '$(srcdir)/'`src/GetStartupInfo.c
+
+src/libwinstorecompat_a-GetStartupInfo.obj: src/GetStartupInfo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetStartupInfo.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Tpo -c -o src/libwinstorecompat_a-GetStartupInfo.obj `if test -f 'src/GetStartupInfo.c'; then $(CYGPATH_W) 'src/GetStartupInfo.c'; else $(CYGPATH_W) '$(srcdir)/src/GetStartupInfo.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetStartupInfo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetStartupInfo.c' object='src/libwinstorecompat_a-GetStartupInfo.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetStartupInfo.obj `if test -f 'src/GetStartupInfo.c'; then $(CYGPATH_W) 'src/GetStartupInfo.c'; else $(CYGPATH_W) '$(srcdir)/src/GetStartupInfo.c'; fi`
+
+src/libwinstorecompat_a-GetConsoleOutputCP.o: src/GetConsoleOutputCP.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetConsoleOutputCP.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Tpo -c -o src/libwinstorecompat_a-GetConsoleOutputCP.o `test -f 'src/GetConsoleOutputCP.c' || echo '$(srcdir)/'`src/GetConsoleOutputCP.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetConsoleOutputCP.c' object='src/libwinstorecompat_a-GetConsoleOutputCP.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetConsoleOutputCP.o `test -f 'src/GetConsoleOutputCP.c' || echo '$(srcdir)/'`src/GetConsoleOutputCP.c
+
+src/libwinstorecompat_a-GetConsoleOutputCP.obj: src/GetConsoleOutputCP.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetConsoleOutputCP.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Tpo -c -o src/libwinstorecompat_a-GetConsoleOutputCP.obj `if test -f 'src/GetConsoleOutputCP.c'; then $(CYGPATH_W) 'src/GetConsoleOutputCP.c'; else $(CYGPATH_W) '$(srcdir)/src/GetConsoleOutputCP.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetConsoleOutputCP.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetConsoleOutputCP.c' object='src/libwinstorecompat_a-GetConsoleOutputCP.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetConsoleOutputCP.obj `if test -f 'src/GetConsoleOutputCP.c'; then $(CYGPATH_W) 'src/GetConsoleOutputCP.c'; else $(CYGPATH_W) '$(srcdir)/src/GetConsoleOutputCP.c'; fi`
+
+src/libwinstorecompat_a-EnumProcessModules.o: src/EnumProcessModules.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-EnumProcessModules.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Tpo -c -o src/libwinstorecompat_a-EnumProcessModules.o `test -f 'src/EnumProcessModules.c' || echo '$(srcdir)/'`src/EnumProcessModules.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Tpo src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/EnumProcessModules.c' object='src/libwinstorecompat_a-EnumProcessModules.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-EnumProcessModules.o `test -f 'src/EnumProcessModules.c' || echo '$(srcdir)/'`src/EnumProcessModules.c
+
+src/libwinstorecompat_a-EnumProcessModules.obj: src/EnumProcessModules.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-EnumProcessModules.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Tpo -c -o src/libwinstorecompat_a-EnumProcessModules.obj `if test -f 'src/EnumProcessModules.c'; then $(CYGPATH_W) 'src/EnumProcessModules.c'; else $(CYGPATH_W) '$(srcdir)/src/EnumProcessModules.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Tpo src/$(DEPDIR)/libwinstorecompat_a-EnumProcessModules.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/EnumProcessModules.c' object='src/libwinstorecompat_a-EnumProcessModules.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-EnumProcessModules.obj `if test -f 'src/EnumProcessModules.c'; then $(CYGPATH_W) 'src/EnumProcessModules.c'; else $(CYGPATH_W) '$(srcdir)/src/EnumProcessModules.c'; fi`
+
+src/libwinstorecompat_a-RtlAddFunctionTable.o: src/RtlAddFunctionTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlAddFunctionTable.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Tpo -c -o src/libwinstorecompat_a-RtlAddFunctionTable.o `test -f 'src/RtlAddFunctionTable.c' || echo '$(srcdir)/'`src/RtlAddFunctionTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlAddFunctionTable.c' object='src/libwinstorecompat_a-RtlAddFunctionTable.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlAddFunctionTable.o `test -f 'src/RtlAddFunctionTable.c' || echo '$(srcdir)/'`src/RtlAddFunctionTable.c
+
+src/libwinstorecompat_a-RtlAddFunctionTable.obj: src/RtlAddFunctionTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlAddFunctionTable.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Tpo -c -o src/libwinstorecompat_a-RtlAddFunctionTable.obj `if test -f 'src/RtlAddFunctionTable.c'; then $(CYGPATH_W) 'src/RtlAddFunctionTable.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlAddFunctionTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlAddFunctionTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlAddFunctionTable.c' object='src/libwinstorecompat_a-RtlAddFunctionTable.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlAddFunctionTable.obj `if test -f 'src/RtlAddFunctionTable.c'; then $(CYGPATH_W) 'src/RtlAddFunctionTable.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlAddFunctionTable.c'; fi`
+
+src/libwinstorecompat_a-RtlCaptureContext.o: src/RtlCaptureContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlCaptureContext.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Tpo -c -o src/libwinstorecompat_a-RtlCaptureContext.o `test -f 'src/RtlCaptureContext.c' || echo '$(srcdir)/'`src/RtlCaptureContext.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlCaptureContext.c' object='src/libwinstorecompat_a-RtlCaptureContext.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlCaptureContext.o `test -f 'src/RtlCaptureContext.c' || echo '$(srcdir)/'`src/RtlCaptureContext.c
+
+src/libwinstorecompat_a-RtlCaptureContext.obj: src/RtlCaptureContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlCaptureContext.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Tpo -c -o src/libwinstorecompat_a-RtlCaptureContext.obj `if test -f 'src/RtlCaptureContext.c'; then $(CYGPATH_W) 'src/RtlCaptureContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlCaptureContext.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlCaptureContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlCaptureContext.c' object='src/libwinstorecompat_a-RtlCaptureContext.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlCaptureContext.obj `if test -f 'src/RtlCaptureContext.c'; then $(CYGPATH_W) 'src/RtlCaptureContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlCaptureContext.c'; fi`
+
+src/libwinstorecompat_a-RtlVirtualUnwind.o: src/RtlVirtualUnwind.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlVirtualUnwind.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Tpo -c -o src/libwinstorecompat_a-RtlVirtualUnwind.o `test -f 'src/RtlVirtualUnwind.c' || echo '$(srcdir)/'`src/RtlVirtualUnwind.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlVirtualUnwind.c' object='src/libwinstorecompat_a-RtlVirtualUnwind.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlVirtualUnwind.o `test -f 'src/RtlVirtualUnwind.c' || echo '$(srcdir)/'`src/RtlVirtualUnwind.c
+
+src/libwinstorecompat_a-RtlVirtualUnwind.obj: src/RtlVirtualUnwind.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlVirtualUnwind.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Tpo -c -o src/libwinstorecompat_a-RtlVirtualUnwind.obj `if test -f 'src/RtlVirtualUnwind.c'; then $(CYGPATH_W) 'src/RtlVirtualUnwind.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlVirtualUnwind.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlVirtualUnwind.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlVirtualUnwind.c' object='src/libwinstorecompat_a-RtlVirtualUnwind.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlVirtualUnwind.obj `if test -f 'src/RtlVirtualUnwind.c'; then $(CYGPATH_W) 'src/RtlVirtualUnwind.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlVirtualUnwind.c'; fi`
+
+src/libwinstorecompat_a-RtlRestoreContext.o: src/RtlRestoreContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlRestoreContext.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Tpo -c -o src/libwinstorecompat_a-RtlRestoreContext.o `test -f 'src/RtlRestoreContext.c' || echo '$(srcdir)/'`src/RtlRestoreContext.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlRestoreContext.c' object='src/libwinstorecompat_a-RtlRestoreContext.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlRestoreContext.o `test -f 'src/RtlRestoreContext.c' || echo '$(srcdir)/'`src/RtlRestoreContext.c
+
+src/libwinstorecompat_a-RtlRestoreContext.obj: src/RtlRestoreContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-RtlRestoreContext.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Tpo -c -o src/libwinstorecompat_a-RtlRestoreContext.obj `if test -f 'src/RtlRestoreContext.c'; then $(CYGPATH_W) 'src/RtlRestoreContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlRestoreContext.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Tpo src/$(DEPDIR)/libwinstorecompat_a-RtlRestoreContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlRestoreContext.c' object='src/libwinstorecompat_a-RtlRestoreContext.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-RtlRestoreContext.obj `if test -f 'src/RtlRestoreContext.c'; then $(CYGPATH_W) 'src/RtlRestoreContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlRestoreContext.c'; fi`
+
+src/libwinstorecompat_a-GetUserName.o: src/GetUserName.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetUserName.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Tpo -c -o src/libwinstorecompat_a-GetUserName.o `test -f 'src/GetUserName.c' || echo '$(srcdir)/'`src/GetUserName.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetUserName.c' object='src/libwinstorecompat_a-GetUserName.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetUserName.o `test -f 'src/GetUserName.c' || echo '$(srcdir)/'`src/GetUserName.c
+
+src/libwinstorecompat_a-GetUserName.obj: src/GetUserName.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompat_a-GetUserName.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Tpo -c -o src/libwinstorecompat_a-GetUserName.obj `if test -f 'src/GetUserName.c'; then $(CYGPATH_W) 'src/GetUserName.c'; else $(CYGPATH_W) '$(srcdir)/src/GetUserName.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Tpo src/$(DEPDIR)/libwinstorecompat_a-GetUserName.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetUserName.c' object='src/libwinstorecompat_a-GetUserName.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompat_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompat_a-GetUserName.obj `if test -f 'src/GetUserName.c'; then $(CYGPATH_W) 'src/GetUserName.c'; else $(CYGPATH_W) '$(srcdir)/src/GetUserName.c'; fi`
+
+src/libwinstorecompatapp_a-GetModuleHandle.o: src/GetModuleHandle.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetModuleHandle.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Tpo -c -o src/libwinstorecompatapp_a-GetModuleHandle.o `test -f 'src/GetModuleHandle.c' || echo '$(srcdir)/'`src/GetModuleHandle.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetModuleHandle.c' object='src/libwinstorecompatapp_a-GetModuleHandle.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetModuleHandle.o `test -f 'src/GetModuleHandle.c' || echo '$(srcdir)/'`src/GetModuleHandle.c
+
+src/libwinstorecompatapp_a-GetModuleHandle.obj: src/GetModuleHandle.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetModuleHandle.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Tpo -c -o src/libwinstorecompatapp_a-GetModuleHandle.obj `if test -f 'src/GetModuleHandle.c'; then $(CYGPATH_W) 'src/GetModuleHandle.c'; else $(CYGPATH_W) '$(srcdir)/src/GetModuleHandle.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetModuleHandle.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetModuleHandle.c' object='src/libwinstorecompatapp_a-GetModuleHandle.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetModuleHandle.obj `if test -f 'src/GetModuleHandle.c'; then $(CYGPATH_W) 'src/GetModuleHandle.c'; else $(CYGPATH_W) '$(srcdir)/src/GetModuleHandle.c'; fi`
+
+src/libwinstorecompatapp_a-LoadLibraryW.o: src/LoadLibraryW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-LoadLibraryW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Tpo -c -o src/libwinstorecompatapp_a-LoadLibraryW.o `test -f 'src/LoadLibraryW.c' || echo '$(srcdir)/'`src/LoadLibraryW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LoadLibraryW.c' object='src/libwinstorecompatapp_a-LoadLibraryW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-LoadLibraryW.o `test -f 'src/LoadLibraryW.c' || echo '$(srcdir)/'`src/LoadLibraryW.c
+
+src/libwinstorecompatapp_a-LoadLibraryW.obj: src/LoadLibraryW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-LoadLibraryW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Tpo -c -o src/libwinstorecompatapp_a-LoadLibraryW.obj `if test -f 'src/LoadLibraryW.c'; then $(CYGPATH_W) 'src/LoadLibraryW.c'; else $(CYGPATH_W) '$(srcdir)/src/LoadLibraryW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-LoadLibraryW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/LoadLibraryW.c' object='src/libwinstorecompatapp_a-LoadLibraryW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-LoadLibraryW.obj `if test -f 'src/LoadLibraryW.c'; then $(CYGPATH_W) 'src/LoadLibraryW.c'; else $(CYGPATH_W) '$(srcdir)/src/LoadLibraryW.c'; fi`
+
+src/libwinstorecompatapp_a-CreateFileW.o: src/CreateFileW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-CreateFileW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Tpo -c -o src/libwinstorecompatapp_a-CreateFileW.o `test -f 'src/CreateFileW.c' || echo '$(srcdir)/'`src/CreateFileW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateFileW.c' object='src/libwinstorecompatapp_a-CreateFileW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-CreateFileW.o `test -f 'src/CreateFileW.c' || echo '$(srcdir)/'`src/CreateFileW.c
+
+src/libwinstorecompatapp_a-CreateFileW.obj: src/CreateFileW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-CreateFileW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Tpo -c -o src/libwinstorecompatapp_a-CreateFileW.obj `if test -f 'src/CreateFileW.c'; then $(CYGPATH_W) 'src/CreateFileW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateFileW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-CreateFileW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/CreateFileW.c' object='src/libwinstorecompatapp_a-CreateFileW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-CreateFileW.obj `if test -f 'src/CreateFileW.c'; then $(CYGPATH_W) 'src/CreateFileW.c'; else $(CYGPATH_W) '$(srcdir)/src/CreateFileW.c'; fi`
+
+src/libwinstorecompatapp_a-UnhandledExceptionFilter.o: src/UnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-UnhandledExceptionFilter.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Tpo -c -o src/libwinstorecompatapp_a-UnhandledExceptionFilter.o `test -f 'src/UnhandledExceptionFilter.c' || echo '$(srcdir)/'`src/UnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/UnhandledExceptionFilter.c' object='src/libwinstorecompatapp_a-UnhandledExceptionFilter.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-UnhandledExceptionFilter.o `test -f 'src/UnhandledExceptionFilter.c' || echo '$(srcdir)/'`src/UnhandledExceptionFilter.c
+
+src/libwinstorecompatapp_a-UnhandledExceptionFilter.obj: src/UnhandledExceptionFilter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-UnhandledExceptionFilter.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Tpo -c -o src/libwinstorecompatapp_a-UnhandledExceptionFilter.obj `if test -f 'src/UnhandledExceptionFilter.c'; then $(CYGPATH_W) 'src/UnhandledExceptionFilter.c'; else $(CYGPATH_W) '$(srcdir)/src/UnhandledExceptionFilter.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-UnhandledExceptionFilter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/UnhandledExceptionFilter.c' object='src/libwinstorecompatapp_a-UnhandledExceptionFilter.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-UnhandledExceptionFilter.obj `if test -f 'src/UnhandledExceptionFilter.c'; then $(CYGPATH_W) 'src/UnhandledExceptionFilter.c'; else $(CYGPATH_W) '$(srcdir)/src/UnhandledExceptionFilter.c'; fi`
+
+src/libwinstorecompatapp_a-VirtualProtect.o: src/VirtualProtect.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-VirtualProtect.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Tpo -c -o src/libwinstorecompatapp_a-VirtualProtect.o `test -f 'src/VirtualProtect.c' || echo '$(srcdir)/'`src/VirtualProtect.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/VirtualProtect.c' object='src/libwinstorecompatapp_a-VirtualProtect.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-VirtualProtect.o `test -f 'src/VirtualProtect.c' || echo '$(srcdir)/'`src/VirtualProtect.c
+
+src/libwinstorecompatapp_a-VirtualProtect.obj: src/VirtualProtect.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-VirtualProtect.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Tpo -c -o src/libwinstorecompatapp_a-VirtualProtect.obj `if test -f 'src/VirtualProtect.c'; then $(CYGPATH_W) 'src/VirtualProtect.c'; else $(CYGPATH_W) '$(srcdir)/src/VirtualProtect.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-VirtualProtect.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/VirtualProtect.c' object='src/libwinstorecompatapp_a-VirtualProtect.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-VirtualProtect.obj `if test -f 'src/VirtualProtect.c'; then $(CYGPATH_W) 'src/VirtualProtect.c'; else $(CYGPATH_W) '$(srcdir)/src/VirtualProtect.c'; fi`
+
+src/libwinstorecompatapp_a-getenv.o: src/getenv.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-getenv.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Tpo -c -o src/libwinstorecompatapp_a-getenv.o `test -f 'src/getenv.c' || echo '$(srcdir)/'`src/getenv.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/getenv.c' object='src/libwinstorecompatapp_a-getenv.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-getenv.o `test -f 'src/getenv.c' || echo '$(srcdir)/'`src/getenv.c
+
+src/libwinstorecompatapp_a-getenv.obj: src/getenv.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-getenv.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Tpo -c -o src/libwinstorecompatapp_a-getenv.obj `if test -f 'src/getenv.c'; then $(CYGPATH_W) 'src/getenv.c'; else $(CYGPATH_W) '$(srcdir)/src/getenv.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-getenv.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/getenv.c' object='src/libwinstorecompatapp_a-getenv.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-getenv.obj `if test -f 'src/getenv.c'; then $(CYGPATH_W) 'src/getenv.c'; else $(CYGPATH_W) '$(srcdir)/src/getenv.c'; fi`
+
+src/libwinstorecompatapp_a-GetFileSize.o: src/GetFileSize.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetFileSize.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Tpo -c -o src/libwinstorecompatapp_a-GetFileSize.o `test -f 'src/GetFileSize.c' || echo '$(srcdir)/'`src/GetFileSize.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetFileSize.c' object='src/libwinstorecompatapp_a-GetFileSize.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetFileSize.o `test -f 'src/GetFileSize.c' || echo '$(srcdir)/'`src/GetFileSize.c
+
+src/libwinstorecompatapp_a-GetFileSize.obj: src/GetFileSize.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetFileSize.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Tpo -c -o src/libwinstorecompatapp_a-GetFileSize.obj `if test -f 'src/GetFileSize.c'; then $(CYGPATH_W) 'src/GetFileSize.c'; else $(CYGPATH_W) '$(srcdir)/src/GetFileSize.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetFileSize.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetFileSize.c' object='src/libwinstorecompatapp_a-GetFileSize.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetFileSize.obj `if test -f 'src/GetFileSize.c'; then $(CYGPATH_W) 'src/GetFileSize.c'; else $(CYGPATH_W) '$(srcdir)/src/GetFileSize.c'; fi`
+
+src/libwinstorecompatapp_a-SHGetFolderPathW.o: src/SHGetFolderPathW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-SHGetFolderPathW.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Tpo -c -o src/libwinstorecompatapp_a-SHGetFolderPathW.o `test -f 'src/SHGetFolderPathW.c' || echo '$(srcdir)/'`src/SHGetFolderPathW.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SHGetFolderPathW.c' object='src/libwinstorecompatapp_a-SHGetFolderPathW.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-SHGetFolderPathW.o `test -f 'src/SHGetFolderPathW.c' || echo '$(srcdir)/'`src/SHGetFolderPathW.c
+
+src/libwinstorecompatapp_a-SHGetFolderPathW.obj: src/SHGetFolderPathW.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-SHGetFolderPathW.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Tpo -c -o src/libwinstorecompatapp_a-SHGetFolderPathW.obj `if test -f 'src/SHGetFolderPathW.c'; then $(CYGPATH_W) 'src/SHGetFolderPathW.c'; else $(CYGPATH_W) '$(srcdir)/src/SHGetFolderPathW.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-SHGetFolderPathW.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/SHGetFolderPathW.c' object='src/libwinstorecompatapp_a-SHGetFolderPathW.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-SHGetFolderPathW.obj `if test -f 'src/SHGetFolderPathW.c'; then $(CYGPATH_W) 'src/SHGetFolderPathW.c'; else $(CYGPATH_W) '$(srcdir)/src/SHGetFolderPathW.c'; fi`
+
+src/libwinstorecompatapp_a-QueueTimer.o: src/QueueTimer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-QueueTimer.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Tpo -c -o src/libwinstorecompatapp_a-QueueTimer.o `test -f 'src/QueueTimer.c' || echo '$(srcdir)/'`src/QueueTimer.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/QueueTimer.c' object='src/libwinstorecompatapp_a-QueueTimer.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-QueueTimer.o `test -f 'src/QueueTimer.c' || echo '$(srcdir)/'`src/QueueTimer.c
+
+src/libwinstorecompatapp_a-QueueTimer.obj: src/QueueTimer.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-QueueTimer.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Tpo -c -o src/libwinstorecompatapp_a-QueueTimer.obj `if test -f 'src/QueueTimer.c'; then $(CYGPATH_W) 'src/QueueTimer.c'; else $(CYGPATH_W) '$(srcdir)/src/QueueTimer.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-QueueTimer.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/QueueTimer.c' object='src/libwinstorecompatapp_a-QueueTimer.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-QueueTimer.obj `if test -f 'src/QueueTimer.c'; then $(CYGPATH_W) 'src/QueueTimer.c'; else $(CYGPATH_W) '$(srcdir)/src/QueueTimer.c'; fi`
+
+src/libwinstorecompatapp_a-GetStartupInfo.o: src/GetStartupInfo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetStartupInfo.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Tpo -c -o src/libwinstorecompatapp_a-GetStartupInfo.o `test -f 'src/GetStartupInfo.c' || echo '$(srcdir)/'`src/GetStartupInfo.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetStartupInfo.c' object='src/libwinstorecompatapp_a-GetStartupInfo.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetStartupInfo.o `test -f 'src/GetStartupInfo.c' || echo '$(srcdir)/'`src/GetStartupInfo.c
+
+src/libwinstorecompatapp_a-GetStartupInfo.obj: src/GetStartupInfo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetStartupInfo.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Tpo -c -o src/libwinstorecompatapp_a-GetStartupInfo.obj `if test -f 'src/GetStartupInfo.c'; then $(CYGPATH_W) 'src/GetStartupInfo.c'; else $(CYGPATH_W) '$(srcdir)/src/GetStartupInfo.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetStartupInfo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetStartupInfo.c' object='src/libwinstorecompatapp_a-GetStartupInfo.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetStartupInfo.obj `if test -f 'src/GetStartupInfo.c'; then $(CYGPATH_W) 'src/GetStartupInfo.c'; else $(CYGPATH_W) '$(srcdir)/src/GetStartupInfo.c'; fi`
+
+src/libwinstorecompatapp_a-EnumProcessModules.o: src/EnumProcessModules.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-EnumProcessModules.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Tpo -c -o src/libwinstorecompatapp_a-EnumProcessModules.o `test -f 'src/EnumProcessModules.c' || echo '$(srcdir)/'`src/EnumProcessModules.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/EnumProcessModules.c' object='src/libwinstorecompatapp_a-EnumProcessModules.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-EnumProcessModules.o `test -f 'src/EnumProcessModules.c' || echo '$(srcdir)/'`src/EnumProcessModules.c
+
+src/libwinstorecompatapp_a-EnumProcessModules.obj: src/EnumProcessModules.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-EnumProcessModules.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Tpo -c -o src/libwinstorecompatapp_a-EnumProcessModules.obj `if test -f 'src/EnumProcessModules.c'; then $(CYGPATH_W) 'src/EnumProcessModules.c'; else $(CYGPATH_W) '$(srcdir)/src/EnumProcessModules.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-EnumProcessModules.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/EnumProcessModules.c' object='src/libwinstorecompatapp_a-EnumProcessModules.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-EnumProcessModules.obj `if test -f 'src/EnumProcessModules.c'; then $(CYGPATH_W) 'src/EnumProcessModules.c'; else $(CYGPATH_W) '$(srcdir)/src/EnumProcessModules.c'; fi`
+
+src/libwinstorecompatapp_a-RtlAddFunctionTable.o: src/RtlAddFunctionTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlAddFunctionTable.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Tpo -c -o src/libwinstorecompatapp_a-RtlAddFunctionTable.o `test -f 'src/RtlAddFunctionTable.c' || echo '$(srcdir)/'`src/RtlAddFunctionTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlAddFunctionTable.c' object='src/libwinstorecompatapp_a-RtlAddFunctionTable.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlAddFunctionTable.o `test -f 'src/RtlAddFunctionTable.c' || echo '$(srcdir)/'`src/RtlAddFunctionTable.c
+
+src/libwinstorecompatapp_a-RtlAddFunctionTable.obj: src/RtlAddFunctionTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlAddFunctionTable.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Tpo -c -o src/libwinstorecompatapp_a-RtlAddFunctionTable.obj `if test -f 'src/RtlAddFunctionTable.c'; then $(CYGPATH_W) 'src/RtlAddFunctionTable.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlAddFunctionTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlAddFunctionTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlAddFunctionTable.c' object='src/libwinstorecompatapp_a-RtlAddFunctionTable.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlAddFunctionTable.obj `if test -f 'src/RtlAddFunctionTable.c'; then $(CYGPATH_W) 'src/RtlAddFunctionTable.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlAddFunctionTable.c'; fi`
+
+src/libwinstorecompatapp_a-RtlCaptureContext.o: src/RtlCaptureContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlCaptureContext.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Tpo -c -o src/libwinstorecompatapp_a-RtlCaptureContext.o `test -f 'src/RtlCaptureContext.c' || echo '$(srcdir)/'`src/RtlCaptureContext.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlCaptureContext.c' object='src/libwinstorecompatapp_a-RtlCaptureContext.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlCaptureContext.o `test -f 'src/RtlCaptureContext.c' || echo '$(srcdir)/'`src/RtlCaptureContext.c
+
+src/libwinstorecompatapp_a-RtlCaptureContext.obj: src/RtlCaptureContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlCaptureContext.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Tpo -c -o src/libwinstorecompatapp_a-RtlCaptureContext.obj `if test -f 'src/RtlCaptureContext.c'; then $(CYGPATH_W) 'src/RtlCaptureContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlCaptureContext.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlCaptureContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlCaptureContext.c' object='src/libwinstorecompatapp_a-RtlCaptureContext.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlCaptureContext.obj `if test -f 'src/RtlCaptureContext.c'; then $(CYGPATH_W) 'src/RtlCaptureContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlCaptureContext.c'; fi`
+
+src/libwinstorecompatapp_a-RtlVirtualUnwind.o: src/RtlVirtualUnwind.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlVirtualUnwind.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Tpo -c -o src/libwinstorecompatapp_a-RtlVirtualUnwind.o `test -f 'src/RtlVirtualUnwind.c' || echo '$(srcdir)/'`src/RtlVirtualUnwind.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlVirtualUnwind.c' object='src/libwinstorecompatapp_a-RtlVirtualUnwind.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlVirtualUnwind.o `test -f 'src/RtlVirtualUnwind.c' || echo '$(srcdir)/'`src/RtlVirtualUnwind.c
+
+src/libwinstorecompatapp_a-RtlVirtualUnwind.obj: src/RtlVirtualUnwind.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlVirtualUnwind.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Tpo -c -o src/libwinstorecompatapp_a-RtlVirtualUnwind.obj `if test -f 'src/RtlVirtualUnwind.c'; then $(CYGPATH_W) 'src/RtlVirtualUnwind.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlVirtualUnwind.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlVirtualUnwind.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlVirtualUnwind.c' object='src/libwinstorecompatapp_a-RtlVirtualUnwind.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlVirtualUnwind.obj `if test -f 'src/RtlVirtualUnwind.c'; then $(CYGPATH_W) 'src/RtlVirtualUnwind.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlVirtualUnwind.c'; fi`
+
+src/libwinstorecompatapp_a-RtlRestoreContext.o: src/RtlRestoreContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlRestoreContext.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Tpo -c -o src/libwinstorecompatapp_a-RtlRestoreContext.o `test -f 'src/RtlRestoreContext.c' || echo '$(srcdir)/'`src/RtlRestoreContext.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlRestoreContext.c' object='src/libwinstorecompatapp_a-RtlRestoreContext.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlRestoreContext.o `test -f 'src/RtlRestoreContext.c' || echo '$(srcdir)/'`src/RtlRestoreContext.c
+
+src/libwinstorecompatapp_a-RtlRestoreContext.obj: src/RtlRestoreContext.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-RtlRestoreContext.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Tpo -c -o src/libwinstorecompatapp_a-RtlRestoreContext.obj `if test -f 'src/RtlRestoreContext.c'; then $(CYGPATH_W) 'src/RtlRestoreContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlRestoreContext.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-RtlRestoreContext.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/RtlRestoreContext.c' object='src/libwinstorecompatapp_a-RtlRestoreContext.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-RtlRestoreContext.obj `if test -f 'src/RtlRestoreContext.c'; then $(CYGPATH_W) 'src/RtlRestoreContext.c'; else $(CYGPATH_W) '$(srcdir)/src/RtlRestoreContext.c'; fi`
+
+src/libwinstorecompatapp_a-GetUserName.o: src/GetUserName.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetUserName.o -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Tpo -c -o src/libwinstorecompatapp_a-GetUserName.o `test -f 'src/GetUserName.c' || echo '$(srcdir)/'`src/GetUserName.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetUserName.c' object='src/libwinstorecompatapp_a-GetUserName.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetUserName.o `test -f 'src/GetUserName.c' || echo '$(srcdir)/'`src/GetUserName.c
+
+src/libwinstorecompatapp_a-GetUserName.obj: src/GetUserName.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/libwinstorecompatapp_a-GetUserName.obj -MD -MP -MF src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Tpo -c -o src/libwinstorecompatapp_a-GetUserName.obj `if test -f 'src/GetUserName.c'; then $(CYGPATH_W) 'src/GetUserName.c'; else $(CYGPATH_W) '$(srcdir)/src/GetUserName.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Tpo src/$(DEPDIR)/libwinstorecompatapp_a-GetUserName.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/GetUserName.c' object='src/libwinstorecompatapp_a-GetUserName.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libwinstorecompatapp_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libwinstorecompatapp_a-GetUserName.obj `if test -f 'src/GetUserName.c'; then $(CYGPATH_W) 'src/GetUserName.c'; else $(CYGPATH_W) '$(srcdir)/src/GetUserName.c'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
