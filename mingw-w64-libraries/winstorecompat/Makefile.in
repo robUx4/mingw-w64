@@ -415,7 +415,9 @@ libwinstorecompat_a_SOURCES = \
   src/GetUserName.c \
   $(NULL)
 
-libwinstorecompat_a_CPPFLAGS = $(AM_CPPFLAGS) -D_WIN32_WINNT=_WIN32_WINNT_WIN8
+libwinstorecompat_a_CPPFLAGS = $(AM_CPPFLAGS) -I@includedir@ -DWINAPI_FAMILY=WINAPI_FAMILY_APP -DUNICODE \
+  -DWINSTORECOMPAT -D_WIN32_WINNT=_WIN32_WINNT_WIN8
+
 libwinstorecompatapp_a_SOURCES = \
   src/GetModuleHandle.c \
   src/LoadLibraryW.c \
@@ -435,7 +437,9 @@ libwinstorecompatapp_a_SOURCES = \
   src/GetUserName.c \
   $(NULL)
 
-libwinstorecompatapp_a_CPPFLAGS = $(AM_CPPFLAGS) -D_WIN32_WINNT=_WIN32_WINNT_WIN10
+libwinstorecompatapp_a_CPPFLAGS = $(AM_CPPFLAGS) -I@includedir@ -DWINAPI_FAMILY=WINAPI_FAMILY_APP -DUNICODE \
+  -DWINSTORECOMPAT -D_WIN32_WINNT=_WIN32_WINNT_WIN10
+
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
