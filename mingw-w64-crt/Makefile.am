@@ -435,8 +435,8 @@ src_libmingwex=\
   misc/longjmp.S \
   misc/mingw_getsp.S \
   misc/alarm.c \
-  misc/basename.c        misc/btowc.c               misc/delay-f.c          misc/delay-n.c         \
-  misc/delayimp.c        misc/dirent.c          \
+  misc/basename.c        misc/btowc.c               \
+  misc/dirent.c          \
   misc/dirname.c \
   misc/feclearexcept.c   misc/fegetenv.c            misc/fegetexceptflag.c  misc/fegetround.c            misc/feholdexcept.c    \
   misc/feraiseexcept.c   misc/fesetenv.c            misc/fesetexceptflag.c  misc/fesetround.c            misc/fetestexcept.c    \
@@ -472,6 +472,9 @@ src_libmingwex=\
   stdio/ulltoa.c           stdio/ulltow.c            stdio/vasprintf.c        stdio/vfscanf.c           stdio/vfwscanf.c        \
   stdio/vscanf.c           stdio/vsnwprintf.c        stdio/vsscanf.c         \
   stdio/vswscanf.c         stdio/vwscanf.c           stdio/wtoll.c            stdio/mingw_asprintf.c    stdio/mingw_vasprintf.c
+
+src_libdelayimp=\
+  misc/delayimp.c          misc/delay-f.c            misc/delay-n.c
 
 # these go into both 32 and 64 bit x86 versions:
 src_libmingwex_x86=\
@@ -759,8 +762,11 @@ lib32_libntoskrnl_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
 lib32_libntoskrnl_a_AR = $(DTLIB32) && $(AR) $(ARFLAGS)
 
 if !W32API
+if DELAY_IMPORT_LIBS
 lib32_LIBRARIES += lib32/libdelayimp.a
-lib32_libdelayimp_a_SOURCES =
+lib32_libdelayimp_a_SOURCES = $(src_libdelayimp)
+lib32_libdelayimp_a_CPPFLAGS=$(CPPFLAGS32) $(extra_include) $(AM_CPPFLAGS)
+endif
 
 lib32_LIBRARIES += lib32/libm.a
 nodist_lib32_libm_a_SOURCES = $(src_libm)
@@ -1093,8 +1099,11 @@ lib64_libtaskschd_a_SOURCES = $(src_libtaskschd)
 lib64_libtaskschd_a_CPPFLAGS=$(CPPFLAGS64) $(sysincludes)
 
 if !W32API
+if DELAY_IMPORT_LIBS
 lib64_LIBRARIES += lib64/libdelayimp.a
-lib64_libdelayimp_a_SOURCES =
+lib64_libdelayimp_a_SOURCES = $(src_libdelayimp)
+lib64_libdelayimp_a_CPPFLAGS=$(CPPFLAGS64) $(extra_include) $(AM_CPPFLAGS)
+endif
 
 lib64_LIBRARIES += lib64/libm.a
 nodist_lib64_libm_a_SOURCES = $(src_libm)
@@ -1434,8 +1443,11 @@ libarm32_libws2_32_a_AR = $(DTDEFARM32) libarm32/ws2_32.def && $(AR) $(ARFLAGS)
 EXTRA_libarm32_libws2_32_a_DEPENDENCIES=libarm32/ws2_32.def
 
 if !W32API
+if DELAY_IMPORT_LIBS
 libarm32_LIBRARIES += libarm32/libdelayimp.a
-libarm32_libdelayimp_a_SOURCES =
+libarm32_libdelayimp_a_SOURCES = $(src_libdelayimp)
+libarm32_libdelayimp_a_CPPFLAGS=$(CPPFLAGSARM32) $(extra_include) $(AM_CPPFLAGS)
+endif
 
 libarm32_LIBRARIES += libarm32/libm.a
 nodist_libarm32_libm_a_SOURCES = $(src_libm)
@@ -1713,8 +1725,11 @@ libarm64_libws2_32_a_AR = $(DTDEFARM64) libarm64/ws2_32.def && $(AR) $(ARFLAGS)
 EXTRA_libarm64_libws2_32_a_DEPENDENCIES=libarm64/ws2_32.def
 
 if !W32API
+if DELAY_IMPORT_LIBS
 libarm64_LIBRARIES += libarm64/libdelayimp.a
-libarm64_libdelayimp_a_SOURCES =
+libarm64_libdelayimp_a_SOURCES = $(src_libdelayimp)
+libarm64_libdelayimp_a_CPPFLAGS=$(CPPFLAGSARM64) $(extra_include) $(AM_CPPFLAGS)
+endif
 
 libarm64_LIBRARIES += libarm64/libm.a
 nodist_libarm64_libm_a_SOURCES = $(src_libm)
