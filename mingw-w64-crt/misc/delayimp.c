@@ -32,22 +32,6 @@ static int __memcmp(const void *pv1,const void *pv2,size_t cb)
   return *((unsigned char *)pv1) - *((unsigned char *)pv2);
 }
 
-static void *__memcpy(void *pvDst,const void *pvSrc,size_t cb)
-{
-  void *pvRet = pvDst;
-  while(cb--) {
-    *(char *)pvDst = *(char *)pvSrc;
-    pvDst = ((char *)pvDst) + 1;
-    pvSrc = ((char *)pvSrc) + 1;
-  }
-  return pvRet;
-}
-
-static unsigned IndexFromPImgThunkData(PCImgThunkData pitdCur,PCImgThunkData pitdBase)
-{
-  return (unsigned) (pitdCur - pitdBase);
-}
-
 #define __ImageBase __MINGW_LSYMBOL(_image_base__)
 extern IMAGE_DOS_HEADER __ImageBase;
 
@@ -68,6 +52,57 @@ static unsigned CountOfImports(PCImgThunkData pitdBase)
     cRet++;
   }
   return cRet;
+}
+
+typedef struct InternalImgDelayDescr {
+  DWORD grAttrs;
+  LPCSTR szName;
+  HMODULE *phmod;
+  PImgThunkData pIAT;
+  PCImgThunkData pINT;
+  PCImgThunkData pBoundIAT;
+  PCImgThunkData pUnloadIAT;
+  DWORD dwTimeStamp;
+} InternalImgDelayDescr;
+
+typedef InternalImgDelayDescr *PIIDD;
+typedef const InternalImgDelayDescr *PCIIDD;
+
+static PIMAGE_NT_HEADERS WINAPI PinhFromImageBase(HMODULE hmod)
+{
+  return (PIMAGE_NT_HEADERS) (((PBYTE)(hmod)) + ((PIMAGE_DOS_HEADER)(hmod))->e_lfanew);
+}
+
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN8
+typedef FARPROC (WINAPI *PDELAYLOAD_FAILURE_SYSTEM_ROUTINE) (LPCSTR pszDllName, LPCSTR pszProcName);
+
+PVOID WINAPI ResolveDelayLoadedAPI(
+  PVOID                             ParentModuleBase,
+  PCImgDelayDescr                   DelayloadDescriptor,
+  PVOID                             FailureDllHook,
+  PDELAYLOAD_FAILURE_SYSTEM_ROUTINE FailureSystemHook,
+  PCImgThunkData                    ThunkAddress,
+  ULONG                             Flags
+);
+FARPROC WINAPI DelayLoadFailureHook(
+  LPCSTR pszDllName,
+  LPCSTR pszProcName
+);
+#else /* _WIN32_WINNT < _WIN32_WINNT_WIN8 */
+static void *__memcpy(void *pvDst,const void *pvSrc,size_t cb)
+{
+  void *pvRet = pvDst;
+  while(cb--) {
+    *(char *)pvDst = *(char *)pvSrc;
+    pvDst = ((char *)pvDst) + 1;
+    pvSrc = ((char *)pvSrc) + 1;
+  }
+  return pvRet;
+}
+
+static unsigned IndexFromPImgThunkData(PCImgThunkData pitdCur,PCImgThunkData pitdBase)
+{
+  return (unsigned) (pitdCur - pitdBase);
 }
 
 PUnloadInfo __puiHead = 0;
@@ -93,25 +128,6 @@ static void del_ULI(UnloadInfo *p)
     }
 }
 
-typedef struct InternalImgDelayDescr {
-  DWORD grAttrs;
-  LPCSTR szName;
-  HMODULE *phmod;
-  PImgThunkData pIAT;
-  PCImgThunkData pINT;
-  PCImgThunkData pBoundIAT;
-  PCImgThunkData pUnloadIAT;
-  DWORD dwTimeStamp;
-} InternalImgDelayDescr;
-
-typedef InternalImgDelayDescr *PIIDD;
-typedef const InternalImgDelayDescr *PCIIDD;
-
-static PIMAGE_NT_HEADERS WINAPI PinhFromImageBase(HMODULE hmod)
-{
-  return (PIMAGE_NT_HEADERS) (((PBYTE)(hmod)) + ((PIMAGE_DOS_HEADER)(hmod))->e_lfanew);
-}
-
 static void WINAPI OverlayIAT(PImgThunkData pitdDst,PCImgThunkData pitdSrc)
 {
   __memcpy(pitdDst,pitdSrc,CountOfImports(pitdDst) * sizeof(IMAGE_THUNK_DATA));
@@ -126,6 +142,7 @@ static int WINAPI FLoadedAtPreferredAddress(PIMAGE_NT_HEADERS pinh,HMODULE hmod)
 {
   return ((UINT_PTR)(hmod)) == pinh->OptionalHeader.ImageBase;
 }
+#endif /* _WIN32_WINNT < _WIN32_WINNT_WIN8 */
 
 #if(defined(_X86_) && !defined(__x86_64))
 #undef InterlockedExchangePointer
@@ -137,6 +154,9 @@ FARPROC WINAPI __delayLoadHelper2(PCImgDelayDescr pidd,FARPROC *ppfnIATEntry);
 
 FARPROC WINAPI __delayLoadHelper2(PCImgDelayDescr pidd,FARPROC *ppfnIATEntry)
 {
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN8
+    return ResolveDelayLoadedAPI( &__ImageBase, pidd, NULL, DelayLoadFailureHook, (PCImgThunkData)ppfnIATEntry, 0 );
+#else /* _WIN32_WINNT < _WIN32_WINNT_WIN8 */
   InternalImgDelayDescr idd = {
     pidd->grAttrs,(LPCTSTR) PtrFromRVA(pidd->rvaDLLName),(HMODULE *) PtrFromRVA(pidd->rvaHmod),
     (PImgThunkData) PtrFromRVA(pidd->rvaIAT), (PCImgThunkData) PtrFromRVA(pidd->rvaINT),
@@ -228,8 +248,10 @@ HookBypass:
     (*__pfnDliNotifyHook2)(dliNoteEndProcessing,&dli);
   }
   return pfnRet;
+#endif /* _WIN32_WINNT < _WIN32_WINNT_WIN8 */
 }
 
+#if _WIN32_WINNT < _WIN32_WINNT_WIN8
 WINBOOL WINAPI __FUnloadDelayLoadedDLL2(LPCSTR szDll)
 {
   WINBOOL fRet = FALSE;
@@ -252,6 +274,7 @@ WINBOOL WINAPI __FUnloadDelayLoadedDLL2(LPCSTR szDll)
   }
   return fRet;
 }
+#endif /* _WIN32_WINNT < _WIN32_WINNT_WIN8 */
 
 HRESULT WINAPI __HrLoadAllImportsForDll(LPCSTR szDll)
 {
