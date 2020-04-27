@@ -57,6 +57,7 @@ static pthread_t idListNextId = 0;
 #if !defined(_MSC_VER) || defined (USE_VEH_FOR_MSC_SETTHREADNAME)
 static void *SetThreadName_VEH_handle = NULL;
 
+#if _WIN32_WINNT < _WIN32_WINNT_WIN10
 static LONG __stdcall
 SetThreadName_VEH (PEXCEPTION_POINTERS ExceptionInfo)
 {
@@ -66,6 +67,7 @@ SetThreadName_VEH (PEXCEPTION_POINTERS ExceptionInfo)
 
   return EXCEPTION_CONTINUE_SEARCH;
 }
+#endif /* _WIN32_WINNT < _WIN32_WINNT_WIN10 */
 #endif
 
 typedef struct _THREADNAME_INFO
@@ -77,14 +79,18 @@ typedef struct _THREADNAME_INFO
 } THREADNAME_INFO;
 
 static void
-SetThreadName (DWORD dwThreadID, LPCSTR szThreadName)
+SetThreadName (struct _pthread_v *tv, LPCSTR szThreadName)
 {
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN10
+    // UTF8 to wide
+    //TODO SetThreadDescription(tv->th, );
+#else /* _WIN32_WINNT < _WIN32_WINNT_WIN10 */
    THREADNAME_INFO info;
    DWORD infosize;
 
    info.dwType = 0x1000;
    info.szName = szThreadName;
-   info.dwThreadID = dwThreadID;
+   info.dwThreadID = tv->tid;
    info.dwFlags = 0;
 
    infosize = sizeof (info) / sizeof (ULONG_PTR);
@@ -106,6 +112,7 @@ SetThreadName (DWORD dwThreadID, LPCSTR szThreadName)
 
    RaiseException (EXCEPTION_SET_THREAD_NAME, 0, infosize, (ULONG_PTR *) &info);
 #endif
+#endif /* _WIN32_WINNT < _WIN32_WINNT_WIN10 */
 }
 
 /* Search the list idList for an element with identifier ID.  If
@@ -419,7 +426,7 @@ __dyn_tls_pthread (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
 
   if (dwReason == DLL_PROCESS_DETACH)
     {
-#if !defined(_MSC_VER) || defined (USE_VEH_FOR_MSC_SETTHREADNAME)
+#if (!defined(_MSC_VER) || defined (USE_VEH_FOR_MSC_SETTHREADNAME)) && _WIN32_WINNT < _WIN32_WINNT_WIN10
       if (lpreserved == NULL && SetThreadName_VEH_handle != NULL)
         {
           RemoveVectoredExceptionHandler (SetThreadName_VEH_handle);
@@ -430,7 +437,7 @@ __dyn_tls_pthread (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
     }
   else if (dwReason == DLL_PROCESS_ATTACH)
     {
-#if !defined(_MSC_VER) || defined (USE_VEH_FOR_MSC_SETTHREADNAME)
+#if (!defined(_MSC_VER) || defined (USE_VEH_FOR_MSC_SETTHREADNAME)) && _WIN32_WINNT < _WIN32_WINNT_WIN10
       SetThreadName_VEH_handle = AddVectoredExceptionHandler (1, &SetThreadName_VEH);
       /* Can't do anything on error anyway, check for NULL later */
 #endif
@@ -1809,7 +1816,7 @@ pthread_setname_np (pthread_t thread, const char *name)
     free (tv->thread_name);
 
   tv->thread_name = stored_name;
-  SetThreadName (tv->tid, name);
+  SetThreadName (tv, name);
   return 0;
 }
 
