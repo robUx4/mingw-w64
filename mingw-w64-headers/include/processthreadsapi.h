@@ -109,16 +109,11 @@ extern "C" {
   WINBASEAPI WINBOOL WINAPI TerminateThread (HANDLE hThread, DWORD dwExitCode);
   WINBASEAPI WINBOOL WINAPI SetProcessShutdownParameters (DWORD dwLevel, DWORD dwFlags);
   WINBASEAPI DWORD WINAPI GetProcessVersion (DWORD ProcessId);
-  WINBASEAPI VOID WINAPI GetStartupInfoW (LPSTARTUPINFOW lpStartupInfo);
   WINBASEAPI WINBOOL WINAPI SetThreadStackGuarantee (PULONG StackSizeInBytes);
   WINBASEAPI WINBOOL WINAPI ProcessIdToSessionId (DWORD dwProcessId, DWORD *pSessionId);
   WINBASEAPI HANDLE WINAPI CreateRemoteThreadEx (HANDLE hProcess, LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList, LPDWORD lpThreadId);
   WINBASEAPI WINBOOL WINAPI SetThreadContext (HANDLE hThread, CONST CONTEXT *lpContext);
   WINBASEAPI WINBOOL WINAPI GetProcessHandleCount (HANDLE hProcess, PDWORD pdwHandleCount);
-
-#ifdef UNICODE
-#define GetStartupInfo GetStartupInfoW
-#endif
 
 #ifndef _APISET_EXPORTS_FILTER
   WINADVAPI WINBOOL WINAPI CreateProcessAsUserW (HANDLE hToken, LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, WINBOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCWSTR lpCurrentDirectory, LPSTARTUPINFOW lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
@@ -168,6 +163,12 @@ extern "C" {
 
 #endif
 
+#if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_DESKTOP) || defined(WINSTORECOMPAT)
+  WINBASEAPI VOID WINAPI GetStartupInfoW (LPSTARTUPINFOW lpStartupInfo);
+#ifdef UNICODE
+#define GetStartupInfo GetStartupInfoW
+#endif
+#endif
 #if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_APP)
 #ifndef _APISET_EXPORTS_FILTER
   WINBASEAPI WINBOOL WINAPI CreateProcessA (LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, WINBOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
