@@ -1,7 +1,7 @@
 
 SUBDIRS = . tests
 
-AM_CFLAGS = -Wall -DWIN32_LEAN_AND_MEAN
+AM_CFLAGS = -Wall -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=_WIN32_WINNT_WIN10 -Werror=implicit-function-declaration
 ACLOCAL_AMFLAGS = -I m4
 
 lib_LTLIBRARIES = libwinpthread.la
