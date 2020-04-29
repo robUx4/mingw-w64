@@ -801,7 +801,7 @@ lib32_libmingwthrd_a_CPPFLAGS=$(CPPFLAGS32) $(sysincludes)
 
 processed_defs += lib32/msvcrt.def lib32/msvcr80.def lib32/msvcr90.def lib32/msvcr90d.def lib32/msvcr100.def lib32/msvcr110.def lib32/msvcr120.def lib32/msvcr120d.def \
 				  lib32/msvcr120_app.def lib32/msvcp120_app.def lib32/ucrtbase.def \
-				  lib32/api-ms-win-crt-math-l1-1-0.def lib32/api-ms-win-crt-private-l1-1-0.def lib32/api-ms-win-crt-runtime-l1-1-0.def \
+				  lib32/api-ms-win-crt-math-l1-1-0.def lib32/api-ms-win-crt-runtime-l1-1-0.def \
 				  lib32/vcruntime140_app.def
 
 endif
@@ -887,7 +887,7 @@ lib32/lib%.a: lib-common/%.def
 lib32/libucrt.a: lib32/ucrt.mri lib32/libucrt_extra.a \
 		lib32/libapi-ms-win-crt-conio-l1-1-0.a lib32/libapi-ms-win-crt-convert-l1-1-0.a lib32/libapi-ms-win-crt-environment-l1-1-0.a \
 		lib32/libapi-ms-win-crt-filesystem-l1-1-0.a lib32/libapi-ms-win-crt-heap-l1-1-0.a lib32/libapi-ms-win-crt-locale-l1-1-0.a \
-		lib32/libapi-ms-win-crt-math-l1-1-0.a lib32/libapi-ms-win-crt-multibyte-l1-1-0.a lib32/libapi-ms-win-crt-private-l1-1-0.a \
+		lib32/libapi-ms-win-crt-math-l1-1-0.a lib32/libapi-ms-win-crt-multibyte-l1-1-0.a \
 		lib32/libapi-ms-win-crt-process-l1-1-0.a lib32/libapi-ms-win-crt-runtime-l1-1-0.a lib32/libapi-ms-win-crt-stdio-l1-1-0.a \
 		lib32/libapi-ms-win-crt-string-l1-1-0.a lib32/libapi-ms-win-crt-time-l1-1-0.a lib32/libapi-ms-win-crt-utility-l1-1-0.a
 	rm -f $@
@@ -1141,7 +1141,7 @@ processed_defs += lib64/msvcrt.def lib64/msvcr80.def lib64/msvcr90.def lib64/msv
 				  lib64/msvcr120_app.def lib64/msvcp120_app.def lib64/ucrtbase.def \
 				  lib64/advapi32.def lib64/clbcatq.def lib64/kernel32.def lib64/ole32.def \
 				  lib64/oleaut32.def lib64/user32.def lib64/ws2_32.def \
-				  lib64/api-ms-win-crt-math-l1-1-0.def lib64/api-ms-win-crt-private-l1-1-0.def lib64/api-ms-win-crt-runtime-l1-1-0.def \
+				  lib64/api-ms-win-crt-math-l1-1-0.def lib64/api-ms-win-crt-runtime-l1-1-0.def \
 				  lib64/vcruntime140_app.def
 
 endif
@@ -1227,7 +1227,7 @@ lib64/lib%.a: lib-common/%.def
 lib64/libucrt.a: lib64/ucrt.mri lib64/libucrt_extra.a \
 		lib64/libapi-ms-win-crt-conio-l1-1-0.a lib64/libapi-ms-win-crt-convert-l1-1-0.a lib64/libapi-ms-win-crt-environment-l1-1-0.a \
 		lib64/libapi-ms-win-crt-filesystem-l1-1-0.a lib64/libapi-ms-win-crt-heap-l1-1-0.a lib64/libapi-ms-win-crt-locale-l1-1-0.a \
-		lib64/libapi-ms-win-crt-math-l1-1-0.a lib64/libapi-ms-win-crt-multibyte-l1-1-0.a lib64/libapi-ms-win-crt-private-l1-1-0.a \
+		lib64/libapi-ms-win-crt-math-l1-1-0.a lib64/libapi-ms-win-crt-multibyte-l1-1-0.a \
 		lib64/libapi-ms-win-crt-process-l1-1-0.a lib64/libapi-ms-win-crt-runtime-l1-1-0.a lib64/libapi-ms-win-crt-stdio-l1-1-0.a \
 		lib64/libapi-ms-win-crt-string-l1-1-0.a lib64/libapi-ms-win-crt-time-l1-1-0.a lib64/libapi-ms-win-crt-utility-l1-1-0.a
 	rm -f $@
@@ -1483,7 +1483,7 @@ libarm32_libmingwthrd_a_CPPFLAGS=$(CPPFLAGSARM32) $(sysincludes)
 processed_defs += libarm32/msvcrt.def libarm32/msvcr80.def libarm32/msvcr90.def libarm32/msvcr90d.def libarm32/msvcr100.def libarm32/msvcr110.def libarm32/msvcr120_app.def libarm32/ucrtbase.def \
 				  libarm32/advapi32.def libarm32/clbcatq.def libarm32/kernel32.def libarm32/ole32.def libarm32/oleaut32.def \
 				  libarm32/user32.def libarm32/ws2_32.def \
-				  libarm32/api-ms-win-crt-math-l1-1-0.def libarm32/api-ms-win-crt-private-l1-1-0.def libarm32/api-ms-win-crt-runtime-l1-1-0.def \
+				  libarm32/api-ms-win-crt-math-l1-1-0.def libarm32/api-ms-win-crt-runtime-l1-1-0.def \
 				  libarm32/vcruntime140_app.def
 
 endif
@@ -1528,7 +1528,7 @@ libarm32/lib%.a: lib-common/%.def
 libarm32/libucrt.a: libarm32/ucrt.mri libarm32/libucrt_extra.a \
 		libarm32/libapi-ms-win-crt-conio-l1-1-0.a libarm32/libapi-ms-win-crt-convert-l1-1-0.a libarm32/libapi-ms-win-crt-environment-l1-1-0.a \
 		libarm32/libapi-ms-win-crt-filesystem-l1-1-0.a libarm32/libapi-ms-win-crt-heap-l1-1-0.a libarm32/libapi-ms-win-crt-locale-l1-1-0.a \
-		libarm32/libapi-ms-win-crt-math-l1-1-0.a libarm32/libapi-ms-win-crt-multibyte-l1-1-0.a libarm32/libapi-ms-win-crt-private-l1-1-0.a \
+		libarm32/libapi-ms-win-crt-math-l1-1-0.a libarm32/libapi-ms-win-crt-multibyte-l1-1-0.a \
 		libarm32/libapi-ms-win-crt-process-l1-1-0.a libarm32/libapi-ms-win-crt-runtime-l1-1-0.a libarm32/libapi-ms-win-crt-stdio-l1-1-0.a \
 		libarm32/libapi-ms-win-crt-string-l1-1-0.a libarm32/libapi-ms-win-crt-time-l1-1-0.a libarm32/libapi-ms-win-crt-utility-l1-1-0.a
 	rm -f $@
@@ -1765,7 +1765,7 @@ libarm64_libmingwthrd_a_CPPFLAGS=$(CPPFLAGSARM64) $(sysincludes)
 processed_defs += libarm64/msvcrt.def libarm64/ucrtbase.def \
 				  libarm64/advapi32.def libarm64/clbcatq.def libarm64/kernel32.def libarm64/ole32.def libarm64/oleaut32.def \
 				  libarm64/user32.def libarm64/ws2_32.def \
-				  libarm64/api-ms-win-crt-math-l1-1-0.def libarm64/api-ms-win-crt-private-l1-1-0.def libarm64/api-ms-win-crt-runtime-l1-1-0.def \
+				  libarm64/api-ms-win-crt-math-l1-1-0.def libarm64/api-ms-win-crt-runtime-l1-1-0.def \
 				  libarm64/vcruntime140_app.def
 
 endif
@@ -1796,7 +1796,7 @@ libarm64/lib%.a: lib-common/%.def
 libarm64/libucrt.a: libarm64/ucrt.mri libarm64/libucrt_extra.a \
 		libarm64/libapi-ms-win-crt-conio-l1-1-0.a libarm64/libapi-ms-win-crt-convert-l1-1-0.a libarm64/libapi-ms-win-crt-environment-l1-1-0.a \
 		libarm64/libapi-ms-win-crt-filesystem-l1-1-0.a libarm64/libapi-ms-win-crt-heap-l1-1-0.a libarm64/libapi-ms-win-crt-locale-l1-1-0.a \
-		libarm64/libapi-ms-win-crt-math-l1-1-0.a libarm64/libapi-ms-win-crt-multibyte-l1-1-0.a libarm64/libapi-ms-win-crt-private-l1-1-0.a \
+		libarm64/libapi-ms-win-crt-math-l1-1-0.a libarm64/libapi-ms-win-crt-multibyte-l1-1-0.a \
 		libarm64/libapi-ms-win-crt-process-l1-1-0.a libarm64/libapi-ms-win-crt-runtime-l1-1-0.a libarm64/libapi-ms-win-crt-stdio-l1-1-0.a \
 		libarm64/libapi-ms-win-crt-string-l1-1-0.a libarm64/libapi-ms-win-crt-time-l1-1-0.a libarm64/libapi-ms-win-crt-utility-l1-1-0.a
 	rm -f $@
