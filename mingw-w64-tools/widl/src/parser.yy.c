@@ -1,6 +1,6 @@
-#line 1 "tools/widl/parser.yy.c"
+#line 2 "tools/widl/parser.yy.c"
 
-#line 3 "tools/widl/parser.yy.c"
+#line 4 "tools/widl/parser.yy.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -1041,13 +1041,13 @@ UUID *parse_uuid(const char *u)
   return uuid;
 }
 
-#line 1044 "tools/widl/parser.yy.c"
+#line 1045 "tools/widl/parser.yy.c"
 /*
  **************************************************************************
  * The flexer starts here
  **************************************************************************
  */
-#line 1050 "tools/widl/parser.yy.c"
+#line 1051 "tools/widl/parser.yy.c"
 
 #define INITIAL 0
 #define QUOTE 1
@@ -1281,7 +1281,7 @@ YY_DECL
 	{
 #line 132 "tools/widl/parser.l"
 
-#line 1284 "tools/widl/parser.yy.c"
+#line 1285 "tools/widl/parser.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1616,7 +1616,7 @@ YY_RULE_SETUP
 #line 239 "tools/widl/parser.l"
 ECHO;
 	YY_BREAK
-#line 1619 "tools/widl/parser.yy.c"
+#line 1620 "tools/widl/parser.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2668,7 +2668,9 @@ static const struct keyword keywords[] = {
 	{"coclass",         tCOCLASS,        0},
 	{"const",           tCONST,          0},
 	{"cpp_quote",       tCPPQUOTE,       0},
+	{"declare",         tDECLARE,        1},
 	{"default",         tDEFAULT,        0},
+	{"delegate",        tDELEGATE,       1},
 	{"dispinterface",   tDISPINTERFACE,  0},
 	{"double",          tDOUBLE,         0},
 	{"enum",            tENUM,           0},
@@ -2690,6 +2692,8 @@ static const struct keyword keywords[] = {
 	{"pascal",          tPASCAL,         0},
 	{"properties",      tPROPERTIES,     0},
 	{"register",        tREGISTER,       0},
+	{"requires",        tREQUIRES,       1},
+	{"runtimeclass",    tRUNTIMECLASS,   1},
 	{"short",           tSHORT,          0},
 	{"signed",          tSIGNED,         0},
 	{"sizeof",          tSIZEOF,         0},
@@ -2711,7 +2715,9 @@ static const struct keyword keywords[] = {
  */
 static const struct keyword attr_keywords[] =
 {
+	{"activatable",                 tACTIVATABLE,               1},
 	{"aggregatable",                tAGGREGATABLE,              0},
+	{"agile",                       tAGILE,                     1},
 	{"all_nodes",                   tALLNODES,                  0},
 	{"allocate",                    tALLOCATE,                  0},
 	{"annotation",                  tANNOTATION,                0},
@@ -2749,8 +2755,12 @@ static const struct keyword attr_keywords[] =
 	{"encode",                      tENCODE,                    0},
 	{"endpoint",                    tENDPOINT,                  0},
 	{"entry",                       tENTRY,                     0},
+	{"eventadd",                    tEVENTADD,                  1},
+	{"eventremove",                 tEVENTREMOVE,               1},
+	{"exclusiveto",                 tEXCLUSIVETO,               1},
 	{"explicit_handle",             tEXPLICITHANDLE,            0},
 	{"fault_status",                tFAULTSTATUS,               0},
+	{"flags",                       tFLAGS,                     1},
 	{"force_allocate",              tFORCEALLOCATE,             0},
 	{"free",                        tFREE,                      0},
 	{"handle",                      tHANDLE,                    0},
@@ -2773,12 +2783,15 @@ static const struct keyword attr_keywords[] =
 	{"length_is",                   tLENGTHIS,                  0},
 	{"licensed",                    tLICENSED,                  0},
 	{"local",                       tLOCAL,                     0},
+	{"marshaling_behavior",         tMARSHALINGBEHAVIOR,        1},
 	{"maybe",                       tMAYBE,                     0},
 	{"message",                     tMESSAGE,                   0},
+	{"mta" ,                        tMTA,                       1},
 	{"neutral",                     tNEUTRAL,                   0},
 	{"nocode",                      tNOCODE,                    0},
 	{"nonbrowsable",                tNONBROWSABLE,              0},
 	{"noncreatable",                tNONCREATABLE,              0},
+	{"none",                        tNONE,                      1},
 	{"nonextensible",               tNONEXTENSIBLE,             0},
 	{"notify",                      tNOTIFY,                    0},
 	{"notify_flag",                 tNOTIFYFLAG,                0},
@@ -2808,6 +2821,8 @@ static const struct keyword attr_keywords[] =
 	{"single_node",                 tSINGLENODE,                0},
 	{"size_is",                     tSIZEIS,                    0},
 	{"source",                      tSOURCE,                    0},
+	{"standard",                    tSTANDARD,                  1},
+	{"static",                      tSTATIC,                    1},
 	{"strict_context_handle",       tSTRICTCONTEXTHANDLE,       0},
 	{"string",                      tSTRING,                    0},
 	{"switch_is",                   tSWITCHIS,                  0},
