@@ -127,3 +127,11 @@ namespace Windows {
 #endif
   }
 }
+
+namespace Windows {
+    namespace Foundation {
+        declare {
+            interface Windows.Foundation.Collections.IVectorView<HSTRING>;
+        }
+    }
+}
