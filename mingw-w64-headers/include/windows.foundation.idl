@@ -101,6 +101,14 @@ namespace Windows {
             }
 
             [
+                uuid(faa585ea-6214-4217-afda-7f46de5869b3)
+            ]
+            interface IIterable<T> : IInspectable
+            {
+                HRESULT First([out, retval] Windows.Foundation.Collections.IIterator<T> **value);
+            }
+
+            [
                 uuid(bbe1fa4c-b0e3-4583-baef-1f1b2e483e56)
             ]
             interface IVectorView<T> : IInspectable
