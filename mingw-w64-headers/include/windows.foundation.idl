@@ -87,6 +87,11 @@ namespace Windows {
     }
 
 #ifdef __WIDL__
+        [
+            uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
+        ]
+        delegate void EventHandler<T>([in] IInspectable *sender, [in] T args);
+
         namespace Collections
         {
             [
