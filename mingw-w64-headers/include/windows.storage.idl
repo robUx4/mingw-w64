@@ -11,11 +11,13 @@
 import "inspectable.idl";
 import "hstring.idl";
 import "windows.foundation.idl";
+import "windows.storage.streams.idl";
 
 namespace Windows {
   namespace Foundation {
     interface IAsyncAction;
     interface TypedEventHandler;
+    interface Uri; // runtimeclass
     //struct DateTime;
     //struct EventRegistrationToken;
 
@@ -27,13 +29,18 @@ namespace Windows {
   namespace Storage {
     interface IStorageItem;
     interface IStorageFolder;
+    interface IStorageFile;
+    interface IStorageFileStatics;
     interface IApplicationData;
     interface IApplicationDataStatics;
     interface IApplicationDataSetVersionHandler;
     interface ApplicationDataContainer;
     interface ApplicationDataSetVersionHandler; //delegate
+    interface StreamedFileDataRequestedHandler; // delegate
     interface ISetVersionRequest;
     interface ISetVersionDeferral;
+    interface IStorageFile;
+    interface StreamedFileDataRequest; // delegate
     enum StorageDeleteOption;
     enum NameCollisionOption;
     enum StorageItemTypes;
@@ -41,6 +48,12 @@ namespace Windows {
     enum ApplicationDataCreateDisposition;
     enum FileAttributes;
     enum CreationCollisionOption;
+    enum FileAccessMode;
+    enum StreamedFileFailureMode;
+
+    namespace Streams {
+      interface IRandomAccessStreamReference;
+    }
   }
 }
 
@@ -89,6 +102,17 @@ namespace Windows {
       CreationCollisionOption_OpenIfExists
     } CreationCollisionOption;
 
+    typedef enum FileAccessMode {
+      FileAccessMode_Read,
+      FileAccessMode_ReadWrite
+    } FileAccessMode;
+
+    typedef enum StreamedFileFailureMode {
+        StreamedFileFailureMode_Failed               = 0,
+        StreamedFileFailureMode_CurrentlyUnavailable = 1,
+        StreamedFileFailureMode_Incomplete           = 2
+    } StreamedFileFailureMode;
+
     [uuid(4207A996-CA2F-42F7-BDE8-8B10457A7F30)]
     interface IStorageItem : IInspectable
     {
@@ -100,7 +124,7 @@ namespace Windows {
       [propget] HRESULT Name(HSTRING *value);
       [propget] HRESULT Path(HSTRING *value);
       [propget] HRESULT Attributes(FileAttributes* value);
-      [propget] HRESULT DateCreated(DateTime* value);
+      [propget] HRESULT DateCreated(/*DateTime* */ UINT64* value);
       HRESULT IsOfType(StorageItemTypes itemType, boolean* value);
     }
 
@@ -116,6 +140,35 @@ namespace Windows {
         [propget] HRESULT MediaServerDevices(IStorageFolder** value);
     }
 
+    [uuid(5984C710-DAF2-43C8-8BB4-A4D3EACFD03F)]
+    interface IStorageFileStatics : IInspectable
+    {
+        HRESULT GetFileFromPathAsync(HSTRING path, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT GetFileFromApplicationUriAsync(Windows.Foundation.Uri* uri, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT CreateStreamedFileAsync(HSTRING displayNameWithExtension, StreamedFileDataRequestedHandler* dataRequested, /*IRandomAccessStreamReference* */ IInspectable* thumbnail, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT ReplaceWithStreamedFileAsync(IStorageFile* fileToReplace, StreamedFileDataRequestedHandler* dataRequested, /*IRandomAccessStreamReference* */ IInspectable* thumbnail, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT CreateStreamedFileFromUriAsync(HSTRING displayNameWithExtension, Uri* uri, /*IRandomAccessStreamReference* */ IInspectable* thumbnail, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT ReplaceWithStreamedFileFromUriAsync(IStorageFile* fileToReplace, Uri* uri, /*IRandomAccessStreamReference* */ IInspectable* thumbnail, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+    }
+
+    [uuid(FA3F6186-4214-428C-A64C-14C9AC7315EA)]
+    interface IStorageFile : IInspectable
+    // also IStorageItem, IInputStreamReference, IRandomAccessStreamReference
+    {
+        [propget] HRESULT FileType(HSTRING *value);
+        [propget] HRESULT ContentType(HSTRING *value);
+        HRESULT OpenAsync(FileAccessMode accessMode, /*IAsyncOperation<IRandomAccessStream*>*/IInspectable** operation);
+        HRESULT OpenTransactedWriteAsync(/*IAsyncOperation<StorageStreamTransaction*>*/IInspectable** operation);
+        HRESULT CopyOverloadDefaultNameAndOptions(IStorageFolder *destinationFolder, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT CopyOverloadDefaultOptions(IStorageFolder *destinationFolder, HSTRING desiredNewName, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT CopyOverload(IStorageFolder *destinationFolder, HSTRING desiredNewName, NameCollisionOption option, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
+        HRESULT CopyAndReplaceAsync(IStorageFile *fileToReplace, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveOverloadDefaultNameAndOptions(IStorageFolder *destinationFolder, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveOverloadDefaultOptions(IStorageFolder *destinationFolder, HSTRING desiredNewName, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveOverload(IStorageFolder *destinationFolder, HSTRING desiredNewName, NameCollisionOption option, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveAndReplaceAsync(IStorageFile *fileToReplace, /* IAsyncAction** */ IInspectable** operation);
+    }
+
     [uuid(72D1CB78-B3EF-4F75-A80B-6FD9DAE2944B)]
     interface IStorageFolder : IInspectable
     {
@@ -129,6 +182,12 @@ namespace Windows {
       HRESULT GetFilesAsyncOverloadDefaultOptionsStartAndCount(/*IAsyncOperation<IVectorView<StorageFile*>*>*/IInspectable** operation);
       HRESULT GetFoldersAsyncOverloadDefaultOptionsStartAndCount(/*IAsyncOperation<IVectorView<StorageFolder*>*>*/IInspectable** operation);
       HRESULT GetItemsAsyncOverloadDefaultStartAndCount(/*IAsyncOperation<IVectorView<StorageItem*>*>*/IInspectable** operation);
+    }
+
+    [uuid(1673FCCE-DABD-4D50-BEEE-180B8A8191B6)]
+    interface StreamedFileDataRequest : IInspectable
+    {
+        HRESULT FailAndClose(Windows.Storage.StreamedFileFailureMode failureMode);
     }
 
     [uuid(C5AEFD1E-F467-40BA-8566-AB640A441E1D)]
@@ -152,8 +211,8 @@ namespace Windows {
       [propget] HRESULT LocalFolder(IStorageFolder** value);
       [propget] HRESULT RoamingFolder(IStorageFolder** value);
       [propget] HRESULT TemporaryFolder(IStorageFolder** value);
-      // [eventadd] HRESULT DataChanged(/*TypedEventHandler<ApplicationData*, IInspectable*>*/IInspectable* handler, EventRegistrationToken* token);
-      /* [eventremove] */ HRESULT DataChanged(EventRegistrationToken token);
+      /*[eventadd]*/ [local] HRESULT DataChanged(/*TypedEventHandler<ApplicationData*, IInspectable*>*/void* handler, /*EventRegistrationToken* */ UINT64* token);
+      /* [eventremove] */ HRESULT DataChanged(/*EventRegistrationToken*/ UINT64 token);
       HRESULT SignalDataChanged();
       HRESULT RoamingStorageQuota(UINT64* value);
     }
@@ -171,6 +230,11 @@ namespace Windows {
     [uuid(A05791E6-CC9F-4687-ACAB-A364FD785463)]
     interface ApplicationDataSetVersionHandler : IUnknown {
       HRESULT ApplicationDataSetVersionHandler(ISetVersionRequest* setVersionRequest);
+    }
+
+    [uuid(FEF6A824-2FE1-4D07-A35B-B77C50B5F4CC)]
+    interface StreamedFileDataRequestedHandler : IUnknown {
+      HRESULT StreamedFileDataRequestedHandler(StreamedFileDataRequest* stream);
     }
 
     [uuid(B9C76B9B-1056-4E69-8330-162619956F9B)]

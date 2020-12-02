@@ -16,8 +16,11 @@ namespace Windows {
     interface IAsyncAction;
     interface IAsyncOperation;
     interface AsyncActionCompletedHandler; // delegate
-    interface TypedEventHandler;           // delegate
+    interface TypedEventHandler;       // delegate
+    interface IClosable;
+    interface Uri; // runtimeclass
     struct    DateTime;
+    struct    TimeSpan;
     struct    EventRegistrationToken;
 
     namespace Collections {
@@ -40,6 +43,10 @@ namespace Windows {
       UINT64 UniversalTime;
     } DateTime;
 
+    typedef struct TimeSpan {
+      UINT64 Duration;
+    } TimeSpan;
+
     typedef struct EventRegistrationToken {
       UINT64 Value;
     } EventRegistrationToken;
@@ -60,6 +67,26 @@ namespace Windows {
       [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
       HRESULT GetResults();
     }
+
+    [uuid(5A648006-843A-4DA9-865B-9D26E5DFAD7B)]
+    interface IAsyncAction : IInspectable
+    // also IAsyncInfo
+    {
+        [propput] HRESULT Completed(AsyncActionCompletedHandler* handler);
+        [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
+        HRESULT GetResults();
+    }
+
+      [uuid(30D5A829-7FA4-4026-83BB-D75BAE4EA99E)]
+      interface IClosable : IInspectable
+      {
+          HRESULT Close();
+      }
+
+      [uuid(9E365E57-48B2-4160-956F-C7385120BBFC)]
+      interface Uri : IInspectable
+      {
+      }
 
     [uuid(A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7)]
     interface AsyncActionCompletedHandler : IUnknown {
