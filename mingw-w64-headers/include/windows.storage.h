@@ -2095,11 +2095,11 @@ namespace ABI {
                 virtual HRESULT STDMETHODCALLTYPE get_TemporaryFolder(
                     IStorageFolder **value) = 0;
 
-                virtual HRESULT STDMETHODCALLTYPE DataChanged(
+                virtual HRESULT STDMETHODCALLTYPE add_DataChanged(
                     void *handler,
                     UINT64 *token) = 0;
 
-                virtual HRESULT STDMETHODCALLTYPE DataChanged(
+                virtual HRESULT STDMETHODCALLTYPE remove_DataChanged(
                     UINT64 token) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE SignalDataChanged(
@@ -2186,12 +2186,12 @@ typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataVtbl {
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
         __x_ABI_CWindows_CStorage_CIStorageFolder **value);
 
-    HRESULT (STDMETHODCALLTYPE *DataChanged)(
+    HRESULT (STDMETHODCALLTYPE *add_DataChanged)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
         void *handler,
         UINT64 *token);
 
-    HRESULT (STDMETHODCALLTYPE *DataChanged)(
+    HRESULT (STDMETHODCALLTYPE *remove_DataChanged)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
         UINT64 token);
 
@@ -2229,8 +2229,8 @@ interface __x_ABI_CWindows_CStorage_CIApplicationData {
 #define __x_ABI_CWindows_CStorage_CIApplicationData_get_LocalFolder(This,value) (This)->lpVtbl->get_LocalFolder(This,value)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_get_RoamingFolder(This,value) (This)->lpVtbl->get_RoamingFolder(This,value)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_get_TemporaryFolder(This,value) (This)->lpVtbl->get_TemporaryFolder(This,value)
-#define __x_ABI_CWindows_CStorage_CIApplicationData_DataChanged(This,handler,token) (This)->lpVtbl->DataChanged(This,handler,token)
-#define __x_ABI_CWindows_CStorage_CIApplicationData_DataChanged(This,token) (This)->lpVtbl->DataChanged(This,token)
+#define __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged(This,handler,token) (This)->lpVtbl->add_DataChanged(This,handler,token)
+#define __x_ABI_CWindows_CStorage_CIApplicationData_remove_DataChanged(This,token) (This)->lpVtbl->remove_DataChanged(This,token)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_SignalDataChanged(This) (This)->lpVtbl->SignalDataChanged(This)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_RoamingStorageQuota(This,value) (This)->lpVtbl->RoamingStorageQuota(This,value)
 #else
@@ -2282,11 +2282,11 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_Roami
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_TemporaryFolder(__x_ABI_CWindows_CStorage_CIApplicationData* This,__x_ABI_CWindows_CStorage_CIStorageFolder **value) {
     return This->lpVtbl->get_TemporaryFolder(This,value);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,void *handler,UINT64 *token) {
-    return This->lpVtbl->DataChanged(This,handler,token);
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,void *handler,UINT64 *token) {
+    return This->lpVtbl->add_DataChanged(This,handler,token);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,UINT64 token) {
-    return This->lpVtbl->DataChanged(This,token);
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_remove_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,UINT64 token) {
+    return This->lpVtbl->remove_DataChanged(This,token);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_SignalDataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This) {
     return This->lpVtbl->SignalDataChanged(This);

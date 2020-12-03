@@ -210,8 +210,8 @@ namespace Windows {
       [propget] HRESULT LocalFolder(IStorageFolder** value);
       [propget] HRESULT RoamingFolder(IStorageFolder** value);
       [propget] HRESULT TemporaryFolder(IStorageFolder** value);
-      /*[eventadd]*/ [local] HRESULT DataChanged(/*TypedEventHandler<ApplicationData*, IInspectable*>*/void* handler, /*EventRegistrationToken* */ UINT64* token);
-      /* [eventremove] */ HRESULT DataChanged(/*EventRegistrationToken*/ UINT64 token);
+      [local] HRESULT add_DataChanged(/*TypedEventHandler<ApplicationData*, IInspectable*>*/void* handler, /*EventRegistrationToken* */ UINT64* token);
+      HRESULT remove_DataChanged(/*EventRegistrationToken*/ UINT64 token);
       HRESULT SignalDataChanged();
       HRESULT RoamingStorageQuota(UINT64* value);
     }
