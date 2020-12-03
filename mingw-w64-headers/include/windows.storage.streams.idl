@@ -35,20 +35,20 @@ namespace Windows {
   namespace Storage {
     namespace Streams {
       typedef enum InputStreamOptions {
-        InputStreamOptions_None = 0x0,
-        InputStreamOptions_Partial = 0x1,
-        InputStreamOptions_ReadAhead = 0x2
+        None = 0x0,
+        Partial = 0x1,
+        ReadAhead = 0x2
       } InputStreamOptions;
 
       typedef enum ByteOrder {
-        ByteOrder_LittleEndian,
-        ByteOrder_BigEndian
+        LittleEndian,
+        BigEndian
       } ByteOrder;
 
       typedef enum UnicodeEncoding {
-        UnicodeEncoding_Utf8,
-        UnicodeEncoding_Utf16LE,
-        UnicodeEncoding_Utf16BE
+        Utf8,
+        Utf16LE,
+        Utf16BE
       } UnicodeEncoding;
 
       [uuid(905A0FE0-BC53-11DF-8C49-001E4FC686DA)]

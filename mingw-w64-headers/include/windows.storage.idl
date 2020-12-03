@@ -11,7 +11,6 @@
 import "inspectable.idl";
 import "hstring.idl";
 import "windows.foundation.idl";
-import "windows.storage.streams.idl";
 
 namespace Windows {
   namespace Foundation {
@@ -60,57 +59,57 @@ namespace Windows {
 namespace Windows {
   namespace Storage {
     typedef enum NameCollisionoption {
-      NameCollisionoption_GenerateUniqueName,
-      NameCollisionoption_ReplaceExisting,
-      NameCollisionoption_FailIfExists
+      GenerateUniqueName,
+      ReplaceExisting,
+      FailIfExists
     } NameCollisionOption;
 
     typedef enum StorageDeleteOption {
-      StorageDeleteOption_Default,
-      StorageDeleteOption_PermanentDelete
+      Default,
+      PermanentDelete
     } StorageDeleteOption;
 
     typedef enum StorageItemTypes {
-      StorageItemTypes_None,
-      StorageItemTypes_File,
-      StorageItemTypes_Folder
+      None,
+      File,
+      Folder
     } StorageItemTypes;
 
     typedef enum ApplicationDataCreateDisposition {
-      ApplicationDataCreateDisposition_Always,
-      ApplicationDataCreateDisposition_Existing
+      Always,
+      Existing
     } ApplicationDataCreateDisposition;
 
     typedef enum ApplicationDataLocality {
-      ApplicationDataLocality_Local,
-      ApplicationDataLocality_Roaming,
-      ApplicationDataLocality_Temporary
+      Local,
+      Roaming,
+      Temporary
     } ApplicationDataLocality;
 
     typedef enum FileAttributes {
-      FileAttributes_Normal,
-      FileAttributes_ReadOnly,
-      FileAttributes_Directory,
-      FileAttributes_Archive,
-      FileAttributes_Temporary
+      Normal,
+      ReadOnly,
+      Directory,
+      Archive,
+      Temporary
     } FileAttributes;
 
     typedef enum CreationCollisionOption {
-      CreationCollisionOption_GenerateUniqueName,
-      CreationCollisionOption_ReplaceExisting,
-      CreationCollisionOption_FailIfExists,
-      CreationCollisionOption_OpenIfExists
+      GenerateUniqueName,
+      ReplaceExisting,
+      FailIfExists,
+      OpenIfExists
     } CreationCollisionOption;
 
     typedef enum FileAccessMode {
-      FileAccessMode_Read,
-      FileAccessMode_ReadWrite
+      Read,
+      ReadWrite
     } FileAccessMode;
 
     typedef enum StreamedFileFailureMode {
-        StreamedFileFailureMode_Failed               = 0,
-        StreamedFileFailureMode_CurrentlyUnavailable = 1,
-        StreamedFileFailureMode_Incomplete           = 2
+        Failed               = 0,
+        CurrentlyUnavailable = 1,
+        Incomplete           = 2
     } StreamedFileFailureMode;
 
     [uuid(4207A996-CA2F-42F7-BDE8-8B10457A7F30)]
