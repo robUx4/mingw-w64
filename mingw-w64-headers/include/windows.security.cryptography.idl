@@ -17,9 +17,6 @@ namespace Windows {
       interface IBuffer;
     }
   }
-}
-
-namespace Windows {
   namespace Security {
     namespace Cryptography {
       interface ICryptographicBufferStatics;
@@ -39,7 +36,7 @@ namespace Windows {
 
       [uuid(320B7E22-3CB0-4CDF-8663-1D28910065EB)]
       interface ICryptographicBufferStatics : IInspectable {
-        HRESULT Compare(IBuffer* object1, IBuffer* object2, boolean* isEqual);
+        HRESULT Compare(Windows.Storage.Streams.IBuffer* object1, IBuffer* object2, boolean* isEqual);
         HRESULT GenerateRandom(UINT32 length, IBuffer** buffer);
         HRESULT GenerateRandomNumber(UINT32* value);
         HRESULT CreateFromByteArray(UINT32 __valueSize, BYTE* value,IBuffer** buffer);
