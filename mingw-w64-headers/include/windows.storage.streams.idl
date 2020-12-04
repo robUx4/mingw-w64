@@ -9,6 +9,7 @@
 #endif
 
 import "inspectable.idl";
+import "windows.foundation.idl";
 
 namespace Windows {
   //~ namespace Foundation {
@@ -24,9 +25,18 @@ namespace Windows {
       interface IOutputStream;
       interface IRandomAccessStream;
       interface IDataReader;
+      interface IDataReaderFactory;
       enum ByteOrder;
       enum InputStreamOptions;
       enum UnicodeEncoding;
+
+      interface IAsyncOperation_IRandomAccessStreamWithContentType; // IAsyncOperation<IRandomAccessStreamWithContentType*>
+      interface IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType; // delegate  AsyncOperationCompletedHandler<IRandomAccessStreamWithContentType*>
+
+      interface IAsyncOperation_UINT32; // IAsyncOperation<UINT32>
+      interface IAsyncOperationCompletedHandler_UINT32; // delegate  AsyncOperationCompletedHandler<UINT32>
+
+      interface IAsyncOperationWithProgress_IBuffer_UINT32; // IAsyncOperationWithProgress<IBuffer*, UINT32>
     }
   }
 }
@@ -63,10 +73,39 @@ namespace Windows {
         HRESULT Create(UINT32 capacity, IBuffer** value);
       }
 
+      [uuid(CC254827-4B3D-438F-9232-10C76BC7E038)]
+      interface IRandomAccessStreamWithContentType : IInspectable {
+        void Dispose();
+      }
+
       [uuid(33EE3134-1DD6-4E3A-8067-D1C162E8642B)]
       interface IRandomAccessStreamReference : IInspectable
       {
-          HRESULT OpenReadAsync(/*IAsyncOperation<IRandomAccessStreamWithContentType*>*/IInspectable** operation);
+          HRESULT OpenReadAsync(IAsyncOperation_IRandomAccessStreamWithContentType** operation);
+      }
+
+      [uuid(3DDDECF4-1D39-58E8-83B1-DBED541C7F35)]
+      interface IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType : IUnknown {
+        HRESULT Invoke(IRandomAccessStreamWithContentType* asyncInfo, Windows.Foundation.AsyncStatus asyncStatus);
+      }
+
+      [uuid("e521c894-2c26-5946-9e61-2b5e188d01ed")]
+      interface IAsyncOperation_IRandomAccessStreamWithContentType : IInspectable 
+      // also IAsyncInfo
+      {
+        [propput] HRESULT Completed(IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType* handler);
+        [propget] HRESULT Completed(IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType** handler);
+        HRESULT GetResults(IRandomAccessStreamWithContentType** result);
+      }
+
+      [uuid("e521c894-2c26-5946-9e61-2b5e188d01ed")]
+      interface IAsyncOperationWithProgress_IBuffer_UINT32 : IInspectable 
+      // also IAsyncInfo
+      {
+        [propput] HRESULT Completed(IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType* handler);
+        [propget] HRESULT Completed(IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType** handler);
+        [propget] HRESULT Progress(IAsyncOperationCompletedHandler_IRandomAccessStreamWithContentType** handler);
+        HRESULT GetResults(IRandomAccessStreamWithContentType** result);
       }
 
       [uuid(43929D18-5EC9-4B5A-919C-4205B0C804B6)]
@@ -79,7 +118,7 @@ namespace Windows {
       interface IInputStream : IInspectable
       // also IClosable
       {
-          HRESULT ReadAsync(IBuffer* buffer, UINT32 count, InputStreamOptions options, /*IAsyncOperationWithProgress<IBuffer*, UINT32>*/IInspectable** operation);
+          HRESULT ReadAsync(IBuffer* buffer, UINT32 count, InputStreamOptions options, IAsyncOperationWithProgress_IBuffer_UINT32** operation);
       }
 
       [uuid(905A0FE6-BC53-11DF-8C49-001E4FC686DA)]
@@ -103,6 +142,31 @@ namespace Windows {
           HRESULT CloneStream(IRandomAccessStream** stream);
           [propget] HRESULT CanRead(boolean* value);
           [propget] HRESULT CanWrite(boolean* value);
+      }
+
+      [uuid(11FCBFC8-F93A-471B-B121-F379E349313C)]
+      interface IDataReaderStatics : IInspectable
+      {
+          HRESULT FromBuffer(IBuffer* buffer, IDataReader** dataReader);
+      }
+
+      [uuid(9343B6E7-E3D2-5E4A-AB2D-2BCE4919A6A4)]
+      interface IAsyncOperationCompletedHandler_UINT32 : IUnknown {
+        HRESULT Invoke(UINT32* asyncInfo, Windows.Foundation.AsyncStatus asyncStatus);
+      }
+
+      []
+      interface IAsyncOperation_UINT32 : IInspectable
+      // also IAsyncInfo
+      {
+        [propput] HRESULT Completed(IAsyncOperationCompletedHandler_UINT32* handler);
+        [propget] HRESULT Completed(IAsyncOperationCompletedHandler_UINT32** handler);
+        HRESULT GetResults(UINT32* result);
+      }
+
+      []
+      interface DataReaderLoadOperation : IAsyncOperation_UINT32
+      {
       }
 
       [uuid(E2B50029-B4C1-4314-A4B8-FB813A2F275E)]
@@ -131,9 +195,15 @@ namespace Windows {
           HRESULT ReadString(UINT32 codeUnitCount, HSTRING* value);
           HRESULT ReadDateTime(/*DateTime* */ UINT64* value);
           HRESULT ReadTimeSpan(/*TimeSpan* */ UINT64* value);
-          HRESULT LoadAsync(UINT32 count, /*DataReaderLoadOperation* */IInspectable** operation);
+          HRESULT LoadAsync(UINT32 count, IAsyncOperation_UINT32** operation);
           HRESULT DetachBuffer(IBuffer** buffer);
           HRESULT DetachStream(IInputStream** stream);
+      }
+
+      [uuid(d7527847-57da-4e15-914c-06806699a098)]
+      interface IDataReaderFactory : IInspectable
+      {
+          HRESULT CreateDataReader(IInputStream* inputStream, IDataReader** dataReader);
       }
     }
   }

@@ -96,8 +96,9 @@ namespace Windows {
 
     //FIXME: WHERE IS IT?
     //generic <typename TResult>
-    [uuid("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")]
-    interface IAsyncOperation : IAsyncInfo {
+    // only IAsyncOperation<StorageFile*>
+    [uuid("e521c894-2c26-5946-9e61-2b5e188d01ed")]
+    interface IAsyncOperation : IInspectable {
       [propput] HRESULT Completed(AsyncActionCompletedHandler* handler);
       [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
       //FIXME: implement generics
