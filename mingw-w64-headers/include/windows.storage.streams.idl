@@ -9,6 +9,7 @@
 #endif
 
 import "inspectable.idl";
+import "windows.foundation.idl";
 
 namespace Windows {
   namespace Storage {
@@ -29,6 +30,15 @@ namespace Windows {
       typedef enum UnicodeEncoding UnicodeEncoding;
     }
   }
+}
+
+namespace Windows {
+    namespace Foundation {
+        declare {
+            interface Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStreamWithContentType*>;
+            interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.Streams.IRandomAccessStreamWithContentType*>;
+        }
+    }
 }
 
 namespace Windows {
@@ -72,7 +82,7 @@ namespace Windows {
       [uuid(33EE3134-1DD6-4E3A-8067-D1C162E8642B)]
       interface IRandomAccessStreamReference : IInspectable
       {
-          HRESULT OpenReadAsync(/*IAsyncOperation<IRandomAccessStreamWithContentType*>*/ IInspectable** operation);
+          HRESULT OpenReadAsync(Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStreamWithContentType*>** operation);
       }
 
       [uuid(905A0FE2-BC53-11DF-8C49-001E4FC686DA)]
@@ -133,7 +143,7 @@ namespace Windows {
           HRESULT ReadString(UINT32 codeUnitCount, HSTRING* value);
           HRESULT ReadDateTime(/*DateTime* */ UINT64* value);
           HRESULT ReadTimeSpan(/*TimeSpan* */ UINT64* value);
-          HRESULT LoadAsync(UINT32 count, /*IAsyncOperation<UINT32>*/ IInspectable** operation);
+          HRESULT LoadAsync(UINT32 count, Windows.Foundation.IAsyncOperation<UINT32>** operation);
           HRESULT DetachBuffer(IBuffer** buffer);
           HRESULT DetachStream(IInputStream** stream);
       }
