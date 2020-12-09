@@ -21,7 +21,6 @@ namespace Windows {
     struct    EventRegistrationToken;
 
     namespace Collections {
-      interface IVectorView;
       interface IPropertySet;
     }
   }
@@ -76,16 +75,6 @@ namespace Windows {
       //FIXME: implement generics
       /*TResult*/ IInspectable* GetResults();
     }
-
-
-    namespace Collections {
-      //interface IVectorView;
-      /*[uuid(8A43ED9F-F4E6-4421-ACF9-1DAB2986820C)]
-      interface IPropertySet : IInspectable {
-        //
-      }*/
-    }
-
 #ifdef __WIDL__
         [
             uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
