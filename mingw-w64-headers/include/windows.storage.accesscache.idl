@@ -1,0 +1,78 @@
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
+ */
+
+#ifdef __WIDL__
+#pragma winrt ns_prefix
+#endif
+
+import "inspectable.idl";
+import "windows.foundation.idl";
+import "windows.storage.idl";
+
+namespace Windows {
+  namespace Storage {
+    namespace AccessCache {
+      interface IStorageItemAccessList;
+      interface IStorageApplicationPermissionsStatics;
+      interface IStorageItemMostRecentlyUsedList;
+
+      typedef enum AccessCacheOptions AccessCacheOptions;
+
+      runtimeclass StorageApplicationPermissions;
+    }
+  }
+}
+
+namespace Windows {
+  namespace Storage {
+    namespace AccessCache {
+      enum AccessCacheOptions {
+        None = 0x0,
+        DisallowUserInput = 0x1,
+        FastLocationsOnly = 0x2,
+        UseReadOnlyCachedCopy = 0x4,
+        SuppressAccessTimeUpdate = 0x8
+      };
+
+      [uuid(4391DFAA-D033-48F9-8060-3EC847D2E3F1)]
+      interface IStorageApplicationPermissionsStatics : IInspectable
+      {
+          [propget] HRESULT FutureAccessList(IStorageItemAccessList** value);
+          [propget] HRESULT MostRecentlyUsedList(IStorageItemMostRecentlyUsedList** value);
+      }
+
+      [uuid(2CAFF6AD-DE90-47F5-B2C3-DD36C9FDD453)]
+      interface IStorageItemAccessList : IInspectable
+      {
+          HRESULT AddOverloadDefaultMetadata(Windows.Storage.IStorageItem* file, HSTRING* token);
+          HRESULT Add(Windows.Storage.IStorageItem* file, HSTRING metadata, HSTRING* token);
+          HRESULT AddOrReplaceOverloadDefaultMetadata(HSTRING token, Windows.Storage.IStorageItem* file);
+          HRESULT AddOrReplace(HSTRING token, Windows.Storage.IStorageItem* file, HSTRING metadata);
+          HRESULT GetItemAsync(HSTRING token, Windows.Foundation.IAsyncOperation<Windows.Storage.IStorageItem*>** operation);
+          HRESULT GetFileAsync(HSTRING token, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+          HRESULT GetFolderAsync(HSTRING token, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFolder*>** operation);
+          HRESULT GetItemWithOptionsAsync(HSTRING token, AccessCacheOptions options, Windows.Foundation.IAsyncOperation<Windows.Storage.IStorageItem*>** operation);
+          HRESULT GetFileWithOptionsAsync(HSTRING token, AccessCacheOptions options, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+          HRESULT GetFolderWithOptionsAsync(HSTRING token, AccessCacheOptions options, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFolder*>** operation);
+          HRESULT Remove(HSTRING token);
+          HRESULT ContainsItem(HSTRING token, boolean* value);
+          HRESULT Clear();
+          HRESULT CheckAccess(Windows.Storage.IStorageItem* file, boolean* value);
+          [propget] HRESULT Entries(/*AccessListEntryView*/ IInspectable** entries);
+          [propget] HRESULT MaximumItemsAllowed(UINT32* value);
+      }
+
+      [
+        marshaling_behavior(agile)
+      ]
+      runtimeclass StorageApplicationPermissions
+      {
+        // TODO should be  static(Windows.Storage.AccessCache.IStorageApplicationPermissionsStatics, Windows.Foundation.UniversalApiContract, 1.0)
+        [default] interface IStorageApplicationPermissionsStatics;
+      }  
+    }
+  }
+}

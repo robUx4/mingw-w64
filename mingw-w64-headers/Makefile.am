@@ -243,6 +243,7 @@ IDL_SRCS = \
   include/windows.foundation.idl \
   include/windows.security.cryptography.idl \
   include/windows.storage.idl \
+  include/windows.storage.accesscache.idl \
   include/windows.storage.streams.idl \
   include/windows.system.idl \
   include/windows.system.threading.idl \
