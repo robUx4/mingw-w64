@@ -15,6 +15,18 @@ namespace Windows {
     namespace Streams {
       interface IBufferFactory;
       interface IBuffer;
+      interface IDataReader;
+      interface IDataReaderFactory;
+      interface IInputStream;
+      interface IRandomAccessStream;
+      interface IRandomAccessStreamReference;
+      interface IRandomAccessStreamWithContentType;
+
+      runtimeclass DataReader;
+
+      typedef enum InputStreamOptions InputStreamOptions;
+      typedef enum ByteOrder ByteOrder;
+      typedef enum UnicodeEncoding UnicodeEncoding;
     }
   }
 }
@@ -22,6 +34,23 @@ namespace Windows {
 namespace Windows {
   namespace Storage {
     namespace Streams {
+      enum InputStreamOptions {
+        None = 0x0,
+        Partial = 0x1,
+        ReadAhead = 0x2
+      };
+
+      enum ByteOrder {
+        LittleEndian,
+        BigEndian
+      };
+
+      enum UnicodeEncoding {
+        Utf8,
+        Utf16LE,
+        Utf16BE
+      };
+
       [uuid(905A0FE0-BC53-11DF-8C49-001E4FC686DA)]
       interface IBuffer : IInspectable {
         [propget] HRESULT Capacity(UINT32* value);
@@ -32,6 +61,87 @@ namespace Windows {
       [uuid(71AF914D-C10F-484B-BC50-14BC623B3A27)]
       interface IBufferFactory : IInspectable {
         HRESULT Create(UINT32 capacity, IBuffer** value);
+      }
+
+      [uuid(CC254827-4B3D-438F-9232-10C76BC7E038)]
+      interface IRandomAccessStreamWithContentType : IInspectable
+      // also IDisposable IContentTypeProvider IInputStream IOutputStream IRandomAccessStream
+      {
+      }
+
+      [uuid(33EE3134-1DD6-4E3A-8067-D1C162E8642B)]
+      interface IRandomAccessStreamReference : IInspectable
+      {
+          HRESULT OpenReadAsync(/*IAsyncOperation<IRandomAccessStreamWithContentType*>*/ IInspectable** operation);
+      }
+
+      [uuid(905A0FE2-BC53-11DF-8C49-001E4FC686DA)]
+      interface IInputStream : IInspectable
+      // also IClosable
+      {
+          void Dispose();
+          HRESULT ReadAsync(IBuffer* buffer, UINT32 count, InputStreamOptions options, /*IAsyncOperationWithProgress<IBuffer*, UINT32>*/ IInspectable** operation);
+      }
+
+      [uuid(905A0FE1-BC53-11DF-8C49-001E4FC686DA)]
+      interface IRandomAccessStream : IInspectable
+      // also IClosable, IInputStream, IOutputStream
+      {
+          [propget] HRESULT Size(UINT64* value);
+          [propput] HRESULT Size(UINT64 value);
+          HRESULT GetInputStreamAt(UINT64 position, IInputStream** stream);
+          HRESULT GetOutputStreamAt(UINT64 position, /*IOutputStream*/ IInspectable** stream);
+          [propget] HRESULT Position(UINT64* value);
+          HRESULT Seek(UINT64 position);
+          HRESULT CloneStream(IRandomAccessStream** stream);
+          [propget] HRESULT CanRead(boolean* value);
+          [propget] HRESULT CanWrite(boolean* value);
+      }
+
+      [
+        marshaling_behavior(agile)
+      ]
+      runtimeclass DataReader
+      {
+        [default] interface IDataReader;
+        //interface Windows.Foundation.IClosable;
+      }
+
+      [uuid(E2B50029-B4C1-4314-A4B8-FB813A2F275E)]
+      interface IDataReader : IInspectable
+      {
+          [propget] HRESULT UnconsumedBufferLength(UINT32* value);
+          [propget] HRESULT UnicodeEncoding(UnicodeEncoding* value);
+          [propput] HRESULT UnicodeEncoding(UnicodeEncoding value);
+          [propget] HRESULT ByteOrder(ByteOrder* value);
+          [propput] HRESULT ByteOrder(ByteOrder value);
+          [propget] HRESULT InputStreamOptions(InputStreamOptions* value);
+          [propput] HRESULT InputStreamOptions(InputStreamOptions value);
+          HRESULT ReadByte(BYTE* value);
+          HRESULT ReadBytes(UINT32 valueSize, BYTE* value);
+          HRESULT ReadBuffer(UINT32 length, IBuffer** buffer);
+          HRESULT ReadBoolean(boolean* value);
+          HRESULT ReadGuid(GUID* value);
+          HRESULT ReadInt16(INT16* value);
+          HRESULT ReadInt32(INT32* value);
+          HRESULT ReadInt64(INT64* value);
+          HRESULT ReadUInt16(UINT16* value);
+          HRESULT ReadUInt32(UINT32* value);
+          HRESULT ReadUInt64(UINT64* value);
+          HRESULT ReadSingle(FLOAT* value);
+          HRESULT ReadDouble(DOUBLE* value);
+          HRESULT ReadString(UINT32 codeUnitCount, HSTRING* value);
+          HRESULT ReadDateTime(/*DateTime* */ UINT64* value);
+          HRESULT ReadTimeSpan(/*TimeSpan* */ UINT64* value);
+          HRESULT LoadAsync(UINT32 count, /*IAsyncOperation<UINT32>*/ IInspectable** operation);
+          HRESULT DetachBuffer(IBuffer** buffer);
+          HRESULT DetachStream(IInputStream** stream);
+      }
+
+      [uuid(D7527847-57DA-4E15-914C-06806699A098)]
+      interface IDataReaderFactory : IInspectable
+      {
+          HRESULT CreateDataReader(IInputStream* inputStream, IDataReader** dataReader);
       }
     }
   }
