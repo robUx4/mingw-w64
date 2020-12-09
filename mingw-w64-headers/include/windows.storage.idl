@@ -39,10 +39,35 @@ namespace Windows {
     typedef enum ApplicationDataCreateDisposition ApplicationDataCreateDisposition;
     typedef enum FileAttributes FileAttributes;
     typedef enum CreationCollisionOption CreationCollisionOption;
+    typedef enum FileAccessMode FileAccessMode;
+    interface IStorageFile;
+    interface IStorageFileStatics;
+    interface StreamedFileDataRequestedHandler; // delegate
 
     runtimeclass ApplicationData;
     runtimeclass KnownFolders;
+    runtimeclass StorageFile;
+    runtimeclass StorageFolder;
+
+    namespace Streams {
+      interface IRandomAccessStreamReference;
+    }
   }
+}
+
+namespace Windows {
+    namespace Foundation {
+        declare {
+            interface Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>;
+            interface Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFolder*>;
+            interface Windows.Foundation.IAsyncOperation<Windows.Storage.IStorageItem*>;
+            //~ interface Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStreamReference*>;
+            interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.StorageFile*>;
+            interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.StorageFolder*>;
+            interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.IStorageItem*>;
+            //~ interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.Streams.IRandomAccessStreamReference*>;
+        }
+    }
 }
 
 namespace Windows {
@@ -90,6 +115,11 @@ namespace Windows {
       OpenIfExists
     };
 
+    enum FileAccessMode {
+      Read,
+      ReadWrite
+    };
+
     [uuid(4207A996-CA2F-42F7-BDE8-8B10457A7F30)]
     interface IStorageItem : IInspectable
     {
@@ -125,19 +155,73 @@ namespace Windows {
       interface IKnownFoldersStatics;
     }
 
+    [
+      exclusiveto(Windows.Storage.StorageFile),
+      uuid(5984C710-DAF2-43C8-8BB4-A4D3EACFD03F)
+    ]
+    interface IStorageFileStatics : IInspectable
+    {
+        HRESULT GetFileFromPathAsync(HSTRING path, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT GetFileFromApplicationUriAsync(/* Uri* */ IInspectable* uri, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT CreateStreamedFileAsync(HSTRING displayNameWithExtension, StreamedFileDataRequestedHandler* dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference* thumbnail, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT ReplaceWithStreamedFileAsync(IStorageFile* fileToReplace, StreamedFileDataRequestedHandler* dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference* thumbnail, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT CreateStreamedFileFromUriAsync(HSTRING displayNameWithExtension, /* Uri* */ IInspectable* uri, Windows.Storage.Streams.IRandomAccessStreamReference* thumbnail, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT ReplaceWithStreamedFileFromUriAsync(IStorageFile* fileToReplace, /* Uri* */ IInspectable* uri, Windows.Storage.Streams.IRandomAccessStreamReference* thumbnail, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+    }
+
+    [
+      exclusiveto(Windows.Storage.StorageFile),
+      uuid(FA3F6186-4214-428C-A64C-14C9AC7315EA)
+    ]
+    interface IStorageFile : IInspectable
+    {
+        [propget] HRESULT FileType(HSTRING *value);
+        [propget] HRESULT ContentType(HSTRING *value);
+        HRESULT OpenAsync(FileAccessMode accessMode, /*Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStreamReference*>*/IInspectable** operation);
+        HRESULT OpenTransactedWriteAsync(/*IAsyncOperation<StorageStreamTransaction*>*/IInspectable** operation);
+        HRESULT CopyOverloadDefaultNameAndOptions(IStorageFolder *destinationFolder, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT CopyOverloadDefaultOptions(IStorageFolder *destinationFolder, HSTRING desiredNewName, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT CopyOverload(IStorageFolder *destinationFolder, HSTRING desiredNewName, NameCollisionOption option, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+        HRESULT CopyAndReplaceAsync(IStorageFile *fileToReplace, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveOverloadDefaultNameAndOptions(IStorageFolder *destinationFolder, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveOverloadDefaultOptions(IStorageFolder *destinationFolder, HSTRING desiredNewName, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveOverload(IStorageFolder *destinationFolder, HSTRING desiredNewName, NameCollisionOption option, /* IAsyncAction** */ IInspectable** operation);
+        HRESULT MoveAndReplaceAsync(IStorageFile *fileToReplace, /* IAsyncAction** */ IInspectable** operation);
+    }
+
     [uuid(72D1CB78-B3EF-4F75-A80B-6FD9DAE2944B)]
     interface IStorageFolder : IInspectable
     {
-      HRESULT CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, /*IAsyncOperation<IStorageFile*>*/IInspectable** operation);
-      HRESULT CreateFileAsync(HSTRING desiredName, CreationCollisionOption options, /*IAsyncOperation<IStorageFile*>*/IInspectable** operation);
-      HRESULT CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, /*IAsyncOperation<IStorageFolder*>*/IInspectable** operation);
-      HRESULT CreateFolderAsync(HSTRING desiredName, CreationCollisionOption options, /*IAsyncOperation<StorageFolder*>*/IInspectable** operation);
-      HRESULT GetFileAsync(HSTRING name, /*IAsyncOperation<StorageFile*>*/IInspectable** operation);
-      HRESULT GetFolderAsync(HSTRING name, /*IAsyncOperation<StorageFolder*>*/IInspectable** operation);
-      HRESULT GetItemAsync(HSTRING name, /*IAsyncOperation<StorageItem*>*/IInspectable** operation);
+      HRESULT CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+      HRESULT CreateFileAsync(HSTRING desiredName, CreationCollisionOption options, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+      HRESULT CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, Windows.Foundation.IAsyncOperation<StorageFolder*>** operation);
+      HRESULT CreateFolderAsync(HSTRING desiredName, CreationCollisionOption options, Windows.Foundation.IAsyncOperation<StorageFolder*>** operation);
+      HRESULT GetFileAsync(HSTRING name, Windows.Foundation.IAsyncOperation<Windows.Storage.StorageFile*>** operation);
+      HRESULT GetFolderAsync(HSTRING name, Windows.Foundation.IAsyncOperation<StorageFolder*>** operation);
+      HRESULT GetItemAsync(HSTRING name, Windows.Foundation.IAsyncOperation<Windows.Storage.IStorageItem*>** operation);
       HRESULT GetFilesAsyncOverloadDefaultOptionsStartAndCount(/*IAsyncOperation<IVectorView<StorageFile*>*>*/IInspectable** operation);
       HRESULT GetFoldersAsyncOverloadDefaultOptionsStartAndCount(/*IAsyncOperation<IVectorView<StorageFolder*>*>*/IInspectable** operation);
       HRESULT GetItemsAsyncOverloadDefaultStartAndCount(/*IAsyncOperation<IVectorView<StorageItem*>*>*/IInspectable** operation);
+    }
+
+    [
+      marshaling_behavior(agile)
+    ]
+    runtimeclass StorageFile
+    {
+      [default] interface IStorageFile;
+      interface IStorageItem;
+      interface Windows.Storage.Streams.IRandomAccessStreamReference;
+    // also  IInputStreamReference
+    }
+
+    [
+      marshaling_behavior(agile)
+    ]
+    runtimeclass StorageFolder
+    {
+      [default] interface IStorageFolder;
+      interface IStorageItem;
     }
 
     [uuid(C5AEFD1E-F467-40BA-8566-AB640A441E1D)]

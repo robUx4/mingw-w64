@@ -61,6 +61,34 @@ typedef struct __x_ABI_CWindows_CStorage_CKnownFolders __x_ABI_CWindows_CStorage
 #endif /* defined __cplusplus */
 #endif /* defined ____x_ABI_CWindows_CStorage_CKnownFolders_FWD_DEFINED__ */
 
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFileStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFileStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageFileStatics __x_ABI_CWindows_CStorage_CIStorageFileStatics;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageFileStatics;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageFile __x_ABI_CWindows_CStorage_CIStorageFile;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageFile;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFolder_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageFolder_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CIStorageFolder __x_ABI_CWindows_CStorage_CIStorageFolder;
@@ -74,6 +102,36 @@ namespace ABI {
 }
 #endif /* __cplusplus */
 #endif
+
+#ifndef ____x_ABI_CWindows_CStorage_CStorageFile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStorageFile_FWD_DEFINED__
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            class StorageFile;
+        }
+    }
+}
+#else
+typedef struct __x_ABI_CWindows_CStorage_CStorageFile __x_ABI_CWindows_CStorage_CStorageFile;
+#endif /* defined __cplusplus */
+#endif /* defined ____x_ABI_CWindows_CStorage_CStorageFile_FWD_DEFINED__ */
+
+#ifndef ____x_ABI_CWindows_CStorage_CStorageFolder_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStorageFolder_FWD_DEFINED__
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            class StorageFolder;
+        }
+    }
+}
+#else
+typedef struct __x_ABI_CWindows_CStorage_CStorageFolder __x_ABI_CWindows_CStorage_CStorageFolder;
+#endif /* defined __cplusplus */
+#endif /* defined ____x_ABI_CWindows_CStorage_CStorageFolder_FWD_DEFINED__ */
 
 #ifndef ____x_ABI_CWindows_CStorage_CIApplicationDataContainer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIApplicationDataContainer_FWD_DEFINED__
@@ -182,6 +240,90 @@ namespace ABI {
     namespace Windows {
         namespace Storage {
             interface ISetVersionDeferral;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFile*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFolder*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::IStorageItem*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*>;
         }
     }
 }
@@ -370,6 +512,106 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFile_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageFile __x_ABI_CWindows_CStorage_CIStorageFile;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageFile;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFileStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFileStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStorageFileStatics __x_ABI_CWindows_CStorage_CIStorageFileStatics;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStorageFileStatics;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface StreamedFileDataRequestedHandler;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Streams {
+                interface IRandomAccessStreamReference;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFile*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFolder*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::IStorageItem*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 #ifdef __cplusplus
 } /* extern "C" */
 namespace ABI {
@@ -384,13 +626,16 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CNameCollisionOption {
     NameCollisionOption_GenerateUniqueName = 0,
     NameCollisionOption_ReplaceExisting = 1,
     NameCollisionOption_FailIfExists = 2
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_NAMECOLLISIONOPTION
+#define NameCollisionOption __x_ABI_CWindows_CStorage_CNameCollisionOption
+#endif /* WIDL_USING__WINDOWS_STORAGE_NAMECOLLISIONOPTION */
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -405,12 +650,15 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CStorageDeleteOption {
     StorageDeleteOption_Default = 0,
     StorageDeleteOption_PermanentDelete = 1
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_STORAGEDELETEOPTION
+#define StorageDeleteOption __x_ABI_CWindows_CStorage_CStorageDeleteOption
+#endif /* WIDL_USING__WINDOWS_STORAGE_STORAGEDELETEOPTION */
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -426,13 +674,16 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CStorageItemTypes {
     StorageItemTypes_None = 0,
     StorageItemTypes_File = 1,
     StorageItemTypes_Folder = 2
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_STORAGEITEMTYPES
+#define StorageItemTypes __x_ABI_CWindows_CStorage_CStorageItemTypes
+#endif /* WIDL_USING__WINDOWS_STORAGE_STORAGEITEMTYPES */
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -447,12 +698,15 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CApplicationDataCreateDisposition {
     ApplicationDataCreateDisposition_Always = 0,
     ApplicationDataCreateDisposition_Existing = 1
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_APPLICATIONDATACREATEDISPOSITION
+#define ApplicationDataCreateDisposition __x_ABI_CWindows_CStorage_CApplicationDataCreateDisposition
+#endif /* WIDL_USING__WINDOWS_STORAGE_APPLICATIONDATACREATEDISPOSITION */
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -468,13 +722,16 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CApplicationDataLocality {
     ApplicationDataLocality_Local = 0,
     ApplicationDataLocality_Roaming = 1,
     ApplicationDataLocality_Temporary = 2
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_APPLICATIONDATALOCALITY
+#define ApplicationDataLocality __x_ABI_CWindows_CStorage_CApplicationDataLocality
+#endif /* WIDL_USING__WINDOWS_STORAGE_APPLICATIONDATALOCALITY */
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -492,7 +749,7 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CFileAttributes {
     FileAttributes_Normal = 0,
     FileAttributes_ReadOnly = 1,
@@ -500,7 +757,10 @@ enum __x_ABI_CWindows_CStorage_CFileAttributes {
     FileAttributes_Archive = 3,
     FileAttributes_Temporary = 4
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_FILEATTRIBUTES
+#define FileAttributes __x_ABI_CWindows_CStorage_CFileAttributes
+#endif /* WIDL_USING__WINDOWS_STORAGE_FILEATTRIBUTES */
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -517,14 +777,40 @@ namespace ABI {
     }
 }
 extern "C" {
-#else
+#else /* __cplusplus */
 enum __x_ABI_CWindows_CStorage_CCreationCollisionOption {
     CreationCollisionOption_GenerateUniqueName = 0,
     CreationCollisionOption_ReplaceExisting = 1,
     CreationCollisionOption_FailIfExists = 2,
     CreationCollisionOption_OpenIfExists = 3
 };
-#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_REATIONCOLLISIONOPTION
+#define CreationCollisionOption __x_ABI_CWindows_CStorage_CCreationCollisionOption
+#endif /* WIDL_USING__WINDOWS_STORAGE_REATIONCOLLISIONOPTION */
+#endif /* __cplusplus */
+
+#ifdef __cplusplus
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            enum FileAccessMode {
+                FileAccessMode_Read = 0,
+                FileAccessMode_ReadWrite = 1
+            };
+        }
+    }
+}
+extern "C" {
+#else /* __cplusplus */
+enum __x_ABI_CWindows_CStorage_CFileAccessMode {
+    FileAccessMode_Read = 0,
+    FileAccessMode_ReadWrite = 1
+};
+#ifdef WIDL_USING_WINDOWS_STORAGE_FILEACCESSMODE
+#define FileAccessMode __x_ABI_CWindows_CStorage_CFileAccessMode
+#endif /* WIDL_USING__WINDOWS_STORAGE_FILEACCESSMODE */
+#endif /* __cplusplus */
 
 /*****************************************************************************
  * IStorageItem interface
@@ -544,19 +830,19 @@ namespace ABI {
             {
                 virtual HRESULT STDMETHODCALLTYPE RenameAsyncOverloadDefaultOptions(
                     HSTRING desiredName,
-                    IInspectable **action) = 0;
+                    IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE RenameAsync(
                     HSTRING desiredName,
                     enum NameCollisionOption option,
-                    IInspectable **action) = 0;
+                    IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE DeleteAsyncOverloadDefaultOptions(
-                    IInspectable **action) = 0;
+                    IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE DeleteAsync(
                     enum StorageDeleteOption option,
-                    IInspectable **action) = 0;
+                    IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetBasicPropertiesAsync(
                     IInspectable **action) = 0;
@@ -619,22 +905,22 @@ typedef struct __x_ABI_CWindows_CStorage_CIStorageItemVtbl {
     HRESULT (STDMETHODCALLTYPE *RenameAsyncOverloadDefaultOptions)(
         __x_ABI_CWindows_CStorage_CIStorageItem *This,
         HSTRING desiredName,
-        IInspectable **action);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
 
     HRESULT (STDMETHODCALLTYPE *RenameAsync)(
         __x_ABI_CWindows_CStorage_CIStorageItem *This,
         HSTRING desiredName,
         enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,
-        IInspectable **action);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsyncOverloadDefaultOptions)(
         __x_ABI_CWindows_CStorage_CIStorageItem *This,
-        IInspectable **action);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync)(
         __x_ABI_CWindows_CStorage_CIStorageItem *This,
         enum __x_ABI_CWindows_CStorage_CStorageDeleteOption option,
-        IInspectable **action);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
 
     HRESULT (STDMETHODCALLTYPE *GetBasicPropertiesAsync)(
         __x_ABI_CWindows_CStorage_CIStorageItem *This,
@@ -711,16 +997,16 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_GetTrustLevel
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
 /*** IStorageItem methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_RenameAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageItem* This,HSTRING desiredName,IInspectable **action) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_RenameAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageItem* This,HSTRING desiredName,__x_ABI_CWindows_CFoundation_CIAsyncAction **action) {
     return This->lpVtbl->RenameAsyncOverloadDefaultOptions(This,desiredName,action);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_RenameAsync(__x_ABI_CWindows_CStorage_CIStorageItem* This,HSTRING desiredName,enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,IInspectable **action) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_RenameAsync(__x_ABI_CWindows_CStorage_CIStorageItem* This,HSTRING desiredName,enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,__x_ABI_CWindows_CFoundation_CIAsyncAction **action) {
     return This->lpVtbl->RenameAsync(This,desiredName,option,action);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_DeleteAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageItem* This,IInspectable **action) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_DeleteAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageItem* This,__x_ABI_CWindows_CFoundation_CIAsyncAction **action) {
     return This->lpVtbl->DeleteAsyncOverloadDefaultOptions(This,action);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_DeleteAsync(__x_ABI_CWindows_CStorage_CIStorageItem* This,enum __x_ABI_CWindows_CStorage_CStorageDeleteOption option,IInspectable **action) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_DeleteAsync(__x_ABI_CWindows_CStorage_CIStorageItem* This,enum __x_ABI_CWindows_CStorage_CStorageDeleteOption option,__x_ABI_CWindows_CFoundation_CIAsyncAction **action) {
     return This->lpVtbl->DeleteAsync(This,option,action);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_GetBasicPropertiesAsync(__x_ABI_CWindows_CStorage_CIStorageItem* This,IInspectable **action) {
@@ -742,6 +1028,27 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageItem_IsOfType(__x_
     return This->lpVtbl->IsOfType(This,itemType,value);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISTORAGEITEM
+#define IID_IStorageItem IID___x_ABI_CWindows_CStorage_CIStorageItem
+#define IStorageItemVtbl __x_ABI_CWindows_CStorage_CIStorageItemVtbl
+#define IStorageItem __x_ABI_CWindows_CStorage_CIStorageItem
+#define IStorageItem_QueryInterface __x_ABI_CWindows_CStorage_CIStorageItem_QueryInterface
+#define IStorageItem_AddRef __x_ABI_CWindows_CStorage_CIStorageItem_AddRef
+#define IStorageItem_Release __x_ABI_CWindows_CStorage_CIStorageItem_Release
+#define IStorageItem_GetIids __x_ABI_CWindows_CStorage_CIStorageItem_GetIids
+#define IStorageItem_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIStorageItem_GetRuntimeClassName
+#define IStorageItem_GetTrustLevel __x_ABI_CWindows_CStorage_CIStorageItem_GetTrustLevel
+#define IStorageItem_RenameAsyncOverloadDefaultOptions __x_ABI_CWindows_CStorage_CIStorageItem_RenameAsyncOverloadDefaultOptions
+#define IStorageItem_RenameAsync __x_ABI_CWindows_CStorage_CIStorageItem_RenameAsync
+#define IStorageItem_DeleteAsyncOverloadDefaultOptions __x_ABI_CWindows_CStorage_CIStorageItem_DeleteAsyncOverloadDefaultOptions
+#define IStorageItem_DeleteAsync __x_ABI_CWindows_CStorage_CIStorageItem_DeleteAsync
+#define IStorageItem_GetBasicPropertiesAsync __x_ABI_CWindows_CStorage_CIStorageItem_GetBasicPropertiesAsync
+#define IStorageItem_get_Name __x_ABI_CWindows_CStorage_CIStorageItem_get_Name
+#define IStorageItem_get_Path __x_ABI_CWindows_CStorage_CIStorageItem_get_Path
+#define IStorageItem_get_Attributes __x_ABI_CWindows_CStorage_CIStorageItem_get_Attributes
+#define IStorageItem_get_DateCreated __x_ABI_CWindows_CStorage_CIStorageItem_get_DateCreated
+#define IStorageItem_IsOfType __x_ABI_CWindows_CStorage_CIStorageItem_IsOfType
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISTORAGEITEM */
 #endif
 
 #endif
@@ -921,6 +1228,24 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_M
     return This->lpVtbl->get_MediaServerDevices(This,value);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_IKNOWNFOLDERSSTATICS
+#define IID_IKnownFoldersStatics IID___x_ABI_CWindows_CStorage_CIKnownFoldersStatics
+#define IKnownFoldersStaticsVtbl __x_ABI_CWindows_CStorage_CIKnownFoldersStaticsVtbl
+#define IKnownFoldersStatics __x_ABI_CWindows_CStorage_CIKnownFoldersStatics
+#define IKnownFoldersStatics_QueryInterface __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_QueryInterface
+#define IKnownFoldersStatics_AddRef __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_AddRef
+#define IKnownFoldersStatics_Release __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_Release
+#define IKnownFoldersStatics_GetIids __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_GetIids
+#define IKnownFoldersStatics_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_GetRuntimeClassName
+#define IKnownFoldersStatics_GetTrustLevel __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_GetTrustLevel
+#define IKnownFoldersStatics_get_MusicLibrary __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_MusicLibrary
+#define IKnownFoldersStatics_get_PicturesLibrary __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_PicturesLibrary
+#define IKnownFoldersStatics_get_VideosLibrary __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_VideosLibrary
+#define IKnownFoldersStatics_get_DocumentsLibrary __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_DocumentsLibrary
+#define IKnownFoldersStatics_get_HomeGroup __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_HomeGroup
+#define IKnownFoldersStatics_get_RemovableDevices __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_RemovableDevices
+#define IKnownFoldersStatics_get_MediaServerDevices __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_MediaServerDevices
+#endif /* WIDL_USING__WINDOWS_STORAGE_IKNOWNFOLDERSSTATICS */
 #endif
 
 #endif
@@ -942,6 +1267,510 @@ static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_KnownFolders[
 #endif /* RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED */
 
 /*****************************************************************************
+ * IStorageFileStatics interface
+ *
+ * Interface is a part of the implementation of type Windows.Storage.StorageFile
+ *
+ */
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFileStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFileStatics_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___x_ABI_CWindows_CStorage_CIStorageFileStatics, 0x5984c710, 0xdaf2, 0x43c8, 0x8b,0xb4, 0xa4,0xd3,0xea,0xcf,0xd0,0x3f);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            MIDL_INTERFACE("5984c710-daf2-43c8-8bb4-a4d3eacfd03f")
+            IStorageFileStatics : public IInspectable
+            {
+                virtual HRESULT STDMETHODCALLTYPE GetFileFromPathAsync(
+                    HSTRING path,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE GetFileFromApplicationUriAsync(
+                    IInspectable *uri,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE CreateStreamedFileAsync(
+                    HSTRING displayNameWithExtension,
+                    StreamedFileDataRequestedHandler *dataRequested,
+                    IRandomAccessStreamReference *thumbnail,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE ReplaceWithStreamedFileAsync(
+                    IStorageFile *fileToReplace,
+                    StreamedFileDataRequestedHandler *dataRequested,
+                    IRandomAccessStreamReference *thumbnail,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE CreateStreamedFileFromUriAsync(
+                    HSTRING displayNameWithExtension,
+                    IInspectable *uri,
+                    IRandomAccessStreamReference *thumbnail,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE ReplaceWithStreamedFileFromUriAsync(
+                    IStorageFile *fileToReplace,
+                    IInspectable *uri,
+                    IRandomAccessStreamReference *thumbnail,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Storage::IStorageFileStatics, 0x5984c710, 0xdaf2, 0x43c8, 0x8b,0xb4, 0xa4,0xd3,0xea,0xcf,0xd0,0x3f)
+#endif
+#else
+typedef struct __x_ABI_CWindows_CStorage_CIStorageFileStaticsVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        TrustLevel *trustLevel);
+
+    /*** IStorageFileStatics methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetFileFromPathAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        HSTRING path,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *GetFileFromApplicationUriAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        IInspectable *uri,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *CreateStreamedFileAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        HSTRING displayNameWithExtension,
+        __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,
+        __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *ReplaceWithStreamedFileAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        __x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,
+        __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,
+        __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *CreateStreamedFileFromUriAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        HSTRING displayNameWithExtension,
+        IInspectable *uri,
+        __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *ReplaceWithStreamedFileFromUriAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
+        __x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,
+        IInspectable *uri,
+        __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CStorage_CIStorageFileStaticsVtbl;
+
+interface __x_ABI_CWindows_CStorage_CIStorageFileStatics {
+    CONST_VTBL __x_ABI_CWindows_CStorage_CIStorageFileStaticsVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IStorageFileStatics methods ***/
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromPathAsync(This,path,operation) (This)->lpVtbl->GetFileFromPathAsync(This,path,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromApplicationUriAsync(This,uri,operation) (This)->lpVtbl->GetFileFromApplicationUriAsync(This,uri,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileAsync(This,displayNameWithExtension,dataRequested,thumbnail,operation) (This)->lpVtbl->CreateStreamedFileAsync(This,displayNameWithExtension,dataRequested,thumbnail,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileAsync(This,fileToReplace,dataRequested,thumbnail,operation) (This)->lpVtbl->ReplaceWithStreamedFileAsync(This,fileToReplace,dataRequested,thumbnail,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileFromUriAsync(This,displayNameWithExtension,uri,thumbnail,operation) (This)->lpVtbl->CreateStreamedFileFromUriAsync(This,displayNameWithExtension,uri,thumbnail,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileFromUriAsync(This,fileToReplace,uri,thumbnail,operation) (This)->lpVtbl->ReplaceWithStreamedFileFromUriAsync(This,fileToReplace,uri,thumbnail,operation)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_QueryInterface(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CStorage_CIStorageFileStatics_AddRef(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CStorage_CIStorageFileStatics_Release(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetIids(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetRuntimeClassName(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetTrustLevel(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IStorageFileStatics methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromPathAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING path,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->GetFileFromPathAsync(This,path,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromApplicationUriAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,IInspectable *uri,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->GetFileFromApplicationUriAsync(This,uri,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING displayNameWithExtension,__x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->CreateStreamedFileAsync(This,displayNameWithExtension,dataRequested,thumbnail,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,__x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,__x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->ReplaceWithStreamedFileAsync(This,fileToReplace,dataRequested,thumbnail,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileFromUriAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING displayNameWithExtension,IInspectable *uri,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->CreateStreamedFileFromUriAsync(This,displayNameWithExtension,uri,thumbnail,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileFromUriAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,__x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,IInspectable *uri,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->ReplaceWithStreamedFileFromUriAsync(This,fileToReplace,uri,thumbnail,operation);
+}
+#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISTORAGEFILESTATICS
+#define IID_IStorageFileStatics IID___x_ABI_CWindows_CStorage_CIStorageFileStatics
+#define IStorageFileStaticsVtbl __x_ABI_CWindows_CStorage_CIStorageFileStaticsVtbl
+#define IStorageFileStatics __x_ABI_CWindows_CStorage_CIStorageFileStatics
+#define IStorageFileStatics_QueryInterface __x_ABI_CWindows_CStorage_CIStorageFileStatics_QueryInterface
+#define IStorageFileStatics_AddRef __x_ABI_CWindows_CStorage_CIStorageFileStatics_AddRef
+#define IStorageFileStatics_Release __x_ABI_CWindows_CStorage_CIStorageFileStatics_Release
+#define IStorageFileStatics_GetIids __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetIids
+#define IStorageFileStatics_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetRuntimeClassName
+#define IStorageFileStatics_GetTrustLevel __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetTrustLevel
+#define IStorageFileStatics_GetFileFromPathAsync __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromPathAsync
+#define IStorageFileStatics_GetFileFromApplicationUriAsync __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromApplicationUriAsync
+#define IStorageFileStatics_CreateStreamedFileAsync __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileAsync
+#define IStorageFileStatics_ReplaceWithStreamedFileAsync __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileAsync
+#define IStorageFileStatics_CreateStreamedFileFromUriAsync __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileFromUriAsync
+#define IStorageFileStatics_ReplaceWithStreamedFileFromUriAsync __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileFromUriAsync
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISTORAGEFILESTATICS */
+#endif
+
+#endif
+
+#endif  /* ____x_ABI_CWindows_CStorage_CIStorageFileStatics_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IStorageFile interface
+ *
+ * Interface is a part of the implementation of type Windows.Storage.StorageFile
+ *
+ */
+#ifndef ____x_ABI_CWindows_CStorage_CIStorageFile_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStorageFile_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___x_ABI_CWindows_CStorage_CIStorageFile, 0xfa3f6186, 0x4214, 0x428c, 0xa6,0x4c, 0x14,0xc9,0xac,0x73,0x15,0xea);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            MIDL_INTERFACE("fa3f6186-4214-428c-a64c-14c9ac7315ea")
+            IStorageFile : public IInspectable
+            {
+                virtual HRESULT STDMETHODCALLTYPE get_FileType(
+                    HSTRING *value) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE get_ContentType(
+                    HSTRING *value) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE OpenAsync(
+                    enum FileAccessMode accessMode,
+                    IInspectable **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE OpenTransactedWriteAsync(
+                    IInspectable **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE CopyOverloadDefaultNameAndOptions(
+                    IStorageFolder *destinationFolder,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE CopyOverloadDefaultOptions(
+                    IStorageFolder *destinationFolder,
+                    HSTRING desiredNewName,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE CopyOverload(
+                    IStorageFolder *destinationFolder,
+                    HSTRING desiredNewName,
+                    enum NameCollisionOption option,
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE CopyAndReplaceAsync(
+                    IStorageFile *fileToReplace,
+                    IInspectable **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE MoveOverloadDefaultNameAndOptions(
+                    IStorageFolder *destinationFolder,
+                    IInspectable **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE MoveOverloadDefaultOptions(
+                    IStorageFolder *destinationFolder,
+                    HSTRING desiredNewName,
+                    IInspectable **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE MoveOverload(
+                    IStorageFolder *destinationFolder,
+                    HSTRING desiredNewName,
+                    enum NameCollisionOption option,
+                    IInspectable **operation) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE MoveAndReplaceAsync(
+                    IStorageFile *fileToReplace,
+                    IInspectable **operation) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Storage::IStorageFile, 0xfa3f6186, 0x4214, 0x428c, 0xa6,0x4c, 0x14,0xc9,0xac,0x73,0x15,0xea)
+#endif
+#else
+typedef struct __x_ABI_CWindows_CStorage_CIStorageFileVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        TrustLevel *trustLevel);
+
+    /*** IStorageFile methods ***/
+    HRESULT (STDMETHODCALLTYPE *get_FileType)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        HSTRING *value);
+
+    HRESULT (STDMETHODCALLTYPE *get_ContentType)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        HSTRING *value);
+
+    HRESULT (STDMETHODCALLTYPE *OpenAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        enum __x_ABI_CWindows_CStorage_CFileAccessMode accessMode,
+        IInspectable **operation);
+
+    HRESULT (STDMETHODCALLTYPE *OpenTransactedWriteAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        IInspectable **operation);
+
+    HRESULT (STDMETHODCALLTYPE *CopyOverloadDefaultNameAndOptions)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *CopyOverloadDefaultOptions)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,
+        HSTRING desiredNewName,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *CopyOverload)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,
+        HSTRING desiredNewName,
+        enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
+
+    HRESULT (STDMETHODCALLTYPE *CopyAndReplaceAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,
+        IInspectable **operation);
+
+    HRESULT (STDMETHODCALLTYPE *MoveOverloadDefaultNameAndOptions)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,
+        IInspectable **operation);
+
+    HRESULT (STDMETHODCALLTYPE *MoveOverloadDefaultOptions)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,
+        HSTRING desiredNewName,
+        IInspectable **operation);
+
+    HRESULT (STDMETHODCALLTYPE *MoveOverload)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,
+        HSTRING desiredNewName,
+        enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,
+        IInspectable **operation);
+
+    HRESULT (STDMETHODCALLTYPE *MoveAndReplaceAsync)(
+        __x_ABI_CWindows_CStorage_CIStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,
+        IInspectable **operation);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CStorage_CIStorageFileVtbl;
+
+interface __x_ABI_CWindows_CStorage_CIStorageFile {
+    CONST_VTBL __x_ABI_CWindows_CStorage_CIStorageFileVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __x_ABI_CWindows_CStorage_CIStorageFile_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __x_ABI_CWindows_CStorage_CIStorageFile_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IStorageFile methods ***/
+#define __x_ABI_CWindows_CStorage_CIStorageFile_get_FileType(This,value) (This)->lpVtbl->get_FileType(This,value)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_get_ContentType(This,value) (This)->lpVtbl->get_ContentType(This,value)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_OpenAsync(This,accessMode,operation) (This)->lpVtbl->OpenAsync(This,accessMode,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_OpenTransactedWriteAsync(This,operation) (This)->lpVtbl->OpenTransactedWriteAsync(This,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverloadDefaultNameAndOptions(This,destinationFolder,operation) (This)->lpVtbl->CopyOverloadDefaultNameAndOptions(This,destinationFolder,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverloadDefaultOptions(This,destinationFolder,desiredNewName,operation) (This)->lpVtbl->CopyOverloadDefaultOptions(This,destinationFolder,desiredNewName,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverload(This,destinationFolder,desiredNewName,option,operation) (This)->lpVtbl->CopyOverload(This,destinationFolder,desiredNewName,option,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_CopyAndReplaceAsync(This,fileToReplace,operation) (This)->lpVtbl->CopyAndReplaceAsync(This,fileToReplace,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverloadDefaultNameAndOptions(This,destinationFolder,operation) (This)->lpVtbl->MoveOverloadDefaultNameAndOptions(This,destinationFolder,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverloadDefaultOptions(This,destinationFolder,desiredNewName,operation) (This)->lpVtbl->MoveOverloadDefaultOptions(This,destinationFolder,desiredNewName,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverload(This,destinationFolder,desiredNewName,option,operation) (This)->lpVtbl->MoveOverload(This,destinationFolder,desiredNewName,option,operation)
+#define __x_ABI_CWindows_CStorage_CIStorageFile_MoveAndReplaceAsync(This,fileToReplace,operation) (This)->lpVtbl->MoveAndReplaceAsync(This,fileToReplace,operation)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_QueryInterface(__x_ABI_CWindows_CStorage_CIStorageFile* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CStorage_CIStorageFile_AddRef(__x_ABI_CWindows_CStorage_CIStorageFile* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CStorage_CIStorageFile_Release(__x_ABI_CWindows_CStorage_CIStorageFile* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_GetIids(__x_ABI_CWindows_CStorage_CIStorageFile* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_GetRuntimeClassName(__x_ABI_CWindows_CStorage_CIStorageFile* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_GetTrustLevel(__x_ABI_CWindows_CStorage_CIStorageFile* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IStorageFile methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_get_FileType(__x_ABI_CWindows_CStorage_CIStorageFile* This,HSTRING *value) {
+    return This->lpVtbl->get_FileType(This,value);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_get_ContentType(__x_ABI_CWindows_CStorage_CIStorageFile* This,HSTRING *value) {
+    return This->lpVtbl->get_ContentType(This,value);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_OpenAsync(__x_ABI_CWindows_CStorage_CIStorageFile* This,enum __x_ABI_CWindows_CStorage_CFileAccessMode accessMode,IInspectable **operation) {
+    return This->lpVtbl->OpenAsync(This,accessMode,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_OpenTransactedWriteAsync(__x_ABI_CWindows_CStorage_CIStorageFile* This,IInspectable **operation) {
+    return This->lpVtbl->OpenTransactedWriteAsync(This,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverloadDefaultNameAndOptions(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->CopyOverloadDefaultNameAndOptions(This,destinationFolder,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,HSTRING desiredNewName,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->CopyOverloadDefaultOptions(This,destinationFolder,desiredNewName,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverload(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,HSTRING desiredNewName,enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+    return This->lpVtbl->CopyOverload(This,destinationFolder,desiredNewName,option,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_CopyAndReplaceAsync(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,IInspectable **operation) {
+    return This->lpVtbl->CopyAndReplaceAsync(This,fileToReplace,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverloadDefaultNameAndOptions(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,IInspectable **operation) {
+    return This->lpVtbl->MoveOverloadDefaultNameAndOptions(This,destinationFolder,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,HSTRING desiredNewName,IInspectable **operation) {
+    return This->lpVtbl->MoveOverloadDefaultOptions(This,destinationFolder,desiredNewName,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverload(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFolder *destinationFolder,HSTRING desiredNewName,enum __x_ABI_CWindows_CStorage_CNameCollisionOption option,IInspectable **operation) {
+    return This->lpVtbl->MoveOverload(This,destinationFolder,desiredNewName,option,operation);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFile_MoveAndReplaceAsync(__x_ABI_CWindows_CStorage_CIStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,IInspectable **operation) {
+    return This->lpVtbl->MoveAndReplaceAsync(This,fileToReplace,operation);
+}
+#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISTORAGEFILE
+#define IID_IStorageFile IID___x_ABI_CWindows_CStorage_CIStorageFile
+#define IStorageFileVtbl __x_ABI_CWindows_CStorage_CIStorageFileVtbl
+#define IStorageFile __x_ABI_CWindows_CStorage_CIStorageFile
+#define IStorageFile_QueryInterface __x_ABI_CWindows_CStorage_CIStorageFile_QueryInterface
+#define IStorageFile_AddRef __x_ABI_CWindows_CStorage_CIStorageFile_AddRef
+#define IStorageFile_Release __x_ABI_CWindows_CStorage_CIStorageFile_Release
+#define IStorageFile_GetIids __x_ABI_CWindows_CStorage_CIStorageFile_GetIids
+#define IStorageFile_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIStorageFile_GetRuntimeClassName
+#define IStorageFile_GetTrustLevel __x_ABI_CWindows_CStorage_CIStorageFile_GetTrustLevel
+#define IStorageFile_get_FileType __x_ABI_CWindows_CStorage_CIStorageFile_get_FileType
+#define IStorageFile_get_ContentType __x_ABI_CWindows_CStorage_CIStorageFile_get_ContentType
+#define IStorageFile_OpenAsync __x_ABI_CWindows_CStorage_CIStorageFile_OpenAsync
+#define IStorageFile_OpenTransactedWriteAsync __x_ABI_CWindows_CStorage_CIStorageFile_OpenTransactedWriteAsync
+#define IStorageFile_CopyOverloadDefaultNameAndOptions __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverloadDefaultNameAndOptions
+#define IStorageFile_CopyOverloadDefaultOptions __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverloadDefaultOptions
+#define IStorageFile_CopyOverload __x_ABI_CWindows_CStorage_CIStorageFile_CopyOverload
+#define IStorageFile_CopyAndReplaceAsync __x_ABI_CWindows_CStorage_CIStorageFile_CopyAndReplaceAsync
+#define IStorageFile_MoveOverloadDefaultNameAndOptions __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverloadDefaultNameAndOptions
+#define IStorageFile_MoveOverloadDefaultOptions __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverloadDefaultOptions
+#define IStorageFile_MoveOverload __x_ABI_CWindows_CStorage_CIStorageFile_MoveOverload
+#define IStorageFile_MoveAndReplaceAsync __x_ABI_CWindows_CStorage_CIStorageFile_MoveAndReplaceAsync
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISTORAGEFILE */
+#endif
+
+#endif
+
+#endif  /* ____x_ABI_CWindows_CStorage_CIStorageFile_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
  * IStorageFolder interface
  *
  */
@@ -959,33 +1788,33 @@ namespace ABI {
             {
                 virtual HRESULT STDMETHODCALLTYPE CreateFileAsyncOverloadDefaultOptions(
                     HSTRING desiredName,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateFileAsync(
                     HSTRING desiredName,
                     enum CreationCollisionOption options,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateFolderAsyncOverloadDefaultOptions(
                     HSTRING desiredName,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateFolderAsync(
                     HSTRING desiredName,
                     enum CreationCollisionOption options,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFileAsync(
                     HSTRING name,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFolderAsync(
                     HSTRING name,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetItemAsync(
                     HSTRING name,
-                    IInspectable **operation) = 0;
+                    IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFilesAsyncOverloadDefaultOptionsStartAndCount(
                     IInspectable **operation) = 0;
@@ -1038,39 +1867,39 @@ typedef struct __x_ABI_CWindows_CStorage_CIStorageFolderVtbl {
     HRESULT (STDMETHODCALLTYPE *CreateFileAsyncOverloadDefaultOptions)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING desiredName,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
 
     HRESULT (STDMETHODCALLTYPE *CreateFileAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING desiredName,
         enum __x_ABI_CWindows_CStorage_CCreationCollisionOption options,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
 
     HRESULT (STDMETHODCALLTYPE *CreateFolderAsyncOverloadDefaultOptions)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING desiredName,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder **operation);
 
     HRESULT (STDMETHODCALLTYPE *CreateFolderAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING desiredName,
         enum __x_ABI_CWindows_CStorage_CCreationCollisionOption options,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFileAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING name,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING name,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetItemAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
         HSTRING name,
-        IInspectable **operation);
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFilesAsyncOverloadDefaultOptionsStartAndCount)(
         __x_ABI_CWindows_CStorage_CIStorageFolder *This,
@@ -1134,25 +1963,25 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetTrustLev
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
 /*** IStorageFolder methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFileAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFileAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
     return This->lpVtbl->CreateFileAsyncOverloadDefaultOptions(This,desiredName,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFileAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,enum __x_ABI_CWindows_CStorage_CCreationCollisionOption options,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFileAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,enum __x_ABI_CWindows_CStorage_CCreationCollisionOption options,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
     return This->lpVtbl->CreateFileAsync(This,desiredName,options,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFolderAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFolderAsyncOverloadDefaultOptions(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,__FIAsyncOperation_1_Windows__CStorage__CStorageFolder **operation) {
     return This->lpVtbl->CreateFolderAsyncOverloadDefaultOptions(This,desiredName,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFolderAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,enum __x_ABI_CWindows_CStorage_CCreationCollisionOption options,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFolderAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING desiredName,enum __x_ABI_CWindows_CStorage_CCreationCollisionOption options,__FIAsyncOperation_1_Windows__CStorage__CStorageFolder **operation) {
     return This->lpVtbl->CreateFolderAsync(This,desiredName,options,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetFileAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING name,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetFileAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING name,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
     return This->lpVtbl->GetFileAsync(This,name,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetFolderAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING name,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetFolderAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING name,__FIAsyncOperation_1_Windows__CStorage__CStorageFolder **operation) {
     return This->lpVtbl->GetFolderAsync(This,name,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetItemAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING name,IInspectable **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetItemAsync(__x_ABI_CWindows_CStorage_CIStorageFolder* This,HSTRING name,__FIAsyncOperation_1_Windows__CStorage__CIStorageItem **operation) {
     return This->lpVtbl->GetItemAsync(This,name,operation);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetFilesAsyncOverloadDefaultOptionsStartAndCount(__x_ABI_CWindows_CStorage_CIStorageFolder* This,IInspectable **operation) {
@@ -1165,11 +1994,63 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetItemsAsy
     return This->lpVtbl->GetItemsAsyncOverloadDefaultStartAndCount(This,operation);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISTORAGEFOLDER
+#define IID_IStorageFolder IID___x_ABI_CWindows_CStorage_CIStorageFolder
+#define IStorageFolderVtbl __x_ABI_CWindows_CStorage_CIStorageFolderVtbl
+#define IStorageFolder __x_ABI_CWindows_CStorage_CIStorageFolder
+#define IStorageFolder_QueryInterface __x_ABI_CWindows_CStorage_CIStorageFolder_QueryInterface
+#define IStorageFolder_AddRef __x_ABI_CWindows_CStorage_CIStorageFolder_AddRef
+#define IStorageFolder_Release __x_ABI_CWindows_CStorage_CIStorageFolder_Release
+#define IStorageFolder_GetIids __x_ABI_CWindows_CStorage_CIStorageFolder_GetIids
+#define IStorageFolder_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIStorageFolder_GetRuntimeClassName
+#define IStorageFolder_GetTrustLevel __x_ABI_CWindows_CStorage_CIStorageFolder_GetTrustLevel
+#define IStorageFolder_CreateFileAsyncOverloadDefaultOptions __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFileAsyncOverloadDefaultOptions
+#define IStorageFolder_CreateFileAsync __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFileAsync
+#define IStorageFolder_CreateFolderAsyncOverloadDefaultOptions __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFolderAsyncOverloadDefaultOptions
+#define IStorageFolder_CreateFolderAsync __x_ABI_CWindows_CStorage_CIStorageFolder_CreateFolderAsync
+#define IStorageFolder_GetFileAsync __x_ABI_CWindows_CStorage_CIStorageFolder_GetFileAsync
+#define IStorageFolder_GetFolderAsync __x_ABI_CWindows_CStorage_CIStorageFolder_GetFolderAsync
+#define IStorageFolder_GetItemAsync __x_ABI_CWindows_CStorage_CIStorageFolder_GetItemAsync
+#define IStorageFolder_GetFilesAsyncOverloadDefaultOptionsStartAndCount __x_ABI_CWindows_CStorage_CIStorageFolder_GetFilesAsyncOverloadDefaultOptionsStartAndCount
+#define IStorageFolder_GetFoldersAsyncOverloadDefaultOptionsStartAndCount __x_ABI_CWindows_CStorage_CIStorageFolder_GetFoldersAsyncOverloadDefaultOptionsStartAndCount
+#define IStorageFolder_GetItemsAsyncOverloadDefaultStartAndCount __x_ABI_CWindows_CStorage_CIStorageFolder_GetItemsAsyncOverloadDefaultStartAndCount
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISTORAGEFOLDER */
 #endif
 
 #endif
 
 #endif  /* ____x_ABI_CWindows_CStorage_CIStorageFolder_INTERFACE_DEFINED__ */
+
+/*
+ * Class Windows.Storage.StorageFile
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.IStorageFile ** Default Interface **
+ *    Windows.Storage.IStorageItem
+ *    Windows.Storage.Streams.IRandomAccessStreamReference
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#ifndef RUNTIMECLASS_Windows_Storage_StorageFile_DEFINED
+#define RUNTIMECLASS_Windows_Storage_StorageFile_DEFINED
+static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFile[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','o','r','a','g','e','F','i','l','e',0};
+#endif /* RUNTIMECLASS_Windows_Storage_StorageFile_DEFINED */
+
+/*
+ * Class Windows.Storage.StorageFolder
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.IStorageFolder ** Default Interface **
+ *    Windows.Storage.IStorageItem
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#ifndef RUNTIMECLASS_Windows_Storage_StorageFolder_DEFINED
+#define RUNTIMECLASS_Windows_Storage_StorageFolder_DEFINED
+static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFolder[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','o','r','a','g','e','F','o','l','d','e','r',0};
+#endif /* RUNTIMECLASS_Windows_Storage_StorageFolder_DEFINED */
 
 /*****************************************************************************
  * IApplicationDataContainer interface
@@ -1337,6 +2218,23 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationDataContainer_
     return This->lpVtbl->DeleteContainer(This,name);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_IAPPLICATIONDATACONTAINER
+#define IID_IApplicationDataContainer IID___x_ABI_CWindows_CStorage_CIApplicationDataContainer
+#define IApplicationDataContainerVtbl __x_ABI_CWindows_CStorage_CIApplicationDataContainerVtbl
+#define IApplicationDataContainer __x_ABI_CWindows_CStorage_CIApplicationDataContainer
+#define IApplicationDataContainer_QueryInterface __x_ABI_CWindows_CStorage_CIApplicationDataContainer_QueryInterface
+#define IApplicationDataContainer_AddRef __x_ABI_CWindows_CStorage_CIApplicationDataContainer_AddRef
+#define IApplicationDataContainer_Release __x_ABI_CWindows_CStorage_CIApplicationDataContainer_Release
+#define IApplicationDataContainer_GetIids __x_ABI_CWindows_CStorage_CIApplicationDataContainer_GetIids
+#define IApplicationDataContainer_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIApplicationDataContainer_GetRuntimeClassName
+#define IApplicationDataContainer_GetTrustLevel __x_ABI_CWindows_CStorage_CIApplicationDataContainer_GetTrustLevel
+#define IApplicationDataContainer_get_Name __x_ABI_CWindows_CStorage_CIApplicationDataContainer_get_Name
+#define IApplicationDataContainer_get_Locality __x_ABI_CWindows_CStorage_CIApplicationDataContainer_get_Locality
+#define IApplicationDataContainer_get_Values __x_ABI_CWindows_CStorage_CIApplicationDataContainer_get_Values
+#define IApplicationDataContainer_get_Containers __x_ABI_CWindows_CStorage_CIApplicationDataContainer_get_Containers
+#define IApplicationDataContainer_CreateContainer __x_ABI_CWindows_CStorage_CIApplicationDataContainer_CreateContainer
+#define IApplicationDataContainer_DeleteContainer __x_ABI_CWindows_CStorage_CIApplicationDataContainer_DeleteContainer
+#endif /* WIDL_USING__WINDOWS_STORAGE_IAPPLICATIONDATACONTAINER */
 #endif
 
 #endif
@@ -1365,14 +2263,14 @@ namespace ABI {
                 virtual HRESULT STDMETHODCALLTYPE SetVersionAsync(
                     int desiredVersion,
                     IApplicationDataSetVersionHandler *handler,
-                    IInspectable **setVersionOperation) = 0;
+                    IAsyncAction **setVersionOperation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ClearAllAsync(
-                    IInspectable **clearOperation) = 0;
+                    IAsyncAction **clearOperation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ClearAsync(
                     enum ApplicationDataLocality locality,
-                    IInspectable **clearOperation) = 0;
+                    IAsyncAction **clearOperation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_LocalSettings(
                     IApplicationDataContainer **value) = 0;
@@ -1389,8 +2287,12 @@ namespace ABI {
                 virtual HRESULT STDMETHODCALLTYPE get_TemporaryFolder(
                     IStorageFolder **value) = 0;
 
-                virtual HRESULT STDMETHODCALLTYPE DataChanged(
-                    struct EventRegistrationToken token) = 0;
+                virtual HRESULT STDMETHODCALLTYPE add_DataChanged(
+                    IInspectable *handler,
+                    EventRegistrationToken *token) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE remove_DataChanged(
+                    EventRegistrationToken token) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE SignalDataChanged(
                     ) = 0;
@@ -1445,16 +2347,16 @@ typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataVtbl {
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
         int desiredVersion,
         __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler *handler,
-        IInspectable **setVersionOperation);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **setVersionOperation);
 
     HRESULT (STDMETHODCALLTYPE *ClearAllAsync)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
-        IInspectable **clearOperation);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **clearOperation);
 
     HRESULT (STDMETHODCALLTYPE *ClearAsync)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
         enum __x_ABI_CWindows_CStorage_CApplicationDataLocality locality,
-        IInspectable **clearOperation);
+        __x_ABI_CWindows_CFoundation_CIAsyncAction **clearOperation);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalSettings)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
@@ -1476,9 +2378,14 @@ typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataVtbl {
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
         __x_ABI_CWindows_CStorage_CIStorageFolder **value);
 
-    HRESULT (STDMETHODCALLTYPE *DataChanged)(
+    HRESULT (STDMETHODCALLTYPE *add_DataChanged)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
-        struct __x_ABI_CWindows_CFoundation_CEventRegistrationToken token);
+        IInspectable *handler,
+        EventRegistrationToken *token);
+
+    HRESULT (STDMETHODCALLTYPE *remove_DataChanged)(
+        __x_ABI_CWindows_CStorage_CIApplicationData *This,
+        EventRegistrationToken token);
 
     HRESULT (STDMETHODCALLTYPE *SignalDataChanged)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This);
@@ -1514,7 +2421,8 @@ interface __x_ABI_CWindows_CStorage_CIApplicationData {
 #define __x_ABI_CWindows_CStorage_CIApplicationData_get_LocalFolder(This,value) (This)->lpVtbl->get_LocalFolder(This,value)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_get_RoamingFolder(This,value) (This)->lpVtbl->get_RoamingFolder(This,value)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_get_TemporaryFolder(This,value) (This)->lpVtbl->get_TemporaryFolder(This,value)
-#define __x_ABI_CWindows_CStorage_CIApplicationData_DataChanged(This,token) (This)->lpVtbl->DataChanged(This,token)
+#define __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged(This,handler,token) (This)->lpVtbl->add_DataChanged(This,handler,token)
+#define __x_ABI_CWindows_CStorage_CIApplicationData_remove_DataChanged(This,token) (This)->lpVtbl->remove_DataChanged(This,token)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_SignalDataChanged(This) (This)->lpVtbl->SignalDataChanged(This)
 #define __x_ABI_CWindows_CStorage_CIApplicationData_RoamingStorageQuota(This,value) (This)->lpVtbl->RoamingStorageQuota(This,value)
 #else
@@ -1542,13 +2450,13 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_GetTrustL
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_Version(__x_ABI_CWindows_CStorage_CIApplicationData* This,int *value) {
     return This->lpVtbl->get_Version(This,value);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_SetVersionAsync(__x_ABI_CWindows_CStorage_CIApplicationData* This,int desiredVersion,__x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler *handler,IInspectable **setVersionOperation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_SetVersionAsync(__x_ABI_CWindows_CStorage_CIApplicationData* This,int desiredVersion,__x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler *handler,__x_ABI_CWindows_CFoundation_CIAsyncAction **setVersionOperation) {
     return This->lpVtbl->SetVersionAsync(This,desiredVersion,handler,setVersionOperation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_ClearAllAsync(__x_ABI_CWindows_CStorage_CIApplicationData* This,IInspectable **clearOperation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_ClearAllAsync(__x_ABI_CWindows_CStorage_CIApplicationData* This,__x_ABI_CWindows_CFoundation_CIAsyncAction **clearOperation) {
     return This->lpVtbl->ClearAllAsync(This,clearOperation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_ClearAsync(__x_ABI_CWindows_CStorage_CIApplicationData* This,enum __x_ABI_CWindows_CStorage_CApplicationDataLocality locality,IInspectable **clearOperation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_ClearAsync(__x_ABI_CWindows_CStorage_CIApplicationData* This,enum __x_ABI_CWindows_CStorage_CApplicationDataLocality locality,__x_ABI_CWindows_CFoundation_CIAsyncAction **clearOperation) {
     return This->lpVtbl->ClearAsync(This,locality,clearOperation);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_LocalSettings(__x_ABI_CWindows_CStorage_CIApplicationData* This,__x_ABI_CWindows_CStorage_CIApplicationDataContainer **value) {
@@ -1566,8 +2474,11 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_Roami
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_TemporaryFolder(__x_ABI_CWindows_CStorage_CIApplicationData* This,__x_ABI_CWindows_CStorage_CIStorageFolder **value) {
     return This->lpVtbl->get_TemporaryFolder(This,value);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,struct __x_ABI_CWindows_CFoundation_CEventRegistrationToken token) {
-    return This->lpVtbl->DataChanged(This,token);
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,IInspectable *handler,EventRegistrationToken *token) {
+    return This->lpVtbl->add_DataChanged(This,handler,token);
+}
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_remove_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,EventRegistrationToken token) {
+    return This->lpVtbl->remove_DataChanged(This,token);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_SignalDataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This) {
     return This->lpVtbl->SignalDataChanged(This);
@@ -1576,6 +2487,30 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_RoamingSt
     return This->lpVtbl->RoamingStorageQuota(This,value);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_IAPPLICATIONDATA
+#define IID_IApplicationData IID___x_ABI_CWindows_CStorage_CIApplicationData
+#define IApplicationDataVtbl __x_ABI_CWindows_CStorage_CIApplicationDataVtbl
+#define IApplicationData __x_ABI_CWindows_CStorage_CIApplicationData
+#define IApplicationData_QueryInterface __x_ABI_CWindows_CStorage_CIApplicationData_QueryInterface
+#define IApplicationData_AddRef __x_ABI_CWindows_CStorage_CIApplicationData_AddRef
+#define IApplicationData_Release __x_ABI_CWindows_CStorage_CIApplicationData_Release
+#define IApplicationData_GetIids __x_ABI_CWindows_CStorage_CIApplicationData_GetIids
+#define IApplicationData_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIApplicationData_GetRuntimeClassName
+#define IApplicationData_GetTrustLevel __x_ABI_CWindows_CStorage_CIApplicationData_GetTrustLevel
+#define IApplicationData_get_Version __x_ABI_CWindows_CStorage_CIApplicationData_get_Version
+#define IApplicationData_SetVersionAsync __x_ABI_CWindows_CStorage_CIApplicationData_SetVersionAsync
+#define IApplicationData_ClearAllAsync __x_ABI_CWindows_CStorage_CIApplicationData_ClearAllAsync
+#define IApplicationData_ClearAsync __x_ABI_CWindows_CStorage_CIApplicationData_ClearAsync
+#define IApplicationData_get_LocalSettings __x_ABI_CWindows_CStorage_CIApplicationData_get_LocalSettings
+#define IApplicationData_get_RoamingSettings __x_ABI_CWindows_CStorage_CIApplicationData_get_RoamingSettings
+#define IApplicationData_get_LocalFolder __x_ABI_CWindows_CStorage_CIApplicationData_get_LocalFolder
+#define IApplicationData_get_RoamingFolder __x_ABI_CWindows_CStorage_CIApplicationData_get_RoamingFolder
+#define IApplicationData_get_TemporaryFolder __x_ABI_CWindows_CStorage_CIApplicationData_get_TemporaryFolder
+#define IApplicationData_add_DataChanged __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged
+#define IApplicationData_remove_DataChanged __x_ABI_CWindows_CStorage_CIApplicationData_remove_DataChanged
+#define IApplicationData_SignalDataChanged __x_ABI_CWindows_CStorage_CIApplicationData_SignalDataChanged
+#define IApplicationData_RoamingStorageQuota __x_ABI_CWindows_CStorage_CIApplicationData_RoamingStorageQuota
+#endif /* WIDL_USING__WINDOWS_STORAGE_IAPPLICATIONDATA */
 #endif
 
 #endif
@@ -1703,6 +2638,18 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData2_get_Loca
     return This->lpVtbl->get_LocalCacheFolder(This,value);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_IAPPLICATIONDATA2
+#define IID_IApplicationData2 IID___x_ABI_CWindows_CStorage_CIApplicationData2
+#define IApplicationData2Vtbl __x_ABI_CWindows_CStorage_CIApplicationData2Vtbl
+#define IApplicationData2 __x_ABI_CWindows_CStorage_CIApplicationData2
+#define IApplicationData2_QueryInterface __x_ABI_CWindows_CStorage_CIApplicationData2_QueryInterface
+#define IApplicationData2_AddRef __x_ABI_CWindows_CStorage_CIApplicationData2_AddRef
+#define IApplicationData2_Release __x_ABI_CWindows_CStorage_CIApplicationData2_Release
+#define IApplicationData2_GetIids __x_ABI_CWindows_CStorage_CIApplicationData2_GetIids
+#define IApplicationData2_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIApplicationData2_GetRuntimeClassName
+#define IApplicationData2_GetTrustLevel __x_ABI_CWindows_CStorage_CIApplicationData2_GetTrustLevel
+#define IApplicationData2_get_LocalCacheFolder __x_ABI_CWindows_CStorage_CIApplicationData2_get_LocalCacheFolder
+#endif /* WIDL_USING__WINDOWS_STORAGE_IAPPLICATIONDATA2 */
 #endif
 
 #endif
@@ -1816,6 +2763,18 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationDataStatics_ge
     return This->lpVtbl->get_Current(This,data);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_IAPPLICATIONDATASTATICS
+#define IID_IApplicationDataStatics IID___x_ABI_CWindows_CStorage_CIApplicationDataStatics
+#define IApplicationDataStaticsVtbl __x_ABI_CWindows_CStorage_CIApplicationDataStaticsVtbl
+#define IApplicationDataStatics __x_ABI_CWindows_CStorage_CIApplicationDataStatics
+#define IApplicationDataStatics_QueryInterface __x_ABI_CWindows_CStorage_CIApplicationDataStatics_QueryInterface
+#define IApplicationDataStatics_AddRef __x_ABI_CWindows_CStorage_CIApplicationDataStatics_AddRef
+#define IApplicationDataStatics_Release __x_ABI_CWindows_CStorage_CIApplicationDataStatics_Release
+#define IApplicationDataStatics_GetIids __x_ABI_CWindows_CStorage_CIApplicationDataStatics_GetIids
+#define IApplicationDataStatics_GetRuntimeClassName __x_ABI_CWindows_CStorage_CIApplicationDataStatics_GetRuntimeClassName
+#define IApplicationDataStatics_GetTrustLevel __x_ABI_CWindows_CStorage_CIApplicationDataStatics_GetTrustLevel
+#define IApplicationDataStatics_get_Current __x_ABI_CWindows_CStorage_CIApplicationDataStatics_get_Current
+#endif /* WIDL_USING__WINDOWS_STORAGE_IAPPLICATIONDATASTATICS */
 #endif
 
 #endif
@@ -1901,6 +2860,15 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationDataSetVersion
     return This->lpVtbl->Invoke(This,setVersionRequest);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_IAPPLICATIONDATASETVERSIONHANDLER
+#define IID_IApplicationDataSetVersionHandler IID___x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler
+#define IApplicationDataSetVersionHandlerVtbl __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandlerVtbl
+#define IApplicationDataSetVersionHandler __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler
+#define IApplicationDataSetVersionHandler_QueryInterface __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler_QueryInterface
+#define IApplicationDataSetVersionHandler_AddRef __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler_AddRef
+#define IApplicationDataSetVersionHandler_Release __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler_Release
+#define IApplicationDataSetVersionHandler_Invoke __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler_Invoke
+#endif /* WIDL_USING__WINDOWS_STORAGE_IAPPLICATIONDATASETVERSIONHANDLER */
 #endif
 
 #endif
@@ -2036,6 +3004,20 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CISetVersionRequest_GetDefe
     return This->lpVtbl->GetDeferral(This,deferral);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISETVERSIONREQUEST
+#define IID_ISetVersionRequest IID___x_ABI_CWindows_CStorage_CISetVersionRequest
+#define ISetVersionRequestVtbl __x_ABI_CWindows_CStorage_CISetVersionRequestVtbl
+#define ISetVersionRequest __x_ABI_CWindows_CStorage_CISetVersionRequest
+#define ISetVersionRequest_QueryInterface __x_ABI_CWindows_CStorage_CISetVersionRequest_QueryInterface
+#define ISetVersionRequest_AddRef __x_ABI_CWindows_CStorage_CISetVersionRequest_AddRef
+#define ISetVersionRequest_Release __x_ABI_CWindows_CStorage_CISetVersionRequest_Release
+#define ISetVersionRequest_GetIids __x_ABI_CWindows_CStorage_CISetVersionRequest_GetIids
+#define ISetVersionRequest_GetRuntimeClassName __x_ABI_CWindows_CStorage_CISetVersionRequest_GetRuntimeClassName
+#define ISetVersionRequest_GetTrustLevel __x_ABI_CWindows_CStorage_CISetVersionRequest_GetTrustLevel
+#define ISetVersionRequest_get_CurrentVersion __x_ABI_CWindows_CStorage_CISetVersionRequest_get_CurrentVersion
+#define ISetVersionRequest_get_DesiredVersion __x_ABI_CWindows_CStorage_CISetVersionRequest_get_DesiredVersion
+#define ISetVersionRequest_GetDeferral __x_ABI_CWindows_CStorage_CISetVersionRequest_GetDeferral
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISETVERSIONREQUEST */
 #endif
 
 #endif
@@ -2148,11 +3130,902 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CISetVersionDeferral_Comple
     return This->lpVtbl->Complete(This);
 }
 #endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISETVERSIONDEFERRAL
+#define IID_ISetVersionDeferral IID___x_ABI_CWindows_CStorage_CISetVersionDeferral
+#define ISetVersionDeferralVtbl __x_ABI_CWindows_CStorage_CISetVersionDeferralVtbl
+#define ISetVersionDeferral __x_ABI_CWindows_CStorage_CISetVersionDeferral
+#define ISetVersionDeferral_QueryInterface __x_ABI_CWindows_CStorage_CISetVersionDeferral_QueryInterface
+#define ISetVersionDeferral_AddRef __x_ABI_CWindows_CStorage_CISetVersionDeferral_AddRef
+#define ISetVersionDeferral_Release __x_ABI_CWindows_CStorage_CISetVersionDeferral_Release
+#define ISetVersionDeferral_GetIids __x_ABI_CWindows_CStorage_CISetVersionDeferral_GetIids
+#define ISetVersionDeferral_GetRuntimeClassName __x_ABI_CWindows_CStorage_CISetVersionDeferral_GetRuntimeClassName
+#define ISetVersionDeferral_GetTrustLevel __x_ABI_CWindows_CStorage_CISetVersionDeferral_GetTrustLevel
+#define ISetVersionDeferral_Complete __x_ABI_CWindows_CStorage_CISetVersionDeferral_Complete
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISETVERSIONDEFERRAL */
 #endif
 
 #endif
 
 #endif  /* ____x_ABI_CWindows_CStorage_CISetVersionDeferral_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IAsyncOperation<ABI::Windows::Storage::StorageFile*> interface
+ *
+ */
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIAsyncOperation_1_Windows__CStorage__CStorageFile, 0x5e52f8ce, 0xaced, 0x5a42, 0x95,0xb4, 0xf6,0x74,0xdd,0x84,0x88,0x5e);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("5e52f8ce-aced-5a42-95b4-f674dd84885e")
+            IAsyncOperation<ABI::Windows::Storage::StorageFile*> : public IAsyncInfo
+            {
+                virtual HRESULT STDMETHODCALLTYPE put_Completed(
+                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> *handler) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE get_Completed(
+                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> **handler) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE GetResults(
+                    IStorageFile **result) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*>, 0x5e52f8ce, 0xaced, 0x5a42, 0x95,0xb4, 0xf6,0x74,0xdd,0x84,0x88,0x5e)
+#endif
+#else
+typedef struct __FIAsyncOperation_1_Windows__CStorage__CStorageFileVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        TrustLevel *trustLevel);
+
+    /*** IAsyncInfo methods ***/
+    HRESULT (STDMETHODCALLTYPE *get_Id)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        unsigned int *id);
+
+    HRESULT (STDMETHODCALLTYPE *get_Status)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        AsyncStatus *status);
+
+    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        HRESULT *errorCode);
+
+    HRESULT (STDMETHODCALLTYPE *Cancel)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This);
+
+    HRESULT (STDMETHODCALLTYPE *Close)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This);
+
+    /*** IAsyncOperation<ABI::Windows::Storage::StorageFile*> methods ***/
+    HRESULT (STDMETHODCALLTYPE *put_Completed)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *handler);
+
+    HRESULT (STDMETHODCALLTYPE *get_Completed)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile **handler);
+
+    HRESULT (STDMETHODCALLTYPE *GetResults)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
+        __x_ABI_CWindows_CStorage_CIStorageFile **result);
+
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CStorage__CStorageFileVtbl;
+
+interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile {
+    CONST_VTBL __FIAsyncOperation_1_Windows__CStorage__CStorageFileVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IAsyncInfo methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Cancel(This) (This)->lpVtbl->Cancel(This)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Close(This) (This)->lpVtbl->Close(This)
+/*** IAsyncOperation<ABI::Windows::Storage::StorageFile*> methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetResults(This,result) (This)->lpVtbl->GetResults(This,result)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_QueryInterface(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIAsyncOperation_1_Windows__CStorage__CStorageFile_AddRef(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Release(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetIids(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetRuntimeClassName(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetTrustLevel(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IAsyncInfo methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Id(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,unsigned int *id) {
+    return This->lpVtbl->get_Id(This,id);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Status(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,AsyncStatus *status) {
+    return This->lpVtbl->get_Status(This,status);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_ErrorCode(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,HRESULT *errorCode) {
+    return This->lpVtbl->get_ErrorCode(This,errorCode);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Cancel(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This) {
+    return This->lpVtbl->Cancel(This);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Close(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This) {
+    return This->lpVtbl->Close(This);
+}
+/*** IAsyncOperation<ABI::Windows::Storage::StorageFile*> methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_put_Completed(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *handler) {
+    return This->lpVtbl->put_Completed(This,handler);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Completed(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile **handler) {
+    return This->lpVtbl->get_Completed(This,handler);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetResults(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,__x_ABI_CWindows_CStorage_CIStorageFile **result) {
+    return This->lpVtbl->GetResults(This,result);
+}
+#endif
+#ifdef WIDL_USING_IASYNCOPERATION_1_WINDOWS_STORAGE_STORAGEFILE
+#define IID_IAsyncOperation_StorageFile IID___FIAsyncOperation_1_Windows__CStorage__CStorageFile
+#define IAsyncOperation_StorageFileVtbl __FIAsyncOperation_1_Windows__CStorage__CStorageFileVtbl
+#define IAsyncOperation_StorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile
+#define IAsyncOperation_StorageFile_QueryInterface __FIAsyncOperation_1_Windows__CStorage__CStorageFile_QueryInterface
+#define IAsyncOperation_StorageFile_AddRef __FIAsyncOperation_1_Windows__CStorage__CStorageFile_AddRef
+#define IAsyncOperation_StorageFile_Release __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Release
+#define IAsyncOperation_StorageFile_GetIids __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetIids
+#define IAsyncOperation_StorageFile_GetRuntimeClassName __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetRuntimeClassName
+#define IAsyncOperation_StorageFile_GetTrustLevel __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetTrustLevel
+#define IAsyncOperation_StorageFile_get_Id __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Id
+#define IAsyncOperation_StorageFile_get_Status __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Status
+#define IAsyncOperation_StorageFile_get_ErrorCode __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_ErrorCode
+#define IAsyncOperation_StorageFile_Cancel __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Cancel
+#define IAsyncOperation_StorageFile_Close __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Close
+#define IAsyncOperation_StorageFile_put_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFile_put_Completed
+#define IAsyncOperation_StorageFile_get_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Completed
+#define IAsyncOperation_StorageFile_GetResults __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetResults
+#endif /* WIDL_USING__IASYNCOPERATION_1_WINDOWS_STORAGE_STORAGEFILE */
+#endif
+
+#endif
+
+#endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IAsyncOperation<ABI::Windows::Storage::StorageFolder*> interface
+ *
+ */
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIAsyncOperation_1_Windows__CStorage__CStorageFolder, 0x6be9e7d7, 0xe83a, 0x5cbc, 0x80,0x2c, 0x17,0x68,0x96,0x0b,0x52,0xc3);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("6be9e7d7-e83a-5cbc-802c-1768960b52c3")
+            IAsyncOperation<ABI::Windows::Storage::StorageFolder*> : public IAsyncInfo
+            {
+                virtual HRESULT STDMETHODCALLTYPE put_Completed(
+                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> *handler) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE get_Completed(
+                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> **handler) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE GetResults(
+                    IStorageFolder **result) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*>, 0x6be9e7d7, 0xe83a, 0x5cbc, 0x80,0x2c, 0x17,0x68,0x96,0x0b,0x52,0xc3)
+#endif
+#else
+typedef struct __FIAsyncOperation_1_Windows__CStorage__CStorageFolderVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        TrustLevel *trustLevel);
+
+    /*** IAsyncInfo methods ***/
+    HRESULT (STDMETHODCALLTYPE *get_Id)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        unsigned int *id);
+
+    HRESULT (STDMETHODCALLTYPE *get_Status)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        AsyncStatus *status);
+
+    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        HRESULT *errorCode);
+
+    HRESULT (STDMETHODCALLTYPE *Cancel)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This);
+
+    HRESULT (STDMETHODCALLTYPE *Close)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This);
+
+    /*** IAsyncOperation<ABI::Windows::Storage::StorageFolder*> methods ***/
+    HRESULT (STDMETHODCALLTYPE *put_Completed)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *handler);
+
+    HRESULT (STDMETHODCALLTYPE *get_Completed)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder **handler);
+
+    HRESULT (STDMETHODCALLTYPE *GetResults)(
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
+        __x_ABI_CWindows_CStorage_CIStorageFolder **result);
+
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CStorage__CStorageFolderVtbl;
+
+interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder {
+    CONST_VTBL __FIAsyncOperation_1_Windows__CStorage__CStorageFolderVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IAsyncInfo methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Cancel(This) (This)->lpVtbl->Cancel(This)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Close(This) (This)->lpVtbl->Close(This)
+/*** IAsyncOperation<ABI::Windows::Storage::StorageFolder*> methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetResults(This,result) (This)->lpVtbl->GetResults(This,result)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_QueryInterface(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_AddRef(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Release(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetIids(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetRuntimeClassName(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetTrustLevel(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IAsyncInfo methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Id(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,unsigned int *id) {
+    return This->lpVtbl->get_Id(This,id);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Status(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,AsyncStatus *status) {
+    return This->lpVtbl->get_Status(This,status);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_ErrorCode(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,HRESULT *errorCode) {
+    return This->lpVtbl->get_ErrorCode(This,errorCode);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Cancel(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This) {
+    return This->lpVtbl->Cancel(This);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Close(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This) {
+    return This->lpVtbl->Close(This);
+}
+/*** IAsyncOperation<ABI::Windows::Storage::StorageFolder*> methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_put_Completed(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *handler) {
+    return This->lpVtbl->put_Completed(This,handler);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Completed(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder **handler) {
+    return This->lpVtbl->get_Completed(This,handler);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetResults(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,__x_ABI_CWindows_CStorage_CIStorageFolder **result) {
+    return This->lpVtbl->GetResults(This,result);
+}
+#endif
+#ifdef WIDL_USING_IASYNCOPERATION_1_WINDOWS_STORAGE_STORAGEFOLDER
+#define IID_IAsyncOperation_StorageFolder IID___FIAsyncOperation_1_Windows__CStorage__CStorageFolder
+#define IAsyncOperation_StorageFolderVtbl __FIAsyncOperation_1_Windows__CStorage__CStorageFolderVtbl
+#define IAsyncOperation_StorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder
+#define IAsyncOperation_StorageFolder_QueryInterface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_QueryInterface
+#define IAsyncOperation_StorageFolder_AddRef __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_AddRef
+#define IAsyncOperation_StorageFolder_Release __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Release
+#define IAsyncOperation_StorageFolder_GetIids __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetIids
+#define IAsyncOperation_StorageFolder_GetRuntimeClassName __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetRuntimeClassName
+#define IAsyncOperation_StorageFolder_GetTrustLevel __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetTrustLevel
+#define IAsyncOperation_StorageFolder_get_Id __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Id
+#define IAsyncOperation_StorageFolder_get_Status __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Status
+#define IAsyncOperation_StorageFolder_get_ErrorCode __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_ErrorCode
+#define IAsyncOperation_StorageFolder_Cancel __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Cancel
+#define IAsyncOperation_StorageFolder_Close __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Close
+#define IAsyncOperation_StorageFolder_put_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_put_Completed
+#define IAsyncOperation_StorageFolder_get_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Completed
+#define IAsyncOperation_StorageFolder_GetResults __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetResults
+#endif /* WIDL_USING__IASYNCOPERATION_1_WINDOWS_STORAGE_STORAGEFOLDER */
+#endif
+
+#endif
+
+#endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IAsyncOperation<ABI::Windows::Storage::IStorageItem*> interface
+ *
+ */
+#ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIAsyncOperation_1_Windows__CStorage__CIStorageItem, 0x5fc9c137, 0xebb7, 0x5e6c, 0x9c,0xba, 0x68,0x6f,0x2e,0xc2,0xb0,0xbb);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("5fc9c137-ebb7-5e6c-9cba-686f2ec2b0bb")
+            IAsyncOperation<ABI::Windows::Storage::IStorageItem*> : public IAsyncInfo
+            {
+                virtual HRESULT STDMETHODCALLTYPE put_Completed(
+                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> *handler) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE get_Completed(
+                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> **handler) = 0;
+
+                virtual HRESULT STDMETHODCALLTYPE GetResults(
+                    IStorageItem **result) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*>, 0x5fc9c137, 0xebb7, 0x5e6c, 0x9c,0xba, 0x68,0x6f,0x2e,0xc2,0xb0,0xbb)
+#endif
+#else
+typedef struct __FIAsyncOperation_1_Windows__CStorage__CIStorageItemVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        TrustLevel *trustLevel);
+
+    /*** IAsyncInfo methods ***/
+    HRESULT (STDMETHODCALLTYPE *get_Id)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        unsigned int *id);
+
+    HRESULT (STDMETHODCALLTYPE *get_Status)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        AsyncStatus *status);
+
+    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        HRESULT *errorCode);
+
+    HRESULT (STDMETHODCALLTYPE *Cancel)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This);
+
+    HRESULT (STDMETHODCALLTYPE *Close)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This);
+
+    /*** IAsyncOperation<ABI::Windows::Storage::IStorageItem*> methods ***/
+    HRESULT (STDMETHODCALLTYPE *put_Completed)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *handler);
+
+    HRESULT (STDMETHODCALLTYPE *get_Completed)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem **handler);
+
+    HRESULT (STDMETHODCALLTYPE *GetResults)(
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
+        __x_ABI_CWindows_CStorage_CIStorageItem **result);
+
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CStorage__CIStorageItemVtbl;
+
+interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem {
+    CONST_VTBL __FIAsyncOperation_1_Windows__CStorage__CIStorageItemVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IAsyncInfo methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Cancel(This) (This)->lpVtbl->Cancel(This)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Close(This) (This)->lpVtbl->Close(This)
+/*** IAsyncOperation<ABI::Windows::Storage::IStorageItem*> methods ***/
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetResults(This,result) (This)->lpVtbl->GetResults(This,result)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_QueryInterface(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_AddRef(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Release(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetIids(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetRuntimeClassName(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetTrustLevel(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IAsyncInfo methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Id(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,unsigned int *id) {
+    return This->lpVtbl->get_Id(This,id);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Status(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,AsyncStatus *status) {
+    return This->lpVtbl->get_Status(This,status);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_ErrorCode(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,HRESULT *errorCode) {
+    return This->lpVtbl->get_ErrorCode(This,errorCode);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Cancel(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This) {
+    return This->lpVtbl->Cancel(This);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Close(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This) {
+    return This->lpVtbl->Close(This);
+}
+/*** IAsyncOperation<ABI::Windows::Storage::IStorageItem*> methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_put_Completed(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *handler) {
+    return This->lpVtbl->put_Completed(This,handler);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Completed(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem **handler) {
+    return This->lpVtbl->get_Completed(This,handler);
+}
+static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetResults(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,__x_ABI_CWindows_CStorage_CIStorageItem **result) {
+    return This->lpVtbl->GetResults(This,result);
+}
+#endif
+#ifdef WIDL_USING_IASYNCOPERATION_1_WINDOWS_STORAGE_ISTORAGEITEM
+#define IID_IAsyncOperation_IStorageItem IID___FIAsyncOperation_1_Windows__CStorage__CIStorageItem
+#define IAsyncOperation_IStorageItemVtbl __FIAsyncOperation_1_Windows__CStorage__CIStorageItemVtbl
+#define IAsyncOperation_IStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem
+#define IAsyncOperation_IStorageItem_QueryInterface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_QueryInterface
+#define IAsyncOperation_IStorageItem_AddRef __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_AddRef
+#define IAsyncOperation_IStorageItem_Release __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Release
+#define IAsyncOperation_IStorageItem_GetIids __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetIids
+#define IAsyncOperation_IStorageItem_GetRuntimeClassName __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetRuntimeClassName
+#define IAsyncOperation_IStorageItem_GetTrustLevel __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetTrustLevel
+#define IAsyncOperation_IStorageItem_get_Id __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Id
+#define IAsyncOperation_IStorageItem_get_Status __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Status
+#define IAsyncOperation_IStorageItem_get_ErrorCode __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_ErrorCode
+#define IAsyncOperation_IStorageItem_Cancel __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Cancel
+#define IAsyncOperation_IStorageItem_Close __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Close
+#define IAsyncOperation_IStorageItem_put_Completed __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_put_Completed
+#define IAsyncOperation_IStorageItem_get_Completed __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Completed
+#define IAsyncOperation_IStorageItem_GetResults __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetResults
+#endif /* WIDL_USING__IASYNCOPERATION_1_WINDOWS_STORAGE_ISTORAGEITEM */
+#endif
+
+#endif
+
+#endif  /* ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> interface
+ *
+ */
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile, 0xe521c894, 0x2c26, 0x5946, 0x9e,0x61, 0x2b,0x5e,0x18,0x8d,0x01,0xed);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("e521c894-2c26-5946-9e61-2b5e188d01ed")
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> : public IUnknown
+            {
+                virtual HRESULT STDMETHODCALLTYPE Invoke(
+                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> *asyncInfo,
+                    AsyncStatus asyncStatus) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*>, 0xe521c894, 0x2c26, 0x5946, 0x9e,0x61, 0x2b,0x5e,0x18,0x8d,0x01,0xed)
+#endif
+#else
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFileVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *This);
+
+    /*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> methods ***/
+    HRESULT (STDMETHODCALLTYPE *Invoke)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *This,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *asyncInfo,
+        AsyncStatus asyncStatus);
+
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFileVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile {
+    CONST_VTBL __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFileVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_Release(This) (This)->lpVtbl->Release(This)
+/*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> methods ***/
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_Invoke(This,asyncInfo,asyncStatus) (This)->lpVtbl->Invoke(This,asyncInfo,asyncStatus)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_QueryInterface(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_AddRef(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_Release(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_Invoke(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile* This,__FIAsyncOperation_1_Windows__CStorage__CStorageFile *asyncInfo,AsyncStatus asyncStatus) {
+    return This->lpVtbl->Invoke(This,asyncInfo,asyncStatus);
+}
+#endif
+#ifdef WIDL_USING_IASYNCOPERATIONCOMPLETEDHANDLER_1_WINDOWS_STORAGE_STORAGEFILE
+#define IID_IAsyncOperationCompletedHandler_StorageFile IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile
+#define IAsyncOperationCompletedHandler_StorageFileVtbl __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFileVtbl
+#define IAsyncOperationCompletedHandler_StorageFile __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile
+#define IAsyncOperationCompletedHandler_StorageFile_QueryInterface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_QueryInterface
+#define IAsyncOperationCompletedHandler_StorageFile_AddRef __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_AddRef
+#define IAsyncOperationCompletedHandler_StorageFile_Release __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_Release
+#define IAsyncOperationCompletedHandler_StorageFile_Invoke __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_Invoke
+#endif /* WIDL_USING__IASYNCOPERATIONCOMPLETEDHANDLER_1_WINDOWS_STORAGE_STORAGEFILE */
+#endif
+
+#endif
+
+#endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> interface
+ *
+ */
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder, 0xc211026e, 0x9e63, 0x5452, 0xba,0x54, 0x3a,0x07,0xd6,0xa9,0x68,0x74);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("c211026e-9e63-5452-ba54-3a07d6a96874")
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> : public IUnknown
+            {
+                virtual HRESULT STDMETHODCALLTYPE Invoke(
+                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> *asyncInfo,
+                    AsyncStatus asyncStatus) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*>, 0xc211026e, 0x9e63, 0x5452, 0xba,0x54, 0x3a,0x07,0xd6,0xa9,0x68,0x74)
+#endif
+#else
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolderVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *This);
+
+    /*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> methods ***/
+    HRESULT (STDMETHODCALLTYPE *Invoke)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *This,
+        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *asyncInfo,
+        AsyncStatus asyncStatus);
+
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolderVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder {
+    CONST_VTBL __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolderVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_Release(This) (This)->lpVtbl->Release(This)
+/*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> methods ***/
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_Invoke(This,asyncInfo,asyncStatus) (This)->lpVtbl->Invoke(This,asyncInfo,asyncStatus)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_QueryInterface(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_AddRef(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_Release(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_Invoke(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder* This,__FIAsyncOperation_1_Windows__CStorage__CStorageFolder *asyncInfo,AsyncStatus asyncStatus) {
+    return This->lpVtbl->Invoke(This,asyncInfo,asyncStatus);
+}
+#endif
+#ifdef WIDL_USING_IASYNCOPERATIONCOMPLETEDHANDLER_1_WINDOWS_STORAGE_STORAGEFOLDER
+#define IID_IAsyncOperationCompletedHandler_StorageFolder IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder
+#define IAsyncOperationCompletedHandler_StorageFolderVtbl __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolderVtbl
+#define IAsyncOperationCompletedHandler_StorageFolder __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder
+#define IAsyncOperationCompletedHandler_StorageFolder_QueryInterface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_QueryInterface
+#define IAsyncOperationCompletedHandler_StorageFolder_AddRef __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_AddRef
+#define IAsyncOperationCompletedHandler_StorageFolder_Release __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_Release
+#define IAsyncOperationCompletedHandler_StorageFolder_Invoke __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_Invoke
+#endif /* WIDL_USING__IASYNCOPERATIONCOMPLETEDHANDLER_1_WINDOWS_STORAGE_STORAGEFOLDER */
+#endif
+
+#endif
+
+#endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> interface
+ *
+ */
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem, 0x92c3102f, 0xa327, 0x5318, 0xa6,0xc1, 0x76,0xf6,0xb2,0xa0,0xab,0xfb);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("92c3102f-a327-5318-a6c1-76f6b2a0abfb")
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> : public IUnknown
+            {
+                virtual HRESULT STDMETHODCALLTYPE Invoke(
+                    IAsyncOperation<ABI::Windows::Storage::IStorageItem*> *asyncInfo,
+                    AsyncStatus asyncStatus) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*>, 0x92c3102f, 0xa327, 0x5318, 0xa6,0xc1, 0x76,0xf6,0xb2,0xa0,0xab,0xfb)
+#endif
+#else
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItemVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *This);
+
+    /*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> methods ***/
+    HRESULT (STDMETHODCALLTYPE *Invoke)(
+        __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *This,
+        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *asyncInfo,
+        AsyncStatus asyncStatus);
+
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItemVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem {
+    CONST_VTBL __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItemVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_Release(This) (This)->lpVtbl->Release(This)
+/*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> methods ***/
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_Invoke(This,asyncInfo,asyncStatus) (This)->lpVtbl->Invoke(This,asyncInfo,asyncStatus)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_QueryInterface(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_AddRef(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_Release(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> methods ***/
+static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_Invoke(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem* This,__FIAsyncOperation_1_Windows__CStorage__CIStorageItem *asyncInfo,AsyncStatus asyncStatus) {
+    return This->lpVtbl->Invoke(This,asyncInfo,asyncStatus);
+}
+#endif
+#ifdef WIDL_USING_IASYNCOPERATIONCOMPLETEDHANDLER_1_WINDOWS_STORAGE_ISTORAGEITEM
+#define IID_IAsyncOperationCompletedHandler_IStorageItem IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem
+#define IAsyncOperationCompletedHandler_IStorageItemVtbl __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItemVtbl
+#define IAsyncOperationCompletedHandler_IStorageItem __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem
+#define IAsyncOperationCompletedHandler_IStorageItem_QueryInterface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_QueryInterface
+#define IAsyncOperationCompletedHandler_IStorageItem_AddRef __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_AddRef
+#define IAsyncOperationCompletedHandler_IStorageItem_Release __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_Release
+#define IAsyncOperationCompletedHandler_IStorageItem_Invoke __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_Invoke
+#endif /* WIDL_USING__IASYNCOPERATIONCOMPLETEDHANDLER_1_WINDOWS_STORAGE_ISTORAGEITEM */
+#endif
+
+#endif
+
+#endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__ */
 
 /* Begin additional prototypes for all interfaces */
 
