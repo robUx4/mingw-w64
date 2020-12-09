@@ -543,6 +543,7 @@ EXTRA_HEADERS = \
 @HAVE_WIDL_TRUE@  include/windows.foundation.idl \
 @HAVE_WIDL_TRUE@  include/windows.security.cryptography.idl \
 @HAVE_WIDL_TRUE@  include/windows.storage.idl \
+@HAVE_WIDL_TRUE@  include/windows.storage.accesscache.idl \
 @HAVE_WIDL_TRUE@  include/windows.storage.streams.idl \
 @HAVE_WIDL_TRUE@  include/windows.system.idl \
 @HAVE_WIDL_TRUE@  include/windows.system.threading.idl \
