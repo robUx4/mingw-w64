@@ -1,0 +1,176 @@
+/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
+ */
+
+#ifdef __WIDL__
+#pragma winrt ns_prefix
+#endif
+
+import "inspectable.idl";
+import "hstring.idl";
+import "windows.foundation.idl";
+
+namespace Windows {
+  namespace Devices {
+    namespace Enumeration {
+      runtimeclass DeviceWatcher;
+      runtimeclass DeviceInformation;
+      runtimeclass DeviceInformationUpdate;
+      runtimeclass DeviceInformationCollection;
+
+      interface IDeviceInformation;
+      interface IDeviceInformationStatics;
+      interface IDeviceInformationUpdate;
+      interface IDeviceWatcher;
+      declare {
+        interface Windows.Foundation.IAsyncOperation<DeviceInformation*>;
+        interface Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>;
+        interface Windows.Foundation.AsyncOperationCompletedHandler<DeviceInformation*>;
+        interface Windows.Foundation.AsyncOperationCompletedHandler<DeviceInformationCollection*>;
+        interface Windows.Foundation.Collections.IVectorView<DeviceInformation*>;
+        interface Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformation*>;
+        interface Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformationUpdate*>;
+        interface Windows.Foundation.TypedEventHandler<DeviceWatcher*, IInspectable*>;
+      }
+
+      typedef enum DeviceClass DeviceClass;
+      typedef enum DeviceInformationKind DeviceInformationKind;
+      typedef enum DeviceWatcherStatus DeviceWatcherStatus;
+    }
+  }
+}
+
+namespace Windows {
+  namespace Devices {
+    namespace Enumeration {
+      enum DeviceClass {
+        All,
+        AudioCapture,
+        AudioRender,
+        PortableStorageDevice,
+        VideoCapture,
+        ImageScanner,
+        Location
+      };
+
+      enum DeviceInformationKind {
+        Unknown,
+        DeviceInterface,
+        DeviceContainer,
+        Device,
+        DeviceInterfaceClass,
+        AssociationEndpoint,
+        AssociationEndpointContainer,
+        AssociationEndpointService,
+        DevicePanel,
+      };
+
+      enum DeviceWatcherStatus {
+        Created,
+        Started,
+        EnumerationCompleted,
+        Stopping,
+        Stopped,
+        Aborted,
+      };
+
+      [uuid(C17F100E-3A46-4A78-8013-769DC9B97390)]
+      interface IDeviceInformationStatics : IInspectable
+      {
+         HRESULT CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation<DeviceInformation*> **operation);
+         HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable<HSTRING> *additionalProperties, Windows.Foundation.IAsyncOperation<DeviceInformation*> **operation);
+         HRESULT FindAllAsync(Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
+         HRESULT FindAllAsyncDeviceClass(DeviceClass deviceclass, Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
+         HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
+         HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable<HSTRING> *additionalProperties, DeviceInformationKind kind, Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
+         HRESULT CreateWatcher(IDeviceWatcher **operation);
+         HRESULT CreateWatcherDeviceClass(DeviceClass deviceclass, IDeviceWatcher **operation);
+         HRESULT CreateWatcherAqsFilter(HSTRING aqsFilter, IDeviceWatcher **operation);
+         HRESULT CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable<HSTRING> *additionalProperties, IDeviceWatcher **operation);
+      }
+
+      [
+        exclusiveto(Windows.Devices.Enumeration.DeviceInformation),
+        uuid(ABA0FB95-4398-489D-8E44-E6130927011F)
+      ]
+      interface IDeviceInformation : IInspectable
+      {
+        [propget] HRESULT Id(HSTRING* value);
+        [propget] HRESULT Name(HSTRING* value);
+        [propget] HRESULT IsEnabled(boolean* value);
+        [propget] HRESULT IsDefault(boolean* value);
+      }
+
+      [
+        exclusiveto(Windows.Devices.Enumeration.DeviceInformationUpdate),
+        uuid(8f315305-d972-44b7-a37e-9e822c78213b)
+      ]
+      interface IDeviceInformationUpdate : IInspectable
+      {
+        [propget] HRESULT Id(HSTRING* value);
+      }
+
+      [
+        exclusiveto(Windows.Devices.Enumeration.DeviceInformationCollection),
+        uuid(e170688f-3495-5bf6-aab5-9cac17e0f10f)
+      ]
+      interface IDeviceInformationCollection : Windows.Foundation.Collections.IVectorView<DeviceInformation*>
+      {
+      }
+
+      [
+        marshaling_behavior(agile)
+      ]
+      runtimeclass DeviceInformation
+      {
+        [default] interface IDeviceInformation;
+      }
+
+      [
+        marshaling_behavior(agile)
+      ]
+      runtimeclass DeviceInformationUpdate
+      {
+        [default] interface IDeviceInformationUpdate;
+      }
+
+      [
+        marshaling_behavior(agile)
+      ]
+      runtimeclass DeviceWatcher
+      {
+        [default] interface IDeviceWatcher;
+      }
+
+      [
+        marshaling_behavior(agile)
+      ]
+      runtimeclass DeviceInformationCollection
+      {
+        [default] interface IDeviceInformationCollection;
+      }
+
+      [
+        uuid(C9EAB97D-8F6B-4F96-A9F4-ABC814E22271)
+      ]
+      interface IDeviceWatcher : IInspectable
+      {
+        [eventadd]    HRESULT Added(Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformation*>* handler, EventRegistrationToken* token);
+        [eventremove] HRESULT Added(EventRegistrationToken token);
+        [eventadd]    HRESULT Updated(Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformationUpdate*>* handler, EventRegistrationToken* token);
+        [eventremove] HRESULT Updated(EventRegistrationToken token);
+        [eventadd]    HRESULT Removed(Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformationUpdate*>* handler, EventRegistrationToken* token);
+        [eventremove] HRESULT Removed(EventRegistrationToken token);
+        [eventadd]    HRESULT EnumerationCompleted(Windows.Foundation.TypedEventHandler<DeviceWatcher*, IInspectable*>* handler, EventRegistrationToken* token);
+        [eventremove] HRESULT EnumerationCompleted(EventRegistrationToken token);
+        [eventadd]    HRESULT Stopped(Windows.Foundation.TypedEventHandler<DeviceWatcher*, IInspectable*>* handler, EventRegistrationToken* token);
+        [eventremove] HRESULT Stopped(EventRegistrationToken token);
+        [propget] HRESULT Status(DeviceWatcherStatus* status);
+        HRESULT Start();
+        HRESULT Stop();
+      }
+    }
+  }
+}
