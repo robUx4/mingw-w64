@@ -239,6 +239,7 @@ IDL_SRCS = \
   include/wsdxml.idl \
   include/wsmandisp.idl \
   include/wtypesbase.idl \
+  include/windows.devices.enumeration.idl \
   include/windows.foundation.idl \
   include/windows.security.cryptography.idl \
   include/windows.storage.idl \

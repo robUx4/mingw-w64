@@ -539,6 +539,7 @@ EXTRA_HEADERS = \
 @HAVE_WIDL_TRUE@  include/wsdxml.idl \
 @HAVE_WIDL_TRUE@  include/wsmandisp.idl \
 @HAVE_WIDL_TRUE@  include/wtypesbase.idl \
+@HAVE_WIDL_TRUE@  include/windows.devices.enumeration.idl \
 @HAVE_WIDL_TRUE@  include/windows.foundation.idl \
 @HAVE_WIDL_TRUE@  include/windows.security.cryptography.idl \
 @HAVE_WIDL_TRUE@  include/windows.storage.idl \
