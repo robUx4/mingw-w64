@@ -10,6 +10,19 @@
 
 import "inspectable.idl";
 
+cpp_quote("#if 0 // widl-only definitions already defined in Windows headers")
+typedef struct EventRegistrationToken {
+  UINT64 Value;
+} EventRegistrationToken;
+
+typedef enum AsyncStatus {
+  Started,
+  Completed,
+  Canceled,
+  Error
+} AsyncStatus;
+cpp_quote("#endif // widl-only definitions")
+
 namespace Windows {
   namespace Foundation {
     interface IAsyncInfo;
@@ -18,7 +31,6 @@ namespace Windows {
     interface AsyncActionCompletedHandler; // delegate
     interface TypedEventHandler;           // delegate
     struct    DateTime;
-    struct    EventRegistrationToken;
 
     namespace Collections {
       interface IPropertySet;
@@ -28,20 +40,9 @@ namespace Windows {
 
 namespace Windows {
   namespace Foundation {
-    typedef enum AsyncStatus {
-      Started,
-      Completed,
-      Canceled,
-      Error
-    } AsyncStatus;
-
     typedef struct DateTime {
       UINT64 UniversalTime;
     } DateTime;
-
-    typedef struct EventRegistrationToken {
-      UINT64 Value;
-    } EventRegistrationToken;
 
     [uuid(00000036-0000-0000-C000-000000000046)]
     interface IAsyncInfo : IInspectable
