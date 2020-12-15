@@ -27,7 +27,7 @@ namespace Windows {
   namespace Foundation {
     interface IAsyncInfo;
     interface IAsyncAction;
-    interface IAsyncOperation;
+    interface IAsyncOperation<T>;
     interface AsyncActionCompletedHandler; // delegate
     interface TypedEventHandler;           // delegate
     struct    DateTime;
@@ -67,16 +67,19 @@ namespace Windows {
       HRESULT Invoke(IAsyncAction *asyncAction, AsyncStatus status);
     }
 
-    //FIXME: WHERE IS IT?
-    //generic <typename TResult>
-    [uuid("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")]
-    interface IAsyncOperation : IAsyncInfo {
-      [propput] HRESULT Completed(AsyncActionCompletedHandler* handler);
-      [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
-      //FIXME: implement generics
-      /*TResult*/ IInspectable* GetResults();
-    }
 #ifdef __WIDL__
+        [
+            uuid("FCDCF02C-E5D8-4478-915A-4D90B74B83A5")
+        ]
+        delegate HRESULT AsyncOperationCompletedHandler<T>(Windows.Foundation.IAsyncOperation<T> *asyncInfo, AsyncStatus asyncStatus);
+
+        [uuid("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")]
+        interface IAsyncOperation<T> : IAsyncInfo {
+            [propput] HRESULT Completed(AsyncOperationCompletedHandler<T>* handler);
+            [propget] HRESULT Completed(AsyncOperationCompletedHandler<T>** handler);
+            HRESULT GetResults(T* result);
+        }
+
         [
             uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
         ]
@@ -122,6 +125,8 @@ namespace Windows {
     namespace Foundation {
         declare {
             interface Windows.Foundation.Collections.IVectorView<HSTRING>;
+            interface Windows.Foundation.IAsyncOperation<UINT32>;
+            interface Windows.Foundation.AsyncOperationCompletedHandler<UINT32>;
         }
     }
 }
