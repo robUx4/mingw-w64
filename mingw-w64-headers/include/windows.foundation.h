@@ -76,6 +76,38 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
+#define ____FIIterable_1_HSTRING_FWD_DEFINED__
+typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterable<ABI::HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
+#define ____FIIterator_1_HSTRING_FWD_DEFINED__
+typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterator<ABI::HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 #ifndef ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
@@ -703,6 +735,38 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
+#define ____FIIterable_1_HSTRING_FWD_DEFINED__
+typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterable<ABI::HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
+#define ____FIIterator_1_HSTRING_FWD_DEFINED__
+typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterator<ABI::HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 #ifndef ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
@@ -890,6 +954,302 @@ static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetMany(__FIVectorView_1_HST
 #endif
 
 #endif  /* ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IIterable<ABI::HSTRING> interface
+ *
+ */
+#ifndef ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+#define ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIIterable_1_HSTRING, 0x6d68d316, 0x9712, 0x5b81, 0xbe,0x82, 0x20,0xdc,0xb8,0xb5,0x45,0x21);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<>
+                MIDL_INTERFACE("6d68d316-9712-5b81-be82-20dcb8b54521")
+                IIterable<ABI::HSTRING> : public IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE First(
+                        IIterator<ABI::HSTRING> **value) = 0;
+
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IIterable<ABI::HSTRING>, 0x6d68d316, 0x9712, 0x5b81, 0xbe,0x82, 0x20,0xdc,0xb8,0xb5,0x45,0x21)
+#endif
+#else
+typedef struct __FIIterable_1_HSTRINGVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIIterable_1_HSTRING *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIIterable_1_HSTRING *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIIterable_1_HSTRING *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __FIIterable_1_HSTRING *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __FIIterable_1_HSTRING *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __FIIterable_1_HSTRING *This,
+        TrustLevel *trustLevel);
+
+    /*** IIterable<ABI::HSTRING> methods ***/
+    HRESULT (STDMETHODCALLTYPE *First)(
+        __FIIterable_1_HSTRING *This,
+        __FIIterator_1_HSTRING **value);
+
+    END_INTERFACE
+} __FIIterable_1_HSTRINGVtbl;
+
+interface __FIIterable_1_HSTRING {
+    CONST_VTBL __FIIterable_1_HSTRINGVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIIterable_1_HSTRING_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIIterable_1_HSTRING_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIIterable_1_HSTRING_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __FIIterable_1_HSTRING_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __FIIterable_1_HSTRING_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __FIIterable_1_HSTRING_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IIterable<ABI::HSTRING> methods ***/
+#define __FIIterable_1_HSTRING_First(This,value) (This)->lpVtbl->First(This,value)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIIterable_1_HSTRING_QueryInterface(__FIIterable_1_HSTRING* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIIterable_1_HSTRING_AddRef(__FIIterable_1_HSTRING* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIIterable_1_HSTRING_Release(__FIIterable_1_HSTRING* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __FIIterable_1_HSTRING_GetIids(__FIIterable_1_HSTRING* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __FIIterable_1_HSTRING_GetRuntimeClassName(__FIIterable_1_HSTRING* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __FIIterable_1_HSTRING_GetTrustLevel(__FIIterable_1_HSTRING* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IIterable<ABI::HSTRING> methods ***/
+static FORCEINLINE HRESULT __FIIterable_1_HSTRING_First(__FIIterable_1_HSTRING* This,__FIIterator_1_HSTRING **value) {
+    return This->lpVtbl->First(This,value);
+}
+#endif
+#ifdef WIDL_USING_IITERABLE_1_HSTRING
+#define IID_IIterable_HSTRING IID___FIIterable_1_HSTRING
+#define IIterable_HSTRINGVtbl __FIIterable_1_HSTRINGVtbl
+#define IIterable_HSTRING __FIIterable_1_HSTRING
+#define IIterable_HSTRING_QueryInterface __FIIterable_1_HSTRING_QueryInterface
+#define IIterable_HSTRING_AddRef __FIIterable_1_HSTRING_AddRef
+#define IIterable_HSTRING_Release __FIIterable_1_HSTRING_Release
+#define IIterable_HSTRING_GetIids __FIIterable_1_HSTRING_GetIids
+#define IIterable_HSTRING_GetRuntimeClassName __FIIterable_1_HSTRING_GetRuntimeClassName
+#define IIterable_HSTRING_GetTrustLevel __FIIterable_1_HSTRING_GetTrustLevel
+#define IIterable_HSTRING_First __FIIterable_1_HSTRING_First
+#endif /* WIDL_USING__IITERABLE_1_HSTRING */
+#endif
+
+#endif
+
+#endif  /* ____FIIterable_1_HSTRING_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * IIterator<ABI::HSTRING> interface
+ *
+ */
+#ifndef ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
+#define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FIIterator_1_HSTRING, 0x36245dd8, 0xf1a8, 0x5da3, 0x80,0x2b, 0x6d,0x93,0x31,0x7f,0x9a,0x03);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<>
+                MIDL_INTERFACE("36245dd8-f1a8-5da3-802b-6d93317f9a03")
+                IIterator<ABI::HSTRING> : public IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE get_Current(
+                        HSTRING *value) = 0;
+
+                    virtual HRESULT STDMETHODCALLTYPE get_HasCurrent(
+                        WINBOOL *value) = 0;
+
+                    virtual HRESULT STDMETHODCALLTYPE MoveNext(
+                        WINBOOL *value) = 0;
+
+                    virtual HRESULT STDMETHODCALLTYPE GetMany(
+                        UINT32 count,
+                        HSTRING *items,
+                        UINT32 *value) = 0;
+
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IIterator<ABI::HSTRING>, 0x36245dd8, 0xf1a8, 0x5da3, 0x80,0x2b, 0x6d,0x93,0x31,0x7f,0x9a,0x03)
+#endif
+#else
+typedef struct __FIIterator_1_HSTRINGVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FIIterator_1_HSTRING *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FIIterator_1_HSTRING *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FIIterator_1_HSTRING *This);
+
+    /*** IInspectable methods ***/
+    HRESULT (STDMETHODCALLTYPE *GetIids)(
+        __FIIterator_1_HSTRING *This,
+        ULONG *iidCount,
+        IID **iids);
+
+    HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
+        __FIIterator_1_HSTRING *This,
+        HSTRING *className);
+
+    HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
+        __FIIterator_1_HSTRING *This,
+        TrustLevel *trustLevel);
+
+    /*** IIterator<ABI::HSTRING> methods ***/
+    HRESULT (STDMETHODCALLTYPE *get_Current)(
+        __FIIterator_1_HSTRING *This,
+        HSTRING *value);
+
+    HRESULT (STDMETHODCALLTYPE *get_HasCurrent)(
+        __FIIterator_1_HSTRING *This,
+        WINBOOL *value);
+
+    HRESULT (STDMETHODCALLTYPE *MoveNext)(
+        __FIIterator_1_HSTRING *This,
+        WINBOOL *value);
+
+    HRESULT (STDMETHODCALLTYPE *GetMany)(
+        __FIIterator_1_HSTRING *This,
+        UINT32 count,
+        HSTRING *items,
+        UINT32 *value);
+
+    END_INTERFACE
+} __FIIterator_1_HSTRINGVtbl;
+
+interface __FIIterator_1_HSTRING {
+    CONST_VTBL __FIIterator_1_HSTRINGVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FIIterator_1_HSTRING_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FIIterator_1_HSTRING_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FIIterator_1_HSTRING_Release(This) (This)->lpVtbl->Release(This)
+/*** IInspectable methods ***/
+#define __FIIterator_1_HSTRING_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
+#define __FIIterator_1_HSTRING_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
+#define __FIIterator_1_HSTRING_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
+/*** IIterator<ABI::HSTRING> methods ***/
+#define __FIIterator_1_HSTRING_get_Current(This,value) (This)->lpVtbl->get_Current(This,value)
+#define __FIIterator_1_HSTRING_get_HasCurrent(This,value) (This)->lpVtbl->get_HasCurrent(This,value)
+#define __FIIterator_1_HSTRING_MoveNext(This,value) (This)->lpVtbl->MoveNext(This,value)
+#define __FIIterator_1_HSTRING_GetMany(This,count,items,value) (This)->lpVtbl->GetMany(This,count,items,value)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_QueryInterface(__FIIterator_1_HSTRING* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FIIterator_1_HSTRING_AddRef(__FIIterator_1_HSTRING* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FIIterator_1_HSTRING_Release(__FIIterator_1_HSTRING* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IInspectable methods ***/
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetIids(__FIIterator_1_HSTRING* This,ULONG *iidCount,IID **iids) {
+    return This->lpVtbl->GetIids(This,iidCount,iids);
+}
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetRuntimeClassName(__FIIterator_1_HSTRING* This,HSTRING *className) {
+    return This->lpVtbl->GetRuntimeClassName(This,className);
+}
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetTrustLevel(__FIIterator_1_HSTRING* This,TrustLevel *trustLevel) {
+    return This->lpVtbl->GetTrustLevel(This,trustLevel);
+}
+/*** IIterator<ABI::HSTRING> methods ***/
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_get_Current(__FIIterator_1_HSTRING* This,HSTRING *value) {
+    return This->lpVtbl->get_Current(This,value);
+}
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_get_HasCurrent(__FIIterator_1_HSTRING* This,WINBOOL *value) {
+    return This->lpVtbl->get_HasCurrent(This,value);
+}
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_MoveNext(__FIIterator_1_HSTRING* This,WINBOOL *value) {
+    return This->lpVtbl->MoveNext(This,value);
+}
+static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetMany(__FIIterator_1_HSTRING* This,UINT32 count,HSTRING *items,UINT32 *value) {
+    return This->lpVtbl->GetMany(This,count,items,value);
+}
+#endif
+#ifdef WIDL_USING_IITERATOR_1_HSTRING
+#define IID_IIterator_HSTRING IID___FIIterator_1_HSTRING
+#define IIterator_HSTRINGVtbl __FIIterator_1_HSTRINGVtbl
+#define IIterator_HSTRING __FIIterator_1_HSTRING
+#define IIterator_HSTRING_QueryInterface __FIIterator_1_HSTRING_QueryInterface
+#define IIterator_HSTRING_AddRef __FIIterator_1_HSTRING_AddRef
+#define IIterator_HSTRING_Release __FIIterator_1_HSTRING_Release
+#define IIterator_HSTRING_GetIids __FIIterator_1_HSTRING_GetIids
+#define IIterator_HSTRING_GetRuntimeClassName __FIIterator_1_HSTRING_GetRuntimeClassName
+#define IIterator_HSTRING_GetTrustLevel __FIIterator_1_HSTRING_GetTrustLevel
+#define IIterator_HSTRING_get_Current __FIIterator_1_HSTRING_get_Current
+#define IIterator_HSTRING_get_HasCurrent __FIIterator_1_HSTRING_get_HasCurrent
+#define IIterator_HSTRING_MoveNext __FIIterator_1_HSTRING_MoveNext
+#define IIterator_HSTRING_GetMany __FIIterator_1_HSTRING_GetMany
+#endif /* WIDL_USING__IITERATOR_1_HSTRING */
+#endif
+
+#endif
+
+#endif  /* ____FIIterator_1_HSTRING_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
  * IAsyncOperation<ABI::UINT32> interface
