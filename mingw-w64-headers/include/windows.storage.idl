@@ -90,10 +90,10 @@ namespace Windows {
     [uuid(4207A996-CA2F-42F7-BDE8-8B10457A7F30)]
     interface IStorageItem : IInspectable
     {
-      HRESULT RenameAsyncOverloadDefaultOptions(HSTRING desiredName, /*IAsyncAction*/ IInspectable** action);
-      HRESULT RenameAsync(HSTRING desiredName, NameCollisionOption option, /*IAsyncAction*/ IInspectable** action);
-      HRESULT DeleteAsyncOverloadDefaultOptions(/*IAsyncAction*/ IInspectable** action);
-      HRESULT DeleteAsync(StorageDeleteOption option, /*IAsyncAction*/ IInspectable** action);
+      HRESULT RenameAsyncOverloadDefaultOptions(HSTRING desiredName, Windows.Foundation.IAsyncAction** action);
+      HRESULT RenameAsync(HSTRING desiredName, NameCollisionOption option, Windows.Foundation.IAsyncAction** action);
+      HRESULT DeleteAsyncOverloadDefaultOptions(Windows.Foundation.IAsyncAction** action);
+      HRESULT DeleteAsync(StorageDeleteOption option, Windows.Foundation.IAsyncAction** action);
       HRESULT GetBasicPropertiesAsync(/*IAsyncOperation<Windows.Storage.FileProperties.BasicProperties*>*/ IInspectable** action);
       [propget] HRESULT Name(HSTRING *value);
       [propget] HRESULT Path(HSTRING *value);
@@ -142,9 +142,9 @@ namespace Windows {
     [uuid(C3DA6FB7-B744-4B45-B0B8-223A0938D0DC)]
     interface IApplicationData : IInspectable {
       [propget] HRESULT Version(int* value);
-      HRESULT SetVersionAsync(int desiredVersion, IApplicationDataSetVersionHandler* handler, /*IAsyncAction*/ IInspectable** setVersionOperation);
-      HRESULT ClearAllAsync(/*IAsyncAction*/ IInspectable** clearOperation);
-      HRESULT ClearAsync(ApplicationDataLocality locality, /*IAsyncAction*/ IInspectable** clearOperation);
+      HRESULT SetVersionAsync(int desiredVersion, IApplicationDataSetVersionHandler* handler, Windows.Foundation.IAsyncAction** setVersionOperation);
+      HRESULT ClearAllAsync(Windows.Foundation.IAsyncAction** clearOperation);
+      HRESULT ClearAsync(ApplicationDataLocality locality, Windows.Foundation.IAsyncAction** clearOperation);
       [propget] HRESULT LocalSettings(IApplicationDataContainer** value);
       [propget] HRESULT RoamingSettings(IApplicationDataContainer** value);
       [propget] HRESULT LocalFolder(IStorageFolder** value);
