@@ -46,6 +46,21 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifndef ____x_ABI_CWindows_CStorage_CKnownFolders_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CKnownFolders_FWD_DEFINED__
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            class KnownFolders;
+        }
+    }
+}
+#else
+typedef struct __x_ABI_CWindows_CStorage_CKnownFolders __x_ABI_CWindows_CStorage_CKnownFolders;
+#endif /* defined __cplusplus */
+#endif /* defined ____x_ABI_CWindows_CStorage_CKnownFolders_FWD_DEFINED__ */
+
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageFolder_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageFolder_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CIStorageFolder __x_ABI_CWindows_CStorage_CIStorageFolder;
@@ -87,6 +102,21 @@ namespace ABI {
 }
 #endif /* __cplusplus */
 #endif
+
+#ifndef ____x_ABI_CWindows_CStorage_CApplicationData_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CApplicationData_FWD_DEFINED__
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            class ApplicationData;
+        }
+    }
+}
+#else
+typedef struct __x_ABI_CWindows_CStorage_CApplicationData __x_ABI_CWindows_CStorage_CApplicationData;
+#endif /* defined __cplusplus */
+#endif /* defined ____x_ABI_CWindows_CStorage_CApplicationData_FWD_DEFINED__ */
 
 #ifndef ____x_ABI_CWindows_CStorage_CIApplicationData2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIApplicationData2_FWD_DEFINED__
@@ -897,6 +927,20 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_M
 
 #endif  /* ____x_ABI_CWindows_CStorage_CIKnownFoldersStatics_INTERFACE_DEFINED__ */
 
+/*
+ * Class Windows.Storage.KnownFolders
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.IKnownFoldersStatics
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#ifndef RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED
+#define RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED
+static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_KnownFolders[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','K','n','o','w','n','F','o','l','d','e','r','s',0};
+#endif /* RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED */
+
 /*****************************************************************************
  * IStorageFolder interface
  *
@@ -1537,6 +1581,20 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_RoamingSt
 #endif
 
 #endif  /* ____x_ABI_CWindows_CStorage_CIApplicationData_INTERFACE_DEFINED__ */
+
+/*
+ * Class Windows.Storage.ApplicationData
+ *
+ * Class implements the following interfaces:
+ *    Windows.Storage.IApplicationData ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#ifndef RUNTIMECLASS_Windows_Storage_ApplicationData_DEFINED
+#define RUNTIMECLASS_Windows_Storage_ApplicationData_DEFINED
+static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_ApplicationData[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','p','p','l','i','c','a','t','i','o','n','D','a','t','a',0};
+#endif /* RUNTIMECLASS_Windows_Storage_ApplicationData_DEFINED */
 
 /*****************************************************************************
  * IApplicationData2 interface

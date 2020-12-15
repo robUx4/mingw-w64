@@ -39,6 +39,9 @@ namespace Windows {
     typedef enum ApplicationDataCreateDisposition ApplicationDataCreateDisposition;
     typedef enum FileAttributes FileAttributes;
     typedef enum CreationCollisionOption CreationCollisionOption;
+
+    runtimeclass ApplicationData;
+    runtimeclass KnownFolders;
   }
 }
 
@@ -114,6 +117,14 @@ namespace Windows {
         [propget] HRESULT MediaServerDevices(IStorageFolder** value);
     }
 
+    [
+      marshaling_behavior(agile)
+    ]
+    runtimeclass KnownFolders
+    {
+      interface IKnownFoldersStatics;
+    }
+
     [uuid(72D1CB78-B3EF-4F75-A80B-6FD9DAE2944B)]
     interface IStorageFolder : IInspectable
     {
@@ -154,6 +165,14 @@ namespace Windows {
       [eventremove] HRESULT DataChanged(EventRegistrationToken token);
       HRESULT SignalDataChanged();
       HRESULT RoamingStorageQuota(UINT64* value);
+    }
+
+    [
+      marshaling_behavior(agile)
+    ]
+    runtimeclass ApplicationData
+    {
+      [default] interface IApplicationData;
     }
 
     [uuid(9E65CD69-0BA3-4E32-BE29-B02DE6607638)]
