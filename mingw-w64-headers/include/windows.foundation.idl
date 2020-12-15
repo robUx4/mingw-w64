@@ -29,7 +29,6 @@ namespace Windows {
     interface IAsyncAction;
     interface IAsyncOperation<T>;
     interface AsyncActionCompletedHandler; // delegate
-    interface TypedEventHandler;           // delegate
     struct    DateTime;
 
     namespace Collections {
@@ -84,6 +83,11 @@ namespace Windows {
             uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
         ]
         delegate void EventHandler<T>([in] IInspectable *sender, [in] T args);
+
+        [
+            uuid(9DE1C534-6AE1-11E0-84E1-18A905BCC53F)
+        ]
+        delegate void TypedEventHandler<TSender,TResult>(TSender sender, TResult args);
 
         namespace Collections
         {

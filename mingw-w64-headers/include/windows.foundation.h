@@ -165,20 +165,6 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CFoundation_CTypedEventHandler __x_ABI_CWindows_CFoundation_CTypedEventHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            interface TypedEventHandler;
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
 #ifdef __cplusplus
 } /* extern "C" */
 namespace ABI {
