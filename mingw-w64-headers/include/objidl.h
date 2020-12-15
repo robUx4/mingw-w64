@@ -10454,44 +10454,45 @@ typedef struct IAdviseSink2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAdviseSink2* This,
+        IAdviseSink2 *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAdviseSink2* This);
+        IAdviseSink2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAdviseSink2* This);
+        IAdviseSink2 *This);
 
     /*** IAdviseSink methods ***/
     void (STDMETHODCALLTYPE *OnDataChange)(
-        IAdviseSink2* This,
+        IAdviseSink2 *This,
         FORMATETC *pFormatetc,
         STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *OnViewChange)(
-        IAdviseSink2* This,
+        IAdviseSink2 *This,
         DWORD dwAspect,
         LONG lindex);
 
     void (STDMETHODCALLTYPE *OnRename)(
-        IAdviseSink2* This,
+        IAdviseSink2 *This,
         IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *OnSave)(
-        IAdviseSink2* This);
+        IAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *OnClose)(
-        IAdviseSink2* This);
+        IAdviseSink2 *This);
 
     /*** IAdviseSink2 methods ***/
     void (STDMETHODCALLTYPE *OnLinkSrcChange)(
-        IAdviseSink2* This,
+        IAdviseSink2 *This,
         IMoniker *pmk);
 
     END_INTERFACE
 } IAdviseSink2Vtbl;
+
 interface IAdviseSink2 {
     CONST_VTBL IAdviseSink2Vtbl* lpVtbl;
 };
@@ -10546,6 +10547,21 @@ static FORCEINLINE void IAdviseSink2_OnLinkSrcChange(IAdviseSink2* This,IMoniker
 
 #endif
 
+HRESULT STDMETHODCALLTYPE IAdviseSink2_RemoteOnLinkSrcChange_Proxy(
+    IAdviseSink2* This,
+    IMoniker *pmk);
+void __RPC_STUB IAdviseSink2_RemoteOnLinkSrcChange_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+void CALLBACK IAdviseSink2_OnLinkSrcChange_Proxy(
+    IAdviseSink2* This,
+    IMoniker *pmk);
+HRESULT __RPC_STUB IAdviseSink2_OnLinkSrcChange_Stub(
+    IAdviseSink2* This,
+    IMoniker *pmk);
+
 #endif  /* __IAdviseSink2_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
@@ -10557,7 +10573,7 @@ static FORCEINLINE void IAdviseSink2_OnLinkSrcChange(IAdviseSink2* This,IMoniker
 DEFINE_GUID(IID_AsyncIAdviseSink2, 0x00000151, 0x0000, 0x0000, 0xc0,0x00, 0x00,0x00,0x00,0x00,0x00,0x46);
 #if defined(__cplusplus) && !defined(CINTERFACE)
 MIDL_INTERFACE("00000151-0000-0000-c000-000000000046")
-AsyncIAdviseSink2 : public IAdviseSink
+AsyncIAdviseSink2 : public AsyncIAdviseSink
 {
     virtual void STDMETHODCALLTYPE Begin_OnLinkSrcChange(
         IMoniker *pmk) = 0;
@@ -10575,62 +10591,63 @@ typedef struct AsyncIAdviseSink2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncIAdviseSink2* This,
+        AsyncIAdviseSink2 *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
-    /*** IAdviseSink methods ***/
+    /*** AsyncIAdviseSink methods ***/
     void (STDMETHODCALLTYPE *Begin_OnDataChange)(
-        AsyncIAdviseSink2* This,
+        AsyncIAdviseSink2 *This,
         FORMATETC *pFormatetc,
         STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *Finish_OnDataChange)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *Begin_OnViewChange)(
-        AsyncIAdviseSink2* This,
+        AsyncIAdviseSink2 *This,
         DWORD dwAspect,
         LONG lindex);
 
     void (STDMETHODCALLTYPE *Finish_OnViewChange)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *Begin_OnRename)(
-        AsyncIAdviseSink2* This,
+        AsyncIAdviseSink2 *This,
         IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *Finish_OnRename)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *Begin_OnSave)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *Finish_OnSave)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *Begin_OnClose)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     void (STDMETHODCALLTYPE *Finish_OnClose)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
-    /*** IAdviseSink2 methods ***/
+    /*** AsyncIAdviseSink2 methods ***/
     void (STDMETHODCALLTYPE *Begin_OnLinkSrcChange)(
-        AsyncIAdviseSink2* This,
+        AsyncIAdviseSink2 *This,
         IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *Finish_OnLinkSrcChange)(
-        AsyncIAdviseSink2* This);
+        AsyncIAdviseSink2 *This);
 
     END_INTERFACE
 } AsyncIAdviseSink2Vtbl;
+
 interface AsyncIAdviseSink2 {
     CONST_VTBL AsyncIAdviseSink2Vtbl* lpVtbl;
 };
@@ -10641,7 +10658,7 @@ interface AsyncIAdviseSink2 {
 #define AsyncIAdviseSink2_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
 #define AsyncIAdviseSink2_AddRef(This) (This)->lpVtbl->AddRef(This)
 #define AsyncIAdviseSink2_Release(This) (This)->lpVtbl->Release(This)
-/*** IAdviseSink methods ***/
+/*** AsyncIAdviseSink methods ***/
 #define AsyncIAdviseSink2_Begin_OnDataChange(This,pFormatetc,pStgmed) (This)->lpVtbl->Begin_OnDataChange(This,pFormatetc,pStgmed)
 #define AsyncIAdviseSink2_Finish_OnDataChange(This) (This)->lpVtbl->Finish_OnDataChange(This)
 #define AsyncIAdviseSink2_Begin_OnViewChange(This,dwAspect,lindex) (This)->lpVtbl->Begin_OnViewChange(This,dwAspect,lindex)
@@ -10652,7 +10669,7 @@ interface AsyncIAdviseSink2 {
 #define AsyncIAdviseSink2_Finish_OnSave(This) (This)->lpVtbl->Finish_OnSave(This)
 #define AsyncIAdviseSink2_Begin_OnClose(This) (This)->lpVtbl->Begin_OnClose(This)
 #define AsyncIAdviseSink2_Finish_OnClose(This) (This)->lpVtbl->Finish_OnClose(This)
-/*** IAdviseSink2 methods ***/
+/*** AsyncIAdviseSink2 methods ***/
 #define AsyncIAdviseSink2_Begin_OnLinkSrcChange(This,pmk) (This)->lpVtbl->Begin_OnLinkSrcChange(This,pmk)
 #define AsyncIAdviseSink2_Finish_OnLinkSrcChange(This) (This)->lpVtbl->Finish_OnLinkSrcChange(This)
 #else
@@ -10666,48 +10683,64 @@ static FORCEINLINE ULONG AsyncIAdviseSink2_AddRef(AsyncIAdviseSink2* This) {
 static FORCEINLINE ULONG AsyncIAdviseSink2_Release(AsyncIAdviseSink2* This) {
     return This->lpVtbl->Release(This);
 }
-/*** IAdviseSink methods ***/
-static FORCEINLINE void Begin_AsyncIAdviseSink2_OnDataChange(AsyncIAdviseSink2* This,FORMATETC *pFormatetc,STGMEDIUM *pStgmed) {
+/*** AsyncIAdviseSink methods ***/
+static FORCEINLINE void AsyncIAdviseSink2_Begin_OnDataChange(AsyncIAdviseSink2* This,FORMATETC *pFormatetc,STGMEDIUM *pStgmed) {
     This->lpVtbl->Begin_OnDataChange(This,pFormatetc,pStgmed);
 }
-static FORCEINLINE void Finish_AsyncIAdviseSink2_OnDataChange(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Finish_OnDataChange(AsyncIAdviseSink2* This) {
     This->lpVtbl->Finish_OnDataChange(This);
 }
-static FORCEINLINE void Begin_AsyncIAdviseSink2_OnViewChange(AsyncIAdviseSink2* This,DWORD dwAspect,LONG lindex) {
+static FORCEINLINE void AsyncIAdviseSink2_Begin_OnViewChange(AsyncIAdviseSink2* This,DWORD dwAspect,LONG lindex) {
     This->lpVtbl->Begin_OnViewChange(This,dwAspect,lindex);
 }
-static FORCEINLINE void Finish_AsyncIAdviseSink2_OnViewChange(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Finish_OnViewChange(AsyncIAdviseSink2* This) {
     This->lpVtbl->Finish_OnViewChange(This);
 }
-static FORCEINLINE void Begin_AsyncIAdviseSink2_OnRename(AsyncIAdviseSink2* This,IMoniker *pmk) {
+static FORCEINLINE void AsyncIAdviseSink2_Begin_OnRename(AsyncIAdviseSink2* This,IMoniker *pmk) {
     This->lpVtbl->Begin_OnRename(This,pmk);
 }
-static FORCEINLINE void Finish_AsyncIAdviseSink2_OnRename(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Finish_OnRename(AsyncIAdviseSink2* This) {
     This->lpVtbl->Finish_OnRename(This);
 }
-static FORCEINLINE void Begin_AsyncIAdviseSink2_OnSave(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Begin_OnSave(AsyncIAdviseSink2* This) {
     This->lpVtbl->Begin_OnSave(This);
 }
-static FORCEINLINE void Finish_AsyncIAdviseSink2_OnSave(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Finish_OnSave(AsyncIAdviseSink2* This) {
     This->lpVtbl->Finish_OnSave(This);
 }
-static FORCEINLINE void Begin_AsyncIAdviseSink2_OnClose(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Begin_OnClose(AsyncIAdviseSink2* This) {
     This->lpVtbl->Begin_OnClose(This);
 }
-static FORCEINLINE void Finish_AsyncIAdviseSink2_OnClose(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Finish_OnClose(AsyncIAdviseSink2* This) {
     This->lpVtbl->Finish_OnClose(This);
 }
-/*** IAdviseSink2 methods ***/
-static FORCEINLINE void Begin_AsyncIAdviseSink2_OnLinkSrcChange(AsyncIAdviseSink2* This,IMoniker *pmk) {
+/*** AsyncIAdviseSink2 methods ***/
+static FORCEINLINE void AsyncIAdviseSink2_Begin_OnLinkSrcChange(AsyncIAdviseSink2* This,IMoniker *pmk) {
     This->lpVtbl->Begin_OnLinkSrcChange(This,pmk);
 }
-static FORCEINLINE void Finish_AsyncIAdviseSink2_OnLinkSrcChange(AsyncIAdviseSink2* This) {
+static FORCEINLINE void AsyncIAdviseSink2_Finish_OnLinkSrcChange(AsyncIAdviseSink2* This) {
     This->lpVtbl->Finish_OnLinkSrcChange(This);
 }
 #endif
 #endif
 
 #endif
+
+HRESULT STDMETHODCALLTYPE AsyncIAdviseSink2_Begin_RemoteOnLinkSrcChange_Proxy(
+    AsyncIAdviseSink2* This,
+    IMoniker *pmk);
+void __RPC_STUB AsyncIAdviseSink2_Begin_RemoteOnLinkSrcChange_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+HRESULT STDMETHODCALLTYPE AsyncIAdviseSink2_Finish_RemoteOnLinkSrcChange_Proxy(
+    AsyncIAdviseSink2* This);
+void __RPC_STUB AsyncIAdviseSink2_Finish_RemoteOnLinkSrcChange_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
 
 #endif  /* __AsyncIAdviseSink2_INTERFACE_DEFINED__ */
 
@@ -10775,64 +10808,65 @@ typedef struct IDataObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataObject* This,
+        IDataObject *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataObject* This);
+        IDataObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataObject* This);
+        IDataObject *This);
 
     /*** IDataObject methods ***/
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IDataObject* This,
+        IDataObject *This,
         FORMATETC *pformatetcIn,
         STGMEDIUM *pmedium);
 
     HRESULT (STDMETHODCALLTYPE *GetDataHere)(
-        IDataObject* This,
+        IDataObject *This,
         FORMATETC *pformatetc,
         STGMEDIUM *pmedium);
 
     HRESULT (STDMETHODCALLTYPE *QueryGetData)(
-        IDataObject* This,
+        IDataObject *This,
         FORMATETC *pformatetc);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalFormatEtc)(
-        IDataObject* This,
+        IDataObject *This,
         FORMATETC *pformatectIn,
         FORMATETC *pformatetcOut);
 
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        IDataObject* This,
+        IDataObject *This,
         FORMATETC *pformatetc,
         STGMEDIUM *pmedium,
         WINBOOL fRelease);
 
     HRESULT (STDMETHODCALLTYPE *EnumFormatEtc)(
-        IDataObject* This,
+        IDataObject *This,
         DWORD dwDirection,
         IEnumFORMATETC **ppenumFormatEtc);
 
     HRESULT (STDMETHODCALLTYPE *DAdvise)(
-        IDataObject* This,
+        IDataObject *This,
         FORMATETC *pformatetc,
         DWORD advf,
         IAdviseSink *pAdvSink,
         DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *DUnadvise)(
-        IDataObject* This,
+        IDataObject *This,
         DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumDAdvise)(
-        IDataObject* This,
+        IDataObject *This,
         IEnumSTATDATA **ppenumAdvise);
 
     END_INTERFACE
 } IDataObjectVtbl;
+
 interface IDataObject {
     CONST_VTBL IDataObjectVtbl* lpVtbl;
 };
@@ -10897,6 +10931,61 @@ static FORCEINLINE HRESULT IDataObject_EnumDAdvise(IDataObject* This,IEnumSTATDA
 
 #endif
 
+HRESULT STDMETHODCALLTYPE IDataObject_RemoteGetData_Proxy(
+    IDataObject* This,
+    FORMATETC *pformatetcIn,
+    STGMEDIUM *pRemoteMedium);
+void __RPC_STUB IDataObject_RemoteGetData_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+HRESULT STDMETHODCALLTYPE IDataObject_RemoteGetDataHere_Proxy(
+    IDataObject* This,
+    FORMATETC *pformatetc,
+    STGMEDIUM *pRemoteMedium);
+void __RPC_STUB IDataObject_RemoteGetDataHere_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+HRESULT STDMETHODCALLTYPE IDataObject_RemoteSetData_Proxy(
+    IDataObject* This,
+    FORMATETC *pformatetc,
+    FLAG_STGMEDIUM *pmedium,
+    WINBOOL fRelease);
+void __RPC_STUB IDataObject_RemoteSetData_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+HRESULT CALLBACK IDataObject_GetData_Proxy(
+    IDataObject* This,
+    FORMATETC *pformatetcIn,
+    STGMEDIUM *pmedium);
+HRESULT __RPC_STUB IDataObject_GetData_Stub(
+    IDataObject* This,
+    FORMATETC *pformatetcIn,
+    STGMEDIUM *pRemoteMedium);
+HRESULT CALLBACK IDataObject_GetDataHere_Proxy(
+    IDataObject* This,
+    FORMATETC *pformatetc,
+    STGMEDIUM *pmedium);
+HRESULT __RPC_STUB IDataObject_GetDataHere_Stub(
+    IDataObject* This,
+    FORMATETC *pformatetc,
+    STGMEDIUM *pRemoteMedium);
+HRESULT CALLBACK IDataObject_SetData_Proxy(
+    IDataObject* This,
+    FORMATETC *pformatetc,
+    STGMEDIUM *pmedium,
+    WINBOOL fRelease);
+HRESULT __RPC_STUB IDataObject_SetData_Stub(
+    IDataObject* This,
+    FORMATETC *pformatetc,
+    FLAG_STGMEDIUM *pmedium,
+    WINBOOL fRelease);
+
 #endif  /* __IDataObject_INTERFACE_DEFINED__ */
 
 #endif
@@ -10941,19 +11030,19 @@ typedef struct IDataAdviseHolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataAdviseHolder* This,
+        IDataAdviseHolder *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataAdviseHolder* This);
+        IDataAdviseHolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataAdviseHolder* This);
+        IDataAdviseHolder *This);
 
     /*** IDataAdviseHolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IDataAdviseHolder* This,
+        IDataAdviseHolder *This,
         IDataObject *pDataObject,
         FORMATETC *pFetc,
         DWORD advf,
@@ -10961,21 +11050,22 @@ typedef struct IDataAdviseHolderVtbl {
         DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IDataAdviseHolder* This,
+        IDataAdviseHolder *This,
         DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumAdvise)(
-        IDataAdviseHolder* This,
+        IDataAdviseHolder *This,
         IEnumSTATDATA **ppenumAdvise);
 
     HRESULT (STDMETHODCALLTYPE *SendOnDataChange)(
-        IDataAdviseHolder* This,
+        IDataAdviseHolder *This,
         IDataObject *pDataObject,
         DWORD dwReserved,
         DWORD advf);
 
     END_INTERFACE
 } IDataAdviseHolderVtbl;
+
 interface IDataAdviseHolder {
     CONST_VTBL IDataAdviseHolderVtbl* lpVtbl;
 };
@@ -11019,6 +11109,7 @@ static FORCEINLINE HRESULT IDataAdviseHolder_SendOnDataChange(IDataAdviseHolder*
 #endif
 
 #endif
+
 
 #endif  /* __IDataAdviseHolder_INTERFACE_DEFINED__ */
 
@@ -11087,38 +11178,39 @@ typedef struct IMessageFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMessageFilter* This,
+        IMessageFilter *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMessageFilter* This);
+        IMessageFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMessageFilter* This);
+        IMessageFilter *This);
 
     /*** IMessageFilter methods ***/
     DWORD (STDMETHODCALLTYPE *HandleInComingCall)(
-        IMessageFilter* This,
+        IMessageFilter *This,
         DWORD dwCallType,
         HTASK htaskCaller,
         DWORD dwTickCount,
         LPINTERFACEINFO lpInterfaceInfo);
 
     DWORD (STDMETHODCALLTYPE *RetryRejectedCall)(
-        IMessageFilter* This,
+        IMessageFilter *This,
         HTASK htaskCallee,
         DWORD dwTickCount,
         DWORD dwRejectType);
 
     DWORD (STDMETHODCALLTYPE *MessagePending)(
-        IMessageFilter* This,
+        IMessageFilter *This,
         HTASK htaskCallee,
         DWORD dwTickCount,
         DWORD dwPendingType);
 
     END_INTERFACE
 } IMessageFilterVtbl;
+
 interface IMessageFilter {
     CONST_VTBL IMessageFilterVtbl* lpVtbl;
 };
@@ -11158,6 +11250,7 @@ static FORCEINLINE DWORD IMessageFilter_MessagePending(IMessageFilter* This,HTAS
 #endif
 
 #endif
+
 
 #endif  /* __IMessageFilter_INTERFACE_DEFINED__ */
 
@@ -11206,19 +11299,19 @@ typedef struct IClassActivatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IClassActivator* This,
+        IClassActivator *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IClassActivator* This);
+        IClassActivator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IClassActivator* This);
+        IClassActivator *This);
 
     /*** IClassActivator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassObject)(
-        IClassActivator* This,
+        IClassActivator *This,
         REFCLSID rclsid,
         DWORD dwClassContext,
         LCID locale,
@@ -11227,6 +11320,7 @@ typedef struct IClassActivatorVtbl {
 
     END_INTERFACE
 } IClassActivatorVtbl;
+
 interface IClassActivator {
     CONST_VTBL IClassActivatorVtbl* lpVtbl;
 };
@@ -11258,6 +11352,7 @@ static FORCEINLINE HRESULT IClassActivator_GetClassObject(IClassActivator* This,
 #endif
 
 #endif
+
 
 #endif  /* __IClassActivator_INTERFACE_DEFINED__ */
 
@@ -11301,40 +11396,41 @@ typedef struct IFillLockBytesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFillLockBytes* This,
+        IFillLockBytes *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFillLockBytes* This);
+        IFillLockBytes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFillLockBytes* This);
+        IFillLockBytes *This);
 
     /*** IFillLockBytes methods ***/
     HRESULT (STDMETHODCALLTYPE *FillAppend)(
-        IFillLockBytes* This,
+        IFillLockBytes *This,
         const void *pv,
         ULONG cb,
         ULONG *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *FillAt)(
-        IFillLockBytes* This,
+        IFillLockBytes *This,
         ULARGE_INTEGER ulOffset,
         const void *pv,
         ULONG cb,
         ULONG *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *SetFillSize)(
-        IFillLockBytes* This,
+        IFillLockBytes *This,
         ULARGE_INTEGER ulSize);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IFillLockBytes* This,
+        IFillLockBytes *This,
         WINBOOL bCanceled);
 
     END_INTERFACE
 } IFillLockBytesVtbl;
+
 interface IFillLockBytes {
     CONST_VTBL IFillLockBytesVtbl* lpVtbl;
 };
@@ -11379,6 +11475,50 @@ static FORCEINLINE HRESULT IFillLockBytes_Terminate(IFillLockBytes* This,WINBOOL
 
 #endif
 
+HRESULT __stdcall IFillLockBytes_RemoteFillAppend_Proxy(
+    IFillLockBytes* This,
+    const byte *pv,
+    ULONG cb,
+    ULONG *pcbWritten);
+void __RPC_STUB IFillLockBytes_RemoteFillAppend_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+HRESULT __stdcall IFillLockBytes_RemoteFillAt_Proxy(
+    IFillLockBytes* This,
+    ULARGE_INTEGER ulOffset,
+    const byte *pv,
+    ULONG cb,
+    ULONG *pcbWritten);
+void __RPC_STUB IFillLockBytes_RemoteFillAt_Stub(
+    IRpcStubBuffer* This,
+    IRpcChannelBuffer* pRpcChannelBuffer,
+    PRPC_MESSAGE pRpcMessage,
+    DWORD* pdwStubPhase);
+HRESULT CALLBACK IFillLockBytes_FillAppend_Proxy(
+    IFillLockBytes* This,
+    const void *pv,
+    ULONG cb,
+    ULONG *pcbWritten);
+HRESULT __RPC_STUB IFillLockBytes_FillAppend_Stub(
+    IFillLockBytes* This,
+    const byte *pv,
+    ULONG cb,
+    ULONG *pcbWritten);
+HRESULT CALLBACK IFillLockBytes_FillAt_Proxy(
+    IFillLockBytes* This,
+    ULARGE_INTEGER ulOffset,
+    const void *pv,
+    ULONG cb,
+    ULONG *pcbWritten);
+HRESULT __RPC_STUB IFillLockBytes_FillAt_Stub(
+    IFillLockBytes* This,
+    ULARGE_INTEGER ulOffset,
+    const byte *pv,
+    ULONG cb,
+    ULONG *pcbWritten);
+
 #endif  /* __IFillLockBytes_INTERFACE_DEFINED__ */
 
 #endif
@@ -11410,19 +11550,19 @@ typedef struct IProgressNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProgressNotify* This,
+        IProgressNotify *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProgressNotify* This);
+        IProgressNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProgressNotify* This);
+        IProgressNotify *This);
 
     /*** IProgressNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *OnProgress)(
-        IProgressNotify* This,
+        IProgressNotify *This,
         DWORD dwProgressCurrent,
         DWORD dwProgressMaximum,
         WINBOOL fAccurate,
@@ -11430,6 +11570,7 @@ typedef struct IProgressNotifyVtbl {
 
     END_INTERFACE
 } IProgressNotifyVtbl;
+
 interface IProgressNotify {
     CONST_VTBL IProgressNotifyVtbl* lpVtbl;
 };
@@ -11461,6 +11602,7 @@ static FORCEINLINE HRESULT IProgressNotify_OnProgress(IProgressNotify* This,DWOR
 #endif
 
 #endif
+
 
 #endif  /* __IProgressNotify_INTERFACE_DEFINED__ */
 
@@ -11510,39 +11652,40 @@ typedef struct ILayoutStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILayoutStorage* This,
+        ILayoutStorage *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILayoutStorage* This);
+        ILayoutStorage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILayoutStorage* This);
+        ILayoutStorage *This);
 
     /*** ILayoutStorage methods ***/
     HRESULT (__stdcall *LayoutScript)(
-        ILayoutStorage* This,
+        ILayoutStorage *This,
         StorageLayout *pStorageLayout,
         DWORD nEntries,
         DWORD glfInterleavedFlag);
 
     HRESULT (__stdcall *BeginMonitor)(
-        ILayoutStorage* This);
+        ILayoutStorage *This);
 
     HRESULT (__stdcall *EndMonitor)(
-        ILayoutStorage* This);
+        ILayoutStorage *This);
 
     HRESULT (__stdcall *ReLayoutDocfile)(
-        ILayoutStorage* This,
+        ILayoutStorage *This,
         OLECHAR *pwcsNewDfName);
 
     HRESULT (__stdcall *ReLayoutDocfileOnILockBytes)(
-        ILayoutStorage* This,
+        ILayoutStorage *This,
         ILockBytes *pILockBytes);
 
     END_INTERFACE
 } ILayoutStorageVtbl;
+
 interface ILayoutStorage {
     CONST_VTBL ILayoutStorageVtbl* lpVtbl;
 };
@@ -11591,6 +11734,7 @@ static FORCEINLINE HRESULT ILayoutStorage_ReLayoutDocfileOnILockBytes(ILayoutSto
 
 #endif
 
+
 #endif  /* __ILayoutStorage_INTERFACE_DEFINED__ */
 
 #endif
@@ -11622,26 +11766,27 @@ typedef struct IBlockingLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBlockingLock* This,
+        IBlockingLock *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBlockingLock* This);
+        IBlockingLock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBlockingLock* This);
+        IBlockingLock *This);
 
     /*** IBlockingLock methods ***/
     HRESULT (STDMETHODCALLTYPE *Lock)(
-        IBlockingLock* This,
+        IBlockingLock *This,
         DWORD dwTimeout);
 
     HRESULT (STDMETHODCALLTYPE *Unlock)(
-        IBlockingLock* This);
+        IBlockingLock *This);
 
     END_INTERFACE
 } IBlockingLockVtbl;
+
 interface IBlockingLock {
     CONST_VTBL IBlockingLockVtbl* lpVtbl;
 };
@@ -11678,6 +11823,7 @@ static FORCEINLINE HRESULT IBlockingLock_Unlock(IBlockingLock* This) {
 
 #endif
 
+
 #endif  /* __IBlockingLock_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
@@ -11705,24 +11851,25 @@ typedef struct ITimeAndNoticeControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITimeAndNoticeControl* This,
+        ITimeAndNoticeControl *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITimeAndNoticeControl* This);
+        ITimeAndNoticeControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITimeAndNoticeControl* This);
+        ITimeAndNoticeControl *This);
 
     /*** ITimeAndNoticeControl methods ***/
     HRESULT (STDMETHODCALLTYPE *SuppressChanges)(
-        ITimeAndNoticeControl* This,
+        ITimeAndNoticeControl *This,
         DWORD res1,
         DWORD res2);
 
     END_INTERFACE
 } ITimeAndNoticeControlVtbl;
+
 interface ITimeAndNoticeControl {
     CONST_VTBL ITimeAndNoticeControlVtbl* lpVtbl;
 };
@@ -11754,6 +11901,7 @@ static FORCEINLINE HRESULT ITimeAndNoticeControl_SuppressChanges(ITimeAndNoticeC
 #endif
 
 #endif
+
 
 #endif  /* __ITimeAndNoticeControl_INTERFACE_DEFINED__ */
 
@@ -11794,19 +11942,19 @@ typedef struct IOplockStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOplockStorage* This,
+        IOplockStorage *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOplockStorage* This);
+        IOplockStorage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOplockStorage* This);
+        IOplockStorage *This);
 
     /*** IOplockStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateStorageEx)(
-        IOplockStorage* This,
+        IOplockStorage *This,
         LPCWSTR pwcsName,
         DWORD grfMode,
         DWORD stgfmt,
@@ -11815,7 +11963,7 @@ typedef struct IOplockStorageVtbl {
         void **ppstgOpen);
 
     HRESULT (STDMETHODCALLTYPE *OpenStorageEx)(
-        IOplockStorage* This,
+        IOplockStorage *This,
         LPCWSTR pwcsName,
         DWORD grfMode,
         DWORD stgfmt,
@@ -11825,6 +11973,7 @@ typedef struct IOplockStorageVtbl {
 
     END_INTERFACE
 } IOplockStorageVtbl;
+
 interface IOplockStorage {
     CONST_VTBL IOplockStorageVtbl* lpVtbl;
 };
@@ -11861,6 +12010,7 @@ static FORCEINLINE HRESULT IOplockStorage_OpenStorageEx(IOplockStorage* This,LPC
 
 #endif
 
+
 #endif  /* __IOplockStorage_INTERFACE_DEFINED__ */
 
 #endif
@@ -11895,29 +12045,30 @@ typedef struct IDirectWriterLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDirectWriterLock* This,
+        IDirectWriterLock *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDirectWriterLock* This);
+        IDirectWriterLock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDirectWriterLock* This);
+        IDirectWriterLock *This);
 
     /*** IDirectWriterLock methods ***/
     HRESULT (STDMETHODCALLTYPE *WaitForWriteAccess)(
-        IDirectWriterLock* This,
+        IDirectWriterLock *This,
         DWORD dwTimeout);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseWriteAccess)(
-        IDirectWriterLock* This);
+        IDirectWriterLock *This);
 
     HRESULT (STDMETHODCALLTYPE *HaveWriteAccess)(
-        IDirectWriterLock* This);
+        IDirectWriterLock *This);
 
     END_INTERFACE
 } IDirectWriterLockVtbl;
+
 interface IDirectWriterLock {
     CONST_VTBL IDirectWriterLockVtbl* lpVtbl;
 };
@@ -11958,6 +12109,7 @@ static FORCEINLINE HRESULT IDirectWriterLock_HaveWriteAccess(IDirectWriterLock* 
 
 #endif
 
+
 #endif  /* __IDirectWriterLock_INTERFACE_DEFINED__ */
 
 #endif
@@ -11995,19 +12147,19 @@ typedef struct IUrlMonVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUrlMon* This,
+        IUrlMon *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUrlMon* This);
+        IUrlMon *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUrlMon* This);
+        IUrlMon *This);
 
     /*** IUrlMon methods ***/
     HRESULT (STDMETHODCALLTYPE *AsyncGetClassBits)(
-        IUrlMon* This,
+        IUrlMon *This,
         REFCLSID rclsid,
         LPCWSTR pszTYPE,
         LPCWSTR pszExt,
@@ -12021,6 +12173,7 @@ typedef struct IUrlMonVtbl {
 
     END_INTERFACE
 } IUrlMonVtbl;
+
 interface IUrlMon {
     CONST_VTBL IUrlMonVtbl* lpVtbl;
 };
@@ -12053,6 +12206,7 @@ static FORCEINLINE HRESULT IUrlMon_AsyncGetClassBits(IUrlMon* This,REFCLSID rcls
 
 #endif
 
+
 #endif  /* __IUrlMon_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
@@ -12079,23 +12233,24 @@ typedef struct IForegroundTransferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IForegroundTransfer* This,
+        IForegroundTransfer *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IForegroundTransfer* This);
+        IForegroundTransfer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IForegroundTransfer* This);
+        IForegroundTransfer *This);
 
     /*** IForegroundTransfer methods ***/
     HRESULT (STDMETHODCALLTYPE *AllowForegroundTransfer)(
-        IForegroundTransfer* This,
+        IForegroundTransfer *This,
         void *lpvReserved);
 
     END_INTERFACE
 } IForegroundTransferVtbl;
+
 interface IForegroundTransfer {
     CONST_VTBL IForegroundTransferVtbl* lpVtbl;
 };
@@ -12127,6 +12282,7 @@ static FORCEINLINE HRESULT IForegroundTransfer_AllowForegroundTransfer(IForegrou
 #endif
 
 #endif
+
 
 #endif  /* __IForegroundTransfer_INTERFACE_DEFINED__ */
 
@@ -12162,19 +12318,19 @@ typedef struct IThumbnailExtractorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailExtractor* This,
+        IThumbnailExtractor *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailExtractor* This);
+        IThumbnailExtractor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailExtractor* This);
+        IThumbnailExtractor *This);
 
     /*** IThumbnailExtractor methods ***/
     HRESULT (STDMETHODCALLTYPE *ExtractThumbnail)(
-        IThumbnailExtractor* This,
+        IThumbnailExtractor *This,
         IStorage *pStg,
         ULONG ulLength,
         ULONG ulHeight,
@@ -12183,11 +12339,12 @@ typedef struct IThumbnailExtractorVtbl {
         HBITMAP *phOutputBitmap);
 
     HRESULT (STDMETHODCALLTYPE *OnFileUpdated)(
-        IThumbnailExtractor* This,
+        IThumbnailExtractor *This,
         IStorage *pStg);
 
     END_INTERFACE
 } IThumbnailExtractorVtbl;
+
 interface IThumbnailExtractor {
     CONST_VTBL IThumbnailExtractorVtbl* lpVtbl;
 };
@@ -12224,6 +12381,7 @@ static FORCEINLINE HRESULT IThumbnailExtractor_OnFileUpdated(IThumbnailExtractor
 
 #endif
 
+
 #endif  /* __IThumbnailExtractor_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
@@ -12251,24 +12409,25 @@ typedef struct IDummyHICONIncluderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDummyHICONIncluder* This,
+        IDummyHICONIncluder *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDummyHICONIncluder* This);
+        IDummyHICONIncluder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDummyHICONIncluder* This);
+        IDummyHICONIncluder *This);
 
     /*** IDummyHICONIncluder methods ***/
     HRESULT (STDMETHODCALLTYPE *Dummy)(
-        IDummyHICONIncluder* This,
+        IDummyHICONIncluder *This,
         HICON h1,
         HDC h2);
 
     END_INTERFACE
 } IDummyHICONIncluderVtbl;
+
 interface IDummyHICONIncluder {
     CONST_VTBL IDummyHICONIncluderVtbl* lpVtbl;
 };
@@ -12300,6 +12459,7 @@ static FORCEINLINE HRESULT IDummyHICONIncluder_Dummy(IDummyHICONIncluder* This,H
 #endif
 
 #endif
+
 
 #endif  /* __IDummyHICONIncluder_INTERFACE_DEFINED__ */
 
@@ -12338,25 +12498,26 @@ typedef struct IProcessLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProcessLock* This,
+        IProcessLock *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProcessLock* This);
+        IProcessLock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProcessLock* This);
+        IProcessLock *This);
 
     /*** IProcessLock methods ***/
     ULONG (STDMETHODCALLTYPE *AddRefOnProcess)(
-        IProcessLock* This);
+        IProcessLock *This);
 
     ULONG (STDMETHODCALLTYPE *ReleaseRefOnProcess)(
-        IProcessLock* This);
+        IProcessLock *This);
 
     END_INTERFACE
 } IProcessLockVtbl;
+
 interface IProcessLock {
     CONST_VTBL IProcessLockVtbl* lpVtbl;
 };
@@ -12392,6 +12553,7 @@ static FORCEINLINE ULONG IProcessLock_ReleaseRefOnProcess(IProcessLock* This) {
 #endif
 
 #endif
+
 
 #endif  /* __IProcessLock_INTERFACE_DEFINED__ */
 
@@ -12434,42 +12596,43 @@ typedef struct ISurrogateServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISurrogateService* This,
+        ISurrogateService *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISurrogateService* This);
+        ISurrogateService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISurrogateService* This);
+        ISurrogateService *This);
 
     /*** ISurrogateService methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        ISurrogateService* This,
+        ISurrogateService *This,
         REFGUID rguidProcessID,
         IProcessLock *pProcessLock,
         WINBOOL *pfApplicationAware);
 
     HRESULT (STDMETHODCALLTYPE *ApplicationLaunch)(
-        ISurrogateService* This,
+        ISurrogateService *This,
         REFGUID rguidApplID,
         ApplicationType appType);
 
     HRESULT (STDMETHODCALLTYPE *ApplicationFree)(
-        ISurrogateService* This,
+        ISurrogateService *This,
         REFGUID rguidApplID);
 
     HRESULT (STDMETHODCALLTYPE *CatalogRefresh)(
-        ISurrogateService* This,
+        ISurrogateService *This,
         ULONG ulReserved);
 
     HRESULT (STDMETHODCALLTYPE *ProcessShutdown)(
-        ISurrogateService* This,
+        ISurrogateService *This,
         ShutdownType shutdownType);
 
     END_INTERFACE
 } ISurrogateServiceVtbl;
+
 interface ISurrogateService {
     CONST_VTBL ISurrogateServiceVtbl* lpVtbl;
 };
@@ -12518,6 +12681,7 @@ static FORCEINLINE HRESULT ISurrogateService_ProcessShutdown(ISurrogateService* 
 
 #endif
 
+
 #endif  /* __ISurrogateService_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
@@ -12557,38 +12721,39 @@ typedef struct IInitializeSpyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeSpy* This,
+        IInitializeSpy *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeSpy* This);
+        IInitializeSpy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeSpy* This);
+        IInitializeSpy *This);
 
     /*** IInitializeSpy methods ***/
     HRESULT (STDMETHODCALLTYPE *PreInitialize)(
-        IInitializeSpy* This,
+        IInitializeSpy *This,
         DWORD dwCoInit,
         DWORD dwCurThreadAptRefs);
 
     HRESULT (STDMETHODCALLTYPE *PostInitialize)(
-        IInitializeSpy* This,
+        IInitializeSpy *This,
         HRESULT hrCoInit,
         DWORD dwCoInit,
         DWORD dwNewThreadAptRefs);
 
     HRESULT (STDMETHODCALLTYPE *PreUninitialize)(
-        IInitializeSpy* This,
+        IInitializeSpy *This,
         DWORD dwCurThreadAptRefs);
 
     HRESULT (STDMETHODCALLTYPE *PostUninitialize)(
-        IInitializeSpy* This,
+        IInitializeSpy *This,
         DWORD dwNewThreadAptRefs);
 
     END_INTERFACE
 } IInitializeSpyVtbl;
+
 interface IInitializeSpy {
     CONST_VTBL IInitializeSpyVtbl* lpVtbl;
 };
@@ -12633,6 +12798,7 @@ static FORCEINLINE HRESULT IInitializeSpy_PostUninitialize(IInitializeSpy* This,
 
 #endif
 
+
 #endif  /* __IInitializeSpy_INTERFACE_DEFINED__ */
 
 #endif
@@ -12661,23 +12827,24 @@ typedef struct IApartmentShutdownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApartmentShutdown* This,
+        IApartmentShutdown *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApartmentShutdown* This);
+        IApartmentShutdown *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApartmentShutdown* This);
+        IApartmentShutdown *This);
 
     /*** IApartmentShutdown methods ***/
     void (STDMETHODCALLTYPE *OnUninitialize)(
-        IApartmentShutdown* This,
+        IApartmentShutdown *This,
         UINT64 ui64ApartmentIdentifier);
 
     END_INTERFACE
 } IApartmentShutdownVtbl;
+
 interface IApartmentShutdown {
     CONST_VTBL IApartmentShutdownVtbl* lpVtbl;
 };
@@ -12709,6 +12876,7 @@ static FORCEINLINE void IApartmentShutdown_OnUninitialize(IApartmentShutdown* Th
 #endif
 
 #endif
+
 
 #endif  /* __IApartmentShutdown_INTERFACE_DEFINED__ */
 
