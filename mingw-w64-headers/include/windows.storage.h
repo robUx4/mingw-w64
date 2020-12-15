@@ -330,6 +330,20 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifndef ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*>;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 /* Headers for imported files */
 
 #include <inspectable.h>
@@ -348,20 +362,6 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             interface IAsyncAction;
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CFoundation_CTypedEventHandler __x_ABI_CWindows_CFoundation_CTypedEventHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            interface TypedEventHandler;
         }
     }
 }
@@ -2288,7 +2288,7 @@ namespace ABI {
                     IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE add_DataChanged(
-                    IInspectable *handler,
+                    ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> *handler,
                     EventRegistrationToken *token) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE remove_DataChanged(
@@ -2380,7 +2380,7 @@ typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataVtbl {
 
     HRESULT (STDMETHODCALLTYPE *add_DataChanged)(
         __x_ABI_CWindows_CStorage_CIApplicationData *This,
-        IInspectable *handler,
+        __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *handler,
         EventRegistrationToken *token);
 
     HRESULT (STDMETHODCALLTYPE *remove_DataChanged)(
@@ -2474,7 +2474,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_Roami
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_get_TemporaryFolder(__x_ABI_CWindows_CStorage_CIApplicationData* This,__x_ABI_CWindows_CStorage_CIStorageFolder **value) {
     return This->lpVtbl->get_TemporaryFolder(This,value);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,IInspectable *handler,EventRegistrationToken *token) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_add_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *handler,EventRegistrationToken *token) {
     return This->lpVtbl->add_DataChanged(This,handler,token);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_remove_DataChanged(__x_ABI_CWindows_CStorage_CIApplicationData* This,EventRegistrationToken token) {
@@ -4026,6 +4026,103 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 #endif
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
+ * ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> interface
+ *
+ */
+#ifndef ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable, 0x149afa12, 0x66cd, 0x539f, 0x85,0xdd, 0x84,0x87,0xea,0x2c,0xd1,0x13);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<>
+            MIDL_INTERFACE("149afa12-66cd-539f-85dd-8487ea2cd113")
+            ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> : public IUnknown
+            {
+                virtual void STDMETHODCALLTYPE Invoke(
+                    IInspectable *sender,
+                    IApplicationData *args) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*>, 0x149afa12, 0x66cd, 0x539f, 0x85,0xdd, 0x84,0x87,0xea,0x2c,0xd1,0x13)
+#endif
+#else
+typedef struct __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This);
+
+    /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
+    void (STDMETHODCALLTYPE *Invoke)(
+        __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This,
+        IInspectable *sender,
+        __x_ABI_CWindows_CStorage_CIApplicationData *args);
+
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable {
+    CONST_VTBL __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Release(This) (This)->lpVtbl->Release(This)
+/*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(This,sender,args) (This)->lpVtbl->Invoke(This,sender,args)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_QueryInterface(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_AddRef(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Release(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
+static FORCEINLINE void __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CStorage_CIApplicationData *args) {
+    This->lpVtbl->Invoke(This,sender,args);
+}
+#endif
+#ifdef WIDL_USING_ITYPEDEVENTHANDLER_2_WINDOWS_STORAGE_APPLICATIONDATA_IINSPECTABLE
+#define IID_ITypedEventHandler_ApplicationData_IInspectable IID___FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable
+#define ITypedEventHandler_ApplicationData_IInspectableVtbl __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl
+#define ITypedEventHandler_ApplicationData_IInspectable __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable
+#define ITypedEventHandler_ApplicationData_IInspectable_QueryInterface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_QueryInterface
+#define ITypedEventHandler_ApplicationData_IInspectable_AddRef __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_AddRef
+#define ITypedEventHandler_ApplicationData_IInspectable_Release __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Release
+#define ITypedEventHandler_ApplicationData_IInspectable_Invoke __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke
+#endif /* WIDL_USING__ITYPEDEVENTHANDLER_2_WINDOWS_STORAGE_APPLICATIONDATA_IINSPECTABLE */
+#endif
+
+#endif
+
+#endif  /* ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_INTERFACE_DEFINED__ */
 
 /* Begin additional prototypes for all interfaces */
 

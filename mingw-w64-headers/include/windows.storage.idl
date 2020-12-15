@@ -15,7 +15,6 @@ import "windows.foundation.idl";
 namespace Windows {
   namespace Foundation {
     interface IAsyncAction;
-    interface TypedEventHandler;
 
     namespace Collections {
       interface IPropertySet;
@@ -66,6 +65,7 @@ namespace Windows {
             interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.StorageFolder*>;
             interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.IStorageItem*>;
             //~ interface Windows.Foundation.AsyncOperationCompletedHandler<Windows.Storage.Streams.IRandomAccessStreamReference*>;
+            interface Windows.Foundation.TypedEventHandler<ApplicationData*, IInspectable*>;
         }
     }
 }
@@ -245,7 +245,7 @@ namespace Windows {
       [propget] HRESULT LocalFolder(IStorageFolder** value);
       [propget] HRESULT RoamingFolder(IStorageFolder** value);
       [propget] HRESULT TemporaryFolder(IStorageFolder** value);
-      [eventadd] HRESULT DataChanged(/*TypedEventHandler<ApplicationData*, IInspectable*>*/IInspectable* handler, EventRegistrationToken* token);
+      [eventadd] HRESULT DataChanged(Windows.Foundation.TypedEventHandler<ApplicationData*, IInspectable*>* handler, EventRegistrationToken* token);
       [eventremove] HRESULT DataChanged(EventRegistrationToken token);
       HRESULT SignalDataChanged();
       HRESULT RoamingStorageQuota(UINT64* value);
