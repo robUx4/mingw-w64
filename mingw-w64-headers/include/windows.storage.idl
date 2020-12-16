@@ -15,6 +15,7 @@ import "windows.foundation.idl";
 namespace Windows {
   namespace Foundation {
     interface IAsyncAction;
+    typedef struct DateTime DateTime;
 
     namespace Collections {
       interface IPropertySet;

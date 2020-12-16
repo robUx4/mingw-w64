@@ -14,7 +14,7 @@ import "windows.foundation.idl";
 namespace Windows {
     namespace Foundation {
         interface IAsyncAction;
-        struct TimeSpan;
+        typedef struct TimeSpan TimeSpan;
     }
 
     namespace System {
@@ -42,10 +42,6 @@ namespace Windows {
                 None       = 0,
                 TimeSliced = 1
             };
-
-            typedef struct TimeSpan {
-                INT64 Duration;
-            } TimeSpan;
 
             [uuid(FAAEA667-FBEB-49CB-ADB2-71184C556E43)]
             delegate HRESULT TimerElapsedHandler(IThreadPoolTimer* timer);
@@ -78,8 +74,8 @@ namespace Windows {
             [uuid(594EBE78-55EA-4A88-A50D-3402AE1F9CF2)]
             interface IThreadPoolTimer : IInspectable
             {
-                [propget] HRESULT Period(TimeSpan* value);
-                [propget] HRESULT Delay(TimeSpan* value);
+                [propget] HRESULT Period(Windows.Foundation.TimeSpan* value);
+                [propget] HRESULT Delay(Windows.Foundation.TimeSpan* value);
                 HRESULT Cancel();
             }
 
@@ -88,23 +84,23 @@ namespace Windows {
             {
                 HRESULT CreatePeriodicTimer(
                         TimerElapsedHandler* handler,
-                        TimeSpan period,
+                        Windows.Foundation.TimeSpan period,
                         IThreadPoolTimer** timer);
 
                 HRESULT CreateTimer(
                         TimerElapsedHandler* handler,
-                        TimeSpan delay,
+                        Windows.Foundation.TimeSpan delay,
                         IThreadPoolTimer** timer);
 
                 HRESULT CreatePeriodicTimerWithCompletion(
                         TimerElapsedHandler* handler,
-                        TimeSpan period,
+                        Windows.Foundation.TimeSpan period,
                         TimerDestroyedHandler* destroyed,
                         IThreadPoolTimer** timer);
 
                 HRESULT CreateTimerWithCompletion(
                         TimerElapsedHandler* handler,
-                        TimeSpan delay,
+                        Windows.Foundation.TimeSpan delay,
                         TimerDestroyedHandler* destroyed,
                         IThreadPoolTimer** timer);
             }
