@@ -681,6 +681,7 @@ static void compute_delegate_iface_name(type_t *delegate)
     char *name = xmalloc(strlen(delegate->name) + 2);
     sprintf(name, "I%s", delegate->name);
     delegate->details.delegate.iface->name = name;
+    delegate->details.delegate.iface->c_name = format_namespace(delegate->namespace, "__x_", "_C", name, "ABI");
 }
 
 static void compute_interface_signature_uuid(type_t *iface)
@@ -1031,6 +1032,16 @@ void type_delegate_define(type_t *delegate, statement_list_t *stmts)
     iface->details.iface->requires = NULL;
     iface->defined = TRUE;
     compute_method_indexes(iface);
+
+    iface->attrs = xmalloc( sizeof(*iface->attrs) );
+    list_init( iface->attrs );
+
+    const UUID *uuid = get_attrp(delegate->attrs, ATTR_UUID);
+    attr_t *attr = xmalloc( sizeof(*attr) );
+    attr->type = ATTR_UUID;
+    attr->u.pval = xmalloc( sizeof(GUID) );
+    memcpy(attr->u.pval, uuid, sizeof(GUID));
+    list_add_tail( iface->attrs, &attr->entry );
 
     delegate->details.delegate.iface = iface;
     compute_delegate_iface_name(delegate);
