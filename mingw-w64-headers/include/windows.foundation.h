@@ -184,6 +184,48 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifdef __cplusplus
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            struct DateTime {
+                UINT64 UniversalTime;
+            };
+        }
+    }
+}
+extern "C" {
+#else /* __cplusplus */
+struct __x_ABI_CWindows_CFoundation_CDateTime {
+    UINT64 UniversalTime;
+};
+#ifdef WIDL_USING_WINDOWS_FOUNDATION_DATETIME
+#define DateTime __x_ABI_CWindows_CFoundation_CDateTime
+#endif /* WIDL_USING__WINDOWS_FOUNDATION_DATETIME */
+#endif /* __cplusplus */
+
+#ifdef __cplusplus
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            struct TimeSpan {
+                INT64 Duration;
+            };
+        }
+    }
+}
+extern "C" {
+#else /* __cplusplus */
+struct __x_ABI_CWindows_CFoundation_CTimeSpan {
+    INT64 Duration;
+};
+#ifdef WIDL_USING_WINDOWS_FOUNDATION_TIMESPAN
+#define TimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan
+#endif /* WIDL_USING__WINDOWS_FOUNDATION_TIMESPAN */
+#endif /* __cplusplus */
+
 /*****************************************************************************
  * IAsyncInfo interface
  *
