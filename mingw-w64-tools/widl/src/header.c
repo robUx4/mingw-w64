@@ -1614,7 +1614,8 @@ static void write_com_interface_end(FILE *header, type_t *iface)
   if (!dispinterface && !winrt_mode)
   {
     write_method_proto(header, iface);
-    write_locals(header, iface, FALSE);
+    if (type_iface_get_async_iface(iface) != iface)
+      write_locals(header, iface, FALSE);
     fprintf(header, "\n");
   }
   fprintf(header, "#endif  /* __%s_%sINTERFACE_DEFINED__ */\n", iface->c_name, dispinterface ? "DISP" : "");
