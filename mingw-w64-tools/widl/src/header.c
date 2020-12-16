@@ -1892,7 +1892,7 @@ void write_header(const statement_list_t *stmts)
 
   if (!do_header) return;
 
-  if(!(header = fopen(header_name, "w"))) {
+  if(!(header = fopen(header_name, "wb"))) {
     error("Could not open %s for output\n", header_name);
     return;
   }
