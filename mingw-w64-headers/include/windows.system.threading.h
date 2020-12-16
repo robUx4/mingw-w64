@@ -18,15 +18,15 @@
 
 /* Forward declarations */
 
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler;
+#ifndef ____x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler;
 #ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace System {
             namespace Threading {
-                interface TimerElapsedHandler;
+                interface ITimerElapsedHandler;
             }
         }
     }
@@ -34,15 +34,15 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler;
+#ifndef ____x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler;
 #ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace System {
             namespace Threading {
-                interface TimerDestroyedHandler;
+                interface ITimerDestroyedHandler;
             }
         }
     }
@@ -50,15 +50,15 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler;
+#ifndef ____x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler;
 #ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace System {
             namespace Threading {
-                interface WorkItemHandler;
+                interface IWorkItemHandler;
             }
         }
     }
@@ -153,54 +153,6 @@ struct __x_ABI_CWindows_CFoundation_CTimeSpan;
 #define TimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan
 #endif /* WIDL_USING__WINDOWS_FOUNDATION_TIMESPAN */
 #endif /* __cplusplus */
-
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace System {
-            namespace Threading {
-                interface TimerElapsedHandler;
-            }
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace System {
-            namespace Threading {
-                interface TimerDestroyedHandler;
-            }
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace System {
-            namespace Threading {
-                interface WorkItemHandler;
-            }
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
 
 #ifndef ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_FWD_DEFINED__
@@ -303,13 +255,13 @@ enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemOptions {
 #endif /* __cplusplus */
 
 /*****************************************************************************
- * TimerElapsedHandler interface
+ * ITimerElapsedHandler interface
  *
  */
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_INTERFACE_DEFINED__
+#ifndef ____x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_INTERFACE_DEFINED__
 
-DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler, 0xfaaea667, 0xfbeb, 0x49cb, 0xad,0xb2, 0x71,0x18,0x4c,0x55,0x6e,0x43);
+DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler, 0xfaaea667, 0xfbeb, 0x49cb, 0xad,0xb2, 0x71,0x18,0x4c,0x55,0x6e,0x43);
 #if defined(__cplusplus) && !defined(CINTERFACE)
 } /* extern "C" */
 namespace ABI {
@@ -317,7 +269,7 @@ namespace ABI {
         namespace System {
             namespace Threading {
                 MIDL_INTERFACE("faaea667-fbeb-49cb-adb2-71184c556e43")
-                TimerElapsedHandler : public IUnknown
+                ITimerElapsedHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         IThreadPoolTimer *timer) = 0;
@@ -329,83 +281,83 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::TimerElapsedHandler, 0xfaaea667, 0xfbeb, 0x49cb, 0xad,0xb2, 0x71,0x18,0x4c,0x55,0x6e,0x43)
+__CRT_UUID_DECL(ABI::Windows::System::Threading::ITimerElapsedHandler, 0xfaaea667, 0xfbeb, 0x49cb, 0xad,0xb2, 0x71,0x18,0x4c,0x55,0x6e,0x43)
 #endif
 #else
-typedef struct __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandlerVtbl {
+typedef struct __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandlerVtbl {
     BEGIN_INTERFACE
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *This,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *This);
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *This);
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *This);
 
-    /*** TimerElapsedHandler methods ***/
+    /*** ITimerElapsedHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *This,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *This,
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer *timer);
 
     END_INTERFACE
-} __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandlerVtbl;
+} __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandlerVtbl;
 
-interface __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler {
-    CONST_VTBL __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandlerVtbl* lpVtbl;
+interface __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler {
+    CONST_VTBL __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandlerVtbl* lpVtbl;
 };
 
 #ifdef COBJMACROS
 #ifndef WIDL_C_INLINE_WRAPPERS
 /*** IUnknown methods ***/
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_Release(This) (This)->lpVtbl->Release(This)
-/*** TimerElapsedHandler methods ***/
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_Invoke(This,timer) (This)->lpVtbl->Invoke(This,timer)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_Release(This) (This)->lpVtbl->Release(This)
+/*** ITimerElapsedHandler methods ***/
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_Invoke(This,timer) (This)->lpVtbl->Invoke(This,timer)
 #else
 /*** IUnknown methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_QueryInterface(__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler* This,REFIID riid,void **ppvObject) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_QueryInterface(__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler* This,REFIID riid,void **ppvObject) {
     return This->lpVtbl->QueryInterface(This,riid,ppvObject);
 }
-static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_AddRef(__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler* This) {
+static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_AddRef(__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler* This) {
     return This->lpVtbl->AddRef(This);
 }
-static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_Release(__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler* This) {
+static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_Release(__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler* This) {
     return This->lpVtbl->Release(This);
 }
-/*** TimerElapsedHandler methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_Invoke(__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler* This,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer *timer) {
+/*** ITimerElapsedHandler methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_Invoke(__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler* This,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer *timer) {
     return This->lpVtbl->Invoke(This,timer);
 }
 #endif
-#ifdef WIDL_USING_WINDOWS_SYSTEM_THREADING_TIMERELAPSEDHANDLER
-#define IID_TimerElapsedHandler IID___x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler
-#define TimerElapsedHandlerVtbl __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandlerVtbl
-#define TimerElapsedHandler __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler
-#define TimerElapsedHandler_QueryInterface __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_QueryInterface
-#define TimerElapsedHandler_AddRef __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_AddRef
-#define TimerElapsedHandler_Release __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_Release
-#define TimerElapsedHandler_Invoke __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_Invoke
-#endif /* WIDL_USING__WINDOWS_SYSTEM_THREADING_TIMERELAPSEDHANDLER */
+#ifdef WIDL_USING_WINDOWS_SYSTEM_THREADING_ITIMERELAPSEDHANDLER
+#define IID_ITimerElapsedHandler IID___x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler
+#define ITimerElapsedHandlerVtbl __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandlerVtbl
+#define ITimerElapsedHandler __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler
+#define ITimerElapsedHandler_QueryInterface __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_QueryInterface
+#define ITimerElapsedHandler_AddRef __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_AddRef
+#define ITimerElapsedHandler_Release __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_Release
+#define ITimerElapsedHandler_Invoke __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_Invoke
+#endif /* WIDL_USING__WINDOWS_SYSTEM_THREADING_ITIMERELAPSEDHANDLER */
 #endif
 
 #endif
 
-#endif  /* ____x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler_INTERFACE_DEFINED__ */
+#endif  /* ____x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * TimerDestroyedHandler interface
+ * ITimerDestroyedHandler interface
  *
  */
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_INTERFACE_DEFINED__
+#ifndef ____x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_INTERFACE_DEFINED__
 
-DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler, 0x34ed19fa, 0x8384, 0x4eb9, 0x82,0x09, 0xfb,0x50,0x94,0xee,0xec,0x35);
+DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler, 0x34ed19fa, 0x8384, 0x4eb9, 0x82,0x09, 0xfb,0x50,0x94,0xee,0xec,0x35);
 #if defined(__cplusplus) && !defined(CINTERFACE)
 } /* extern "C" */
 namespace ABI {
@@ -413,7 +365,7 @@ namespace ABI {
         namespace System {
             namespace Threading {
                 MIDL_INTERFACE("34ed19fa-8384-4eb9-8209-fb5094eeec35")
-                TimerDestroyedHandler : public IUnknown
+                ITimerDestroyedHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         IThreadPoolTimer *timer) = 0;
@@ -425,83 +377,83 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::TimerDestroyedHandler, 0x34ed19fa, 0x8384, 0x4eb9, 0x82,0x09, 0xfb,0x50,0x94,0xee,0xec,0x35)
+__CRT_UUID_DECL(ABI::Windows::System::Threading::ITimerDestroyedHandler, 0x34ed19fa, 0x8384, 0x4eb9, 0x82,0x09, 0xfb,0x50,0x94,0xee,0xec,0x35)
 #endif
 #else
-typedef struct __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandlerVtbl {
+typedef struct __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandlerVtbl {
     BEGIN_INTERFACE
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *This,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *This);
+        __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *This);
+        __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *This);
 
-    /*** TimerDestroyedHandler methods ***/
+    /*** ITimerDestroyedHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *This,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *This,
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer *timer);
 
     END_INTERFACE
-} __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandlerVtbl;
+} __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandlerVtbl;
 
-interface __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler {
-    CONST_VTBL __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandlerVtbl* lpVtbl;
+interface __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler {
+    CONST_VTBL __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandlerVtbl* lpVtbl;
 };
 
 #ifdef COBJMACROS
 #ifndef WIDL_C_INLINE_WRAPPERS
 /*** IUnknown methods ***/
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_Release(This) (This)->lpVtbl->Release(This)
-/*** TimerDestroyedHandler methods ***/
-#define __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_Invoke(This,timer) (This)->lpVtbl->Invoke(This,timer)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_Release(This) (This)->lpVtbl->Release(This)
+/*** ITimerDestroyedHandler methods ***/
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_Invoke(This,timer) (This)->lpVtbl->Invoke(This,timer)
 #else
 /*** IUnknown methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_QueryInterface(__x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler* This,REFIID riid,void **ppvObject) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_QueryInterface(__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler* This,REFIID riid,void **ppvObject) {
     return This->lpVtbl->QueryInterface(This,riid,ppvObject);
 }
-static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_AddRef(__x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler* This) {
+static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_AddRef(__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler* This) {
     return This->lpVtbl->AddRef(This);
 }
-static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_Release(__x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler* This) {
+static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_Release(__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler* This) {
     return This->lpVtbl->Release(This);
 }
-/*** TimerDestroyedHandler methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_Invoke(__x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler* This,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer *timer) {
+/*** ITimerDestroyedHandler methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_Invoke(__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler* This,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer *timer) {
     return This->lpVtbl->Invoke(This,timer);
 }
 #endif
-#ifdef WIDL_USING_WINDOWS_SYSTEM_THREADING_TIMERDESTROYEDHANDLER
-#define IID_TimerDestroyedHandler IID___x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler
-#define TimerDestroyedHandlerVtbl __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandlerVtbl
-#define TimerDestroyedHandler __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler
-#define TimerDestroyedHandler_QueryInterface __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_QueryInterface
-#define TimerDestroyedHandler_AddRef __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_AddRef
-#define TimerDestroyedHandler_Release __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_Release
-#define TimerDestroyedHandler_Invoke __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_Invoke
-#endif /* WIDL_USING__WINDOWS_SYSTEM_THREADING_TIMERDESTROYEDHANDLER */
+#ifdef WIDL_USING_WINDOWS_SYSTEM_THREADING_ITIMERDESTROYEDHANDLER
+#define IID_ITimerDestroyedHandler IID___x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler
+#define ITimerDestroyedHandlerVtbl __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandlerVtbl
+#define ITimerDestroyedHandler __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler
+#define ITimerDestroyedHandler_QueryInterface __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_QueryInterface
+#define ITimerDestroyedHandler_AddRef __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_AddRef
+#define ITimerDestroyedHandler_Release __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_Release
+#define ITimerDestroyedHandler_Invoke __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_Invoke
+#endif /* WIDL_USING__WINDOWS_SYSTEM_THREADING_ITIMERDESTROYEDHANDLER */
 #endif
 
 #endif
 
-#endif  /* ____x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler_INTERFACE_DEFINED__ */
+#endif  /* ____x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * WorkItemHandler interface
+ * IWorkItemHandler interface
  *
  */
-#ifndef ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_INTERFACE_DEFINED__
+#ifndef ____x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_INTERFACE_DEFINED__
 
-DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler, 0x1d1a8b8b, 0xfa66, 0x414f, 0x9c,0xbd, 0xb6,0x5f,0xc9,0x9d,0x17,0xfa);
+DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler, 0x1d1a8b8b, 0xfa66, 0x414f, 0x9c,0xbd, 0xb6,0x5f,0xc9,0x9d,0x17,0xfa);
 #if defined(__cplusplus) && !defined(CINTERFACE)
 } /* extern "C" */
 namespace ABI {
@@ -509,7 +461,7 @@ namespace ABI {
         namespace System {
             namespace Threading {
                 MIDL_INTERFACE("1d1a8b8b-fa66-414f-9cbd-b65fc99d17fa")
-                WorkItemHandler : public IUnknown
+                IWorkItemHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
                         IAsyncAction *operation) = 0;
@@ -521,74 +473,74 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::WorkItemHandler, 0x1d1a8b8b, 0xfa66, 0x414f, 0x9c,0xbd, 0xb6,0x5f,0xc9,0x9d,0x17,0xfa)
+__CRT_UUID_DECL(ABI::Windows::System::Threading::IWorkItemHandler, 0x1d1a8b8b, 0xfa66, 0x414f, 0x9c,0xbd, 0xb6,0x5f,0xc9,0x9d,0x17,0xfa)
 #endif
 #else
-typedef struct __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandlerVtbl {
+typedef struct __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandlerVtbl {
     BEGIN_INTERFACE
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *This,
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *This,
         REFIID riid,
         void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *This);
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *This);
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *This);
 
-    /*** WorkItemHandler methods ***/
+    /*** IWorkItemHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *This,
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *This,
         __x_ABI_CWindows_CFoundation_CIAsyncAction *operation);
 
     END_INTERFACE
-} __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandlerVtbl;
+} __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandlerVtbl;
 
-interface __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler {
-    CONST_VTBL __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandlerVtbl* lpVtbl;
+interface __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler {
+    CONST_VTBL __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandlerVtbl* lpVtbl;
 };
 
 #ifdef COBJMACROS
 #ifndef WIDL_C_INLINE_WRAPPERS
 /*** IUnknown methods ***/
-#define __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
-#define __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
-#define __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_Release(This) (This)->lpVtbl->Release(This)
-/*** WorkItemHandler methods ***/
-#define __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_Invoke(This,operation) (This)->lpVtbl->Invoke(This,operation)
+#define __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_Release(This) (This)->lpVtbl->Release(This)
+/*** IWorkItemHandler methods ***/
+#define __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_Invoke(This,operation) (This)->lpVtbl->Invoke(This,operation)
 #else
 /*** IUnknown methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_QueryInterface(__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler* This,REFIID riid,void **ppvObject) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_QueryInterface(__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler* This,REFIID riid,void **ppvObject) {
     return This->lpVtbl->QueryInterface(This,riid,ppvObject);
 }
-static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_AddRef(__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler* This) {
+static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_AddRef(__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler* This) {
     return This->lpVtbl->AddRef(This);
 }
-static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_Release(__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler* This) {
+static FORCEINLINE ULONG __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_Release(__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler* This) {
     return This->lpVtbl->Release(This);
 }
-/*** WorkItemHandler methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_Invoke(__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler* This,__x_ABI_CWindows_CFoundation_CIAsyncAction *operation) {
+/*** IWorkItemHandler methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_Invoke(__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler* This,__x_ABI_CWindows_CFoundation_CIAsyncAction *operation) {
     return This->lpVtbl->Invoke(This,operation);
 }
 #endif
-#ifdef WIDL_USING_WINDOWS_SYSTEM_THREADING_WORKITEMHANDLER
-#define IID_WorkItemHandler IID___x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler
-#define WorkItemHandlerVtbl __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandlerVtbl
-#define WorkItemHandler __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler
-#define WorkItemHandler_QueryInterface __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_QueryInterface
-#define WorkItemHandler_AddRef __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_AddRef
-#define WorkItemHandler_Release __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_Release
-#define WorkItemHandler_Invoke __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_Invoke
-#endif /* WIDL_USING__WINDOWS_SYSTEM_THREADING_WORKITEMHANDLER */
+#ifdef WIDL_USING_WINDOWS_SYSTEM_THREADING_IWORKITEMHANDLER
+#define IID_IWorkItemHandler IID___x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler
+#define IWorkItemHandlerVtbl __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandlerVtbl
+#define IWorkItemHandler __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler
+#define IWorkItemHandler_QueryInterface __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_QueryInterface
+#define IWorkItemHandler_AddRef __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_AddRef
+#define IWorkItemHandler_Release __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_Release
+#define IWorkItemHandler_Invoke __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_Invoke
+#endif /* WIDL_USING__WINDOWS_SYSTEM_THREADING_IWORKITEMHANDLER */
 #endif
 
 #endif
 
-#endif  /* ____x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler_INTERFACE_DEFINED__ */
+#endif  /* ____x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
  * IThreadPoolStatics interface
@@ -608,16 +560,16 @@ namespace ABI {
                 IThreadPoolStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE RunAsync(
-                        WorkItemHandler *handler,
+                        IWorkItemHandler *handler,
                         IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAsync(
-                        WorkItemHandler *handler,
+                        IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
                         IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAndOptionsAsync(
-                        WorkItemHandler *handler,
+                        IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
                         enum WorkItemOptions options,
                         IAsyncAction **operation) = 0;
@@ -664,18 +616,18 @@ typedef struct __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStaticsVtbl {
     /*** IThreadPoolStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *RunAsync)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *handler,
         __x_ABI_CWindows_CFoundation_CIAsyncAction **operation);
 
     HRESULT (STDMETHODCALLTYPE *RunWithPriorityAsync)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *handler,
         enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemPriority priority,
         __x_ABI_CWindows_CFoundation_CIAsyncAction **operation);
 
     HRESULT (STDMETHODCALLTYPE *RunWithPriorityAndOptionsAsync)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *handler,
         enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemPriority priority,
         enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemOptions options,
         __x_ABI_CWindows_CFoundation_CIAsyncAction **operation);
@@ -723,13 +675,13 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStati
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
 /*** IThreadPoolStatics methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_RunAsync(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics* This,__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *handler,__x_ABI_CWindows_CFoundation_CIAsyncAction **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_RunAsync(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics* This,__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *handler,__x_ABI_CWindows_CFoundation_CIAsyncAction **operation) {
     return This->lpVtbl->RunAsync(This,handler,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_RunWithPriorityAsync(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics* This,__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *handler,enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemPriority priority,__x_ABI_CWindows_CFoundation_CIAsyncAction **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_RunWithPriorityAsync(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics* This,__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *handler,enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemPriority priority,__x_ABI_CWindows_CFoundation_CIAsyncAction **operation) {
     return This->lpVtbl->RunWithPriorityAsync(This,handler,priority,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_RunWithPriorityAndOptionsAsync(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics* This,__x_ABI_CWindows_CSystem_CThreading_CWorkItemHandler *handler,enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemPriority priority,enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemOptions options,__x_ABI_CWindows_CFoundation_CIAsyncAction **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_RunWithPriorityAndOptionsAsync(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics* This,__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler *handler,enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemPriority priority,enum __x_ABI_CWindows_CSystem_CThreading_CWorkItemOptions options,__x_ABI_CWindows_CFoundation_CIAsyncAction **operation) {
     return This->lpVtbl->RunWithPriorityAndOptionsAsync(This,handler,priority,options,operation);
 }
 #endif
@@ -921,25 +873,25 @@ namespace ABI {
                 IThreadPoolTimerStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimer(
-                        TimerElapsedHandler *handler,
+                        ITimerElapsedHandler *handler,
                         struct TimeSpan period,
                         IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimer(
-                        TimerElapsedHandler *handler,
+                        ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
                         IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimerWithCompletion(
-                        TimerElapsedHandler *handler,
+                        ITimerElapsedHandler *handler,
                         struct TimeSpan period,
-                        TimerDestroyedHandler *destroyed,
+                        ITimerDestroyedHandler *destroyed,
                         IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimerWithCompletion(
-                        TimerElapsedHandler *handler,
+                        ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
-                        TimerDestroyedHandler *destroyed,
+                        ITimerDestroyedHandler *destroyed,
                         IThreadPoolTimer **timer) = 0;
 
                 };
@@ -984,28 +936,28 @@ typedef struct __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStaticsVtbl 
     /*** IThreadPoolTimerStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *CreatePeriodicTimer)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,
         struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan period,
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer);
 
     HRESULT (STDMETHODCALLTYPE *CreateTimer)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,
         struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan delay,
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer);
 
     HRESULT (STDMETHODCALLTYPE *CreatePeriodicTimerWithCompletion)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,
         struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan period,
-        __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *destroyed,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *destroyed,
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer);
 
     HRESULT (STDMETHODCALLTYPE *CreateTimerWithCompletion)(
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics *This,
-        __x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,
         struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan delay,
-        __x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *destroyed,
+        __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *destroyed,
         __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer);
 
     END_INTERFACE
@@ -1052,16 +1004,16 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
 /*** IThreadPoolTimerStatics methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreatePeriodicTimer(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan period,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreatePeriodicTimer(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan period,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
     return This->lpVtbl->CreatePeriodicTimer(This,handler,period,timer);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreateTimer(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan delay,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreateTimer(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan delay,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
     return This->lpVtbl->CreateTimer(This,handler,delay,timer);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreatePeriodicTimerWithCompletion(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan period,__x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *destroyed,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreatePeriodicTimerWithCompletion(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan period,__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *destroyed,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
     return This->lpVtbl->CreatePeriodicTimerWithCompletion(This,handler,period,destroyed,timer);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreateTimerWithCompletion(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CTimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan delay,__x_ABI_CWindows_CSystem_CThreading_CTimerDestroyedHandler *destroyed,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_CreateTimerWithCompletion(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics* This,__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler *handler,struct __x_ABI_CWindows_CSystem_CThreading_CTimeSpan delay,__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler *destroyed,__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer **timer) {
     return This->lpVtbl->CreateTimerWithCompletion(This,handler,delay,destroyed,timer);
 }
 #endif

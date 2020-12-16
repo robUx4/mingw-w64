@@ -28,7 +28,6 @@ namespace Windows {
     interface IApplicationDataStatics;
     interface IApplicationDataSetVersionHandler;
     interface ApplicationDataContainer;
-    // delegate  ApplicationDataSetVersionHandler;
     interface ISetVersionRequest;
     interface ISetVersionDeferral;
     typedef enum StorageDeleteOption StorageDeleteOption;
@@ -270,9 +269,7 @@ namespace Windows {
     }
 
     [uuid(A05791E6-CC9F-4687-ACAB-A364FD785463)]
-    interface IApplicationDataSetVersionHandler : IUnknown {
-      HRESULT Invoke(ISetVersionRequest* setVersionRequest);
-    }
+    delegate HRESULT ApplicationDataSetVersionHandler(ISetVersionRequest* setVersionRequest);
 
     [uuid(B9C76B9B-1056-4E69-8330-162619956F9B)]
     interface ISetVersionRequest : IInspectable {

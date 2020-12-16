@@ -28,7 +28,6 @@ namespace Windows {
     interface IAsyncInfo;
     interface IAsyncAction;
     interface IAsyncOperation<T>;
-    interface AsyncActionCompletedHandler; // delegate
     struct    DateTime;
 
     namespace Collections {
@@ -53,17 +52,14 @@ namespace Windows {
       HRESULT Close();
     }
 
+    [uuid(A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7)]
+    delegate HRESULT AsyncActionCompletedHandler(IAsyncAction *asyncAction, AsyncStatus status);
+
     [uuid(5A648006-843A-4DA9-865B-9D26E5DFAD7B)]
     interface IASyncAction : IAsyncInfo {
       [propput] HRESULT Completed(AsyncActionCompletedHandler* handler);
       [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
       HRESULT GetResults();
-    }
-
-    [uuid(A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7)]
-    interface AsyncActionCompletedHandler : IUnknown {
-      //FIXME: should support cyclic dependency
-      HRESULT Invoke(IAsyncAction *asyncAction, AsyncStatus status);
     }
 
 #ifdef __WIDL__
@@ -82,12 +78,12 @@ namespace Windows {
         [
             uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
         ]
-        delegate void EventHandler<T>([in] IInspectable *sender, [in] T args);
+        delegate HRESULT EventHandler<T>([in] IInspectable *sender, [in] T args);
 
         [
             uuid(9DE1C534-6AE1-11E0-84E1-18A905BCC53F)
         ]
-        delegate void TypedEventHandler<TSender,TResult>(TSender sender, TResult args);
+        delegate HRESULT TypedEventHandler<TSender,TResult>(TSender sender, TResult args);
 
         namespace Collections
         {

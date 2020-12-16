@@ -3906,7 +3906,7 @@ namespace ABI {
             MIDL_INTERFACE("149afa12-66cd-539f-85dd-8487ea2cd113")
             ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> : public IUnknown
             {
-                virtual void STDMETHODCALLTYPE Invoke(
+                virtual HRESULT STDMETHODCALLTYPE Invoke(
                     IInspectable *sender,
                     IApplicationData *args) = 0;
 
@@ -3935,7 +3935,7 @@ typedef struct __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInsp
         __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This);
 
     /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
-    void (STDMETHODCALLTYPE *Invoke)(
+    HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This,
         IInspectable *sender,
         __x_ABI_CWindows_CStorage_CIApplicationData *args);
@@ -3967,8 +3967,8 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplication
     return This->lpVtbl->Release(This);
 }
 /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
-static FORCEINLINE void __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CStorage_CIApplicationData *args) {
-    This->lpVtbl->Invoke(This,sender,args);
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CStorage_CIApplicationData *args) {
+    return This->lpVtbl->Invoke(This,sender,args);
 }
 #endif
 #ifdef WIDL_USING_ITYPEDEVENTHANDLER_2_WINDOWS_STORAGE_APPLICATIONDATA_IINSPECTABLE
