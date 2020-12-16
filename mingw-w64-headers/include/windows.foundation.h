@@ -32,6 +32,20 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IAsyncActionCompletedHandler;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIASyncAction_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIASyncAction_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIASyncAction __x_ABI_CWindows_CFoundation_CIASyncAction;
@@ -40,20 +54,6 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             interface IASyncAction;
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            interface AsyncActionCompletedHandler;
         }
     }
 }
@@ -145,20 +145,6 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             interface IAsyncAction;
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            interface AsyncActionCompletedHandler;
         }
     }
 }
@@ -370,6 +356,102 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIAsyncInfo_Close(__x_AB
 #endif  /* ____x_ABI_CWindows_CFoundation_CIAsyncInfo_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
+ * IAsyncActionCompletedHandler interface
+ *
+ */
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler, 0xa4ed5c81, 0x76c9, 0x40bd, 0x8b,0xe6, 0xb1,0xd9,0x0f,0xb2,0x0a,0xe7);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            MIDL_INTERFACE("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
+            IAsyncActionCompletedHandler : public IUnknown
+            {
+                virtual HRESULT STDMETHODCALLTYPE Invoke(
+                    IAsyncAction *asyncAction,
+                    AsyncStatus status) = 0;
+
+            };
+        }
+    }
+}
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncActionCompletedHandler, 0xa4ed5c81, 0x76c9, 0x40bd, 0x8b,0xe6, 0xb1,0xd9,0x0f,0xb2,0x0a,0xe7)
+#endif
+#else
+typedef struct __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler *This);
+
+    /*** IAsyncActionCompletedHandler methods ***/
+    HRESULT (STDMETHODCALLTYPE *Invoke)(
+        __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler *This,
+        __x_ABI_CWindows_CFoundation_CIAsyncAction *asyncAction,
+        AsyncStatus status);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl;
+
+interface __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler {
+    CONST_VTBL __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_Release(This) (This)->lpVtbl->Release(This)
+/*** IAsyncActionCompletedHandler methods ***/
+#define __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_Invoke(This,asyncAction,status) (This)->lpVtbl->Invoke(This,asyncAction,status)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_QueryInterface(__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_AddRef(__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_Release(__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IAsyncActionCompletedHandler methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_Invoke(__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler* This,__x_ABI_CWindows_CFoundation_CIAsyncAction *asyncAction,AsyncStatus status) {
+    return This->lpVtbl->Invoke(This,asyncAction,status);
+}
+#endif
+#ifdef WIDL_USING_WINDOWS_FOUNDATION_IASYNCACTIONCOMPLETEDHANDLER
+#define IID_IAsyncActionCompletedHandler IID___x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler
+#define IAsyncActionCompletedHandlerVtbl __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl
+#define IAsyncActionCompletedHandler __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler
+#define IAsyncActionCompletedHandler_QueryInterface __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_QueryInterface
+#define IAsyncActionCompletedHandler_AddRef __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_AddRef
+#define IAsyncActionCompletedHandler_Release __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_Release
+#define IAsyncActionCompletedHandler_Invoke __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_Invoke
+#endif /* WIDL_USING__WINDOWS_FOUNDATION_IASYNCACTIONCOMPLETEDHANDLER */
+#endif
+
+#endif
+
+#endif  /* ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_INTERFACE_DEFINED__ */
+
+/*****************************************************************************
  * IASyncAction interface
  *
  */
@@ -386,10 +468,10 @@ namespace ABI {
             IASyncAction : public IAsyncInfo
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    AsyncActionCompletedHandler *handler) = 0;
+                    IAsyncActionCompletedHandler *handler) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    AsyncActionCompletedHandler **handler) = 0;
+                    IAsyncActionCompletedHandler **handler) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetResults(
                     ) = 0;
@@ -454,11 +536,11 @@ typedef struct __x_ABI_CWindows_CFoundation_CIASyncActionVtbl {
     /*** IASyncAction methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
         __x_ABI_CWindows_CFoundation_CIASyncAction *This,
-        __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler *handler);
+        __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *get_Completed)(
         __x_ABI_CWindows_CFoundation_CIASyncAction *This,
-        __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler **handler);
+        __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler **handler);
 
     HRESULT (STDMETHODCALLTYPE *GetResults)(
         __x_ABI_CWindows_CFoundation_CIASyncAction *This);
@@ -528,10 +610,10 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_Close(__x_
     return This->lpVtbl->Close(This);
 }
 /*** IASyncAction methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_put_Completed(__x_ABI_CWindows_CFoundation_CIASyncAction* This,__x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler *handler) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_put_Completed(__x_ABI_CWindows_CFoundation_CIASyncAction* This,__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler *handler) {
     return This->lpVtbl->put_Completed(This,handler);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_get_Completed(__x_ABI_CWindows_CFoundation_CIASyncAction* This,__x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler **handler) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_get_Completed(__x_ABI_CWindows_CFoundation_CIASyncAction* This,__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler **handler) {
     return This->lpVtbl->get_Completed(This,handler);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_GetResults(__x_ABI_CWindows_CFoundation_CIASyncAction* This) {
@@ -562,102 +644,6 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_GetResults
 #endif
 
 #endif  /* ____x_ABI_CWindows_CFoundation_CIASyncAction_INTERFACE_DEFINED__ */
-
-/*****************************************************************************
- * AsyncActionCompletedHandler interface
- *
- */
-#ifndef ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_INTERFACE_DEFINED__
-
-DEFINE_GUID(IID___x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler, 0xa4ed5c81, 0x76c9, 0x40bd, 0x8b,0xe6, 0xb1,0xd9,0x0f,0xb2,0x0a,0xe7);
-#if defined(__cplusplus) && !defined(CINTERFACE)
-} /* extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            MIDL_INTERFACE("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
-            AsyncActionCompletedHandler : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncAction *asyncAction,
-                    AsyncStatus status) = 0;
-
-            };
-        }
-    }
-}
-extern "C" {
-#ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::AsyncActionCompletedHandler, 0xa4ed5c81, 0x76c9, 0x40bd, 0x8b,0xe6, 0xb1,0xd9,0x0f,0xb2,0x0a,0xe7)
-#endif
-#else
-typedef struct __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandlerVtbl {
-    BEGIN_INTERFACE
-
-    /*** IUnknown methods ***/
-    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler *This,
-        REFIID riid,
-        void **ppvObject);
-
-    ULONG (STDMETHODCALLTYPE *AddRef)(
-        __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler *This);
-
-    ULONG (STDMETHODCALLTYPE *Release)(
-        __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler *This);
-
-    /*** AsyncActionCompletedHandler methods ***/
-    HRESULT (STDMETHODCALLTYPE *Invoke)(
-        __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler *This,
-        __x_ABI_CWindows_CFoundation_CIAsyncAction *asyncAction,
-        AsyncStatus status);
-
-    END_INTERFACE
-} __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandlerVtbl;
-
-interface __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler {
-    CONST_VTBL __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandlerVtbl* lpVtbl;
-};
-
-#ifdef COBJMACROS
-#ifndef WIDL_C_INLINE_WRAPPERS
-/*** IUnknown methods ***/
-#define __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
-#define __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
-#define __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_Release(This) (This)->lpVtbl->Release(This)
-/*** AsyncActionCompletedHandler methods ***/
-#define __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_Invoke(This,asyncAction,status) (This)->lpVtbl->Invoke(This,asyncAction,status)
-#else
-/*** IUnknown methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_QueryInterface(__x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler* This,REFIID riid,void **ppvObject) {
-    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
-}
-static FORCEINLINE ULONG __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_AddRef(__x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler* This) {
-    return This->lpVtbl->AddRef(This);
-}
-static FORCEINLINE ULONG __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_Release(__x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler* This) {
-    return This->lpVtbl->Release(This);
-}
-/*** AsyncActionCompletedHandler methods ***/
-static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_Invoke(__x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler* This,__x_ABI_CWindows_CFoundation_CIAsyncAction *asyncAction,AsyncStatus status) {
-    return This->lpVtbl->Invoke(This,asyncAction,status);
-}
-#endif
-#ifdef WIDL_USING_WINDOWS_FOUNDATION_ASYNCACTIONCOMPLETEDHANDLER
-#define IID_AsyncActionCompletedHandler IID___x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler
-#define AsyncActionCompletedHandlerVtbl __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandlerVtbl
-#define AsyncActionCompletedHandler __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler
-#define AsyncActionCompletedHandler_QueryInterface __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_QueryInterface
-#define AsyncActionCompletedHandler_AddRef __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_AddRef
-#define AsyncActionCompletedHandler_Release __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_Release
-#define AsyncActionCompletedHandler_Invoke __x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_Invoke
-#endif /* WIDL_USING__WINDOWS_FOUNDATION_ASYNCACTIONCOMPLETEDHANDLER */
-#endif
-
-#endif
-
-#endif  /* ____x_ABI_CWindows_CFoundation_CAsyncActionCompletedHandler_INTERFACE_DEFINED__ */
 
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
