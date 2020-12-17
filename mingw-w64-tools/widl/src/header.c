@@ -994,7 +994,7 @@ int has_out_arg_or_return(const var_t *func)
 int is_object(const type_t *iface)
 {
     const attr_t *attr;
-    if (type_is_defined(iface) && type_iface_get_inherit(iface))
+    if (type_is_defined(iface) && (type_get_type(iface) == TYPE_DELEGATE || type_iface_get_inherit(iface)))
         return 1;
     if (iface->attrs) LIST_FOR_EACH_ENTRY( attr, iface->attrs, const attr_t, entry )
         if (attr->type == ATTR_OBJECT || attr->type == ATTR_ODL) return 1;
@@ -1679,12 +1679,13 @@ static void write_widl_using_method_macros(FILE *header, const type_t *iface, co
     STATEMENTS_FOR_EACH_FUNC(stmt, type_iface_get_stmts(iface))
     {
         const var_t *func = stmt->u.var;
-	const char *func_name = get_name(func);
+        const char *func_name;
 
         if (is_override_method(iface, top_iface, func)) continue;
+        if (is_callas(func->attrs)) continue;
 
-        if (!is_callas(func->attrs))
-            fprintf(header, "#define %s_%s %s_%s\n", name, func_name, top_iface->c_name, func_name);
+        func_name = get_name(func);
+        fprintf(header, "#define %s_%s %s_%s\n", name, func_name, top_iface->c_name, func_name);
     }
 }
 
@@ -2025,7 +2026,7 @@ static void write_header_stmts(FILE *header, const statement_list_t *stmts, cons
           if (type_get_type(stmt->u.type) == TYPE_DELEGATE) iface = type_delegate_get_iface(iface);
           async_iface = type_iface_get_async_iface(iface);
           if (is_object(iface)) is_object_interface++;
-          if (is_attr(stmt->u.type->attrs, ATTR_DISPINTERFACE) || type_get_type(stmt->u.type) == TYPE_DELEGATE || is_object(stmt->u.type))
+          if (is_attr(stmt->u.type->attrs, ATTR_DISPINTERFACE) || is_object(stmt->u.type))
           {
             write_com_interface_start(header, iface);
             write_header_stmts(header, type_iface_get_stmts(iface), stmt->u.type, TRUE);
