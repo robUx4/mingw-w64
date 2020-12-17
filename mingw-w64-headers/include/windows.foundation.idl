@@ -74,7 +74,7 @@ namespace Windows {
         delegate HRESULT AsyncOperationCompletedHandler<T>(Windows.Foundation.IAsyncOperation<T> *asyncInfo, AsyncStatus asyncStatus);
 
         [uuid("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")]
-        interface IAsyncOperation<T> : IAsyncInfo {
+        interface IAsyncOperation<T> : IInspectable {
             [propput] HRESULT Completed(AsyncOperationCompletedHandler<T>* handler);
             [propget] HRESULT Completed(AsyncOperationCompletedHandler<T>** handler);
             HRESULT GetResults(T* result);

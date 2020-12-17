@@ -3163,7 +3163,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("5e52f8ce-aced-5a42-95b4-f674dd84885e")
-            IAsyncOperation<ABI::Windows::Storage::StorageFile*> : public IAsyncInfo
+            IAsyncOperation<ABI::Windows::Storage::StorageFile*> : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
                     IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> *handler) = 0;
@@ -3212,25 +3212,6 @@ typedef struct __FIAsyncOperation_1_Windows__CStorage__CStorageFileVtbl {
         __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
         TrustLevel *trustLevel);
 
-    /*** IAsyncInfo methods ***/
-    HRESULT (STDMETHODCALLTYPE *get_Id)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
-        unsigned int *id);
-
-    HRESULT (STDMETHODCALLTYPE *get_Status)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
-        AsyncStatus *status);
-
-    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
-        HRESULT *errorCode);
-
-    HRESULT (STDMETHODCALLTYPE *Cancel)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This);
-
-    HRESULT (STDMETHODCALLTYPE *Close)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This);
-
     /*** IAsyncOperation<ABI::Windows::Storage::StorageFile*> methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
         __FIAsyncOperation_1_Windows__CStorage__CStorageFile *This,
@@ -3261,12 +3242,6 @@ interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile {
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IAsyncInfo methods ***/
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Cancel(This) (This)->lpVtbl->Cancel(This)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Close(This) (This)->lpVtbl->Close(This)
 /*** IAsyncOperation<ABI::Windows::Storage::StorageFile*> methods ***/
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
@@ -3292,22 +3267,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_
 static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetTrustLevel(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IAsyncInfo methods ***/
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Id(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,unsigned int *id) {
-    return This->lpVtbl->get_Id(This,id);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Status(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,AsyncStatus *status) {
-    return This->lpVtbl->get_Status(This,status);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_ErrorCode(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,HRESULT *errorCode) {
-    return This->lpVtbl->get_ErrorCode(This,errorCode);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Cancel(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This) {
-    return This->lpVtbl->Cancel(This);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Close(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This) {
-    return This->lpVtbl->Close(This);
-}
 /*** IAsyncOperation<ABI::Windows::Storage::StorageFile*> methods ***/
 static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_put_Completed(__FIAsyncOperation_1_Windows__CStorage__CStorageFile* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile *handler) {
     return This->lpVtbl->put_Completed(This,handler);
@@ -3329,11 +3288,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_
 #define IAsyncOperation_StorageFile_GetIids __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetIids
 #define IAsyncOperation_StorageFile_GetRuntimeClassName __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetRuntimeClassName
 #define IAsyncOperation_StorageFile_GetTrustLevel __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetTrustLevel
-#define IAsyncOperation_StorageFile_get_Id __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Id
-#define IAsyncOperation_StorageFile_get_Status __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Status
-#define IAsyncOperation_StorageFile_get_ErrorCode __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_ErrorCode
-#define IAsyncOperation_StorageFile_Cancel __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Cancel
-#define IAsyncOperation_StorageFile_Close __FIAsyncOperation_1_Windows__CStorage__CStorageFile_Close
 #define IAsyncOperation_StorageFile_put_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFile_put_Completed
 #define IAsyncOperation_StorageFile_get_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFile_get_Completed
 #define IAsyncOperation_StorageFile_GetResults __FIAsyncOperation_1_Windows__CStorage__CStorageFile_GetResults
@@ -3359,7 +3313,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("6be9e7d7-e83a-5cbc-802c-1768960b52c3")
-            IAsyncOperation<ABI::Windows::Storage::StorageFolder*> : public IAsyncInfo
+            IAsyncOperation<ABI::Windows::Storage::StorageFolder*> : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
                     IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> *handler) = 0;
@@ -3408,25 +3362,6 @@ typedef struct __FIAsyncOperation_1_Windows__CStorage__CStorageFolderVtbl {
         __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
         TrustLevel *trustLevel);
 
-    /*** IAsyncInfo methods ***/
-    HRESULT (STDMETHODCALLTYPE *get_Id)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
-        unsigned int *id);
-
-    HRESULT (STDMETHODCALLTYPE *get_Status)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
-        AsyncStatus *status);
-
-    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
-        HRESULT *errorCode);
-
-    HRESULT (STDMETHODCALLTYPE *Cancel)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This);
-
-    HRESULT (STDMETHODCALLTYPE *Close)(
-        __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This);
-
     /*** IAsyncOperation<ABI::Windows::Storage::StorageFolder*> methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
         __FIAsyncOperation_1_Windows__CStorage__CStorageFolder *This,
@@ -3457,12 +3392,6 @@ interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder {
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IAsyncInfo methods ***/
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Cancel(This) (This)->lpVtbl->Cancel(This)
-#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Close(This) (This)->lpVtbl->Close(This)
 /*** IAsyncOperation<ABI::Windows::Storage::StorageFolder*> methods ***/
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
 #define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
@@ -3488,22 +3417,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolde
 static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetTrustLevel(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IAsyncInfo methods ***/
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Id(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,unsigned int *id) {
-    return This->lpVtbl->get_Id(This,id);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Status(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,AsyncStatus *status) {
-    return This->lpVtbl->get_Status(This,status);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_ErrorCode(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,HRESULT *errorCode) {
-    return This->lpVtbl->get_ErrorCode(This,errorCode);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Cancel(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This) {
-    return This->lpVtbl->Cancel(This);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Close(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This) {
-    return This->lpVtbl->Close(This);
-}
 /*** IAsyncOperation<ABI::Windows::Storage::StorageFolder*> methods ***/
 static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_put_Completed(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder *handler) {
     return This->lpVtbl->put_Completed(This,handler);
@@ -3525,11 +3438,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolde
 #define IAsyncOperation_StorageFolder_GetIids __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetIids
 #define IAsyncOperation_StorageFolder_GetRuntimeClassName __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetRuntimeClassName
 #define IAsyncOperation_StorageFolder_GetTrustLevel __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetTrustLevel
-#define IAsyncOperation_StorageFolder_get_Id __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Id
-#define IAsyncOperation_StorageFolder_get_Status __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Status
-#define IAsyncOperation_StorageFolder_get_ErrorCode __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_ErrorCode
-#define IAsyncOperation_StorageFolder_Cancel __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Cancel
-#define IAsyncOperation_StorageFolder_Close __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_Close
 #define IAsyncOperation_StorageFolder_put_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_put_Completed
 #define IAsyncOperation_StorageFolder_get_Completed __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_get_Completed
 #define IAsyncOperation_StorageFolder_GetResults __FIAsyncOperation_1_Windows__CStorage__CStorageFolder_GetResults
@@ -3555,7 +3463,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("5fc9c137-ebb7-5e6c-9cba-686f2ec2b0bb")
-            IAsyncOperation<ABI::Windows::Storage::IStorageItem*> : public IAsyncInfo
+            IAsyncOperation<ABI::Windows::Storage::IStorageItem*> : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
                     IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> *handler) = 0;
@@ -3604,25 +3512,6 @@ typedef struct __FIAsyncOperation_1_Windows__CStorage__CIStorageItemVtbl {
         __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
         TrustLevel *trustLevel);
 
-    /*** IAsyncInfo methods ***/
-    HRESULT (STDMETHODCALLTYPE *get_Id)(
-        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
-        unsigned int *id);
-
-    HRESULT (STDMETHODCALLTYPE *get_Status)(
-        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
-        AsyncStatus *status);
-
-    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
-        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
-        HRESULT *errorCode);
-
-    HRESULT (STDMETHODCALLTYPE *Cancel)(
-        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This);
-
-    HRESULT (STDMETHODCALLTYPE *Close)(
-        __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This);
-
     /*** IAsyncOperation<ABI::Windows::Storage::IStorageItem*> methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
         __FIAsyncOperation_1_Windows__CStorage__CIStorageItem *This,
@@ -3653,12 +3542,6 @@ interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem {
 #define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IAsyncInfo methods ***/
-#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
-#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
-#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
-#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Cancel(This) (This)->lpVtbl->Cancel(This)
-#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Close(This) (This)->lpVtbl->Close(This)
 /*** IAsyncOperation<ABI::Windows::Storage::IStorageItem*> methods ***/
 #define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
 #define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
@@ -3684,22 +3567,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem
 static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetTrustLevel(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IAsyncInfo methods ***/
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Id(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,unsigned int *id) {
-    return This->lpVtbl->get_Id(This,id);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Status(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,AsyncStatus *status) {
-    return This->lpVtbl->get_Status(This,status);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_ErrorCode(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,HRESULT *errorCode) {
-    return This->lpVtbl->get_ErrorCode(This,errorCode);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Cancel(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This) {
-    return This->lpVtbl->Cancel(This);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Close(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This) {
-    return This->lpVtbl->Close(This);
-}
 /*** IAsyncOperation<ABI::Windows::Storage::IStorageItem*> methods ***/
 static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_put_Completed(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem* This,__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem *handler) {
     return This->lpVtbl->put_Completed(This,handler);
@@ -3721,11 +3588,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem
 #define IAsyncOperation_IStorageItem_GetIids __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetIids
 #define IAsyncOperation_IStorageItem_GetRuntimeClassName __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetRuntimeClassName
 #define IAsyncOperation_IStorageItem_GetTrustLevel __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetTrustLevel
-#define IAsyncOperation_IStorageItem_get_Id __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Id
-#define IAsyncOperation_IStorageItem_get_Status __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Status
-#define IAsyncOperation_IStorageItem_get_ErrorCode __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_ErrorCode
-#define IAsyncOperation_IStorageItem_Cancel __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Cancel
-#define IAsyncOperation_IStorageItem_Close __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_Close
 #define IAsyncOperation_IStorageItem_put_Completed __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_put_Completed
 #define IAsyncOperation_IStorageItem_get_Completed __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_get_Completed
 #define IAsyncOperation_IStorageItem_GetResults __FIAsyncOperation_1_Windows__CStorage__CIStorageItem_GetResults

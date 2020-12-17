@@ -892,7 +892,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("ef60385f-be78-584b-aaef-7829ada2b0de")
-            IAsyncOperation<ABI::UINT32> : public IAsyncInfo
+            IAsyncOperation<ABI::UINT32> : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
                     IAsyncOperationCompletedHandler<ABI::UINT32> *handler) = 0;
@@ -941,25 +941,6 @@ typedef struct __FIAsyncOperation_1_UINT32Vtbl {
         __FIAsyncOperation_1_UINT32 *This,
         TrustLevel *trustLevel);
 
-    /*** IAsyncInfo methods ***/
-    HRESULT (STDMETHODCALLTYPE *get_Id)(
-        __FIAsyncOperation_1_UINT32 *This,
-        unsigned int *id);
-
-    HRESULT (STDMETHODCALLTYPE *get_Status)(
-        __FIAsyncOperation_1_UINT32 *This,
-        AsyncStatus *status);
-
-    HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
-        __FIAsyncOperation_1_UINT32 *This,
-        HRESULT *errorCode);
-
-    HRESULT (STDMETHODCALLTYPE *Cancel)(
-        __FIAsyncOperation_1_UINT32 *This);
-
-    HRESULT (STDMETHODCALLTYPE *Close)(
-        __FIAsyncOperation_1_UINT32 *This);
-
     /*** IAsyncOperation<ABI::UINT32> methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
         __FIAsyncOperation_1_UINT32 *This,
@@ -990,12 +971,6 @@ interface __FIAsyncOperation_1_UINT32 {
 #define __FIAsyncOperation_1_UINT32_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIAsyncOperation_1_UINT32_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIAsyncOperation_1_UINT32_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IAsyncInfo methods ***/
-#define __FIAsyncOperation_1_UINT32_get_Id(This,id) (This)->lpVtbl->get_Id(This,id)
-#define __FIAsyncOperation_1_UINT32_get_Status(This,status) (This)->lpVtbl->get_Status(This,status)
-#define __FIAsyncOperation_1_UINT32_get_ErrorCode(This,errorCode) (This)->lpVtbl->get_ErrorCode(This,errorCode)
-#define __FIAsyncOperation_1_UINT32_Cancel(This) (This)->lpVtbl->Cancel(This)
-#define __FIAsyncOperation_1_UINT32_Close(This) (This)->lpVtbl->Close(This)
 /*** IAsyncOperation<ABI::UINT32> methods ***/
 #define __FIAsyncOperation_1_UINT32_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
 #define __FIAsyncOperation_1_UINT32_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
@@ -1021,22 +996,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetRuntimeClassName(__FIA
 static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetTrustLevel(__FIAsyncOperation_1_UINT32* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IAsyncInfo methods ***/
-static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_get_Id(__FIAsyncOperation_1_UINT32* This,unsigned int *id) {
-    return This->lpVtbl->get_Id(This,id);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_get_Status(__FIAsyncOperation_1_UINT32* This,AsyncStatus *status) {
-    return This->lpVtbl->get_Status(This,status);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_get_ErrorCode(__FIAsyncOperation_1_UINT32* This,HRESULT *errorCode) {
-    return This->lpVtbl->get_ErrorCode(This,errorCode);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_Cancel(__FIAsyncOperation_1_UINT32* This) {
-    return This->lpVtbl->Cancel(This);
-}
-static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_Close(__FIAsyncOperation_1_UINT32* This) {
-    return This->lpVtbl->Close(This);
-}
 /*** IAsyncOperation<ABI::UINT32> methods ***/
 static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_put_Completed(__FIAsyncOperation_1_UINT32* This,__FIAsyncOperationCompletedHandler_1_UINT32 *handler) {
     return This->lpVtbl->put_Completed(This,handler);
@@ -1058,11 +1017,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetResults(__FIAsyncOpera
 #define IAsyncOperation_UINT32_GetIids __FIAsyncOperation_1_UINT32_GetIids
 #define IAsyncOperation_UINT32_GetRuntimeClassName __FIAsyncOperation_1_UINT32_GetRuntimeClassName
 #define IAsyncOperation_UINT32_GetTrustLevel __FIAsyncOperation_1_UINT32_GetTrustLevel
-#define IAsyncOperation_UINT32_get_Completed __FIAsyncOperation_1_UINT32_get_Completed
-#define IAsyncOperation_UINT32_get_Status __FIAsyncOperation_1_UINT32_get_Status
-#define IAsyncOperation_UINT32_get_ErrorCode __FIAsyncOperation_1_UINT32_get_ErrorCode
-#define IAsyncOperation_UINT32_Cancel __FIAsyncOperation_1_UINT32_Cancel
-#define IAsyncOperation_UINT32_Close __FIAsyncOperation_1_UINT32_Close
 #define IAsyncOperation_UINT32_put_Completed __FIAsyncOperation_1_UINT32_put_Completed
 #define IAsyncOperation_UINT32_get_Completed __FIAsyncOperation_1_UINT32_get_Completed
 #define IAsyncOperation_UINT32_GetResults __FIAsyncOperation_1_UINT32_GetResults
