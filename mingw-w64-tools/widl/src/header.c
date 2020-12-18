@@ -1901,7 +1901,7 @@ static void write_runtimeclass(FILE *header, type_t *runtimeclass)
     fprintf(header, "#ifndef RUNTIMECLASS_%s_DEFINED\n", c_name);
     fprintf(header, "#define RUNTIMECLASS_%s_DEFINED\n", c_name);
     /* MIDL generates extern const here */
-    fprintf(header, "static const DECLSPEC_SELECTANY WCHAR RuntimeClass_%s[] = {", c_name);
+    fprintf(header, "extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_%s[] = {", c_name);
     for (i = 0, len = strlen(name); i < len; ++i) fprintf(header, "'%c',", name[i]);
     fprintf(header, "0};\n");
     fprintf(header, "#endif /* RUNTIMECLASS_%s_DEFINED */\n", c_name);
