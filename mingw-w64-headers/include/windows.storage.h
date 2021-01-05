@@ -249,99 +249,36 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFile*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFolder*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::IStorageItem*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
@@ -573,43 +510,16 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFile*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFolder*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::IStorageItem*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifdef __cplusplus
@@ -1263,7 +1173,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIKnownFoldersStatics_get_M
  */
 #ifndef RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED
 #define RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_KnownFolders[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','K','n','o','w','n','F','o','l','d','e','r','s',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_KnownFolders[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','K','n','o','w','n','F','o','l','d','e','r','s',0};
 #endif /* RUNTIMECLASS_Windows_Storage_KnownFolders_DEFINED */
 
 /*****************************************************************************
@@ -2034,7 +1944,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFolder_GetItemsAsy
  */
 #ifndef RUNTIMECLASS_Windows_Storage_StorageFile_DEFINED
 #define RUNTIMECLASS_Windows_Storage_StorageFile_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFile[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','o','r','a','g','e','F','i','l','e',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFile[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','o','r','a','g','e','F','i','l','e',0};
 #endif /* RUNTIMECLASS_Windows_Storage_StorageFile_DEFINED */
 
 /*
@@ -2049,7 +1959,7 @@ static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFile[]
  */
 #ifndef RUNTIMECLASS_Windows_Storage_StorageFolder_DEFINED
 #define RUNTIMECLASS_Windows_Storage_StorageFolder_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFolder[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','o','r','a','g','e','F','o','l','d','e','r',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_StorageFolder[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','o','r','a','g','e','F','o','l','d','e','r',0};
 #endif /* RUNTIMECLASS_Windows_Storage_StorageFolder_DEFINED */
 
 /*****************************************************************************
@@ -2528,7 +2438,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIApplicationData_RoamingSt
  */
 #ifndef RUNTIMECLASS_Windows_Storage_ApplicationData_DEFINED
 #define RUNTIMECLASS_Windows_Storage_ApplicationData_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_ApplicationData[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','p','p','l','i','c','a','t','i','o','n','D','a','t','a',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_ApplicationData[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','p','p','l','i','c','a','t','i','o','n','D','a','t','a',0};
 #endif /* RUNTIMECLASS_Windows_Storage_ApplicationData_DEFINED */
 
 /*****************************************************************************
@@ -3907,8 +3817,8 @@ namespace ABI {
             ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> : public IUnknown
             {
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IInspectable *sender,
-                    IApplicationData *args) = 0;
+                    IApplicationData *args,
+                    IInspectable *sender) = 0;
 
             };
         }
@@ -3937,8 +3847,8 @@ typedef struct __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInsp
     /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This,
-        IInspectable *sender,
-        __x_ABI_CWindows_CStorage_CIApplicationData *args);
+        __x_ABI_CWindows_CStorage_CIApplicationData *args,
+        IInspectable *sender);
 
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl;
@@ -3954,7 +3864,7 @@ interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectab
 #define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_AddRef(This) (This)->lpVtbl->AddRef(This)
 #define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Release(This) (This)->lpVtbl->Release(This)
 /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
-#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(This,sender,args) (This)->lpVtbl->Invoke(This,sender,args)
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(This,args,sender) (This)->lpVtbl->Invoke(This,args,sender)
 #else
 /*** IUnknown methods ***/
 static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_QueryInterface(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,REFIID riid,void **ppvObject) {
@@ -3967,8 +3877,8 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplication
     return This->lpVtbl->Release(This);
 }
 /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
-static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CStorage_CIApplicationData *args) {
-    return This->lpVtbl->Invoke(This,sender,args);
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,__x_ABI_CWindows_CStorage_CIApplicationData *args,IInspectable *sender) {
+    return This->lpVtbl->Invoke(This,args,sender);
 }
 #endif
 #ifdef WIDL_USING_ITYPEDEVENTHANDLER_2_WINDOWS_STORAGE_APPLICATIONDATA_IINSPECTABLE

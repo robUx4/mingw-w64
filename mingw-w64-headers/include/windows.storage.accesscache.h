@@ -646,7 +646,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemA
  */
 #ifndef RUNTIMECLASS_Windows_Storage_AccessCache_StorageApplicationPermissions_DEFINED
 #define RUNTIMECLASS_Windows_Storage_AccessCache_StorageApplicationPermissions_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_AccessCache_StorageApplicationPermissions[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','c','c','e','s','s','C','a','c','h','e','.','S','t','o','r','a','g','e','A','p','p','l','i','c','a','t','i','o','n','P','e','r','m','i','s','s','i','o','n','s',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_AccessCache_StorageApplicationPermissions[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','c','c','e','s','s','C','a','c','h','e','.','S','t','o','r','a','g','e','A','p','p','l','i','c','a','t','i','o','n','P','e','r','m','i','s','s','i','o','n','s',0};
 #endif /* RUNTIMECLASS_Windows_Storage_AccessCache_StorageApplicationPermissions_DEFINED */
 
 /* Begin additional prototypes for all interfaces */

@@ -166,29 +166,11 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
@@ -331,15 +313,6 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifdef __cplusplus
@@ -1322,7 +1295,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStre
  */
 #ifndef RUNTIMECLASS_Windows_Storage_Streams_DataReader_DEFINED
 #define RUNTIMECLASS_Windows_Storage_Streams_DataReader_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_Streams_DataReader[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','r','e','a','m','s','.','D','a','t','a','R','e','a','d','e','r',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_Streams_DataReader[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','r','e','a','m','s','.','D','a','t','a','R','e','a','d','e','r',0};
 #endif /* RUNTIMECLASS_Windows_Storage_Streams_DataReader_DEFINED */
 
 /*****************************************************************************
@@ -1416,7 +1389,7 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE LoadAsync(
                         UINT32 count,
-                        IAsyncOperation<ABI::UINT32> **operation) = 0;
+                        IAsyncOperation<UINT32> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DetachBuffer(
                         IBuffer **buffer) = 0;

@@ -10,18 +10,18 @@
 
 import "inspectable.idl";
 
-cpp_quote("#if 0 // widl-only definitions already defined in Windows headers")
+// found in eventtoken.h in MSDK
 typedef struct EventRegistrationToken {
   UINT64 Value;
 } EventRegistrationToken;
 
-typedef enum AsyncStatus {
+// found in asyncinfo.h in MSDK
+typedef [v1_enum] enum AsyncStatus {
   Started,
   Completed,
   Canceled,
   Error
 } AsyncStatus;
-cpp_quote("#endif // widl-only definitions")
 
 namespace Windows {
   namespace Foundation {
@@ -56,10 +56,10 @@ namespace Windows {
       HRESULT Close();
     }
 
-    [uuid(A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7)]
+    [uuid(a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7)]
     delegate HRESULT AsyncActionCompletedHandler(IAsyncAction *asyncAction, AsyncStatus status);
 
-    [uuid(5A648006-843A-4DA9-865B-9D26E5DFAD7B)]
+    [uuid(5a648006-843a-4da9-865b-9d26e5dfad7b)]
     interface IASyncAction : IAsyncInfo {
       [propput] HRESULT Completed(AsyncActionCompletedHandler* handler);
       [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
@@ -68,7 +68,7 @@ namespace Windows {
 
 #ifdef __WIDL__
         [
-            uuid("FCDCF02C-E5D8-4478-915A-4D90B74B83A5")
+            uuid(fcdcf02c-e5d8-4478-915a-4d90b74b83a5)
         ]
         delegate HRESULT AsyncOperationCompletedHandler<T>(Windows.Foundation.IAsyncOperation<T> *asyncInfo, AsyncStatus asyncStatus);
 
@@ -85,9 +85,10 @@ namespace Windows {
         delegate HRESULT EventHandler<T>([in] IInspectable *sender, [in] T args);
 
         [
-            uuid(9DE1C534-6AE1-11E0-84E1-18A905BCC53F)
+            uuid(9de1c534-6ae1-11e0-84e1-18a905bcc53f)
         ]
-        delegate HRESULT TypedEventHandler<TSender,TResult>(TSender sender, TResult args);
+        // parameter order seems inverted for TypedEventHandler<DeviceWatcher*, DeviceInformation*>
+        delegate HRESULT TypedEventHandler<TSender,TResult>(TResult args, TSender sender);
 
         namespace Collections
         {
@@ -115,10 +116,10 @@ namespace Windows {
             ]
             interface IVectorView<T> : IInspectable
             {
-                HRESULT GetAt([in] ULONG index, [out, retval] T *value);
-                [propget] HRESULT Size([out, retval] ULONG *value);
-                HRESULT IndexOf([in, optional] T element, [out] ULONG *index, [out, retval] BOOLEAN *value);
-                HRESULT GetMany([in] ULONG start_index, [out] T *items, [out, retval] ULONG *value);
+                HRESULT GetAt([in] UINT32 index, [out, retval] T *value);
+                [propget] HRESULT Size([out, retval] UINT32 *value);
+                HRESULT IndexOf([in, optional] T element, [out] UINT32 *index, [out, retval] BOOLEAN *value);
+                HRESULT GetMany([in] UINT32 start_index, [in] UINT32 itemsLength, [out] T **items, [out, retval] UINT32 *value);
             }
         }
 #endif
