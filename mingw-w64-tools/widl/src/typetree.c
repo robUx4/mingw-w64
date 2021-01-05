@@ -52,6 +52,7 @@ type_t *make_type(enum type_type type)
     t->c_name = NULL;
     t->signature = NULL;
     t->short_name = NULL;
+    t->name_full_params = NULL;
     memset(&t->details, 0, sizeof(t->details));
     t->typestring_offset = 0;
     t->ptrdesc = 0;
@@ -942,6 +943,40 @@ type_t *type_parameterized_type_specialize_declare(type_t *type, type_list_t *pa
     return new_type;
 }
 
+static char *type_parameterized_implementation_name(type_t *type, int force, type_t *iface, type_list_t *params)
+{
+    size_t len = 0, pos = 0;
+    char *buf = NULL;
+    type_list_t *entry;
+    type_t *runtime_iface;
+
+    pos += strappend(&buf, &len, pos, "%s%s_impl<", force || type->type_type==TYPE_RUNTIMECLASS || iface->type_type==TYPE_DELEGATE ? "I":"", type->name);
+    for (entry = params; entry; entry = entry->next)
+    {
+        for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
+        if (type->type_type == TYPE_RUNTIMECLASS)
+        {
+            pos += strappend(&buf, &len, pos, "ABI::Windows::Foundation::Internal::AggregateType<");
+            pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+            for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+            pos += strappend(&buf, &len, pos, ", ");
+            runtime_iface = type_runtimeclass_get_default_iface(type);
+            pos += append_namespaces(&buf, &len, pos, runtime_iface->namespace, "", "::", runtime_iface->name, use_abi_namespace ? "ABI" : NULL);
+            for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+            pos += strappend(&buf, &len, pos, ">");
+        }
+        else
+        {
+            pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, use_abi_namespace ? "ABI" : NULL);
+            for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+        }
+        if (entry->next) pos += strappend(&buf, &len, pos, ", ");
+    }
+    pos += strappend(&buf, &len, pos, ">");
+
+    return buf;
+}
+
 type_t *type_parameterized_type_specialize_define(type_t *type, type_list_t *params)
 {
     type_list_t *orig = type->details.parameterized.params;
@@ -958,11 +993,13 @@ type_t *type_parameterized_type_specialize_define(type_t *type, type_list_t *par
         return NULL;
     }
 
+    iface->name_full_params = type_parameterized_implementation_name(type, 0, iface, params);
     iface->signature = format_parameterized_type_signature(type, params);
     iface->defined = TRUE;
     if (iface->type_type == TYPE_DELEGATE)
     {
         iface = iface->details.delegate.iface;
+        iface->name_full_params = type_parameterized_implementation_name(type, 1, iface, params);
         iface->signature = format_parameterized_type_signature(type, params);
         iface->defined = TRUE;
     }
@@ -1056,6 +1093,10 @@ void type_parameterized_delegate_define(type_t *type, type_list_t *params, state
     iface->details.iface->disp_inherit = NULL;
     iface->details.iface->async_iface = NULL;
     iface->details.iface->requires = NULL;
+
+    delegate->name = type->name;
+    compute_delegate_iface_names(delegate, type, params);
+    delegate->defined = TRUE;
 }
 
 void type_dispinterface_define(type_t *iface, var_list_t *props, var_list_t *methods)
