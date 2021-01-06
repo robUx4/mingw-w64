@@ -507,7 +507,27 @@ void write_type_left(FILE *h, const decl_spec_t *ds, enum name_type name_type, i
       }
       case TYPE_PARAMETERIZED_TYPE:
       {
-          fprintf(h, "%s<", t->name);
+#if 0
+          int in_namespace = t->namespace && !is_global_namespace(t->namespace);
+          if (in_namespace)
+          {
+            char *namespace = format_namespace(t->namespace, "", "::", t->name, use_abi_namespace ? "ABI" : NULL);
+            fprintf(h, "%s", namespace);
+          }
+#endif
+          type_t *real_type = t->details.parameterized.type;
+          while (type_get_type(real_type) == TYPE_PARAMETERIZED_TYPE)
+          {
+              if (real_type->name[0] == 'I') // already a basic type
+                break;
+              if (real_type == real_type->details.parameterized.type)
+                break;
+              real_type = real_type->details.parameterized.type;
+          }
+          if (type_get_type(real_type) == TYPE_DELEGATE)
+            real_type = type_delegate_get_iface(real_type);
+
+          fprintf(h, "%s<", real_type->name);
            // TODO write extra parameter
           fprintf(h, "TResult_logical");
           fprintf(h, ">");
@@ -516,7 +536,7 @@ void write_type_left(FILE *h, const decl_spec_t *ds, enum name_type name_type, i
       case TYPE_PARAMETER:
       {
            // TODO write extra parameter
-          fprintf(h, "TResult_logical");
+          fprintf(h, "TResult_abi");
           break;
       }
       case TYPE_APICONTRACT:

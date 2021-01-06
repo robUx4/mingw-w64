@@ -876,9 +876,9 @@ namespace ABI {
                 typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
                 typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
             public:
-                virtual HRESULT STDMETHODCALLTYPE  put_Completed(AsyncOperationCompletedHandler<TResult_logical> *handler) = 0;
-                virtual HRESULT STDMETHODCALLTYPE  get_Completed(AsyncOperationCompletedHandler<TResult_logical> **handler) = 0;
-                virtual HRESULT STDMETHODCALLTYPE  GetResults(TResult_logical *result) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  put_Completed(IAsyncOperationCompletedHandler<TResult_logical> *handler) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  get_Completed(IAsyncOperationCompletedHandler<TResult_logical> **handler) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  GetResults(TResult_abi *result) = 0;
             };
         }
     }
@@ -898,7 +898,7 @@ namespace ABI {
                 typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
                 typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
             public:
-                virtual HRESULT STDMETHODCALLTYPE  Invoke(IInspectable *sender,TResult_logical args) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(IInspectable *sender,TResult_abi args) = 0;
             };
         }
     }
@@ -918,7 +918,7 @@ namespace ABI {
                 typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
                 typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
             public:
-                virtual HRESULT STDMETHODCALLTYPE  Invoke(TResult_logical args,TResult_logical sender) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(TResult_abi args,TResult_abi sender) = 0;
             };
         }
     }
@@ -939,10 +939,10 @@ namespace ABI {
                     typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
                     typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
                 public:
-                    virtual HRESULT STDMETHODCALLTYPE  get_Current(TResult_logical *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  get_Current(TResult_abi *value) = 0;
                     virtual HRESULT STDMETHODCALLTYPE  get_HasCurrent(WINBOOL *value) = 0;
                     virtual HRESULT STDMETHODCALLTYPE  MoveNext(WINBOOL *value) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 count,TResult_logical *items,UINT32 *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 count,TResult_abi *items,UINT32 *value) = 0;
                 };
             }
         }
@@ -986,10 +986,10 @@ namespace ABI {
                     typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
                     typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
                 public:
-                    virtual HRESULT STDMETHODCALLTYPE  GetAt(UINT32 index,TResult_logical *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetAt(UINT32 index,TResult_abi *value) = 0;
                     virtual HRESULT STDMETHODCALLTYPE  get_Size(UINT32 *value) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE  IndexOf(TResult_logical element,UINT32 *index,BOOLEAN *value) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 start_index,UINT32 itemsLength,TResult_logical **items,UINT32 *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  IndexOf(TResult_abi element,UINT32 *index,BOOLEAN *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 start_index,UINT32 itemsLength,TResult_abi **items,UINT32 *value) = 0;
                 };
             }
         }
