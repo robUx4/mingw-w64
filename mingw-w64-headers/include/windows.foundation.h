@@ -167,6 +167,54 @@ namespace ABI {
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
 typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IVectorView<HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
+#define ____FIIterable_1_HSTRING_FWD_DEFINED__
+typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterable<HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
+#define ____FIIterator_1_HSTRING_FWD_DEFINED__
+typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterator<HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
+#ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
+#define ____FIVectorView_1_HSTRING_FWD_DEFINED__
+typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
 #endif
 
 #ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
@@ -773,21 +821,63 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_GetResults
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
 typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IVectorView<HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
 #define ____FIIterable_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterable<HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
 #define ____FIIterator_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IIterator<HSTRING>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<UINT32>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 /*****************************************************************************

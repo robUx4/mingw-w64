@@ -250,7 +250,7 @@ char *format_parameterized_type_name(type_t *type, type_list_t *params)
     for (entry = params; entry; entry = entry->next)
     {
         for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
-        pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, use_abi_namespace ? "ABI" : NULL);
+        pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
         for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
         if (entry->next) pos += strappend(&buf, &len, pos, ",");
     }
@@ -279,7 +279,7 @@ static char *format_parameterized_type_c_name(type_t *type, type_list_t *params,
     type_list_t *entry;
     int i, count = 0;
 
-    pos += append_namespaces(&buf, &len, pos, type->namespace, "__x_", "_C", "", use_abi_namespace ? "ABI" : NULL);
+    pos += append_namespaces(&buf, &len, pos, type->namespace, "__x_", "_C", "", type->namespace && use_abi_namespace ? "ABI" : NULL);
     for (entry = params; entry; entry = entry->next) count++;
     pos += strappend(&buf, &len, pos, "%s%s_%d", prefix, type->name, count);
     for (entry = params; entry; entry = entry->next)
