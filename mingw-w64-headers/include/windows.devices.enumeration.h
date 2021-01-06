@@ -1267,18 +1267,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("07faa053-eb2f-5cba-b25b-d9d57be6715f")
-            IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> : public IInspectable
-            {
-                virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation*> *handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation*> **handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE GetResults(
-                    IDeviceInformation **result) = 0;
-
-            };
+            IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> : IAsyncOperation_impl<ABI::Windows::Devices::Enumeration::DeviceInformation*>
+            {};
         }
     }
 }
@@ -1402,6 +1392,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CDevices__CEnumeration_
 
 #endif  /* ____FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__ */
 
+/*** template 1 IAsyncOperation_impl<ABI::Windows::Devices::Enumeration::DeviceInformation*> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation*> interface
  *
@@ -1417,13 +1408,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("bb483df2-7bb6-5923-a28d-8342ec30046b")
-            IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation*> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> *asyncInfo,
-                    AsyncStatus asyncStatus) = 0;
-
-            };
+            IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Devices::Enumeration::DeviceInformation*>
+            {};
         }
     }
 }
@@ -1499,6 +1485,7 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CDevice
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__ */
 
+/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Devices::Enumeration::DeviceInformation*> **
 /*****************************************************************************
  * IVectorView<ABI::Windows::Devices::Enumeration::DeviceInformation*> interface
  *
@@ -1515,27 +1502,8 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("e170688f-3495-5bf6-aab5-9cac17e0f10f")
-                IVectorView<ABI::Windows::Devices::Enumeration::DeviceInformation*> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE GetAt(
-                        UINT32 index,
-                        IDeviceInformation **value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE get_Size(
-                        UINT32 *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE IndexOf(
-                        IDeviceInformation *element,
-                        UINT32 *index,
-                        BOOLEAN *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE GetMany(
-                        UINT32 start_index,
-                        UINT32 itemsLength,
-                        IDeviceInformation ***items,
-                        UINT32 *value) = 0;
-
-                };
+                IVectorView<ABI::Windows::Devices::Enumeration::DeviceInformation*> : IVectorView_impl<ABI::Windows::Devices::Enumeration::DeviceInformation*>
+                {};
             }
         }
     }
@@ -1675,6 +1643,7 @@ static FORCEINLINE HRESULT __FIVectorView_1_Windows__CDevices__CEnumeration__CDe
 
 #endif  /* ____FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__ */
 
+/*** template 1 IVectorView_impl<ABI::Windows::Devices::Enumeration::DeviceInformation*> **
 /*****************************************************************************
  * ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformation*> interface
  *
@@ -1690,13 +1659,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("03c5a07b-990c-5d09-b0b8-5734eaa38222")
-            ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformation*> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IDeviceWatcher *args,
-                    IDeviceInformation *sender) = 0;
-
-            };
+            ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformation*> : ITypedEventHandler_impl<ABI::Windows::Devices::Enumeration::DeviceWatcher*ABI::Windows::Devices::Enumeration::DeviceInformation*>
+            {};
         }
     }
 }
@@ -1772,6 +1736,7 @@ static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumerati
 
 #endif  /* ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_INTERFACE_DEFINED__ */
 
+/*** template 1 ITypedEventHandler_impl<ABI::Windows::Devices::Enumeration::DeviceWatcher*ABI::Windows::Devices::Enumeration::DeviceInformation*> **
 /*****************************************************************************
  * ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*> interface
  *
@@ -1787,13 +1752,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("906f1254-79ad-54fc-93c4-cdb99b437899")
-            ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IDeviceWatcher *args,
-                    IDeviceInformationUpdate *sender) = 0;
-
-            };
+            ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*> : ITypedEventHandler_impl<ABI::Windows::Devices::Enumeration::DeviceWatcher*ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*>
+            {};
         }
     }
 }
@@ -1869,6 +1829,7 @@ static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumerati
 
 #endif  /* ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_INTERFACE_DEFINED__ */
 
+/*** template 1 ITypedEventHandler_impl<ABI::Windows::Devices::Enumeration::DeviceWatcher*ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*> **
 /*****************************************************************************
  * ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::IInspectable*> interface
  *
@@ -1884,13 +1845,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("c82fd42d-dc82-5843-9cfd-cc38b5df10b2")
-            ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::IInspectable*> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IDeviceWatcher *args,
-                    IInspectable *sender) = 0;
-
-            };
+            ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Devices::Enumeration::DeviceWatcher*ABI::IInspectable*>
+            {};
         }
     }
 }
@@ -1966,6 +1922,7 @@ static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumerati
 
 #endif  /* ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_INTERFACE_DEFINED__ */
 
+/*** template 1 ITypedEventHandler_impl<ABI::Windows::Devices::Enumeration::DeviceWatcher*ABI::IInspectable*> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);

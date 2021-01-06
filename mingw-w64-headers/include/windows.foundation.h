@@ -60,101 +60,122 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CAsyncOperationCompletedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CAsyncOperationCompletedHandler_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct AsyncOperationCompletedHandler;
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler_impl;
+
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler : IAsyncOperationCompletedHandler_impl<TResult>
+            {};
+
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncOperation_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CIAsyncOperation_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct IAsyncOperation;
+            template <class TResult>
+            struct IAsyncOperation_impl;
+
+            template <class TResult>
+            struct IAsyncOperation : IAsyncOperation_impl<TResult>
+            {};
+
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CEventHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CEventHandler_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct EventHandler;
+            template <class TResult>
+            struct IEventHandler_impl;
+
+            template <class TResult>
+            struct IEventHandler : IEventHandler_impl<TResult>
+            {};
+
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct TypedEventHandler;
+            template <class TResult>
+            struct ITypedEventHandler_impl;
+
+            template <class TResult>
+            struct ITypedEventHandler : ITypedEventHandler_impl<TResult>
+            {};
+
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIIterator_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CCollections_CIIterator_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T> struct IIterator;
+                template <class TResult>
+                struct IIterator_impl;
+
+                template <class TResult>
+                struct IIterator : IIterator_impl<TResult>
+                {};
+
             }
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIIterable_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CCollections_CIIterable_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T> struct IIterable;
+                template <class TResult>
+                struct IIterable_impl;
+
+                template <class TResult>
+                struct IIterable : IIterable_impl<TResult>
+                {};
+
             }
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIVectorView_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CCollections_CIVectorView_FWD_DEFINED__
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T> struct IVectorView;
+                template <class TResult>
+                struct IVectorView_impl;
+
+                template <class TResult>
+                struct IVectorView : IVectorView_impl<TResult>
+                {};
+
             }
         }
     }
 }
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
@@ -823,6 +844,160 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_GetResults
 
 #endif  /* ____x_ABI_CWindows_CFoundation_CIASyncAction_INTERFACE_DEFINED__ */
 
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler_impl : IUnknown
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(IAsyncOperation<TResult_logical> *asyncInfo,AsyncStatus asyncStatus) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IAsyncOperation_impl : IInspectable
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  put_Completed(AsyncOperationCompletedHandler<TResult_logical> *handler) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  get_Completed(AsyncOperationCompletedHandler<TResult_logical> **handler) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  GetResults(TResult_logical *result) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IEventHandler_impl : IUnknown
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(IInspectable *sender,TResult_logical args) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct ITypedEventHandler_impl : IUnknown
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(TResult_logical args,TResult_logical sender) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IIterator_impl : IInspectable
+                {
+                private:
+                    typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                    typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE  get_Current(TResult_logical *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  get_HasCurrent(WINBOOL *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  MoveNext(WINBOOL *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 count,TResult_logical *items,UINT32 *value) = 0;
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IIterable_impl : IInspectable
+                {
+                private:
+                    typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                    typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE  First(IIterator<TResult_logical> **value) = 0;
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IVectorView_impl : IInspectable
+                {
+                private:
+                    typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                    typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE  GetAt(UINT32 index,TResult_logical *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  get_Size(UINT32 *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  IndexOf(TResult_logical element,UINT32 *index,BOOLEAN *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 start_index,UINT32 itemsLength,TResult_logical **items,UINT32 *value) = 0;
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#endif
+
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
 typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
@@ -871,27 +1046,8 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("fca5679c-bfd4-5187-8b2d-de225049b346")
-                IVectorView<HSTRING> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE GetAt(
-                        UINT32 index,
-                        HSTRING *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE get_Size(
-                        UINT32 *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE IndexOf(
-                        HSTRING element,
-                        UINT32 *index,
-                        BOOLEAN *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE GetMany(
-                        UINT32 start_index,
-                        UINT32 itemsLength,
-                        HSTRING **items,
-                        UINT32 *value) = 0;
-
-                };
+                IVectorView<HSTRING> : IVectorView_impl<HSTRING>
+                {};
             }
         }
     }
@@ -1031,6 +1187,7 @@ static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetMany(__FIVectorView_1_HST
 
 #endif  /* ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
+/*** template 1 IVectorView_impl<HSTRING> **
 /*****************************************************************************
  * IIterable<HSTRING> interface
  *
@@ -1047,12 +1204,8 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("6d68d316-9712-5b81-be82-20dcb8b54521")
-                IIterable<HSTRING> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE First(
-                        IIterator<HSTRING> **value) = 0;
-
-                };
+                IIterable<HSTRING> : IIterable_impl<HSTRING>
+                {};
             }
         }
     }
@@ -1159,6 +1312,7 @@ static FORCEINLINE HRESULT __FIIterable_1_HSTRING_First(__FIIterable_1_HSTRING* 
 
 #endif  /* ____FIIterable_1_HSTRING_INTERFACE_DEFINED__ */
 
+/*** template 1 IIterable_impl<HSTRING> **
 /*****************************************************************************
  * IIterator<HSTRING> interface
  *
@@ -1175,23 +1329,8 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("36245dd8-f1a8-5da3-802b-6d93317f9a03")
-                IIterator<HSTRING> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE get_Current(
-                        HSTRING *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE get_HasCurrent(
-                        WINBOOL *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE MoveNext(
-                        WINBOOL *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE GetMany(
-                        UINT32 count,
-                        HSTRING *items,
-                        UINT32 *value) = 0;
-
-                };
+                IIterator<HSTRING> : IIterator_impl<HSTRING>
+                {};
             }
         }
     }
@@ -1327,6 +1466,7 @@ static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetMany(__FIIterator_1_HSTRING
 
 #endif  /* ____FIIterator_1_HSTRING_INTERFACE_DEFINED__ */
 
+/*** template 1 IIterator_impl<HSTRING> **
 /*****************************************************************************
  * IAsyncOperation<UINT32> interface
  *
@@ -1342,18 +1482,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("ef60385f-be78-584b-aaef-7829ada2b0de")
-            IAsyncOperation<UINT32> : public IInspectable
-            {
-                virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncOperationCompletedHandler<UINT32> *handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncOperationCompletedHandler<UINT32> **handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE GetResults(
-                    UINT32 *result) = 0;
-
-            };
+            IAsyncOperation<UINT32> : IAsyncOperation_impl<UINT32>
+            {};
         }
     }
 }
@@ -1477,6 +1607,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetResults(__FIAsyncOpera
 
 #endif  /* ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__ */
 
+/*** template 1 IAsyncOperation_impl<UINT32> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<UINT32> interface
  *
@@ -1492,13 +1623,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")
-            IAsyncOperationCompletedHandler<UINT32> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncOperation<UINT32> *asyncInfo,
-                    AsyncStatus asyncStatus) = 0;
-
-            };
+            IAsyncOperationCompletedHandler<UINT32> : IAsyncOperationCompletedHandler_impl<UINT32>
+            {};
         }
     }
 }
@@ -1574,6 +1700,7 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_UINT32_Invoke(__
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__ */
 
+/*** template 1 IAsyncOperationCompletedHandler_impl<UINT32> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);

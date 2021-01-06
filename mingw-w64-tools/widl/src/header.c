@@ -1112,25 +1112,6 @@ static void write_parameterized_implementation(FILE *header, type_t *type, int d
     methods = iface;
     parent = type_iface_get_inherit(iface);
   }
-#if 0
-  indent(header, 0);
-  fprintf(header, "template <class ");
-
-  fprintf(header, "TResult"); // TODO use the original parameter name
-//   type_list_t *entry;
-//   for (entry = type->attrs; entry; entry = entry->next)
-//   {
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
-//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
-//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
-//   }
-  fprintf(header, ">\n");
-
-  write_line(header, 0, "struct %s : %s_impl<TResult>", iface->name, iface->name);
-  write_line(header, 0, "{};");
-  fprintf(header, "\n");
-#endif
   assert (parent);
 
   indent(header, 0);
@@ -1154,13 +1135,11 @@ static void write_parameterized_implementation(FILE *header, type_t *type, int d
   write_line(header, -1, "public:");
 
   const statement_t *stmt;
-  int first_iface = 1;
 
   STATEMENTS_FOR_EACH_FUNC(stmt, type_iface_get_stmts(methods))
   {
     const var_t *func = stmt->u.var;
     if (!is_callas(func->attrs)) {
-      const var_t *arg;
 
     ++indentation;
     indent(header, 1);
@@ -2306,13 +2285,8 @@ static void write_header_stmts(FILE *header, const statement_list_t *stmts, cons
         }
         else
         {
-          type_t *iface = stmt->u.type;
           is_object_interface++;
-        //   if (iface->parameterized)
-          {
-            // fprintf(header, "/*** template 4 %s **/\n", iface->name);
-            write_parameterized_implementation(header, stmt->u.type, stmt->declonly);
-          }
+          write_parameterized_implementation(header, stmt->u.type, stmt->declonly);
           is_object_interface--;
         }
         // else if (type_get_type(stmt->u.type) == TYPE_PARAMETERIZED_TYPE)

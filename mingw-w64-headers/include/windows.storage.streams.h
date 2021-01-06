@@ -1886,18 +1886,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("c4a57c5e-32b0-55b3-ad13-ce1c23041ed6")
-            IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : public IInspectable
-            {
-                virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> *handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE GetResults(
-                    IRandomAccessStreamWithContentType **result) = 0;
-
-            };
+            IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : IAsyncOperation_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
+            {};
         }
     }
 }
@@ -2021,6 +2011,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStreams__CIR
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_INTERFACE_DEFINED__ */
 
+/*** template 1 IAsyncOperation_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> interface
  *
@@ -2036,13 +2027,8 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("3dddecf4-1d39-58e8-83b1-dbed541c7f35")
-            IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> *asyncInfo,
-                    AsyncStatus asyncStatus) = 0;
-
-            };
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
+            {};
         }
     }
 }
@@ -2118,6 +2104,7 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_INTERFACE_DEFINED__ */
 
+/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
