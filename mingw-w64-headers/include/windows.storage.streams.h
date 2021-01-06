@@ -2011,7 +2011,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStreams__CIR
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> interface
  *
@@ -2104,7 +2103,6 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);

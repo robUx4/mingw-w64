@@ -3322,7 +3322,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>> **
 /*****************************************************************************
  * IAsyncOperation<ABI::Windows::Storage::StorageFolder*> interface
  *
@@ -3463,7 +3462,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolde
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFolder*, ABI::Windows::Storage::IStorageFolder*>> **
 /*****************************************************************************
  * IAsyncOperation<ABI::Windows::Storage::IStorageItem*> interface
  *
@@ -3604,7 +3602,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CIStorageItem
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<ABI::Windows::Storage::IStorageItem*> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> interface
  *
@@ -3697,7 +3694,6 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> interface
  *
@@ -3790,7 +3786,6 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFolder*, ABI::Windows::Storage::IStorageFolder*>> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> interface
  *
@@ -3883,7 +3878,6 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::IStorageItem*> **
 /*****************************************************************************
  * ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> interface
  *
@@ -3976,7 +3970,6 @@ static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicati
 
 #endif  /* ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_INTERFACE_DEFINED__ */
 
-/*** template 1 ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::ApplicationData*, ABI::Windows::Storage::IApplicationData*>ABI::IInspectable*> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);

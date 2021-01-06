@@ -1187,7 +1187,6 @@ static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetMany(__FIVectorView_1_HST
 
 #endif  /* ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
-/*** template 1 IVectorView_impl<HSTRING> **
 /*****************************************************************************
  * IIterable<HSTRING> interface
  *
@@ -1312,7 +1311,6 @@ static FORCEINLINE HRESULT __FIIterable_1_HSTRING_First(__FIIterable_1_HSTRING* 
 
 #endif  /* ____FIIterable_1_HSTRING_INTERFACE_DEFINED__ */
 
-/*** template 1 IIterable_impl<HSTRING> **
 /*****************************************************************************
  * IIterator<HSTRING> interface
  *
@@ -1466,7 +1464,6 @@ static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetMany(__FIIterator_1_HSTRING
 
 #endif  /* ____FIIterator_1_HSTRING_INTERFACE_DEFINED__ */
 
-/*** template 1 IIterator_impl<HSTRING> **
 /*****************************************************************************
  * IAsyncOperation<UINT32> interface
  *
@@ -1607,7 +1604,6 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetResults(__FIAsyncOpera
 
 #endif  /* ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<UINT32> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<UINT32> interface
  *
@@ -1700,7 +1696,6 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_UINT32_Invoke(__
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<UINT32> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);

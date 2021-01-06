@@ -2282,10 +2282,10 @@ static void write_header_stmts(FILE *header, const statement_list_t *stmts, cons
               write_com_interface_start(header, async_iface);
               write_com_interface_end(header, async_iface);
             }
-            if (iface->parameterized)
-            {
-                fprintf(header, "/*** template 1 %s **\n", iface->parameterized);
-            }
+            // if (iface->parameterized)
+            // {
+            //     fprintf(header, "/*** template 1 %s **\n", iface->parameterized);
+            // }
           }
           else
           {
