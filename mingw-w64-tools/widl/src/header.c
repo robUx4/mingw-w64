@@ -1765,11 +1765,18 @@ static void write_com_interface_end(FILE *header, type_t *iface)
       if (strchr(iface->name, '<')) fprintf(header, "template<> struct ");
       else fprintf(header, "interface ");
   }
+  if (strchr(iface->name, '<'))
+  {
+      fprintf(header, "%s : %s\n", iface->name, iface->parameterized);
+      write_line(header, 0, "{};");
+  }
+  else
+  {
   if (type_iface_get_inherit(iface))
   {
-    fprintf(header, "%s : public %s\n", iface->name,
-            type_iface_get_inherit(iface)->name);
-    write_line(header, 1, "{");
+      fprintf(header, "%s : public %s\n", iface->name,
+                type_iface_get_inherit(iface)->name);
+      write_line(header, 1, "{");
   }
   else
   {
@@ -1784,6 +1791,7 @@ static void write_com_interface_end(FILE *header, type_t *iface)
   if (!type_iface_get_inherit(iface))
     write_line(header, 0, "END_INTERFACE\n");
   write_line(header, -1, "};");
+  }
   if (!is_global_namespace(iface->namespace)) {
       write_namespace_end(header, iface->namespace);
       write_line(header, 0, "extern \"C\" {");

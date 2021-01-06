@@ -52,6 +52,8 @@ type_t *make_type(enum type_type type)
     t->c_name = NULL;
     t->signature = NULL;
     t->short_name = NULL;
+    t->name_no_param = NULL;
+    t->parameterized = NULL;
     memset(&t->details, 0, sizeof(t->details));
     t->typestring_offset = 0;
     t->ptrdesc = 0;
@@ -942,6 +944,35 @@ type_t *type_parameterized_type_specialize_declare(type_t *type, type_list_t *pa
     return new_type;
 }
 
+static char *type_parameterized_bare_name(type_t *type)
+{
+    char *bare_name = strdup(type->name);
+    char *separator = strchr(bare_name, '<');
+    if (separator) *separator = '\0';
+    return bare_name;
+}
+
+static char *type_parameterized_implementation_name(type_t *type, type_list_t *params)
+{
+    size_t len = 0, pos = 0;
+    char *buf = NULL;
+    type_list_t *entry;
+
+    pos += strappend(&buf, &len, pos, "%s_impl<", type->name_no_param);
+    for (entry = params; entry; entry = entry->next)
+    {
+        for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
+        pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+        for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type))
+        {
+            pos += strappend(&buf, &len, pos, "*");
+        }
+    }
+    pos += strappend(&buf, &len, pos, ">");
+
+    return buf;
+}
+
 type_t *type_parameterized_type_specialize_define(type_t *type, type_list_t *params)
 {
     type_list_t *orig = type->details.parameterized.params;
@@ -958,11 +989,15 @@ type_t *type_parameterized_type_specialize_define(type_t *type, type_list_t *par
         return NULL;
     }
 
+    iface->name_no_param = type_parameterized_bare_name(iface);
+    iface->parameterized = type_parameterized_implementation_name(iface, params);
     iface->signature = format_parameterized_type_signature(type, params);
     iface->defined = TRUE;
     if (iface->type_type == TYPE_DELEGATE)
     {
         iface = iface->details.delegate.iface;
+        iface->name_no_param = type_parameterized_bare_name(iface);
+        iface->parameterized = type_parameterized_implementation_name(iface, params);
         iface->signature = format_parameterized_type_signature(type, params);
         iface->defined = TRUE;
     }
