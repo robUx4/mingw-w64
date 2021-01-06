@@ -136,31 +136,87 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceInformation __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceInformation;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation __FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IVectorView<ABI::Windows::Devices::Enumeration::DeviceInformation*>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformation*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::IInspectable*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
@@ -240,11 +296,31 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation __FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceInformation;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template<> struct IVectorView<ABI::Windows::Devices::Enumeration::DeviceInformation*>;
+            }
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifdef __cplusplus

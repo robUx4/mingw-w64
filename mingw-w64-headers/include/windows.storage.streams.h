@@ -166,11 +166,29 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
@@ -313,6 +331,15 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifdef __cplusplus

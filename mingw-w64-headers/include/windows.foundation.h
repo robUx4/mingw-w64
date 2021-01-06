@@ -60,110 +60,6 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CFoundation_CAsyncOperationCompletedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CAsyncOperationCompletedHandler_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template <class T> struct AsyncOperationCompletedHandler : public IInspectable
-            {};
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncOperation_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CIAsyncOperation_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template <class T> struct IAsyncOperation : public IInspectable
-            {};
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CEventHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CEventHandler_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template <class T> struct EventHandler : public IInspectable
-            {};
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CTypedEventHandler_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template <class T> struct TypedEventHandler : public IInspectable
-            {};
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIIterator_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CCollections_CIIterator_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template <class T> struct IIterator : public IInspectable
-                {};
-            }
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIIterable_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CCollections_CIIterable_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template <class T> struct IIterable : public IInspectable
-                {};
-            }
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIVectorView_FWD_DEFINED__
-#define ____x_ABI_CWindows_CFoundation_CCollections_CIVectorView_FWD_DEFINED__
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template <class T> struct IVectorView : public IInspectable
-                {};
-            }
-        }
-    }
-}
-#endif /* __cplusplus */
-#endif
-
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
 typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
@@ -212,29 +108,32 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
-#define ____FIVectorView_1_HSTRING_FWD_DEFINED__
-typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
-#endif
-
-#ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
-#define ____FIIterable_1_HSTRING_FWD_DEFINED__
-typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
-#endif
-
-#ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
-#define ____FIIterator_1_HSTRING_FWD_DEFINED__
-typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
-#endif
-
 #ifndef ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperation<UINT32>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_UINT32 __FIAsyncOperationCompletedHandler_1_UINT32;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template<> struct IAsyncOperationCompletedHandler<UINT32>;
+        }
+    }
+}
+#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
