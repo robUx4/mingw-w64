@@ -1500,10 +1500,9 @@ static void write_forward_parameterized(FILE *header, type_t *iface)
   write_namespace_start(header, iface->namespace);
   // TODO get all the parameters instead of <T>
   indent(header, 0);
-  fprintf(header, "template <class T> struct %s : public IInspectable", iface->name);
+  fprintf(header, "template <class T> struct %s;", iface->name);
   // TODO if inherited add the inherited type
   fprintf(header, "\n");
-  write_line(header, 0, "{};");
   write_namespace_end(header, iface->namespace);
   fprintf(header, "#endif /* __cplusplus */\n");
   fprintf(header, "#endif\n\n" );
@@ -1514,14 +1513,20 @@ static void write_forward(FILE *header, type_t *iface)
   fprintf(header, "#ifndef __%s_FWD_DEFINED__\n", iface->c_name);
   fprintf(header, "#define __%s_FWD_DEFINED__\n", iface->c_name);
   fprintf(header, "typedef interface %s %s;\n", iface->c_name, iface->c_name);
-  if (!strchr(iface->name, '<'))
+  fprintf(header, "#ifdef __cplusplus\n");
+  if (strchr(iface->name, '<'))
   {
-    fprintf(header, "#ifdef __cplusplus\n");
+    char *name = format_namespace(iface->namespace, "", "::", iface->name, use_abi_namespace ? "ABI" : NULL);
+    write_line(header, 0, "#define %s  %s", iface->c_name, name);
+    free(name);
+  }
+  else
+  {
     write_namespace_start(header, iface->namespace);
     write_line(header, 0, "interface %s;", iface->name);
     write_namespace_end(header, iface->namespace);
-    fprintf(header, "#endif /* __cplusplus */\n");
   }
+  fprintf(header, "#endif /* __cplusplus */\n");
 //   else
 //   {
 //     fprintf(header, "#ifdef __cplusplus\n");

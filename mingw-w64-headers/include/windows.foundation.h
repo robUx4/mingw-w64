@@ -66,8 +66,7 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct AsyncOperationCompletedHandler : public IInspectable
-            {};
+            template <class T> struct AsyncOperationCompletedHandler;
         }
     }
 }
@@ -80,8 +79,7 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct IAsyncOperation : public IInspectable
-            {};
+            template <class T> struct IAsyncOperation;
         }
     }
 }
@@ -94,8 +92,7 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct EventHandler : public IInspectable
-            {};
+            template <class T> struct EventHandler;
         }
     }
 }
@@ -108,8 +105,7 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T> struct TypedEventHandler : public IInspectable
-            {};
+            template <class T> struct TypedEventHandler;
         }
     }
 }
@@ -123,8 +119,7 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T> struct IIterator : public IInspectable
-                {};
+                template <class T> struct IIterator;
             }
         }
     }
@@ -139,8 +134,7 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T> struct IIterable : public IInspectable
-                {};
+                template <class T> struct IIterable;
             }
         }
     }
@@ -155,8 +149,7 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T> struct IVectorView : public IInspectable
-                {};
+                template <class T> struct IVectorView;
             }
         }
     }
@@ -167,26 +160,41 @@ namespace ABI {
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
 typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+#ifdef __cplusplus
+#define __FIVectorView_1_HSTRING  ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
 #define ____FIIterable_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+#ifdef __cplusplus
+#define __FIIterable_1_HSTRING  ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
 #define ____FIIterator_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+#ifdef __cplusplus
+#define __FIIterator_1_HSTRING  ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
+#ifdef __cplusplus
+#define __FIAsyncOperation_1_UINT32  ABI::Windows::Foundation::IAsyncOperation<UINT32>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_UINT32 __FIAsyncOperationCompletedHandler_1_UINT32;
+#ifdef __cplusplus
+#define __FIAsyncOperationCompletedHandler_1_UINT32  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<UINT32>
+#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
@@ -818,21 +826,33 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_GetResults
 #ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
 #define ____FIVectorView_1_HSTRING_FWD_DEFINED__
 typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+#ifdef __cplusplus
+#define __FIVectorView_1_HSTRING  ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIIterable_1_HSTRING_FWD_DEFINED__
 #define ____FIIterable_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+#ifdef __cplusplus
+#define __FIIterable_1_HSTRING  ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIIterator_1_HSTRING_FWD_DEFINED__
 #define ____FIIterator_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+#ifdef __cplusplus
+#define __FIIterator_1_HSTRING  ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
+#ifdef __cplusplus
+#define __FIAsyncOperation_1_UINT32  ABI::Windows::Foundation::IAsyncOperation<UINT32>
+#endif /* __cplusplus */
 #endif
 
 /*****************************************************************************
