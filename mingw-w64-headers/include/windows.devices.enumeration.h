@@ -397,12 +397,12 @@ namespace ABI {
                 {
                     virtual HRESULT STDMETHODCALLTYPE CreateFromIdAsync(
                         HSTRING deviceId,
-                        IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateFromIdAsyncAdditionalProperties(
                         HSTRING deviceId,
-                        IIterable<HSTRING> *additionalProperties,
-                        IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> **operation) = 0;
+                        ABI::Windows::Foundation::Collections::IIterable<HSTRING> *additionalProperties,
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE FindAllAsync(
                         IInspectable **operation) = 0;
@@ -417,25 +417,25 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE FindAllAsyncAqsFilterAndAdditionalProperties(
                         HSTRING aqsFilter,
-                        IIterable<HSTRING> *additionalProperties,
+                        ABI::Windows::Foundation::Collections::IIterable<HSTRING> *additionalProperties,
                         enum DeviceInformationKind kind,
                         IInspectable **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateWatcher(
-                        IDeviceWatcher **operation) = 0;
+                        ABI::Windows::Devices::Enumeration::IDeviceWatcher **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateWatcherDeviceClass(
                         enum DeviceClass deviceclass,
-                        IDeviceWatcher **operation) = 0;
+                        ABI::Windows::Devices::Enumeration::IDeviceWatcher **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateWatcherAqsFilter(
                         HSTRING aqsFilter,
-                        IDeviceWatcher **operation) = 0;
+                        ABI::Windows::Devices::Enumeration::IDeviceWatcher **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateWatcherAqsFilterAndAdditionalProperties(
                         HSTRING aqsFilter,
-                        IIterable<HSTRING> *additionalProperties,
-                        IDeviceWatcher **operation) = 0;
+                        ABI::Windows::Foundation::Collections::IIterable<HSTRING> *additionalProperties,
+                        ABI::Windows::Devices::Enumeration::IDeviceWatcher **operation) = 0;
 
                 };
             }

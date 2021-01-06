@@ -770,19 +770,19 @@ namespace ABI {
             {
                 virtual HRESULT STDMETHODCALLTYPE RenameAsyncOverloadDefaultOptions(
                     HSTRING desiredName,
-                    IAsyncAction **action) = 0;
+                    ABI::Windows::Foundation::IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE RenameAsync(
                     HSTRING desiredName,
                     enum NameCollisionOption option,
-                    IAsyncAction **action) = 0;
+                    ABI::Windows::Foundation::IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE DeleteAsyncOverloadDefaultOptions(
-                    IAsyncAction **action) = 0;
+                    ABI::Windows::Foundation::IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE DeleteAsync(
                     enum StorageDeleteOption option,
-                    IAsyncAction **action) = 0;
+                    ABI::Windows::Foundation::IAsyncAction **action) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetBasicPropertiesAsync(
                     IInspectable **action) = 0;
@@ -1012,25 +1012,25 @@ namespace ABI {
             IKnownFoldersStatics : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE get_MusicLibrary(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_PicturesLibrary(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_VideosLibrary(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_DocumentsLibrary(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_HomeGroup(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_RemovableDevices(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_MediaServerDevices(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
             };
         }
@@ -1226,35 +1226,35 @@ namespace ABI {
             {
                 virtual HRESULT STDMETHODCALLTYPE GetFileFromPathAsync(
                     HSTRING path,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFileFromApplicationUriAsync(
                     IInspectable *uri,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateStreamedFileAsync(
                     HSTRING displayNameWithExtension,
-                    StreamedFileDataRequestedHandler *dataRequested,
-                    IRandomAccessStreamReference *thumbnail,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Storage::StreamedFileDataRequestedHandler *dataRequested,
+                    ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ReplaceWithStreamedFileAsync(
-                    IStorageFile *fileToReplace,
-                    StreamedFileDataRequestedHandler *dataRequested,
-                    IRandomAccessStreamReference *thumbnail,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Storage::IStorageFile *fileToReplace,
+                    ABI::Windows::Storage::StreamedFileDataRequestedHandler *dataRequested,
+                    ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateStreamedFileFromUriAsync(
                     HSTRING displayNameWithExtension,
                     IInspectable *uri,
-                    IRandomAccessStreamReference *thumbnail,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ReplaceWithStreamedFileFromUriAsync(
-                    IStorageFile *fileToReplace,
+                    ABI::Windows::Storage::IStorageFile *fileToReplace,
                     IInspectable *uri,
-                    IRandomAccessStreamReference *thumbnail,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
             };
         }
@@ -1453,41 +1453,41 @@ namespace ABI {
                     IInspectable **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CopyOverloadDefaultNameAndOptions(
-                    IStorageFolder *destinationFolder,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Storage::IStorageFolder *destinationFolder,
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CopyOverloadDefaultOptions(
-                    IStorageFolder *destinationFolder,
+                    ABI::Windows::Storage::IStorageFolder *destinationFolder,
                     HSTRING desiredNewName,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CopyOverload(
-                    IStorageFolder *destinationFolder,
+                    ABI::Windows::Storage::IStorageFolder *destinationFolder,
                     HSTRING desiredNewName,
                     enum NameCollisionOption option,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CopyAndReplaceAsync(
-                    IStorageFile *fileToReplace,
+                    ABI::Windows::Storage::IStorageFile *fileToReplace,
                     IInspectable **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE MoveOverloadDefaultNameAndOptions(
-                    IStorageFolder *destinationFolder,
+                    ABI::Windows::Storage::IStorageFolder *destinationFolder,
                     IInspectable **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE MoveOverloadDefaultOptions(
-                    IStorageFolder *destinationFolder,
+                    ABI::Windows::Storage::IStorageFolder *destinationFolder,
                     HSTRING desiredNewName,
                     IInspectable **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE MoveOverload(
-                    IStorageFolder *destinationFolder,
+                    ABI::Windows::Storage::IStorageFolder *destinationFolder,
                     HSTRING desiredNewName,
                     enum NameCollisionOption option,
                     IInspectable **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE MoveAndReplaceAsync(
-                    IStorageFile *fileToReplace,
+                    ABI::Windows::Storage::IStorageFile *fileToReplace,
                     IInspectable **operation) = 0;
 
             };
@@ -1728,33 +1728,33 @@ namespace ABI {
             {
                 virtual HRESULT STDMETHODCALLTYPE CreateFileAsyncOverloadDefaultOptions(
                     HSTRING desiredName,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateFileAsync(
                     HSTRING desiredName,
                     enum CreationCollisionOption options,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateFolderAsyncOverloadDefaultOptions(
                     HSTRING desiredName,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE CreateFolderAsync(
                     HSTRING desiredName,
                     enum CreationCollisionOption options,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFileAsync(
                     HSTRING name,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFolderAsync(
                     HSTRING name,
-                    IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetItemAsync(
                     HSTRING name,
-                    IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
+                    ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetFilesAsyncOverloadDefaultOptionsStartAndCount(
                     IInspectable **operation) = 0;
@@ -2023,7 +2023,7 @@ namespace ABI {
                 virtual HRESULT STDMETHODCALLTYPE CreateContainer(
                     HSTRING name,
                     enum ApplicationDataCreateDisposition disposition,
-                    IApplicationDataContainer **container) = 0;
+                    ABI::Windows::Storage::IApplicationDataContainer **container) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE DeleteContainer(
                     HSTRING name) = 0;
@@ -2202,30 +2202,30 @@ namespace ABI {
 
                 virtual HRESULT STDMETHODCALLTYPE SetVersionAsync(
                     int desiredVersion,
-                    IApplicationDataSetVersionHandler *handler,
-                    IAsyncAction **setVersionOperation) = 0;
+                    ABI::Windows::Storage::IApplicationDataSetVersionHandler *handler,
+                    ABI::Windows::Foundation::IAsyncAction **setVersionOperation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ClearAllAsync(
-                    IAsyncAction **clearOperation) = 0;
+                    ABI::Windows::Foundation::IAsyncAction **clearOperation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ClearAsync(
                     enum ApplicationDataLocality locality,
-                    IAsyncAction **clearOperation) = 0;
+                    ABI::Windows::Foundation::IAsyncAction **clearOperation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_LocalSettings(
-                    IApplicationDataContainer **value) = 0;
+                    ABI::Windows::Storage::IApplicationDataContainer **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_RoamingSettings(
-                    IApplicationDataContainer **value) = 0;
+                    ABI::Windows::Storage::IApplicationDataContainer **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_LocalFolder(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_RoamingFolder(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_TemporaryFolder(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE add_DataChanged(
                     ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> *handler,
@@ -2488,7 +2488,7 @@ namespace ABI {
             IApplicationData2 : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE get_LocalCacheFolder(
-                    IStorageFolder **value) = 0;
+                    ABI::Windows::Storage::IStorageFolder **value) = 0;
 
             };
         }
@@ -2613,7 +2613,7 @@ namespace ABI {
             IApplicationDataStatics : public IInspectable
             {
                 virtual HRESULT STDMETHODCALLTYPE get_Current(
-                    IApplicationData **data) = 0;
+                    ABI::Windows::Storage::IApplicationData **data) = 0;
 
             };
         }
@@ -2738,7 +2738,7 @@ namespace ABI {
             IApplicationDataSetVersionHandler : public IUnknown
             {
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    ISetVersionRequest *setVersionRequest) = 0;
+                    ABI::Windows::Storage::ISetVersionRequest *setVersionRequest) = 0;
 
             };
         }
@@ -2838,7 +2838,7 @@ namespace ABI {
                     UINT32 *desiredVersion) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetDeferral(
-                    ISetVersionDeferral **deferral) = 0;
+                    ABI::Windows::Storage::ISetVersionDeferral **deferral) = 0;
 
             };
         }

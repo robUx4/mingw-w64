@@ -573,7 +573,7 @@ namespace ABI {
                 {
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         UINT32 capacity,
-                        IBuffer **value) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **value) = 0;
 
                 };
             }
@@ -813,7 +813,7 @@ namespace ABI {
                 IRandomAccessStreamReference : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE OpenReadAsync(
-                        IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **operation) = 0;
 
                 };
             }
@@ -943,7 +943,7 @@ namespace ABI {
                         ) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE ReadAsync(
-                        IBuffer *buffer,
+                        ABI::Windows::Storage::Streams::IBuffer *buffer,
                         UINT32 count,
                         enum InputStreamOptions options,
                         IInspectable **operation) = 0;
@@ -1091,7 +1091,7 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE GetInputStreamAt(
                         UINT64 position,
-                        IInputStream **stream) = 0;
+                        ABI::Windows::Storage::Streams::IInputStream **stream) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamAt(
                         UINT64 position,
@@ -1104,7 +1104,7 @@ namespace ABI {
                         UINT64 position) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CloneStream(
-                        IRandomAccessStream **stream) = 0;
+                        ABI::Windows::Storage::Streams::IRandomAccessStream **stream) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE get_CanRead(
                         boolean *value) = 0;
@@ -1354,7 +1354,7 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE ReadBuffer(
                         UINT32 length,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE ReadBoolean(
                         boolean *value) = 0;
@@ -1398,13 +1398,13 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE LoadAsync(
                         UINT32 count,
-                        IAsyncOperation<UINT32> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<UINT32> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DetachBuffer(
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DetachStream(
-                        IInputStream **stream) = 0;
+                        ABI::Windows::Storage::Streams::IInputStream **stream) = 0;
 
                 };
             }
@@ -1760,8 +1760,8 @@ namespace ABI {
                 IDataReaderFactory : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE CreateDataReader(
-                        IInputStream *inputStream,
-                        IDataReader **dataReader) = 0;
+                        ABI::Windows::Storage::Streams::IInputStream *inputStream,
+                        ABI::Windows::Storage::Streams::IDataReader **dataReader) = 0;
 
                 };
             }

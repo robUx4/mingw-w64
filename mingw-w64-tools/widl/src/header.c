@@ -480,8 +480,19 @@ void write_type_left(FILE *h, const decl_spec_t *ds, enum name_type name_type, i
       case TYPE_INTERFACE:
       case TYPE_MODULE:
       case TYPE_COCLASS:
-        fprintf(h, "%s", name);
+      {
+#if 1
+          int in_namespace = t->namespace && !is_global_namespace(t->namespace);
+          if (in_namespace && name_type == NAME_DEFAULT)
+          {
+            char *namespace = format_namespace(t->namespace, "", "::", t->name, use_abi_namespace ? "ABI" : NULL);
+            fprintf(h, "%s", namespace);
+          }
+          else
+#endif
+            fprintf(h, "%s", name);
         break;
+      }
       case TYPE_RUNTIMECLASS:
         fprintf(h, "%s", type_get_name(type_runtimeclass_get_default_iface(t), name_type));
         break;

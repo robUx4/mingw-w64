@@ -571,7 +571,7 @@ namespace ABI {
             IAsyncActionCompletedHandler : public IUnknown
             {
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncAction *asyncAction,
+                    ABI::Windows::Foundation::IAsyncAction *asyncAction,
                     AsyncStatus status) = 0;
 
             };

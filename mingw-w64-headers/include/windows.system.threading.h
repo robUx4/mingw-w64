@@ -255,7 +255,7 @@ namespace ABI {
                 ITimerElapsedHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
-                        IThreadPoolTimer *timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer *timer) = 0;
 
                 };
             }
@@ -351,7 +351,7 @@ namespace ABI {
                 ITimerDestroyedHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
-                        IThreadPoolTimer *timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer *timer) = 0;
 
                 };
             }
@@ -447,7 +447,7 @@ namespace ABI {
                 IWorkItemHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
-                        IAsyncAction *operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction *operation) = 0;
 
                 };
             }
@@ -544,18 +544,18 @@ namespace ABI {
                 {
                     virtual HRESULT STDMETHODCALLTYPE RunAsync(
                         IWorkItemHandler *handler,
-                        IAsyncAction **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAsync(
                         IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
-                        IAsyncAction **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAndOptionsAsync(
                         IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
                         enum WorkItemOptions options,
-                        IAsyncAction **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                 };
             }
@@ -858,24 +858,24 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimer(
                         ITimerElapsedHandler *handler,
                         struct TimeSpan period,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimer(
                         ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimerWithCompletion(
                         ITimerElapsedHandler *handler,
                         struct TimeSpan period,
                         ITimerDestroyedHandler *destroyed,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimerWithCompletion(
                         ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
                         ITimerDestroyedHandler *destroyed,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                 };
             }

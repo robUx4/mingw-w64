@@ -174,10 +174,10 @@ namespace ABI {
                 IStorageApplicationPermissionsStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE get_FutureAccessList(
-                        IStorageItemAccessList **value) = 0;
+                        ABI::Windows::Storage::AccessCache::IStorageItemAccessList **value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE get_MostRecentlyUsedList(
-                        IStorageItemMostRecentlyUsedList **value) = 0;
+                        ABI::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList **value) = 0;
 
                 };
             }
@@ -313,49 +313,49 @@ namespace ABI {
                 IStorageItemAccessList : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE AddOverloadDefaultMetadata(
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         HSTRING *token) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE Add(
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         HSTRING metadata,
                         HSTRING *token) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE AddOrReplaceOverloadDefaultMetadata(
                         HSTRING token,
-                        IStorageItem *file) = 0;
+                        ABI::Windows::Storage::IStorageItem *file) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE AddOrReplace(
                         HSTRING token,
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         HSTRING metadata) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetItemAsync(
                         HSTRING token,
-                        IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFileAsync(
                         HSTRING token,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFolderAsync(
                         HSTRING token,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetItemWithOptionsAsync(
                         HSTRING token,
                         enum AccessCacheOptions options,
-                        IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFileWithOptionsAsync(
                         HSTRING token,
                         enum AccessCacheOptions options,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFolderWithOptionsAsync(
                         HSTRING token,
                         enum AccessCacheOptions options,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE Remove(
                         HSTRING token) = 0;
@@ -368,7 +368,7 @@ namespace ABI {
                         ) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CheckAccess(
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         boolean *value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE get_Entries(
