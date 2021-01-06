@@ -249,99 +249,36 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFile*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFolder*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::IStorageItem*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 /* Headers for imported files */
@@ -573,43 +510,16 @@ namespace ABI {
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFile __FIAsyncOperation_1_Windows__CStorage__CStorageFile;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFile*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStorageFolder __FIAsyncOperation_1_Windows__CStorage__CStorageFolder;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::StorageFolder*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifndef ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CIStorageItem __FIAsyncOperation_1_Windows__CStorage__CIStorageItem;
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::IStorageItem*>;
-        }
-    }
-}
-#endif /* __cplusplus */
 #endif
 
 #ifdef __cplusplus
