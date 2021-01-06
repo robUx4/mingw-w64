@@ -3103,7 +3103,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("5e52f8ce-aced-5a42-95b4-f674dd84885e")
-            IAsyncOperation<ABI::Windows::Storage::StorageFile*> : IAsyncOperation_impl<ABI::Windows::Storage::StorageFile*>
+            IAsyncOperation<ABI::Windows::Storage::StorageFile*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>>
             {};
         }
     }
@@ -3228,7 +3228,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFile_
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<ABI::Windows::Storage::StorageFile*> **
+/*** template 1 IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>> **
 /*****************************************************************************
  * IAsyncOperation<ABI::Windows::Storage::StorageFolder*> interface
  *
@@ -3244,7 +3244,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("6be9e7d7-e83a-5cbc-802c-1768960b52c3")
-            IAsyncOperation<ABI::Windows::Storage::StorageFolder*> : IAsyncOperation_impl<ABI::Windows::Storage::StorageFolder*>
+            IAsyncOperation<ABI::Windows::Storage::StorageFolder*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFolder*, ABI::Windows::Storage::IStorageFolder*>>
             {};
         }
     }
@@ -3369,7 +3369,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_Windows__CStorage__CStorageFolde
 
 #endif  /* ____FIAsyncOperation_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperation_impl<ABI::Windows::Storage::StorageFolder*> **
+/*** template 1 IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFolder*, ABI::Windows::Storage::IStorageFolder*>> **
 /*****************************************************************************
  * IAsyncOperation<ABI::Windows::Storage::IStorageItem*> interface
  *
@@ -3526,7 +3526,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("e521c894-2c26-5946-9e61-2b5e188d01ed")
-            IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::StorageFile*>
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>>
             {};
         }
     }
@@ -3603,7 +3603,7 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::StorageFile*> **
+/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> interface
  *
@@ -3619,7 +3619,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("c211026e-9e63-5452-ba54-3a07d6a96874")
-            IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::StorageFolder*>
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFolder*, ABI::Windows::Storage::IStorageFolder*>>
             {};
         }
     }
@@ -3696,7 +3696,7 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_INTERFACE_DEFINED__ */
 
-/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::StorageFolder*> **
+/*** template 1 IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::StorageFolder*, ABI::Windows::Storage::IStorageFolder*>> **
 /*****************************************************************************
  * IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*> interface
  *
@@ -3805,7 +3805,7 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("149afa12-66cd-539f-85dd-8487ea2cd113")
-            ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Storage::ApplicationData*ABI::IInspectable*>
+            ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::ApplicationData*, ABI::Windows::Storage::IApplicationData*>ABI::IInspectable*>
             {};
         }
     }
@@ -3882,7 +3882,7 @@ static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicati
 
 #endif  /* ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_INTERFACE_DEFINED__ */
 
-/*** template 1 ITypedEventHandler_impl<ABI::Windows::Storage::ApplicationData*ABI::IInspectable*> **
+/*** template 1 ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::ApplicationData*, ABI::Windows::Storage::IApplicationData*>ABI::IInspectable*> **
 /* Begin additional prototypes for all interfaces */
 
 ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);

@@ -952,20 +952,35 @@ static char *type_parameterized_bare_name(type_t *type)
     return bare_name;
 }
 
-static char *type_parameterized_implementation_name(type_t *type, type_list_t *params)
+static char *type_parameterized_implementation_name(type_t *iface, type_list_t *params)
 {
     size_t len = 0, pos = 0;
     char *buf = NULL;
     type_list_t *entry;
+    type_t *type, *runtime_iface;
 
-    pos += strappend(&buf, &len, pos, "%s_impl<", type->name_no_param);
+    pos += strappend(&buf, &len, pos, "%s_impl<", iface->name_no_param);
     for (entry = params; entry; entry = entry->next)
     {
         for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
-        pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
-        for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type))
+        if (type->type_type == TYPE_RUNTIMECLASS)
         {
-            pos += strappend(&buf, &len, pos, "*");
+            pos += strappend(&buf, &len, pos, "ABI::Windows::Foundation::Internal::AggregateType<");
+            pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+            for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+            pos += strappend(&buf, &len, pos, ", ");
+            runtime_iface = type_runtimeclass_get_default_iface(type);
+            pos += append_namespaces(&buf, &len, pos, runtime_iface->namespace, "", "::", runtime_iface->name, runtime_iface->namespace && use_abi_namespace ? "ABI" : NULL);
+            for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+            pos += strappend(&buf, &len, pos, ">");
+            // const char *name = "ABI::Windows::Storage::StorageFile*, ABI::Windows::Storage::IStorageFile*>";
+            // pos += strappend(&buf, &len, pos, name);
+            // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+        }
+        else
+        {
+            pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+            for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
         }
     }
     pos += strappend(&buf, &len, pos, ">");
@@ -1096,7 +1111,7 @@ void type_parameterized_delegate_define(type_t *type, type_list_t *params, state
     delegate->namespace = type->namespace;
     compute_delegate_iface_names(delegate, type, params);
     delegate->name_no_param = type_parameterized_bare_name(type);
-    delegate->parameterized = type_parameterized_implementation_name(delegate, params);
+    // delegate->parameterized = type_parameterized_implementation_name(delegate, params);
     // delegate->signature = format_parameterized_type_signature(type, params);
     delegate->defined = TRUE;
 
