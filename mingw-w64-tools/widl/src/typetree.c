@@ -1091,6 +1091,20 @@ void type_parameterized_delegate_define(type_t *type, type_list_t *params, state
     iface->details.iface->disp_inherit = NULL;
     iface->details.iface->async_iface = NULL;
     iface->details.iface->requires = NULL;
+
+    delegate->name = strdup(type->name);
+    delegate->namespace = type->namespace;
+    compute_delegate_iface_names(delegate, type, params);
+    delegate->name_no_param = type_parameterized_bare_name(type);
+    delegate->parameterized = type_parameterized_implementation_name(delegate, params);
+    // delegate->signature = format_parameterized_type_signature(type, params);
+    delegate->defined = TRUE;
+
+    // iface = iface->details.delegate.iface;
+    // iface->name_no_param = type_parameterized_bare_name(iface);
+    // iface->parameterized = type_parameterized_implementation_name(iface, params);
+    // // iface->signature = format_parameterized_type_signature(type, params);
+    // iface->defined = TRUE;
 }
 
 void type_dispinterface_define(type_t *iface, var_list_t *props, var_list_t *methods)

@@ -1077,6 +1077,111 @@ static char *get_vtbl_entry_name(const type_t *iface, const var_t *func)
   return buff;
 }
 
+static void write_parameterized_implementation(FILE *header, type_t *type, int declonly)
+{
+  fprintf(header, "#if defined(__cplusplus) && !defined(CINTERFACE)\n");
+  write_line(header, 0, "} /* extern \"C\" */");
+  write_namespace_start(header, type->namespace);
+
+  indent(header, 0);
+  fprintf(header, "template <class ");
+
+  fprintf(header, "TResult"); // TODO use the original parameter name
+//   type_list_t *entry;
+//   for (entry = type->attrs; entry; entry = entry->next)
+//   {
+//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
+//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
+//   }
+  fprintf(header, ">\n");
+
+  type_t *iface;
+  type_t *methods;
+  type_t *parent;
+  if (type->name[0] == 'I')
+  {
+    iface = type;
+    methods = type->details.parameterized.type;
+    parent = type_iface_get_inherit(type->details.parameterized.type);
+  }
+  else
+  {
+    iface = type->details.parameterized.type;
+    if (type_get_type(iface) == TYPE_DELEGATE)
+      iface = type_delegate_get_iface(iface);
+    methods = iface;
+    parent = type_iface_get_inherit(iface);
+  }
+  write_line(header, 0, "struct %s : %s_impl<TResult>", iface->name, iface->name);
+  write_line(header, 0, "{};");
+  fprintf(header, "\n");
+  assert (parent);
+
+  indent(header, 0);
+  fprintf(header, "template <class ");
+
+  fprintf(header, "TResult"); // TODO use the original parameter name
+//   type_list_t *entry;
+//   for (entry = type->attrs; entry; entry = entry->next)
+//   {
+//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
+//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
+//   }
+  fprintf(header, ">\n");
+  write_line(header, 0, "struct %s_impl : %s", iface->name, parent->name);
+  write_line(header, 0, "{");
+  write_line(header, 1, "private:");
+  write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;");
+  write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;");
+  write_line(header, -1, "public:");
+
+  const statement_t *stmt;
+  int first_iface = 1;
+
+  STATEMENTS_FOR_EACH_FUNC(stmt, type_iface_get_stmts(methods))
+  {
+    const var_t *func = stmt->u.var;
+    if (!is_callas(func->attrs)) {
+      const var_t *arg;
+
+    indent(header, 1);
+      fprintf(header, "virtual ");
+      write_type_decl_left(header, type_function_get_ret(func->declspec.type));
+      fprintf(header, " %s(", get_name(func));
+    //   write_args(header, type_function_get_args(func->declspec.type), name, 1, FALSE, NAME_C);
+    //   fprintf(header, ") = 0;\n");
+    //   ++indentation;
+    //   if (!is_aggregate_return(func)) {
+    //     indent(header, 0);
+    //     fprintf(header, "%sThis->lpVtbl->%s(This",
+    //             is_void(type_function_get_rettype(func->declspec.type)) ? "" : "return ",
+    //             get_vtbl_entry_name(iface, func));
+    //   } else {
+    //     indent(header, 0);
+    //     write_type_decl_left(header, type_function_get_ret(func->declspec.type));
+    //     fprintf(header, " __ret;\n");
+    //     indent(header, 0);
+    //     fprintf(header, "return *This->lpVtbl->%s(This,&__ret", get_vtbl_entry_name(iface, func));
+    //   }
+      if (type_function_get_args(func->declspec.type))
+          LIST_FOR_EACH_ENTRY( arg, type_function_get_args(func->declspec.type), const var_t, entry )
+              fprintf(header, ",%s", arg->name);
+      fprintf(header, ") = 0;\n");
+      --indentation;
+    }
+  }
+
+  write_line(header, 0, "};");
+
+  write_namespace_end(header, type->namespace);
+  write_line(header, 0, "extern \"C\" {");
+  write_line(header, 0, "#endif");
+}
+
 static void write_method_macro(FILE *header, const type_t *iface, const type_t *child, const char *name)
 {
   const statement_t *stmt;
@@ -1492,19 +1597,50 @@ static void write_function_proto(FILE *header, const type_t *iface, const var_t 
   fprintf(header, ");\n\n");
 }
 
-static void write_forward_parameterized(FILE *header, type_t *iface)
+static void write_forward_parameterized(FILE *header, type_t *type)
 {
-  fprintf(header, "#ifndef __%s_FWD_DEFINED__\n", iface->c_name);
-  fprintf(header, "#define __%s_FWD_DEFINED__\n", iface->c_name);
-  fprintf(header, "#ifdef __cplusplus\n");
-  write_namespace_start(header, iface->namespace);
-  // TODO get all the parameters instead of <T>
+    // TODO generate the template declaration
+    // TODO generate the template implementation
+  fprintf(header, "#if defined(__cplusplus) && !defined(CINTERFACE)\n");
+  write_namespace_start(header, type->namespace);
   indent(header, 0);
-  fprintf(header, "template <class T> struct %s;", iface->name);
-  // TODO if inherited add the inherited type
-  fprintf(header, "\n");
-  write_namespace_end(header, iface->namespace);
-  fprintf(header, "#endif /* __cplusplus */\n");
+  fprintf(header, "template <class ");
+
+  fprintf(header, "TResult"); // TODO use the original parameter name
+//   type_list_t *entry;
+//   for (entry = type->attrs; entry; entry = entry->next)
+//   {
+//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
+//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
+//   }
+  fprintf(header, ">\n");
+  indent(header, 0);
+
+  type_t *iface;
+  if (type->name[0] == 'I')
+    iface = type;
+  else
+  {
+    iface = type->details.parameterized.type;
+    if (type_get_type(iface) == TYPE_DELEGATE)
+      iface = type_delegate_get_iface(iface);
+  }
+  fprintf(header, "struct %s_impl;\n", iface->name);
+
+//   fprintf(header, "#define __%s_FWD_DEFINED__\n", iface->c_name);
+//   fprintf(header, "#ifdef __cplusplus\n");
+//   write_namespace_start(header, iface->namespace);
+//   // TODO get all the parameters instead of <T>
+//   indent(header, 0);
+//   fprintf(header, "template <class T> struct %s;", iface->name);
+//   // TODO if inherited add the inherited type
+//   fprintf(header, "\n");
+
+  write_namespace_end(header, type->namespace);
+//   fprintf(header, "#endif /* __cplusplus */\n");
+
   fprintf(header, "#endif\n\n" );
 }
 
@@ -1514,7 +1650,7 @@ static void write_forward(FILE *header, type_t *iface)
   fprintf(header, "#define __%s_FWD_DEFINED__\n", iface->c_name);
   fprintf(header, "typedef interface %s %s;\n", iface->c_name, iface->c_name);
   fprintf(header, "#ifdef __cplusplus\n");
-  if (strchr(iface->name, '<'))
+  if (iface->parameterized)
   {
     char *name = format_namespace(iface->namespace, "", "::", iface->name, use_abi_namespace ? "ABI" : NULL);
     write_line(header, 0, "#define %s  %s", iface->c_name, name);
@@ -1527,11 +1663,6 @@ static void write_forward(FILE *header, type_t *iface)
     write_namespace_end(header, iface->namespace);
   }
   fprintf(header, "#endif /* __cplusplus */\n");
-//   else
-//   {
-//     fprintf(header, "#ifdef __cplusplus\n");
-//     fprintf(header, "#endif /* __cplusplus */\n");
-//   }
 
   fprintf(header, "#endif\n\n" );
 }
@@ -2015,10 +2146,15 @@ static void write_forward_decls(FILE *header, const statement_list_t *stmts)
     switch (stmt->type)
     {
       case STMT_TYPE:
+    //   {
+    //       type_t *iface = stmt->u.type;
+    //       fprintf(header, "STMT_TYPE %s\n", iface->name);
+    //   }
         if (type_get_type(stmt->u.type) == TYPE_INTERFACE || type_get_type(stmt->u.type) == TYPE_DELEGATE)
         {
           type_t *iface = stmt->u.type;
-          if (type_get_type(iface) == TYPE_DELEGATE) iface = type_delegate_get_iface(iface);
+          if (type_get_type(iface) == TYPE_DELEGATE)
+              iface = type_delegate_get_iface(iface);
           if (is_object(iface) || is_attr(iface->attrs, ATTR_DISPINTERFACE))
           {
             write_forward(header, iface);
@@ -2033,13 +2169,21 @@ static void write_forward_decls(FILE *header, const statement_list_t *stmts)
         else if (type_get_type(stmt->u.type) == TYPE_PARAMETERIZED_TYPE)
         {
           type_t *iface = stmt->u.type;
-          if (type_get_type(iface) == TYPE_DELEGATE) iface = type_delegate_get_iface(iface);
+        //   iface = iface->details.parameterized.type;
+        //   type->details.parameterized.type
         //   if (is_object(iface) || is_attr(iface->attrs, ATTR_DISPINTERFACE))
           {
             // write_com_interface_start(header, iface);
             //   write_header_stmts(header, type_iface_get_stmts(iface), stmt->u.type, TRUE);
             // TODO write_com_interface_end(header, iface);
             write_forward_parameterized(header, iface);
+            // if (type_get_type(iface->details.parameterized.type) == TYPE_DELEGATE)
+            // {
+            //     iface = iface->details.parameterized.type;
+            // if (type_get_type(iface) == TYPE_DELEGATE)
+            //     iface = type_delegate_get_iface(iface);
+            //     write_forward_parameterized(header, iface);
+            // }
             // if (type_iface_get_async_iface(iface))
             //   write_forward(header, type_iface_get_async_iface(iface));
           }
@@ -2088,12 +2232,20 @@ static void write_header_stmts(FILE *header, const statement_list_t *stmts, cons
               write_com_interface_start(header, async_iface);
               write_com_interface_end(header, async_iface);
             }
+            if (iface->parameterized)
+            {
+                fprintf(header, "/*** template 1 %s **\n", iface->parameterized);
+            }
           }
           else
           {
             write_rpc_interface_start(header, iface);
             write_header_stmts(header, type_iface_get_stmts(iface), iface, FALSE);
             write_rpc_interface_end(header, iface);
+            if (iface->parameterized)
+            {
+                fprintf(header, "/*** template 2 %s **\n", iface->parameterized);
+            }
           }
           if (is_object(iface)) is_object_interface--;
         }
@@ -2104,7 +2256,23 @@ static void write_header_stmts(FILE *header, const statement_list_t *stmts, cons
         else if (type_get_type(stmt->u.type) == TYPE_RUNTIMECLASS)
           write_runtimeclass(header, stmt->u.type);
         else if (type_get_type(stmt->u.type) != TYPE_PARAMETERIZED_TYPE)
+        {
+          type_t *iface = stmt->u.type;
+          if (iface->parameterized)
+          {
+            fprintf(header, "/*** template 3 %s **\n", iface->parameterized);
+          }
           write_type_definition(header, stmt->u.type, stmt->declonly);
+        }
+        else
+        {
+          type_t *iface = stmt->u.type;
+        //   if (iface->parameterized)
+          {
+            // fprintf(header, "/*** template 4 %s **/\n", iface->name);
+            write_parameterized_implementation(header, stmt->u.type, stmt->declonly);
+          }
+        }
         // else if (type_get_type(stmt->u.type) == TYPE_PARAMETERIZED_TYPE)
         // {
         //   type_t *iface = stmt->u.type;
@@ -2200,11 +2368,15 @@ void write_header(const statement_list_t *stmts)
 
   fprintf(header, "/* Forward declarations */\n\n");
   write_forward_decls(header, stmts);
+  // TODO write_templates_decls(header, stmts);
 
   fprintf(header, "/* Headers for imported files */\n\n");
   write_imports(header, stmts);
   fprintf(header, "\n");
   start_cplusplus_guard(header);
+
+  fprintf(header, "/* Parameterized implementations */\n\n");
+//   write_forward_decls(header, stmts);
 
   write_header_stmts(header, stmts, NULL, FALSE);
 
