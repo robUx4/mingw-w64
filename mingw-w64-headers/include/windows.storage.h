@@ -18,6 +18,20 @@
 
 /* Forward declarations */
 
+#ifndef ____x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler;
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            interface IStreamedFileDataRequestedHandler;
+        }
+    }
+}
+#endif /* __cplusplus */
+#endif
+
 #ifndef ____x_ABI_CWindows_CStorage_CIStorageItem_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CIStorageItem_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CIStorageItem __x_ABI_CWindows_CStorage_CIStorageItem;
@@ -498,19 +512,99 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler_FWD_DEFINED__
-#define ____x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler;
-#ifdef __cplusplus
+/*****************************************************************************
+ * IStreamedFileDataRequestedHandler interface
+ *
+ */
+#ifndef ____x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_INTERFACE_DEFINED__
+
+DEFINE_GUID(IID___x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler, 0xfef6a824, 0x2fe1, 0x4d07, 0xa3,0x5b, 0xb7,0x7c,0x50,0xb5,0xf4,0xcc);
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Storage {
-            interface StreamedFileDataRequestedHandler;
+            MIDL_INTERFACE("fef6a824-2fe1-4d07-a35b-b77c50b5f4cc")
+            IStreamedFileDataRequestedHandler : public IUnknown
+            {
+                virtual HRESULT STDMETHODCALLTYPE Invoke(
+                    IInspectable *stream) = 0;
+
+            };
         }
     }
 }
-#endif /* __cplusplus */
+extern "C" {
+#ifdef __CRT_UUID_DECL
+__CRT_UUID_DECL(ABI::Windows::Storage::IStreamedFileDataRequestedHandler, 0xfef6a824, 0x2fe1, 0x4d07, 0xa3,0x5b, 0xb7,0x7c,0x50,0xb5,0xf4,0xcc)
 #endif
+#else
+typedef struct __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandlerVtbl {
+    BEGIN_INTERFACE
+
+    /*** IUnknown methods ***/
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(
+        __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *This,
+        REFIID riid,
+        void **ppvObject);
+
+    ULONG (STDMETHODCALLTYPE *AddRef)(
+        __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *This);
+
+    ULONG (STDMETHODCALLTYPE *Release)(
+        __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *This);
+
+    /*** IStreamedFileDataRequestedHandler methods ***/
+    HRESULT (STDMETHODCALLTYPE *Invoke)(
+        __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *This,
+        IInspectable *stream);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandlerVtbl;
+
+interface __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler {
+    CONST_VTBL __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandlerVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+#ifndef WIDL_C_INLINE_WRAPPERS
+/*** IUnknown methods ***/
+#define __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
+#define __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_AddRef(This) (This)->lpVtbl->AddRef(This)
+#define __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_Release(This) (This)->lpVtbl->Release(This)
+/*** IStreamedFileDataRequestedHandler methods ***/
+#define __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_Invoke(This,stream) (This)->lpVtbl->Invoke(This,stream)
+#else
+/*** IUnknown methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_QueryInterface(__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler* This,REFIID riid,void **ppvObject) {
+    return This->lpVtbl->QueryInterface(This,riid,ppvObject);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_AddRef(__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler* This) {
+    return This->lpVtbl->AddRef(This);
+}
+static FORCEINLINE ULONG __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_Release(__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler* This) {
+    return This->lpVtbl->Release(This);
+}
+/*** IStreamedFileDataRequestedHandler methods ***/
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_Invoke(__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler* This,IInspectable *stream) {
+    return This->lpVtbl->Invoke(This,stream);
+}
+#endif
+#ifdef WIDL_USING_WINDOWS_STORAGE_ISTREAMEDFILEDATAREQUESTEDHANDLER
+#define IID_IStreamedFileDataRequestedHandler IID___x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler
+#define IStreamedFileDataRequestedHandlerVtbl __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandlerVtbl
+#define IStreamedFileDataRequestedHandler __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler
+#define IStreamedFileDataRequestedHandler_QueryInterface __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_QueryInterface
+#define IStreamedFileDataRequestedHandler_AddRef __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_AddRef
+#define IStreamedFileDataRequestedHandler_Release __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_Release
+#define IStreamedFileDataRequestedHandler_Invoke __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_Invoke
+#endif /* WIDL_USING__WINDOWS_STORAGE_ISTREAMEDFILEDATAREQUESTEDHANDLER */
+#endif
+
+#endif
+
+#endif  /* ____x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler_INTERFACE_DEFINED__ */
 
 #ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
@@ -1234,13 +1328,13 @@ namespace ABI {
 
                 virtual HRESULT STDMETHODCALLTYPE CreateStreamedFileAsync(
                     HSTRING displayNameWithExtension,
-                    ABI::Windows::Storage::StreamedFileDataRequestedHandler *dataRequested,
+                    IStreamedFileDataRequestedHandler *dataRequested,
                     ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
                     ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ReplaceWithStreamedFileAsync(
                     ABI::Windows::Storage::IStorageFile *fileToReplace,
-                    ABI::Windows::Storage::StreamedFileDataRequestedHandler *dataRequested,
+                    IStreamedFileDataRequestedHandler *dataRequested,
                     ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
                     ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
@@ -1308,14 +1402,14 @@ typedef struct __x_ABI_CWindows_CStorage_CIStorageFileStaticsVtbl {
     HRESULT (STDMETHODCALLTYPE *CreateStreamedFileAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
         HSTRING displayNameWithExtension,
-        __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,
+        __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *dataRequested,
         __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,
         __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
 
     HRESULT (STDMETHODCALLTYPE *ReplaceWithStreamedFileAsync)(
         __x_ABI_CWindows_CStorage_CIStorageFileStatics *This,
         __x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,
-        __x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,
+        __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *dataRequested,
         __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,
         __FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation);
 
@@ -1385,10 +1479,10 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFil
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_GetFileFromApplicationUriAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,IInspectable *uri,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
     return This->lpVtbl->GetFileFromApplicationUriAsync(This,uri,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING displayNameWithExtension,__x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING displayNameWithExtension,__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *dataRequested,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
     return This->lpVtbl->CreateStreamedFileAsync(This,displayNameWithExtension,dataRequested,thumbnail,operation);
 }
-static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,__x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,__x_ABI_CWindows_CStorage_CStreamedFileDataRequestedHandler *dataRequested,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
+static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_ReplaceWithStreamedFileAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,__x_ABI_CWindows_CStorage_CIStorageFile *fileToReplace,__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler *dataRequested,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {
     return This->lpVtbl->ReplaceWithStreamedFileAsync(This,fileToReplace,dataRequested,thumbnail,operation);
 }
 static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CIStorageFileStatics_CreateStreamedFileFromUriAsync(__x_ABI_CWindows_CStorage_CIStorageFileStatics* This,HSTRING displayNameWithExtension,IInspectable *uri,__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *thumbnail,__FIAsyncOperation_1_Windows__CStorage__CStorageFile **operation) {

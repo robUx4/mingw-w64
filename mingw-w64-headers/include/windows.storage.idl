@@ -41,7 +41,9 @@ namespace Windows {
     typedef enum FileAccessMode FileAccessMode;
     interface IStorageFile;
     interface IStorageFileStatics;
-    interface StreamedFileDataRequestedHandler; // delegate
+
+    [uuid(fef6a824-2fe1-4d07-a35b-b77c50b5f4cc)]
+    delegate HRESULT StreamedFileDataRequestedHandler(/*Windows.Storage.Streams.IOutputStream*/ IInspectable *stream);
 
     runtimeclass ApplicationData;
     runtimeclass KnownFolders;
