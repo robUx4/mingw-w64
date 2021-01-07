@@ -1498,6 +1498,12 @@ static void write_forward(FILE *header, type_t *iface)
   fprintf(header, "#define __%s_FWD_DEFINED__\n", iface->c_name);
   fprintf(header, "typedef interface %s %s;\n", iface->c_name, iface->c_name);
   fprintf(header, "#ifdef __cplusplus\n");
+  if (iface->namespace && !is_global_namespace(iface->namespace))
+  {
+    char *name = format_namespace(iface->namespace, "", "::", iface->name, use_abi_namespace ? "ABI" : NULL);
+    fprintf(header, "#define %s  %s\n", iface->c_name, name);
+    free(name);
+  }
   write_namespace_start(header, iface->namespace);
   if (strchr(iface->name, '<')) write_line(header, 0, "template<> struct %s;", iface->name);
   else write_line(header, 0, "interface %s;", iface->name);
