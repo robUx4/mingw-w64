@@ -22,6 +22,7 @@
 #define ____x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler  ABI::Windows::System::Threading::ITimerElapsedHandler
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -38,6 +39,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler  ABI::Windows::System::Threading::ITimerDestroyedHandler
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -54,6 +56,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler  ABI::Windows::System::Threading::IWorkItemHandler
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -70,6 +73,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics  ABI::Windows::System::Threading::IThreadPoolStatics
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -86,6 +90,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer  ABI::Windows::System::Threading::IThreadPoolTimer
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -102,6 +107,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics  ABI::Windows::System::Threading::IThreadPoolTimerStatics
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -127,6 +133,7 @@ extern "C" {
 #define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CIAsyncAction  ABI::Windows::Foundation::IAsyncAction
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -141,6 +148,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics  ABI::Windows::System::Threading::IThreadPoolStatics
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -157,6 +165,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer  ABI::Windows::System::Threading::IThreadPoolTimer
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -173,6 +182,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics  ABI::Windows::System::Threading::IThreadPoolTimerStatics
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -255,7 +265,7 @@ namespace ABI {
                 ITimerElapsedHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
-                        IThreadPoolTimer *timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer *timer) = 0;
 
                 };
             }
@@ -351,7 +361,7 @@ namespace ABI {
                 ITimerDestroyedHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
-                        IThreadPoolTimer *timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer *timer) = 0;
 
                 };
             }
@@ -447,7 +457,7 @@ namespace ABI {
                 IWorkItemHandler : public IUnknown
                 {
                     virtual HRESULT STDMETHODCALLTYPE Invoke(
-                        IAsyncAction *operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction *operation) = 0;
 
                 };
             }
@@ -543,19 +553,19 @@ namespace ABI {
                 IThreadPoolStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE RunAsync(
-                        IWorkItemHandler *handler,
-                        IAsyncAction **operation) = 0;
+                        ABI::Windows::System::Threading::IWorkItemHandler *handler,
+                        ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAsync(
-                        IWorkItemHandler *handler,
+                        ABI::Windows::System::Threading::IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
-                        IAsyncAction **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAndOptionsAsync(
-                        IWorkItemHandler *handler,
+                        ABI::Windows::System::Threading::IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
                         enum WorkItemOptions options,
-                        IAsyncAction **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                 };
             }
@@ -856,26 +866,26 @@ namespace ABI {
                 IThreadPoolTimerStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimer(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan period,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimer(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimerWithCompletion(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan period,
-                        ITimerDestroyedHandler *destroyed,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::ITimerDestroyedHandler *destroyed,
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimerWithCompletion(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
-                        ITimerDestroyedHandler *destroyed,
-                        IThreadPoolTimer **timer) = 0;
+                        ABI::Windows::System::Threading::ITimerDestroyedHandler *destroyed,
+                        ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                 };
             }

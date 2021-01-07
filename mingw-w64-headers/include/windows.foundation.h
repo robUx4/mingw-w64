@@ -22,6 +22,7 @@
 #define ____x_ABI_CWindows_CFoundation_CIAsyncInfo_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIAsyncInfo __x_ABI_CWindows_CFoundation_CIAsyncInfo;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CIAsyncInfo  ABI::Windows::Foundation::IAsyncInfo
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -36,6 +37,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler  ABI::Windows::Foundation::IAsyncActionCompletedHandler
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -50,6 +52,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CFoundation_CIASyncAction_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIASyncAction __x_ABI_CWindows_CFoundation_CIASyncAction;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CIASyncAction  ABI::Windows::Foundation::IASyncAction
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -60,19 +63,129 @@ namespace ABI {
 #endif /* __cplusplus */
 #endif
 
-#ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
-#define ____FIVectorView_1_HSTRING_FWD_DEFINED__
-typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler_impl;
+
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler : IAsyncOperationCompletedHandler_impl<TResult>
+            {};
+
+        }
+    }
+}
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IAsyncOperation_impl;
+
+            template <class TResult>
+            struct IAsyncOperation : IAsyncOperation_impl<TResult>
+            {};
+
+        }
+    }
+}
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IEventHandler_impl;
+
+            template <class TResult>
+            struct IEventHandler : IEventHandler_impl<TResult>
+            {};
+
+        }
+    }
+}
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TSender, class TArgs>
+            struct ITypedEventHandler_impl;
+
+            template <class TSender, class TArgs>
+            struct ITypedEventHandler : ITypedEventHandler_impl<TSender, TArgs>
+            {};
+
+        }
+    }
+}
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template<> struct IVectorView<ABI::HSTRING>;
+                template <class TResult>
+                struct IIterator_impl;
+
+                template <class TResult>
+                struct IIterator : IIterator_impl<TResult>
+                {};
+
             }
         }
     }
 }
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IIterable_impl;
+
+                template <class TResult>
+                struct IIterable : IIterable_impl<TResult>
+                {};
+
+            }
+        }
+    }
+}
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IVectorView_impl;
+
+                template <class TResult>
+                struct IVectorView : IVectorView_impl<TResult>
+                {};
+
+            }
+        }
+    }
+}
+#endif
+
+#ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
+#define ____FIVectorView_1_HSTRING_FWD_DEFINED__
+typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+#ifdef __cplusplus
+#define __FIVectorView_1_HSTRING  ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
 #endif /* __cplusplus */
 #endif
 
@@ -80,15 +193,7 @@ namespace ABI {
 #define ____FIIterable_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template<> struct IIterable<ABI::HSTRING>;
-            }
-        }
-    }
-}
+#define __FIIterable_1_HSTRING  ABI::Windows::Foundation::Collections::IIterable<HSTRING>
 #endif /* __cplusplus */
 #endif
 
@@ -96,15 +201,7 @@ namespace ABI {
 #define ____FIIterator_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template<> struct IIterator<ABI::HSTRING>;
-            }
-        }
-    }
-}
+#define __FIIterator_1_HSTRING  ABI::Windows::Foundation::Collections::IIterator<HSTRING>
 #endif /* __cplusplus */
 #endif
 
@@ -112,13 +209,7 @@ namespace ABI {
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::UINT32>;
-        }
-    }
-}
+#define __FIAsyncOperation_1_UINT32  ABI::Windows::Foundation::IAsyncOperation<UINT32>
 #endif /* __cplusplus */
 #endif
 
@@ -126,13 +217,7 @@ namespace ABI {
 #define ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_UINT32 __FIAsyncOperationCompletedHandler_1_UINT32;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::UINT32>;
-        }
-    }
-}
+#define __FIAsyncOperationCompletedHandler_1_UINT32  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<UINT32>
 #endif /* __cplusplus */
 #endif
 
@@ -144,7 +229,51 @@ namespace ABI {
 extern "C" {
 #endif
 
-#if 0 // widl-only definitions already defined in Windows headers
+#ifdef __cplusplus
+} /* extern "C" */
+// metafunctions for handling Interface Groups and Runtime Types in parameterized interfaces
+namespace ABI {
+namespace Windows { namespace Foundation { namespace Internal
+{
+    // LogicalType - the Windows Runtime type (eg, runtime class, inteface group, etc)
+    //               being provided as an argument to an _impl template, when that type
+    //               cannot be represented at the ABI.
+    // AbiType     - the type used for marshalling, ie "at the ABI", for the logical type.
+    template <class LogicalType, class AbiType>
+    struct AggregateType
+    {};
+
+    // Gets the ABI type.  See AggregateType for description.
+    template <class T>
+    struct GetAbiType
+    {
+        typedef T type;
+    };
+
+    template <class L, class A>
+    struct GetAbiType<AggregateType<L, A> >
+    {
+        typedef A type;
+    };
+
+    // Gets the LogicalType.  See AggregateType for description.
+    template <class T>
+    struct GetLogicalType 
+    {
+        typedef T type; 
+    };
+
+    template <class L, class A>
+    struct GetLogicalType<AggregateType<L, A> >
+    {
+        typedef L type;
+    };
+
+}}} // namespace Windows::Foundation::Internal
+} // ABI
+extern "C" {
+#endif // __cplusplus
+
 typedef struct EventRegistrationToken {
     UINT64 Value;
 } EventRegistrationToken;
@@ -154,11 +283,11 @@ typedef enum AsyncStatus {
     Canceled = 2,
     Error = 3
 } AsyncStatus;
-#endif // widl-only definitions
 #ifndef ____x_ABI_CWindows_CFoundation_CIAsyncInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIAsyncInfo_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIAsyncInfo __x_ABI_CWindows_CFoundation_CIAsyncInfo;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CIAsyncInfo  ABI::Windows::Foundation::IAsyncInfo
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -173,6 +302,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CIAsyncAction  ABI::Windows::Foundation::IAsyncAction
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -204,6 +334,7 @@ struct __x_ABI_CWindows_CFoundation_CDateTime;
 #define ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet  ABI::Windows::Foundation::Collections::IPropertySet
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -446,7 +577,7 @@ namespace ABI {
             IAsyncActionCompletedHandler : public IUnknown
             {
                 virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncAction *asyncAction,
+                    ABI::Windows::Foundation::IAsyncAction *asyncAction,
                     AsyncStatus status) = 0;
 
             };
@@ -542,10 +673,10 @@ namespace ABI {
             IASyncAction : public IAsyncInfo
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncActionCompletedHandler *handler) = 0;
+                    ABI::Windows::Foundation::IAsyncActionCompletedHandler *handler) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncActionCompletedHandler **handler) = 0;
+                    ABI::Windows::Foundation::IAsyncActionCompletedHandler **handler) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetResults(
                     ) = 0;
@@ -719,19 +850,167 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CFoundation_CIASyncAction_GetResults
 
 #endif  /* ____x_ABI_CWindows_CFoundation_CIASyncAction_INTERFACE_DEFINED__ */
 
-#ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
-#define ____FIVectorView_1_HSTRING_FWD_DEFINED__
-typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler_impl : IUnknown
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(IAsyncOperation<TResult_logical> *asyncInfo,AsyncStatus asyncStatus) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IAsyncOperation_impl : IInspectable
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  put_Completed(IAsyncOperationCompletedHandler<TResult_logical> *handler) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  get_Completed(IAsyncOperationCompletedHandler<TResult_logical> **handler) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  GetResults(TResult_abi *result) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TResult>
+            struct IEventHandler_impl : IUnknown
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(IInspectable *sender,TResult_abi args) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            template <class TSender, class TArgs>
+            struct ITypedEventHandler_impl : IUnknown
+            {
+            private:
+                typedef typename Windows::Foundation::Internal::GetAbiType<TSender>::type     TSender_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TSender>::type TSender_logical;
+                typedef typename Windows::Foundation::Internal::GetAbiType<TArgs>::type     TArgs_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TArgs>::type TArgs_logical;
+            public:
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(TSender_abi sender,TArgs_abi args) = 0;
+            };
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template<> struct IVectorView<ABI::HSTRING>;
+                template <class TResult>
+                struct IIterator_impl : IInspectable
+                {
+                private:
+                    typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                    typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE  get_Current(TResult_abi *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  get_HasCurrent(WINBOOL *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  MoveNext(WINBOOL *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 count,TResult_abi *items,UINT32 *value) = 0;
+                };
             }
         }
     }
 }
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IIterable_impl : IInspectable
+                {
+                private:
+                    typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                    typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE  First(IIterator<TResult_logical> **value) = 0;
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#endif
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+} /* extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                template <class TResult>
+                struct IVectorView_impl : IInspectable
+                {
+                private:
+                    typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
+                    typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE  GetAt(UINT32 index,TResult_abi *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  get_Size(UINT32 *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  IndexOf(TResult_abi element,UINT32 *index,BOOLEAN *value) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE  GetMany(UINT32 start_index,UINT32 itemsLength,TResult_abi **items,UINT32 *value) = 0;
+                };
+            }
+        }
+    }
+}
+extern "C" {
+#endif
+
+#ifndef ____FIVectorView_1_HSTRING_FWD_DEFINED__
+#define ____FIVectorView_1_HSTRING_FWD_DEFINED__
+typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+#ifdef __cplusplus
+#define __FIVectorView_1_HSTRING  ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
 #endif /* __cplusplus */
 #endif
 
@@ -739,15 +1018,7 @@ namespace ABI {
 #define ____FIIterable_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template<> struct IIterable<ABI::HSTRING>;
-            }
-        }
-    }
-}
+#define __FIIterable_1_HSTRING  ABI::Windows::Foundation::Collections::IIterable<HSTRING>
 #endif /* __cplusplus */
 #endif
 
@@ -755,15 +1026,7 @@ namespace ABI {
 #define ____FIIterator_1_HSTRING_FWD_DEFINED__
 typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                template<> struct IIterator<ABI::HSTRING>;
-            }
-        }
-    }
-}
+#define __FIIterator_1_HSTRING  ABI::Windows::Foundation::Collections::IIterator<HSTRING>
 #endif /* __cplusplus */
 #endif
 
@@ -771,18 +1034,12 @@ namespace ABI {
 #define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_UINT32 __FIAsyncOperation_1_UINT32;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::UINT32>;
-        }
-    }
-}
+#define __FIAsyncOperation_1_UINT32  ABI::Windows::Foundation::IAsyncOperation<UINT32>
 #endif /* __cplusplus */
 #endif
 
 /*****************************************************************************
- * IVectorView<ABI::HSTRING> interface
+ * IVectorView<HSTRING> interface
  *
  */
 #ifndef ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -797,33 +1054,15 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("fca5679c-bfd4-5187-8b2d-de225049b346")
-                IVectorView<ABI::HSTRING> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE GetAt(
-                        ULONG index,
-                        HSTRING *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE get_Size(
-                        ULONG *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE IndexOf(
-                        HSTRING element,
-                        ULONG *index,
-                        BOOLEAN *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE GetMany(
-                        ULONG start_index,
-                        HSTRING *items,
-                        ULONG *value) = 0;
-
-                };
+                IVectorView<HSTRING> : IVectorView_impl<HSTRING>
+                {};
             }
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IVectorView<ABI::HSTRING>, 0xfca5679c, 0xbfd4, 0x5187, 0x8b,0x2d, 0xde,0x22,0x50,0x49,0xb3,0x46)
+__CRT_UUID_DECL(__FIVectorView_1_HSTRING, 0xfca5679c, 0xbfd4, 0x5187, 0x8b,0x2d, 0xde,0x22,0x50,0x49,0xb3,0x46)
 #endif
 #else
 typedef struct __FIVectorView_1_HSTRINGVtbl {
@@ -855,27 +1094,28 @@ typedef struct __FIVectorView_1_HSTRINGVtbl {
         __FIVectorView_1_HSTRING *This,
         TrustLevel *trustLevel);
 
-    /*** IVectorView<ABI::HSTRING> methods ***/
+    /*** IVectorView<HSTRING> methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAt)(
         __FIVectorView_1_HSTRING *This,
-        ULONG index,
+        UINT32 index,
         HSTRING *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Size)(
         __FIVectorView_1_HSTRING *This,
-        ULONG *value);
+        UINT32 *value);
 
     HRESULT (STDMETHODCALLTYPE *IndexOf)(
         __FIVectorView_1_HSTRING *This,
         HSTRING element,
-        ULONG *index,
+        UINT32 *index,
         BOOLEAN *value);
 
     HRESULT (STDMETHODCALLTYPE *GetMany)(
         __FIVectorView_1_HSTRING *This,
-        ULONG start_index,
-        HSTRING *items,
-        ULONG *value);
+        UINT32 start_index,
+        UINT32 itemsLength,
+        HSTRING **items,
+        UINT32 *value);
 
     END_INTERFACE
 } __FIVectorView_1_HSTRINGVtbl;
@@ -894,11 +1134,11 @@ interface __FIVectorView_1_HSTRING {
 #define __FIVectorView_1_HSTRING_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIVectorView_1_HSTRING_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIVectorView_1_HSTRING_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IVectorView<ABI::HSTRING> methods ***/
+/*** IVectorView<HSTRING> methods ***/
 #define __FIVectorView_1_HSTRING_GetAt(This,index,value) (This)->lpVtbl->GetAt(This,index,value)
 #define __FIVectorView_1_HSTRING_get_Size(This,value) (This)->lpVtbl->get_Size(This,value)
 #define __FIVectorView_1_HSTRING_IndexOf(This,element,index,value) (This)->lpVtbl->IndexOf(This,element,index,value)
-#define __FIVectorView_1_HSTRING_GetMany(This,start_index,items,value) (This)->lpVtbl->GetMany(This,start_index,items,value)
+#define __FIVectorView_1_HSTRING_GetMany(This,start_index,itemsLength,items,value) (This)->lpVtbl->GetMany(This,start_index,itemsLength,items,value)
 #else
 /*** IUnknown methods ***/
 static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_QueryInterface(__FIVectorView_1_HSTRING* This,REFIID riid,void **ppvObject) {
@@ -920,18 +1160,18 @@ static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetRuntimeClassName(__FIVect
 static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetTrustLevel(__FIVectorView_1_HSTRING* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IVectorView<ABI::HSTRING> methods ***/
-static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetAt(__FIVectorView_1_HSTRING* This,ULONG index,HSTRING *value) {
+/*** IVectorView<HSTRING> methods ***/
+static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetAt(__FIVectorView_1_HSTRING* This,UINT32 index,HSTRING *value) {
     return This->lpVtbl->GetAt(This,index,value);
 }
-static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_get_Size(__FIVectorView_1_HSTRING* This,ULONG *value) {
+static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_get_Size(__FIVectorView_1_HSTRING* This,UINT32 *value) {
     return This->lpVtbl->get_Size(This,value);
 }
-static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_IndexOf(__FIVectorView_1_HSTRING* This,HSTRING element,ULONG *index,BOOLEAN *value) {
+static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_IndexOf(__FIVectorView_1_HSTRING* This,HSTRING element,UINT32 *index,BOOLEAN *value) {
     return This->lpVtbl->IndexOf(This,element,index,value);
 }
-static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetMany(__FIVectorView_1_HSTRING* This,ULONG start_index,HSTRING *items,ULONG *value) {
-    return This->lpVtbl->GetMany(This,start_index,items,value);
+static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetMany(__FIVectorView_1_HSTRING* This,UINT32 start_index,UINT32 itemsLength,HSTRING **items,UINT32 *value) {
+    return This->lpVtbl->GetMany(This,start_index,itemsLength,items,value);
 }
 #endif
 #ifdef WIDL_USING_IVECTORVIEW_1_HSTRING
@@ -956,7 +1196,7 @@ static FORCEINLINE HRESULT __FIVectorView_1_HSTRING_GetMany(__FIVectorView_1_HST
 #endif  /* ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * IIterable<ABI::HSTRING> interface
+ * IIterable<HSTRING> interface
  *
  */
 #ifndef ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
@@ -971,19 +1211,15 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("6d68d316-9712-5b81-be82-20dcb8b54521")
-                IIterable<ABI::HSTRING> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE First(
-                        IIterator<ABI::HSTRING> **value) = 0;
-
-                };
+                IIterable<HSTRING> : IIterable_impl<HSTRING>
+                {};
             }
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IIterable<ABI::HSTRING>, 0x6d68d316, 0x9712, 0x5b81, 0xbe,0x82, 0x20,0xdc,0xb8,0xb5,0x45,0x21)
+__CRT_UUID_DECL(__FIIterable_1_HSTRING, 0x6d68d316, 0x9712, 0x5b81, 0xbe,0x82, 0x20,0xdc,0xb8,0xb5,0x45,0x21)
 #endif
 #else
 typedef struct __FIIterable_1_HSTRINGVtbl {
@@ -1015,7 +1251,7 @@ typedef struct __FIIterable_1_HSTRINGVtbl {
         __FIIterable_1_HSTRING *This,
         TrustLevel *trustLevel);
 
-    /*** IIterable<ABI::HSTRING> methods ***/
+    /*** IIterable<HSTRING> methods ***/
     HRESULT (STDMETHODCALLTYPE *First)(
         __FIIterable_1_HSTRING *This,
         __FIIterator_1_HSTRING **value);
@@ -1037,7 +1273,7 @@ interface __FIIterable_1_HSTRING {
 #define __FIIterable_1_HSTRING_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIIterable_1_HSTRING_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIIterable_1_HSTRING_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IIterable<ABI::HSTRING> methods ***/
+/*** IIterable<HSTRING> methods ***/
 #define __FIIterable_1_HSTRING_First(This,value) (This)->lpVtbl->First(This,value)
 #else
 /*** IUnknown methods ***/
@@ -1060,7 +1296,7 @@ static FORCEINLINE HRESULT __FIIterable_1_HSTRING_GetRuntimeClassName(__FIIterab
 static FORCEINLINE HRESULT __FIIterable_1_HSTRING_GetTrustLevel(__FIIterable_1_HSTRING* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IIterable<ABI::HSTRING> methods ***/
+/*** IIterable<HSTRING> methods ***/
 static FORCEINLINE HRESULT __FIIterable_1_HSTRING_First(__FIIterable_1_HSTRING* This,__FIIterator_1_HSTRING **value) {
     return This->lpVtbl->First(This,value);
 }
@@ -1084,7 +1320,7 @@ static FORCEINLINE HRESULT __FIIterable_1_HSTRING_First(__FIIterable_1_HSTRING* 
 #endif  /* ____FIIterable_1_HSTRING_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * IIterator<ABI::HSTRING> interface
+ * IIterator<HSTRING> interface
  *
  */
 #ifndef ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
@@ -1099,30 +1335,15 @@ namespace ABI {
             namespace Collections {
                 template<>
                 MIDL_INTERFACE("36245dd8-f1a8-5da3-802b-6d93317f9a03")
-                IIterator<ABI::HSTRING> : public IInspectable
-                {
-                    virtual HRESULT STDMETHODCALLTYPE get_Current(
-                        HSTRING *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE get_HasCurrent(
-                        WINBOOL *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE MoveNext(
-                        WINBOOL *value) = 0;
-
-                    virtual HRESULT STDMETHODCALLTYPE GetMany(
-                        UINT32 count,
-                        HSTRING *items,
-                        UINT32 *value) = 0;
-
-                };
+                IIterator<HSTRING> : IIterator_impl<HSTRING>
+                {};
             }
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IIterator<ABI::HSTRING>, 0x36245dd8, 0xf1a8, 0x5da3, 0x80,0x2b, 0x6d,0x93,0x31,0x7f,0x9a,0x03)
+__CRT_UUID_DECL(__FIIterator_1_HSTRING, 0x36245dd8, 0xf1a8, 0x5da3, 0x80,0x2b, 0x6d,0x93,0x31,0x7f,0x9a,0x03)
 #endif
 #else
 typedef struct __FIIterator_1_HSTRINGVtbl {
@@ -1154,7 +1375,7 @@ typedef struct __FIIterator_1_HSTRINGVtbl {
         __FIIterator_1_HSTRING *This,
         TrustLevel *trustLevel);
 
-    /*** IIterator<ABI::HSTRING> methods ***/
+    /*** IIterator<HSTRING> methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Current)(
         __FIIterator_1_HSTRING *This,
         HSTRING *value);
@@ -1190,7 +1411,7 @@ interface __FIIterator_1_HSTRING {
 #define __FIIterator_1_HSTRING_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIIterator_1_HSTRING_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIIterator_1_HSTRING_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IIterator<ABI::HSTRING> methods ***/
+/*** IIterator<HSTRING> methods ***/
 #define __FIIterator_1_HSTRING_get_Current(This,value) (This)->lpVtbl->get_Current(This,value)
 #define __FIIterator_1_HSTRING_get_HasCurrent(This,value) (This)->lpVtbl->get_HasCurrent(This,value)
 #define __FIIterator_1_HSTRING_MoveNext(This,value) (This)->lpVtbl->MoveNext(This,value)
@@ -1216,7 +1437,7 @@ static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetRuntimeClassName(__FIIterat
 static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetTrustLevel(__FIIterator_1_HSTRING* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IIterator<ABI::HSTRING> methods ***/
+/*** IIterator<HSTRING> methods ***/
 static FORCEINLINE HRESULT __FIIterator_1_HSTRING_get_Current(__FIIterator_1_HSTRING* This,HSTRING *value) {
     return This->lpVtbl->get_Current(This,value);
 }
@@ -1252,7 +1473,7 @@ static FORCEINLINE HRESULT __FIIterator_1_HSTRING_GetMany(__FIIterator_1_HSTRING
 #endif  /* ____FIIterator_1_HSTRING_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * IAsyncOperation<ABI::UINT32> interface
+ * IAsyncOperation<UINT32> interface
  *
  */
 #ifndef ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__
@@ -1266,24 +1487,14 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("ef60385f-be78-584b-aaef-7829ada2b0de")
-            IAsyncOperation<ABI::UINT32> : public IInspectable
-            {
-                virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncOperationCompletedHandler<ABI::UINT32> *handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncOperationCompletedHandler<ABI::UINT32> **handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE GetResults(
-                    UINT32 *result) = 0;
-
-            };
+            IAsyncOperation<UINT32> : IAsyncOperation_impl<UINT32>
+            {};
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::UINT32>, 0xef60385f, 0xbe78, 0x584b, 0xaa,0xef, 0x78,0x29,0xad,0xa2,0xb0,0xde)
+__CRT_UUID_DECL(__FIAsyncOperation_1_UINT32, 0xef60385f, 0xbe78, 0x584b, 0xaa,0xef, 0x78,0x29,0xad,0xa2,0xb0,0xde)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_UINT32Vtbl {
@@ -1315,7 +1526,7 @@ typedef struct __FIAsyncOperation_1_UINT32Vtbl {
         __FIAsyncOperation_1_UINT32 *This,
         TrustLevel *trustLevel);
 
-    /*** IAsyncOperation<ABI::UINT32> methods ***/
+    /*** IAsyncOperation<UINT32> methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
         __FIAsyncOperation_1_UINT32 *This,
         __FIAsyncOperationCompletedHandler_1_UINT32 *handler);
@@ -1345,7 +1556,7 @@ interface __FIAsyncOperation_1_UINT32 {
 #define __FIAsyncOperation_1_UINT32_GetIids(This,iidCount,iids) (This)->lpVtbl->GetIids(This,iidCount,iids)
 #define __FIAsyncOperation_1_UINT32_GetRuntimeClassName(This,className) (This)->lpVtbl->GetRuntimeClassName(This,className)
 #define __FIAsyncOperation_1_UINT32_GetTrustLevel(This,trustLevel) (This)->lpVtbl->GetTrustLevel(This,trustLevel)
-/*** IAsyncOperation<ABI::UINT32> methods ***/
+/*** IAsyncOperation<UINT32> methods ***/
 #define __FIAsyncOperation_1_UINT32_put_Completed(This,handler) (This)->lpVtbl->put_Completed(This,handler)
 #define __FIAsyncOperation_1_UINT32_get_Completed(This,handler) (This)->lpVtbl->get_Completed(This,handler)
 #define __FIAsyncOperation_1_UINT32_GetResults(This,result) (This)->lpVtbl->GetResults(This,result)
@@ -1370,7 +1581,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetRuntimeClassName(__FIA
 static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetTrustLevel(__FIAsyncOperation_1_UINT32* This,TrustLevel *trustLevel) {
     return This->lpVtbl->GetTrustLevel(This,trustLevel);
 }
-/*** IAsyncOperation<ABI::UINT32> methods ***/
+/*** IAsyncOperation<UINT32> methods ***/
 static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_put_Completed(__FIAsyncOperation_1_UINT32* This,__FIAsyncOperationCompletedHandler_1_UINT32 *handler) {
     return This->lpVtbl->put_Completed(This,handler);
 }
@@ -1402,7 +1613,7 @@ static FORCEINLINE HRESULT __FIAsyncOperation_1_UINT32_GetResults(__FIAsyncOpera
 #endif  /* ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * IAsyncOperationCompletedHandler<ABI::UINT32> interface
+ * IAsyncOperationCompletedHandler<UINT32> interface
  *
  */
 #ifndef ____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__
@@ -1416,19 +1627,14 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")
-            IAsyncOperationCompletedHandler<ABI::UINT32> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncOperation<ABI::UINT32> *asyncInfo,
-                    AsyncStatus asyncStatus) = 0;
-
-            };
+            IAsyncOperationCompletedHandler<UINT32> : IAsyncOperationCompletedHandler_impl<UINT32>
+            {};
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::UINT32>, 0x9343b6e7, 0xe3d2, 0x5e4a, 0xab,0x2d, 0x2b,0xce,0x49,0x19,0xa6,0xa4)
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_UINT32, 0x9343b6e7, 0xe3d2, 0x5e4a, 0xab,0x2d, 0x2b,0xce,0x49,0x19,0xa6,0xa4)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_UINT32Vtbl {
@@ -1446,7 +1652,7 @@ typedef struct __FIAsyncOperationCompletedHandler_1_UINT32Vtbl {
     ULONG (STDMETHODCALLTYPE *Release)(
         __FIAsyncOperationCompletedHandler_1_UINT32 *This);
 
-    /*** IAsyncOperationCompletedHandler<ABI::UINT32> methods ***/
+    /*** IAsyncOperationCompletedHandler<UINT32> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FIAsyncOperationCompletedHandler_1_UINT32 *This,
         __FIAsyncOperation_1_UINT32 *asyncInfo,
@@ -1465,7 +1671,7 @@ interface __FIAsyncOperationCompletedHandler_1_UINT32 {
 #define __FIAsyncOperationCompletedHandler_1_UINT32_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
 #define __FIAsyncOperationCompletedHandler_1_UINT32_AddRef(This) (This)->lpVtbl->AddRef(This)
 #define __FIAsyncOperationCompletedHandler_1_UINT32_Release(This) (This)->lpVtbl->Release(This)
-/*** IAsyncOperationCompletedHandler<ABI::UINT32> methods ***/
+/*** IAsyncOperationCompletedHandler<UINT32> methods ***/
 #define __FIAsyncOperationCompletedHandler_1_UINT32_Invoke(This,asyncInfo,asyncStatus) (This)->lpVtbl->Invoke(This,asyncInfo,asyncStatus)
 #else
 /*** IUnknown methods ***/
@@ -1478,7 +1684,7 @@ static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_UINT32_AddRef(__FI
 static FORCEINLINE ULONG __FIAsyncOperationCompletedHandler_1_UINT32_Release(__FIAsyncOperationCompletedHandler_1_UINT32* This) {
     return This->lpVtbl->Release(This);
 }
-/*** IAsyncOperationCompletedHandler<ABI::UINT32> methods ***/
+/*** IAsyncOperationCompletedHandler<UINT32> methods ***/
 static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_UINT32_Invoke(__FIAsyncOperationCompletedHandler_1_UINT32* This,__FIAsyncOperation_1_UINT32 *asyncInfo,AsyncStatus asyncStatus) {
     return This->lpVtbl->Invoke(This,asyncInfo,asyncStatus);
 }

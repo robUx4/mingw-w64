@@ -22,6 +22,7 @@
 #define ____x_ABI_CWindows_CSystem_CIDispatcherQueueController_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CIDispatcherQueueController __x_ABI_CWindows_CSystem_CIDispatcherQueueController;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSystem_CIDispatcherQueueController  ABI::Windows::System::IDispatcherQueueController
 namespace ABI {
     namespace Windows {
         namespace System {

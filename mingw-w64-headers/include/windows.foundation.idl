@@ -8,26 +8,72 @@
 #pragma winrt ns_prefix
 #endif
 
+cpp_quote("#ifdef __cplusplus")
+cpp_quote("} /* extern \"C\" */")
+cpp_quote("// metafunctions for handling Interface Groups and Runtime Types in parameterized interfaces")
+cpp_quote("namespace ABI {")
+cpp_quote("namespace Windows { namespace Foundation { namespace Internal")
+cpp_quote("{")
+cpp_quote("    // LogicalType - the Windows Runtime type (eg, runtime class, inteface group, etc)")
+cpp_quote("    //               being provided as an argument to an _impl template, when that type")
+cpp_quote("    //               cannot be represented at the ABI.")
+cpp_quote("    // AbiType     - the type used for marshalling, ie \"at the ABI\", for the logical type.")
+cpp_quote("    template <class LogicalType, class AbiType>")
+cpp_quote("    struct AggregateType")
+cpp_quote("    {};")
+cpp_quote("")
+cpp_quote("    // Gets the ABI type.  See AggregateType for description.")
+cpp_quote("    template <class T>")
+cpp_quote("    struct GetAbiType")
+cpp_quote("    {")
+cpp_quote("        typedef T type;")
+cpp_quote("    };")
+cpp_quote("")
+cpp_quote("    template <class L, class A>")
+cpp_quote("    struct GetAbiType<AggregateType<L, A> >")
+cpp_quote("    {")
+cpp_quote("        typedef A type;")
+cpp_quote("    };")
+cpp_quote("")
+cpp_quote("    // Gets the LogicalType.  See AggregateType for description.")
+cpp_quote("    template <class T>")
+cpp_quote("    struct GetLogicalType ")
+cpp_quote("    {")
+cpp_quote("        typedef T type; ")
+cpp_quote("    };")
+cpp_quote("")
+cpp_quote("    template <class L, class A>")
+cpp_quote("    struct GetLogicalType<AggregateType<L, A> >")
+cpp_quote("    {")
+cpp_quote("        typedef L type;")
+cpp_quote("    };")
+cpp_quote("")
+cpp_quote("}}} // namespace Windows::Foundation::Internal")
+cpp_quote("} // ABI")
+cpp_quote("extern \"C\" {")
+cpp_quote("#endif // __cplusplus")
+cpp_quote("")
+
 import "inspectable.idl";
 
-cpp_quote("#if 0 // widl-only definitions already defined in Windows headers")
+// found in eventtoken.h in MSDK
 typedef struct EventRegistrationToken {
   UINT64 Value;
 } EventRegistrationToken;
 
-typedef enum AsyncStatus {
+// found in asyncinfo.h in MSDK
+typedef [v1_enum] enum AsyncStatus {
   Started,
   Completed,
   Canceled,
   Error
 } AsyncStatus;
-cpp_quote("#endif // widl-only definitions")
 
 namespace Windows {
   namespace Foundation {
     interface IAsyncInfo;
     interface IAsyncAction;
-    interface IAsyncOperation<T>;
+    interface IAsyncOperation<TResult>;
     struct    DateTime;
 
     namespace Collections {
@@ -56,10 +102,10 @@ namespace Windows {
       HRESULT Close();
     }
 
-    [uuid(A4ED5C81-76C9-40BD-8BE6-B1D90FB20AE7)]
+    [uuid(a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7)]
     delegate HRESULT AsyncActionCompletedHandler(IAsyncAction *asyncAction, AsyncStatus status);
 
-    [uuid(5A648006-843A-4DA9-865B-9D26E5DFAD7B)]
+    [uuid(5a648006-843a-4da9-865b-9d26e5dfad7b)]
     interface IASyncAction : IAsyncInfo {
       [propput] HRESULT Completed(AsyncActionCompletedHandler* handler);
       [propget] HRESULT Completed(AsyncActionCompletedHandler** handler);
@@ -68,57 +114,58 @@ namespace Windows {
 
 #ifdef __WIDL__
         [
-            uuid("FCDCF02C-E5D8-4478-915A-4D90B74B83A5")
+            uuid(fcdcf02c-e5d8-4478-915a-4d90b74b83a5)
         ]
-        delegate HRESULT AsyncOperationCompletedHandler<T>(Windows.Foundation.IAsyncOperation<T> *asyncInfo, AsyncStatus asyncStatus);
+        delegate HRESULT AsyncOperationCompletedHandler<TResult>(Windows.Foundation.IAsyncOperation<TResult> *asyncInfo, AsyncStatus asyncStatus);
 
         [uuid("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")]
-        interface IAsyncOperation<T> : IInspectable {
-            [propput] HRESULT Completed(AsyncOperationCompletedHandler<T>* handler);
-            [propget] HRESULT Completed(AsyncOperationCompletedHandler<T>** handler);
-            HRESULT GetResults(T* result);
+        interface IAsyncOperation<TResult> : IInspectable {
+            [propput] HRESULT Completed(AsyncOperationCompletedHandler<TResult>* handler);
+            [propget] HRESULT Completed(AsyncOperationCompletedHandler<TResult>** handler);
+            HRESULT GetResults(TResult* result);
         }
 
         [
             uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
         ]
-        delegate HRESULT EventHandler<T>([in] IInspectable *sender, [in] T args);
+        delegate HRESULT EventHandler<TResult>([in] IInspectable *sender, [in] TResult args);
 
         [
-            uuid(9DE1C534-6AE1-11E0-84E1-18A905BCC53F)
+            uuid(9de1c534-6ae1-11e0-84e1-18a905bcc53f)
         ]
-        delegate HRESULT TypedEventHandler<TSender,TResult>(TSender sender, TResult args);
+        // parameter order seems inverted for TypedEventHandler<DeviceWatcher*, DeviceInformation*>
+        delegate HRESULT TypedEventHandler<TArgs,TSender>(TSender sender, TArgs args);
 
         namespace Collections
         {
             [
                 uuid(6a79e863-4300-459a-9966-cbb660963ee1)
             ]
-            interface IIterator<T> : IInspectable
+            interface IIterator<TResult> : IInspectable
             {
-                [propget] HRESULT Current([out, retval] T *value);
+                [propget] HRESULT Current([out, retval] TResult *value);
                 [propget] HRESULT HasCurrent([out, retval] BOOL *value);
                 HRESULT MoveNext([out, retval] BOOL *value);
-                HRESULT GetMany([in] UINT32 count, [out] T *items, [out, retval] UINT32 *value);
+                HRESULT GetMany([in] UINT32 count, [out] TResult *items, [out, retval] UINT32 *value);
             }
 
             [
                 uuid(faa585ea-6214-4217-afda-7f46de5869b3)
             ]
-            interface IIterable<T> : IInspectable
+            interface IIterable<TResult> : IInspectable
             {
-                HRESULT First([out, retval] Windows.Foundation.Collections.IIterator<T> **value);
+                HRESULT First([out, retval] Windows.Foundation.Collections.IIterator<TResult> **value);
             }
 
             [
                 uuid(bbe1fa4c-b0e3-4583-baef-1f1b2e483e56)
             ]
-            interface IVectorView<T> : IInspectable
+            interface IVectorView<TResult> : IInspectable
             {
-                HRESULT GetAt([in] ULONG index, [out, retval] T *value);
-                [propget] HRESULT Size([out, retval] ULONG *value);
-                HRESULT IndexOf([in, optional] T element, [out] ULONG *index, [out, retval] BOOLEAN *value);
-                HRESULT GetMany([in] ULONG start_index, [out] T *items, [out, retval] ULONG *value);
+                HRESULT GetAt([in] UINT32 index, [out, retval] TResult *value);
+                [propget] HRESULT Size([out, retval] UINT32 *value);
+                HRESULT IndexOf([in, optional] TResult element, [out] UINT32 *index, [out, retval] BOOLEAN *value);
+                HRESULT GetMany([in] UINT32 start_index, [in] UINT32 itemsLength, [out] TResult **items, [out, retval] UINT32 *value);
             }
         }
 #endif

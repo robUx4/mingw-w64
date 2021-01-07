@@ -22,6 +22,7 @@
 #define ____x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics  ABI::Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -38,6 +39,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList  ABI::Windows::Storage::AccessCache::IStorageItemAccessList
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -81,6 +83,7 @@ extern "C" {
 #define ____x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList  ABI::Windows::Storage::AccessCache::IStorageItemAccessList
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -97,6 +100,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics  ABI::Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -113,6 +117,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemMostRecentlyUsedList_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemMostRecentlyUsedList __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemMostRecentlyUsedList;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemMostRecentlyUsedList  ABI::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -174,10 +179,10 @@ namespace ABI {
                 IStorageApplicationPermissionsStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE get_FutureAccessList(
-                        IStorageItemAccessList **value) = 0;
+                        ABI::Windows::Storage::AccessCache::IStorageItemAccessList **value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE get_MostRecentlyUsedList(
-                        IStorageItemMostRecentlyUsedList **value) = 0;
+                        ABI::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList **value) = 0;
 
                 };
             }
@@ -313,49 +318,49 @@ namespace ABI {
                 IStorageItemAccessList : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE AddOverloadDefaultMetadata(
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         HSTRING *token) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE Add(
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         HSTRING metadata,
                         HSTRING *token) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE AddOrReplaceOverloadDefaultMetadata(
                         HSTRING token,
-                        IStorageItem *file) = 0;
+                        ABI::Windows::Storage::IStorageItem *file) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE AddOrReplace(
                         HSTRING token,
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         HSTRING metadata) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetItemAsync(
                         HSTRING token,
-                        IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFileAsync(
                         HSTRING token,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFolderAsync(
                         HSTRING token,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetItemWithOptionsAsync(
                         HSTRING token,
                         enum AccessCacheOptions options,
-                        IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFileWithOptionsAsync(
                         HSTRING token,
                         enum AccessCacheOptions options,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetFolderWithOptionsAsync(
                         HSTRING token,
                         enum AccessCacheOptions options,
-                        IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE Remove(
                         HSTRING token) = 0;
@@ -368,7 +373,7 @@ namespace ABI {
                         ) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CheckAccess(
-                        IStorageItem *file,
+                        ABI::Windows::Storage::IStorageItem *file,
                         boolean *value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE get_Entries(
@@ -646,7 +651,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemA
  */
 #ifndef RUNTIMECLASS_Windows_Storage_AccessCache_StorageApplicationPermissions_DEFINED
 #define RUNTIMECLASS_Windows_Storage_AccessCache_StorageApplicationPermissions_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_AccessCache_StorageApplicationPermissions[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','c','c','e','s','s','C','a','c','h','e','.','S','t','o','r','a','g','e','A','p','p','l','i','c','a','t','i','o','n','P','e','r','m','i','s','s','i','o','n','s',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_AccessCache_StorageApplicationPermissions[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','A','c','c','e','s','s','C','a','c','h','e','.','S','t','o','r','a','g','e','A','p','p','l','i','c','a','t','i','o','n','P','e','r','m','i','s','s','i','o','n','s',0};
 #endif /* RUNTIMECLASS_Windows_Storage_AccessCache_StorageApplicationPermissions_DEFINED */
 
 /* Begin additional prototypes for all interfaces */

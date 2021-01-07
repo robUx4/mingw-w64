@@ -18,7 +18,7 @@ namespace Windows {
       runtimeclass DeviceWatcher;
       runtimeclass DeviceInformation;
       runtimeclass DeviceInformationUpdate;
-      runtimeclass DeviceInformationCollection;
+      //~ runtimeclass DeviceInformationCollection;
 
       interface IDeviceInformation;
       interface IDeviceInformationStatics;
@@ -26,9 +26,9 @@ namespace Windows {
       interface IDeviceWatcher;
       declare {
         interface Windows.Foundation.IAsyncOperation<DeviceInformation*>;
-        interface Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>;
+        //~ interface Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>;
         interface Windows.Foundation.AsyncOperationCompletedHandler<DeviceInformation*>;
-        interface Windows.Foundation.AsyncOperationCompletedHandler<DeviceInformationCollection*>;
+        //~ interface Windows.Foundation.AsyncOperationCompletedHandler<DeviceInformationCollection*>;
         interface Windows.Foundation.Collections.IVectorView<DeviceInformation*>;
         interface Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformation*>;
         interface Windows.Foundation.TypedEventHandler<DeviceWatcher*, DeviceInformationUpdate*>;
@@ -81,10 +81,10 @@ namespace Windows {
       {
          HRESULT CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation<DeviceInformation*> **operation);
          HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable<HSTRING> *additionalProperties, Windows.Foundation.IAsyncOperation<DeviceInformation*> **operation);
-         HRESULT FindAllAsync(Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
-         HRESULT FindAllAsyncDeviceClass(DeviceClass deviceclass, Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
-         HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
-         HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable<HSTRING> *additionalProperties, DeviceInformationKind kind, Windows.Foundation.IAsyncOperation<DeviceInformationCollection*> **operation);
+         HRESULT FindAllAsync(/*Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>*/ IInspectable **operation);
+         HRESULT FindAllAsyncDeviceClass(DeviceClass deviceclass, /*Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>*/ IInspectable **operation);
+         HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, /*Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>*/ IInspectable **operation);
+         HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable<HSTRING> *additionalProperties, DeviceInformationKind kind, /*Windows.Foundation.IAsyncOperation<DeviceInformationCollection*>*/ IInspectable **operation);
          HRESULT CreateWatcher(IDeviceWatcher **operation);
          HRESULT CreateWatcherDeviceClass(DeviceClass deviceclass, IDeviceWatcher **operation);
          HRESULT CreateWatcherAqsFilter(HSTRING aqsFilter, IDeviceWatcher **operation);
@@ -113,14 +113,6 @@ namespace Windows {
       }
 
       [
-        exclusiveto(Windows.Devices.Enumeration.DeviceInformationCollection),
-        uuid(e170688f-3495-5bf6-aab5-9cac17e0f10f)
-      ]
-      interface IDeviceInformationCollection : Windows.Foundation.Collections.IVectorView<DeviceInformation*>
-      {
-      }
-
-      [
         marshaling_behavior(agile)
       ]
       runtimeclass DeviceInformation
@@ -144,13 +136,13 @@ namespace Windows {
         [default] interface IDeviceWatcher;
       }
 
-      [
-        marshaling_behavior(agile)
-      ]
-      runtimeclass DeviceInformationCollection
-      {
-        [default] interface IDeviceInformationCollection;
-      }
+      //~ [
+        //~ marshaling_behavior(agile)
+      //~ ]
+      //~ runtimeclass DeviceInformationCollection
+      //~ {
+        //~ [default] interface Windows.Foundation.Collections.IVectorView<DeviceInformation*>;
+      //~ }
 
       [
         uuid(C9EAB97D-8F6B-4F96-A9F4-ABC814E22271)

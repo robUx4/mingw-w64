@@ -22,6 +22,7 @@
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics  ABI::Windows::Security::Cryptography::ICryptographicBufferStatics
 namespace ABI {
     namespace Windows {
         namespace Security {
@@ -47,6 +48,7 @@ extern "C" {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBuffer __x_ABI_CWindows_CStorage_CStreams_CIBuffer;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIBuffer  ABI::Windows::Storage::Streams::IBuffer
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -63,6 +65,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics  ABI::Windows::Security::Cryptography::ICryptographicBufferStatics
 namespace ABI {
     namespace Windows {
         namespace Security {
@@ -120,13 +123,13 @@ namespace ABI {
                 ICryptographicBufferStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE Compare(
-                        IBuffer *object1,
-                        IBuffer *object2,
+                        ABI::Windows::Storage::Streams::IBuffer *object1,
+                        ABI::Windows::Storage::Streams::IBuffer *object2,
                         boolean *isEqual) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GenerateRandom(
                         UINT32 length,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GenerateRandomNumber(
                         UINT32 *value) = 0;
@@ -134,37 +137,37 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE CreateFromByteArray(
                         UINT32 __valueSize,
                         BYTE *value,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CopyToByteArray(
-                        IBuffer *buffer,
+                        ABI::Windows::Storage::Streams::IBuffer *buffer,
                         UINT32 *__valueSize,
                         BYTE **value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DecodeFromHexString(
                         HSTRING value,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE EncodeToHexString(
-                        IBuffer *buffer,
+                        ABI::Windows::Storage::Streams::IBuffer *buffer,
                         HSTRING *value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DecodeFromBase64String(
                         HSTRING value,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE EncodeToBase64String(
-                        IBuffer *buffer,
+                        ABI::Windows::Storage::Streams::IBuffer *buffer,
                         HSTRING *value) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE ConvertStringToBinary(
                         HSTRING value,
                         enum BinaryStringEncoding encoding,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE ConvertBinaryToString(
                         enum BinaryStringEncoding encoding,
-                        IBuffer *buffer,
+                        ABI::Windows::Storage::Streams::IBuffer *buffer,
                         HSTRING *value) = 0;
 
                 };

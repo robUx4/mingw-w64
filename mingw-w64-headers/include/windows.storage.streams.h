@@ -22,6 +22,7 @@
 #define ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBuffer __x_ABI_CWindows_CStorage_CStreams_CIBuffer;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIBuffer  ABI::Windows::Storage::Streams::IBuffer
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -38,6 +39,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIBufferFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory  ABI::Windows::Storage::Streams::IBufferFactory
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -54,6 +56,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType  ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -70,6 +73,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference  ABI::Windows::Storage::Streams::IRandomAccessStreamReference
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -86,6 +90,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIInputStream_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIInputStream __x_ABI_CWindows_CStorage_CStreams_CIInputStream;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIInputStream  ABI::Windows::Storage::Streams::IInputStream
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -102,6 +107,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream  ABI::Windows::Storage::Streams::IRandomAccessStream
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -135,6 +141,7 @@ typedef struct __x_ABI_CWindows_CStorage_CStreams_CDataReader __x_ABI_CWindows_C
 #define ____x_ABI_CWindows_CStorage_CStreams_CIDataReader_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIDataReader __x_ABI_CWindows_CStorage_CStreams_CIDataReader;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIDataReader  ABI::Windows::Storage::Streams::IDataReader
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -151,6 +158,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory  ABI::Windows::Storage::Streams::IDataReaderFactory
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -167,13 +175,7 @@ namespace ABI {
 #define ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
-        }
-    }
-}
+#define __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType  ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
 #endif /* __cplusplus */
 #endif
 
@@ -181,13 +183,7 @@ namespace ABI {
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
-        }
-    }
-}
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
 #endif /* __cplusplus */
 #endif
 
@@ -204,6 +200,7 @@ extern "C" {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIBufferFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory  ABI::Windows::Storage::Streams::IBufferFactory
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -220,6 +217,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBuffer __x_ABI_CWindows_CStorage_CStreams_CIBuffer;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIBuffer  ABI::Windows::Storage::Streams::IBuffer
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -236,6 +234,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIDataReader_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIDataReader __x_ABI_CWindows_CStorage_CStreams_CIDataReader;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIDataReader  ABI::Windows::Storage::Streams::IDataReader
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -252,6 +251,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory  ABI::Windows::Storage::Streams::IDataReaderFactory
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -268,6 +268,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIInputStream_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIInputStream __x_ABI_CWindows_CStorage_CStreams_CIInputStream;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIInputStream  ABI::Windows::Storage::Streams::IInputStream
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -284,6 +285,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream  ABI::Windows::Storage::Streams::IRandomAccessStream
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -300,6 +302,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference  ABI::Windows::Storage::Streams::IRandomAccessStreamReference
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -316,6 +319,7 @@ namespace ABI {
 #define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType;
 #ifdef __cplusplus
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType  ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType
 namespace ABI {
     namespace Windows {
         namespace Storage {
@@ -332,13 +336,7 @@ namespace ABI {
 #define ____FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_FWD_DEFINED__
 typedef interface __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType;
 #ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            template<> struct IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>;
-        }
-    }
-}
+#define __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType  ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
 #endif /* __cplusplus */
 #endif
 
@@ -591,7 +589,7 @@ namespace ABI {
                 {
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         UINT32 capacity,
-                        IBuffer **value) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **value) = 0;
 
                 };
             }
@@ -831,7 +829,7 @@ namespace ABI {
                 IRandomAccessStreamReference : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE OpenReadAsync(
-                        IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **operation) = 0;
 
                 };
             }
@@ -961,7 +959,7 @@ namespace ABI {
                         ) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE ReadAsync(
-                        IBuffer *buffer,
+                        ABI::Windows::Storage::Streams::IBuffer *buffer,
                         UINT32 count,
                         enum InputStreamOptions options,
                         IInspectable **operation) = 0;
@@ -1109,7 +1107,7 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE GetInputStreamAt(
                         UINT64 position,
-                        IInputStream **stream) = 0;
+                        ABI::Windows::Storage::Streams::IInputStream **stream) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamAt(
                         UINT64 position,
@@ -1122,7 +1120,7 @@ namespace ABI {
                         UINT64 position) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CloneStream(
-                        IRandomAccessStream **stream) = 0;
+                        ABI::Windows::Storage::Streams::IRandomAccessStream **stream) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE get_CanRead(
                         boolean *value) = 0;
@@ -1322,7 +1320,7 @@ static FORCEINLINE HRESULT __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStre
  */
 #ifndef RUNTIMECLASS_Windows_Storage_Streams_DataReader_DEFINED
 #define RUNTIMECLASS_Windows_Storage_Streams_DataReader_DEFINED
-static const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_Streams_DataReader[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','r','e','a','m','s','.','D','a','t','a','R','e','a','d','e','r',0};
+extern const DECLSPEC_SELECTANY WCHAR RuntimeClass_Windows_Storage_Streams_DataReader[] = {'W','i','n','d','o','w','s','.','S','t','o','r','a','g','e','.','S','t','r','e','a','m','s','.','D','a','t','a','R','e','a','d','e','r',0};
 #endif /* RUNTIMECLASS_Windows_Storage_Streams_DataReader_DEFINED */
 
 /*****************************************************************************
@@ -1372,7 +1370,7 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE ReadBuffer(
                         UINT32 length,
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE ReadBoolean(
                         boolean *value) = 0;
@@ -1416,13 +1414,13 @@ namespace ABI {
 
                     virtual HRESULT STDMETHODCALLTYPE LoadAsync(
                         UINT32 count,
-                        IAsyncOperation<ABI::UINT32> **operation) = 0;
+                        ABI::Windows::Foundation::IAsyncOperation<UINT32> **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DetachBuffer(
-                        IBuffer **buffer) = 0;
+                        ABI::Windows::Storage::Streams::IBuffer **buffer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE DetachStream(
-                        IInputStream **stream) = 0;
+                        ABI::Windows::Storage::Streams::IInputStream **stream) = 0;
 
                 };
             }
@@ -1778,8 +1776,8 @@ namespace ABI {
                 IDataReaderFactory : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE CreateDataReader(
-                        IInputStream *inputStream,
-                        IDataReader **dataReader) = 0;
+                        ABI::Windows::Storage::Streams::IInputStream *inputStream,
+                        ABI::Windows::Storage::Streams::IDataReader **dataReader) = 0;
 
                 };
             }
@@ -1904,24 +1902,14 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("c4a57c5e-32b0-55b3-ad13-ce1c23041ed6")
-            IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : public IInspectable
-            {
-                virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> *handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> **handler) = 0;
-
-                virtual HRESULT STDMETHODCALLTYPE GetResults(
-                    IRandomAccessStreamWithContentType **result) = 0;
-
-            };
+            IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : IAsyncOperation_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
+            {};
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>, 0xc4a57c5e, 0x32b0, 0x55b3, 0xad,0x13, 0xce,0x1c,0x23,0x04,0x1e,0xd6)
+__CRT_UUID_DECL(__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType, 0xc4a57c5e, 0x32b0, 0x55b3, 0xad,0x13, 0xce,0x1c,0x23,0x04,0x1e,0xd6)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentTypeVtbl {
@@ -2054,19 +2042,14 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("3dddecf4-1d39-58e8-83b1-dbed541c7f35")
-            IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : public IUnknown
-            {
-                virtual HRESULT STDMETHODCALLTYPE Invoke(
-                    IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> *asyncInfo,
-                    AsyncStatus asyncStatus) = 0;
-
-            };
+            IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
+            {};
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>, 0x3dddecf4, 0x1d39, 0x58e8, 0x83,0xb1, 0xdb,0xed,0x54,0x1c,0x7f,0x35)
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType, 0x3dddecf4, 0x1d39, 0x58e8, 0x83,0xb1, 0xdb,0xed,0x54,0x1c,0x7f,0x35)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentTypeVtbl {
