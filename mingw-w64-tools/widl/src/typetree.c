@@ -108,7 +108,7 @@ static size_t append_namespaces(char **buf, size_t *len, size_t pos, struct name
 {
     size_t n = 0;
     n += strappend(buf, len, pos + n, "%s", prefix);
-    n += append_namespace(buf, len, pos + n, namespace, separator, abi_prefix);
+    n += append_namespace(buf, len, pos + n, namespace, separator, namespace && !is_global_namespace(namespace) ? abi_prefix : NULL);
     n += strappend(buf, len, pos + n, "%s", suffix);
     return n;
 }
