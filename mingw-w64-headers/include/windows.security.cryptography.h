@@ -174,7 +174,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Security::Cryptography::ICryptographicBufferStatics, 0x320b7e22, 0x3cb0, 0x4cdf, 0x86,0x63, 0x1d,0x28,0x91,0x00,0x65,0xeb)
+#define __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics  ABI::Windows::Security::Cryptography::ICryptographicBufferStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStatics, 0x320b7e22, 0x3cb0, 0x4cdf, 0x86,0x63, 0x1d,0x28,0x91,0x00,0x65,0xeb)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSecurity_CCryptography_CICryptographicBufferStaticsVtbl {

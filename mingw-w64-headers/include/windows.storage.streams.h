@@ -436,7 +436,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IBuffer, 0x905a0fe0, 0xbc53, 0x11df, 0x8c,0x49, 0x00,0x1e,0x4f,0xc6,0x86,0xda)
+#define __x_ABI_CWindows_CStorage_CStreams_CIBuffer  ABI::Windows::Storage::Streams::IBuffer
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIBuffer, 0x905a0fe0, 0xbc53, 0x11df, 0x8c,0x49, 0x00,0x1e,0x4f,0xc6,0x86,0xda)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIBufferVtbl {
@@ -582,7 +583,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IBufferFactory, 0x71af914d, 0xc10f, 0x484b, 0xbc,0x50, 0x14,0xbc,0x62,0x3b,0x3a,0x27)
+#define __x_ABI_CWindows_CStorage_CStreams_CIBufferFactory  ABI::Windows::Storage::Streams::IBufferFactory
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIBufferFactory, 0x71af914d, 0xc10f, 0x484b, 0xbc,0x50, 0x14,0xbc,0x62,0x3b,0x3a,0x27)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIBufferFactoryVtbl {
@@ -707,7 +709,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType, 0xcc254827, 0x4b3d, 0x438f, 0x92,0x32, 0x10,0xc7,0x6b,0xc7,0xe0,0x38)
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType  ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType, 0xcc254827, 0x4b3d, 0x438f, 0x92,0x32, 0x10,0xc7,0x6b,0xc7,0xe0,0x38)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentTypeVtbl {
@@ -822,7 +825,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IRandomAccessStreamReference, 0x33ee3134, 0x1dd6, 0x4e3a, 0x80,0x67, 0xd1,0xc1,0x62,0xe8,0x64,0x2b)
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference  ABI::Windows::Storage::Streams::IRandomAccessStreamReference
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference, 0x33ee3134, 0x1dd6, 0x4e3a, 0x80,0x67, 0xd1,0xc1,0x62,0xe8,0x64,0x2b)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReferenceVtbl {
@@ -955,7 +959,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IInputStream, 0x905a0fe2, 0xbc53, 0x11df, 0x8c,0x49, 0x00,0x1e,0x4f,0xc6,0x86,0xda)
+#define __x_ABI_CWindows_CStorage_CStreams_CIInputStream  ABI::Windows::Storage::Streams::IInputStream
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIInputStream, 0x905a0fe2, 0xbc53, 0x11df, 0x8c,0x49, 0x00,0x1e,0x4f,0xc6,0x86,0xda)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIInputStreamVtbl {
@@ -1119,7 +1124,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IRandomAccessStream, 0x905a0fe1, 0xbc53, 0x11df, 0x8c,0x49, 0x00,0x1e,0x4f,0xc6,0x86,0xda)
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream  ABI::Windows::Storage::Streams::IRandomAccessStream
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream, 0x905a0fe1, 0xbc53, 0x11df, 0x8c,0x49, 0x00,0x1e,0x4f,0xc6,0x86,0xda)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamVtbl {
@@ -1413,7 +1419,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IDataReader, 0xe2b50029, 0xb4c1, 0x4314, 0xa4,0xb8, 0xfb,0x81,0x3a,0x2f,0x27,0x5e)
+#define __x_ABI_CWindows_CStorage_CStreams_CIDataReader  ABI::Windows::Storage::Streams::IDataReader
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIDataReader, 0xe2b50029, 0xb4c1, 0x4314, 0xa4,0xb8, 0xfb,0x81,0x3a,0x2f,0x27,0x5e)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIDataReaderVtbl {
@@ -1770,7 +1777,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::Streams::IDataReaderFactory, 0xd7527847, 0x57da, 0x4e15, 0x91,0x4c, 0x06,0x80,0x66,0x99,0xa0,0x98)
+#define __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory  ABI::Windows::Storage::Streams::IDataReaderFactory
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactory, 0xd7527847, 0x57da, 0x4e15, 0x91,0x4c, 0x06,0x80,0x66,0x99,0xa0,0x98)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CStreams_CIDataReaderFactoryVtbl {
@@ -1893,7 +1901,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>, 0xc4a57c5e, 0x32b0, 0x55b3, 0xad,0x13, 0xce,0x1c,0x23,0x04,0x1e,0xd6)
+#define __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType  ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
+__CRT_UUID_DECL(__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType, 0xc4a57c5e, 0x32b0, 0x55b3, 0xad,0x13, 0xce,0x1c,0x23,0x04,0x1e,0xd6)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentTypeVtbl {
@@ -2033,7 +2042,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>, 0x3dddecf4, 0x1d39, 0x58e8, 0x83,0xb1, 0xdb,0xed,0x54,0x1c,0x7f,0x35)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType*>
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType, 0x3dddecf4, 0x1d39, 0x58e8, 0x83,0xb1, 0xdb,0xed,0x54,0x1c,0x7f,0x35)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentTypeVtbl {

@@ -150,11 +150,12 @@ static void write_guid(FILE *f, const char *guid_prefix, const char *name, const
 
 static void write_uuid_decl(FILE *f, type_t *type, const UUID *uuid)
 {
-  char *name = format_namespace(type->namespace, "", "::", type->name, use_abi_namespace ? "ABI" : NULL);
+  char *name = format_namespace(type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
   fprintf(f, "#ifdef __CRT_UUID_DECL\n");
+  fprintf(f, "#define %s  %s\n", type->c_name, name);
   fprintf(f, "__CRT_UUID_DECL(%s, 0x%08x, 0x%04x, 0x%04x, 0x%02x,0x%02x, 0x%02x,"
         "0x%02x,0x%02x,0x%02x,0x%02x,0x%02x)\n",
-        name, uuid->Data1, uuid->Data2, uuid->Data3, uuid->Data4[0], uuid->Data4[1],
+        type->c_name, uuid->Data1, uuid->Data2, uuid->Data3, uuid->Data4[0], uuid->Data4[1],
         uuid->Data4[2], uuid->Data4[3], uuid->Data4[4], uuid->Data4[5], uuid->Data4[6],
         uuid->Data4[7]);
   fprintf(f, "#endif\n");
@@ -497,8 +498,20 @@ void write_type_left(FILE *h, const decl_spec_t *ds, enum name_type name_type, i
         fprintf(h, "%s", type_get_name(type_runtimeclass_get_default_iface(t), name_type));
         break;
       case TYPE_DELEGATE:
-        fprintf(h, "%s", type_get_name(type_delegate_get_iface(t), name_type));
+      {
+          t = type_delegate_get_iface(t);
+#if 1
+          int in_namespace = t->namespace && !is_global_namespace(t->namespace);
+          if (in_namespace && name_type == NAME_DEFAULT)
+          {
+            char *namespace = format_namespace(t->namespace, "", "::", t->name, use_abi_namespace ? "ABI" : NULL);
+            fprintf(h, "%s", namespace);
+          }
+          else
+#endif
+        fprintf(h, "%s", type_get_name(t, name_type));
         break;
+      }
       case TYPE_VOID:
         fprintf(h, "void");
         break;
@@ -539,15 +552,35 @@ void write_type_left(FILE *h, const decl_spec_t *ds, enum name_type name_type, i
             real_type = type_delegate_get_iface(real_type);
 
           fprintf(h, "%s<", real_type->name);
-           // TODO write extra parameter
-          fprintf(h, "TResult_logical");
-          fprintf(h, ">");
+          size_t len = 0, pos = 0;
+          char *buf = NULL;
+          type_list_t *entry;
+          for (entry = t->details.parameterized.params; entry; entry = entry->next)
+          {
+              assert(entry->type->type_type != TYPE_POINTER);
+              pos += strappend(&buf, &len, pos, "%s_logical", entry->type->name);
+              assert(!entry->next);
+          }
+          fprintf(h, "%s>",buf);
           break;
       }
       case TYPE_PARAMETER:
       {
+#if 0
            // TODO write extra parameter
           fprintf(h, "TResult_abi");
+#else
+          size_t len = 0, pos = 0;
+          char *buf = NULL;
+          type_list_t *entry;
+          for (entry = t->details.parameterized.params; entry; entry = entry->next)
+          {
+              assert(entry->type->type_type != TYPE_POINTER);
+              pos += strappend(&buf, &len, pos, "%s_abi", entry->type->name);
+              assert(!entry->next);
+          }
+          fprintf(h, "%s_abi",t->name);
+#endif
           break;
       }
       case TYPE_APICONTRACT:
@@ -1148,34 +1181,26 @@ static void write_parameterized_implementation(FILE *header, type_t *type, int d
   }
   assert (parent);
 
-  indent(header, 0);
-  fprintf(header, "template <class ");
-
-#if 1
-  fprintf(header, "TResult"); // TODO use the original parameter name
-#else
   size_t len = 0, pos = 0;
   char *buf = NULL;
   type_list_t *entry;
-  for (entry = params; entry; entry = entry->next)
+  for (entry = type->details.parameterized.params; entry; entry = entry->next)
   {
-    for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {
-        assert(0);
-    }
-    pos += strappend(&buf, &len, pos, "%s", entry->type->name);
-    // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
-    // for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
-    if (entry->next) pos += strappend(&buf, &len, pos, ",");
+    assert(entry->type->type_type != TYPE_POINTER);
+    pos += strappend(&buf, &len, pos, "class %s", entry->type->name);
+    if (entry->next) pos += strappend(&buf, &len, pos, ", ");
   }
-  assert(buf);
-  fprintf(header, buf);
-#endif
-  fprintf(header, ">\n");
+  write_line(header, 0, "template <%s>", buf);
   write_line(header, 0, "struct %s_impl : %s", iface->name, parent->name);
   write_line(header, 0, "{");
   write_line(header, 1, "private:");
-  write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;");
-  write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;");
+  for (entry = type->details.parameterized.params; entry; entry = entry->next)
+  {
+    write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetAbiType<%s>::type     %s_abi;", entry->type->name, entry->type->name);
+    write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetLogicalType<%s>::type %s_logical;", entry->type->name, entry->type->name);
+    pos += strappend(&buf, &len, pos, "class %s", entry->type->name);
+    if (entry->next) pos += strappend(&buf, &len, pos, ", ");
+  }
   write_line(header, -1, "public:");
 
   const statement_t *stmt;
@@ -1191,35 +1216,17 @@ static void write_parameterized_implementation(FILE *header, type_t *type, int d
     //   write_type_decl_left(header, type_function_get_ret(func->declspec.type));
       write_type_decl_left(header, &func->declspec);
       fprintf(header, " %s(", get_name(func));
-    //   write_args(header, type_function_get_args(func->declspec.type), name, 1, FALSE, NAME_C);
-    //   fprintf(header, ") = 0;\n");
-    //   ++indentation;
-    //   if (!is_aggregate_return(func)) {
-    //     indent(header, 0);
-    //     fprintf(header, "%sThis->lpVtbl->%s(This",
-    //             is_void(type_function_get_rettype(func->declspec.type)) ? "" : "return ",
-    //             get_vtbl_entry_name(iface, func));
-    //   } else {
-    //     indent(header, 0);
-    //     write_type_decl_left(header, type_function_get_ret(func->declspec.type));
-    //     fprintf(header, " __ret;\n");
-    //     indent(header, 0);
-    //     fprintf(header, "return *This->lpVtbl->%s(This,&__ret", get_vtbl_entry_name(iface, func));
-    //   }
 #if 1
         write_args(header, type_function_get_args(func->declspec.type), NULL, 0, 0, NAME_DEFAULT);
 #else
-      if (type_function_get_args(func->declspec.type))
-      {
-          int first_arg = 1;
-          LIST_FOR_EACH_ENTRY( arg, type_function_get_args(func->declspec.type), const var_t, entry )
-          {
-              if (!first_arg)
-                fprintf(header, ", ");
-              first_arg = 0;
-              fprintf(header, "%s", arg->name);
-          }
-      }
+      type_function_get_args(func->declspec.type);
+    for (entry = type->details.parameterized.params; entry; entry = entry->next)
+    {
+      write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetAbiType<%s>::type     %s_abi;", entry->type->name, entry->type->name);
+      write_line(header, 0, "typedef typename Windows::Foundation::Internal::GetLogicalType<%s>::type %s_logical;", entry->type->name, entry->type->name);
+      pos += strappend(&buf, &len, pos, "class %s", entry->type->name);
+      if (entry->next) pos += strappend(&buf, &len, pos, ", ");
+    }
 #endif
       fprintf(header, ") = 0;\n");
       --indentation;
@@ -1676,15 +1683,7 @@ static void write_forward_parameterized(FILE *header, type_t *type)
   }
   write_line(header, 0, "struct %s_impl;\n", iface->name);
 
-#if 1
-#if 0
-  indent(header, 0);
-  fprintf(header, "template <class ");
-  fprintf(header, "TResult"); // TODO use the original parameter name
-  fprintf(header, ">\n");
-#else
   write_line(header, 0, "template <%s>", buf);
-#endif
 
   free(buf);
   buf = NULL; pos = 0; len = 0;
@@ -1698,7 +1697,6 @@ static void write_forward_parameterized(FILE *header, type_t *type)
   write_line(header, 0, "struct %s : %s_impl<%s>", iface->name, iface->name, buf);
   write_line(header, 0, "{};");
   fprintf(header, "\n");
-#endif
 
   write_namespace_end(header, type->namespace);
 //   fprintf(header, "#endif /* __cplusplus */\n");
@@ -1990,7 +1988,9 @@ static void write_com_interface_end(FILE *header, type_t *iface)
       write_line(header, 0, "extern \"C\" {");
   }
   if (uuid)
+  {
       write_uuid_decl(header, iface, uuid);
+  }
   fprintf(header, "#else\n");
   /* C interface */
   write_line(header, 1, "typedef struct %sVtbl {", iface->c_name);

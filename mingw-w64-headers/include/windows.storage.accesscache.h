@@ -186,7 +186,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics, 0x4391dfaa, 0xd033, 0x48f9, 0x80,0x60, 0x3e,0xc8,0x47,0xd2,0xe3,0xf1)
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics  ABI::Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStatics, 0x4391dfaa, 0xd033, 0x48f9, 0x80,0x60, 0x3e,0xc8,0x47,0xd2,0xe3,0xf1)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CAccessCache_CIStorageApplicationPermissionsStaticsVtbl {
@@ -384,7 +385,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::AccessCache::IStorageItemAccessList, 0x2caff6ad, 0xde90, 0x47f5, 0xb2,0xc3, 0xdd,0x36,0xc9,0xfd,0xd4,0x53)
+#define __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList  ABI::Windows::Storage::AccessCache::IStorageItemAccessList
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessList, 0x2caff6ad, 0xde90, 0x47f5, 0xb2,0xc3, 0xdd,0x36,0xc9,0xfd,0xd4,0x53)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CAccessCache_CIStorageItemAccessListVtbl {

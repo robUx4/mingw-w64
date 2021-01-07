@@ -64,11 +64,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T>
+            template <class TResult>
             struct IAsyncOperationCompletedHandler_impl;
 
-            template <class T>
-            struct IAsyncOperationCompletedHandler : IAsyncOperationCompletedHandler_impl<T>
+            template <class TResult>
+            struct IAsyncOperationCompletedHandler : IAsyncOperationCompletedHandler_impl<TResult>
             {};
 
         }
@@ -80,11 +80,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T>
+            template <class TResult>
             struct IAsyncOperation_impl;
 
-            template <class T>
-            struct IAsyncOperation : IAsyncOperation_impl<T>
+            template <class TResult>
+            struct IAsyncOperation : IAsyncOperation_impl<TResult>
             {};
 
         }
@@ -96,11 +96,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class T>
+            template <class TResult>
             struct IEventHandler_impl;
 
-            template <class T>
-            struct IEventHandler : IEventHandler_impl<T>
+            template <class TResult>
+            struct IEventHandler : IEventHandler_impl<TResult>
             {};
 
         }
@@ -112,11 +112,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TResult, class TSender>
+            template <class TArgs, class TSender>
             struct ITypedEventHandler_impl;
 
-            template <class TResult, class TSender>
-            struct ITypedEventHandler : ITypedEventHandler_impl<TResult, TSender>
+            template <class TArgs, class TSender>
+            struct ITypedEventHandler : ITypedEventHandler_impl<TArgs, TSender>
             {};
 
         }
@@ -129,11 +129,11 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T>
+                template <class TResult>
                 struct IIterator_impl;
 
-                template <class T>
-                struct IIterator : IIterator_impl<T>
+                template <class TResult>
+                struct IIterator : IIterator_impl<TResult>
                 {};
 
             }
@@ -147,11 +147,11 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T>
+                template <class TResult>
                 struct IIterable_impl;
 
-                template <class T>
-                struct IIterable : IIterable_impl<T>
+                template <class TResult>
+                struct IIterable : IIterable_impl<TResult>
                 {};
 
             }
@@ -165,11 +165,11 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class T>
+                template <class TResult>
                 struct IVectorView_impl;
 
-                template <class T>
-                struct IVectorView : IVectorView_impl<T>
+                template <class TResult>
+                struct IVectorView : IVectorView_impl<TResult>
                 {};
 
             }
@@ -420,7 +420,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncInfo, 0x00000036, 0x0000, 0x0000, 0xc0,0x00, 0x00,0x00,0x00,0x00,0x00,0x46)
+#define __x_ABI_CWindows_CFoundation_CIAsyncInfo  ABI::Windows::Foundation::IAsyncInfo
+__CRT_UUID_DECL(__x_ABI_CWindows_CFoundation_CIAsyncInfo, 0x00000036, 0x0000, 0x0000, 0xc0,0x00, 0x00,0x00,0x00,0x00,0x00,0x46)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CFoundation_CIAsyncInfoVtbl {
@@ -580,7 +581,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncActionCompletedHandler, 0xa4ed5c81, 0x76c9, 0x40bd, 0x8b,0xe6, 0xb1,0xd9,0x0f,0xb2,0x0a,0xe7)
+#define __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler  ABI::Windows::Foundation::IAsyncActionCompletedHandler
+__CRT_UUID_DECL(__x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler, 0xa4ed5c81, 0x76c9, 0x40bd, 0x8b,0xe6, 0xb1,0xd9,0x0f,0xb2,0x0a,0xe7)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandlerVtbl {
@@ -667,10 +669,10 @@ namespace ABI {
             IASyncAction : public IAsyncInfo
             {
                 virtual HRESULT STDMETHODCALLTYPE put_Completed(
-                    IAsyncActionCompletedHandler *handler) = 0;
+                    ABI::Windows::Foundation::IAsyncActionCompletedHandler *handler) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE get_Completed(
-                    IAsyncActionCompletedHandler **handler) = 0;
+                    ABI::Windows::Foundation::IAsyncActionCompletedHandler **handler) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE GetResults(
                     ) = 0;
@@ -681,7 +683,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IASyncAction, 0x5a648006, 0x843a, 0x4da9, 0x86,0x5b, 0x9d,0x26,0xe5,0xdf,0xad,0x7b)
+#define __x_ABI_CWindows_CFoundation_CIASyncAction  ABI::Windows::Foundation::IASyncAction
+__CRT_UUID_DECL(__x_ABI_CWindows_CFoundation_CIASyncAction, 0x5a648006, 0x843a, 0x4da9, 0x86,0x5b, 0x9d,0x26,0xe5,0xdf,0xad,0x7b)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CFoundation_CIASyncActionVtbl {
@@ -911,14 +914,16 @@ extern "C" {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TResult>
+            template <class TArgs, class TSender>
             struct ITypedEventHandler_impl : IUnknown
             {
             private:
-                typedef typename Windows::Foundation::Internal::GetAbiType<TResult>::type     TResult_abi;
-                typedef typename Windows::Foundation::Internal::GetLogicalType<TResult>::type TResult_logical;
+                typedef typename Windows::Foundation::Internal::GetAbiType<TArgs>::type     TArgs_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TArgs>::type TArgs_logical;
+                typedef typename Windows::Foundation::Internal::GetAbiType<TSender>::type     TSender_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TSender>::type TSender_logical;
             public:
-                virtual HRESULT STDMETHODCALLTYPE  Invoke(TResult_abi args,TResult_abi sender) = 0;
+                virtual HRESULT STDMETHODCALLTYPE  Invoke(TSender_abi sender,TArgs_abi args) = 0;
             };
         }
     }
@@ -1054,7 +1059,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IVectorView<HSTRING>, 0xfca5679c, 0xbfd4, 0x5187, 0x8b,0x2d, 0xde,0x22,0x50,0x49,0xb3,0x46)
+#define __FIVectorView_1_HSTRING  ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
+__CRT_UUID_DECL(__FIVectorView_1_HSTRING, 0xfca5679c, 0xbfd4, 0x5187, 0x8b,0x2d, 0xde,0x22,0x50,0x49,0xb3,0x46)
 #endif
 #else
 typedef struct __FIVectorView_1_HSTRINGVtbl {
@@ -1211,7 +1217,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IIterable<HSTRING>, 0x6d68d316, 0x9712, 0x5b81, 0xbe,0x82, 0x20,0xdc,0xb8,0xb5,0x45,0x21)
+#define __FIIterable_1_HSTRING  ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+__CRT_UUID_DECL(__FIIterable_1_HSTRING, 0x6d68d316, 0x9712, 0x5b81, 0xbe,0x82, 0x20,0xdc,0xb8,0xb5,0x45,0x21)
 #endif
 #else
 typedef struct __FIIterable_1_HSTRINGVtbl {
@@ -1335,7 +1342,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::Collections::IIterator<HSTRING>, 0x36245dd8, 0xf1a8, 0x5da3, 0x80,0x2b, 0x6d,0x93,0x31,0x7f,0x9a,0x03)
+#define __FIIterator_1_HSTRING  ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+__CRT_UUID_DECL(__FIIterator_1_HSTRING, 0x36245dd8, 0xf1a8, 0x5da3, 0x80,0x2b, 0x6d,0x93,0x31,0x7f,0x9a,0x03)
 #endif
 #else
 typedef struct __FIIterator_1_HSTRINGVtbl {
@@ -1486,7 +1494,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<UINT32>, 0xef60385f, 0xbe78, 0x584b, 0xaa,0xef, 0x78,0x29,0xad,0xa2,0xb0,0xde)
+#define __FIAsyncOperation_1_UINT32  ABI::Windows::Foundation::IAsyncOperation<UINT32>
+__CRT_UUID_DECL(__FIAsyncOperation_1_UINT32, 0xef60385f, 0xbe78, 0x584b, 0xaa,0xef, 0x78,0x29,0xad,0xa2,0xb0,0xde)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_UINT32Vtbl {
@@ -1626,7 +1635,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<UINT32>, 0x9343b6e7, 0xe3d2, 0x5e4a, 0xab,0x2d, 0x2b,0xce,0x49,0x19,0xa6,0xa4)
+#define __FIAsyncOperationCompletedHandler_1_UINT32  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<UINT32>
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_UINT32, 0x9343b6e7, 0xe3d2, 0x5e4a, 0xab,0x2d, 0x2b,0xce,0x49,0x19,0xa6,0xa4)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_UINT32Vtbl {

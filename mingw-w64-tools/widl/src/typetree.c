@@ -110,7 +110,7 @@ static size_t append_namespaces(char **buf, size_t *len, size_t pos, struct name
 {
     size_t n = 0;
     n += strappend(buf, len, pos + n, "%s", prefix);
-    n += append_namespace(buf, len, pos + n, namespace, separator, abi_prefix);
+    n += append_namespace(buf, len, pos + n, namespace, separator, namespace && !is_global_namespace(namespace) ? abi_prefix : NULL);
     n += strappend(buf, len, pos + n, "%s", suffix);
     return n;
 }
@@ -979,9 +979,10 @@ static char *type_parameterized_implementation_name(type_t *iface, type_list_t *
         }
         else
         {
-            pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+            pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace && !is_global_namespace(type->namespace) ? "ABI" : NULL);
             for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
         }
+        if (entry->next) pos += strappend(&buf, &len, pos, ", ");
     }
     pos += strappend(&buf, &len, pos, ">");
 

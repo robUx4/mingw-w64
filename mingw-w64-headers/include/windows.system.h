@@ -62,7 +62,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::IDispatcherQueueController, 0x22f34e66, 0x50db, 0x4e36, 0xa9,0x8d, 0x61,0xc0,0x1b,0x38,0x4d,0x20)
+#define __x_ABI_CWindows_CSystem_CIDispatcherQueueController  ABI::Windows::System::IDispatcherQueueController
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CIDispatcherQueueController, 0x22f34e66, 0x50db, 0x4e36, 0xa9,0x8d, 0x61,0xc0,0x1b,0x38,0x4d,0x20)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CIDispatcherQueueControllerVtbl {

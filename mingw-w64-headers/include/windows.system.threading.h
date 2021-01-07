@@ -264,7 +264,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::ITimerElapsedHandler, 0xfaaea667, 0xfbeb, 0x49cb, 0xad,0xb2, 0x71,0x18,0x4c,0x55,0x6e,0x43)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler  ABI::Windows::System::Threading::ITimerElapsedHandler
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandler, 0xfaaea667, 0xfbeb, 0x49cb, 0xad,0xb2, 0x71,0x18,0x4c,0x55,0x6e,0x43)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CThreading_CITimerElapsedHandlerVtbl {
@@ -360,7 +361,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::ITimerDestroyedHandler, 0x34ed19fa, 0x8384, 0x4eb9, 0x82,0x09, 0xfb,0x50,0x94,0xee,0xec,0x35)
+#define __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler  ABI::Windows::System::Threading::ITimerDestroyedHandler
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandler, 0x34ed19fa, 0x8384, 0x4eb9, 0x82,0x09, 0xfb,0x50,0x94,0xee,0xec,0x35)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CThreading_CITimerDestroyedHandlerVtbl {
@@ -456,7 +458,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::IWorkItemHandler, 0x1d1a8b8b, 0xfa66, 0x414f, 0x9c,0xbd, 0xb6,0x5f,0xc9,0x9d,0x17,0xfa)
+#define __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler  ABI::Windows::System::Threading::IWorkItemHandler
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandler, 0x1d1a8b8b, 0xfa66, 0x414f, 0x9c,0xbd, 0xb6,0x5f,0xc9,0x9d,0x17,0xfa)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CThreading_CIWorkItemHandlerVtbl {
@@ -543,16 +546,16 @@ namespace ABI {
                 IThreadPoolStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE RunAsync(
-                        IWorkItemHandler *handler,
+                        ABI::Windows::System::Threading::IWorkItemHandler *handler,
                         ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAsync(
-                        IWorkItemHandler *handler,
+                        ABI::Windows::System::Threading::IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
                         ABI::Windows::Foundation::IAsyncAction **operation) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAndOptionsAsync(
-                        IWorkItemHandler *handler,
+                        ABI::Windows::System::Threading::IWorkItemHandler *handler,
                         enum WorkItemPriority priority,
                         enum WorkItemOptions options,
                         ABI::Windows::Foundation::IAsyncAction **operation) = 0;
@@ -564,7 +567,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::IThreadPoolStatics, 0xb6bf67dd, 0x84bd, 0x44f8, 0xac,0x1c, 0x93,0xeb,0xcb,0x9d,0xba,0x91)
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics  ABI::Windows::System::Threading::IThreadPoolStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStatics, 0xb6bf67dd, 0x84bd, 0x44f8, 0xac,0x1c, 0x93,0xeb,0xcb,0x9d,0xba,0x91)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolStaticsVtbl {
@@ -721,7 +725,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::IThreadPoolTimer, 0x594ebe78, 0x55ea, 0x4a88, 0xa5,0x0d, 0x34,0x02,0xae,0x1f,0x9c,0xf2)
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer  ABI::Windows::System::Threading::IThreadPoolTimer
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimer, 0x594ebe78, 0x55ea, 0x4a88, 0xa5,0x0d, 0x34,0x02,0xae,0x1f,0x9c,0xf2)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerVtbl {
@@ -856,25 +861,25 @@ namespace ABI {
                 IThreadPoolTimerStatics : public IInspectable
                 {
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimer(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan period,
                         ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimer(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
                         ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimerWithCompletion(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan period,
-                        ITimerDestroyedHandler *destroyed,
+                        ABI::Windows::System::Threading::ITimerDestroyedHandler *destroyed,
                         ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                     virtual HRESULT STDMETHODCALLTYPE CreateTimerWithCompletion(
-                        ITimerElapsedHandler *handler,
+                        ABI::Windows::System::Threading::ITimerElapsedHandler *handler,
                         struct TimeSpan delay,
-                        ITimerDestroyedHandler *destroyed,
+                        ABI::Windows::System::Threading::ITimerDestroyedHandler *destroyed,
                         ABI::Windows::System::Threading::IThreadPoolTimer **timer) = 0;
 
                 };
@@ -884,7 +889,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::System::Threading::IThreadPoolTimerStatics, 0x1a8a9d02, 0xe482, 0x461b, 0xb8,0xc7, 0x8e,0xfa,0xd1,0xcc,0xe5,0x90)
+#define __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics  ABI::Windows::System::Threading::IThreadPoolTimerStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStatics, 0x1a8a9d02, 0xe482, 0x461b, 0xb8,0xc7, 0x8e,0xfa,0xd1,0xcc,0xe5,0x90)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CSystem_CThreading_CIThreadPoolTimerStaticsVtbl {

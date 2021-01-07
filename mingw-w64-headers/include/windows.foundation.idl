@@ -73,7 +73,7 @@ namespace Windows {
   namespace Foundation {
     interface IAsyncInfo;
     interface IAsyncAction;
-    interface IAsyncOperation<T>;
+    interface IAsyncOperation<TResult>;
     struct    DateTime;
 
     namespace Collections {
@@ -116,56 +116,56 @@ namespace Windows {
         [
             uuid(fcdcf02c-e5d8-4478-915a-4d90b74b83a5)
         ]
-        delegate HRESULT AsyncOperationCompletedHandler<T>(Windows.Foundation.IAsyncOperation<T> *asyncInfo, AsyncStatus asyncStatus);
+        delegate HRESULT AsyncOperationCompletedHandler<TResult>(Windows.Foundation.IAsyncOperation<TResult> *asyncInfo, AsyncStatus asyncStatus);
 
         [uuid("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")]
-        interface IAsyncOperation<T> : IInspectable {
-            [propput] HRESULT Completed(AsyncOperationCompletedHandler<T>* handler);
-            [propget] HRESULT Completed(AsyncOperationCompletedHandler<T>** handler);
-            HRESULT GetResults(T* result);
+        interface IAsyncOperation<TResult> : IInspectable {
+            [propput] HRESULT Completed(AsyncOperationCompletedHandler<TResult>* handler);
+            [propget] HRESULT Completed(AsyncOperationCompletedHandler<TResult>** handler);
+            HRESULT GetResults(TResult* result);
         }
 
         [
             uuid(9de1c535-6ae1-11e0-84e1-18a905bcc53f)
         ]
-        delegate HRESULT EventHandler<T>([in] IInspectable *sender, [in] T args);
+        delegate HRESULT EventHandler<TResult>([in] IInspectable *sender, [in] TResult args);
 
         [
             uuid(9de1c534-6ae1-11e0-84e1-18a905bcc53f)
         ]
         // parameter order seems inverted for TypedEventHandler<DeviceWatcher*, DeviceInformation*>
-        delegate HRESULT TypedEventHandler<TSender,TResult>(TResult args, TSender sender);
+        delegate HRESULT TypedEventHandler<TSender,TArgs>(TSender sender, TArgs args);
 
         namespace Collections
         {
             [
                 uuid(6a79e863-4300-459a-9966-cbb660963ee1)
             ]
-            interface IIterator<T> : IInspectable
+            interface IIterator<TResult> : IInspectable
             {
-                [propget] HRESULT Current([out, retval] T *value);
+                [propget] HRESULT Current([out, retval] TResult *value);
                 [propget] HRESULT HasCurrent([out, retval] BOOL *value);
                 HRESULT MoveNext([out, retval] BOOL *value);
-                HRESULT GetMany([in] UINT32 count, [out] T *items, [out, retval] UINT32 *value);
+                HRESULT GetMany([in] UINT32 count, [out] TResult *items, [out, retval] UINT32 *value);
             }
 
             [
                 uuid(faa585ea-6214-4217-afda-7f46de5869b3)
             ]
-            interface IIterable<T> : IInspectable
+            interface IIterable<TResult> : IInspectable
             {
-                HRESULT First([out, retval] Windows.Foundation.Collections.IIterator<T> **value);
+                HRESULT First([out, retval] Windows.Foundation.Collections.IIterator<TResult> **value);
             }
 
             [
                 uuid(bbe1fa4c-b0e3-4583-baef-1f1b2e483e56)
             ]
-            interface IVectorView<T> : IInspectable
+            interface IVectorView<TResult> : IInspectable
             {
-                HRESULT GetAt([in] UINT32 index, [out, retval] T *value);
+                HRESULT GetAt([in] UINT32 index, [out, retval] TResult *value);
                 [propget] HRESULT Size([out, retval] UINT32 *value);
-                HRESULT IndexOf([in, optional] T element, [out] UINT32 *index, [out, retval] BOOLEAN *value);
-                HRESULT GetMany([in] UINT32 start_index, [in] UINT32 itemsLength, [out] T **items, [out, retval] UINT32 *value);
+                HRESULT IndexOf([in, optional] TResult element, [out] UINT32 *index, [out, retval] BOOLEAN *value);
+                HRESULT GetMany([in] UINT32 start_index, [in] UINT32 itemsLength, [out] TResult **items, [out, retval] UINT32 *value);
             }
         }
 #endif

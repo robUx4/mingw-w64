@@ -312,7 +312,7 @@ typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStor
 #define ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable;
 #ifdef __cplusplus
-#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable  ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*>
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable  ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*>
 #endif /* __cplusplus */
 #endif
 
@@ -537,7 +537,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IStreamedFileDataRequestedHandler, 0xfef6a824, 0x2fe1, 0x4d07, 0xa3,0x5b, 0xb7,0x7c,0x50,0xb5,0xf4,0xcc)
+#define __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler  ABI::Windows::Storage::IStreamedFileDataRequestedHandler
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandler, 0xfef6a824, 0x2fe1, 0x4d07, 0xa3,0x5b, 0xb7,0x7c,0x50,0xb5,0xf4,0xcc)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIStreamedFileDataRequestedHandlerVtbl {
@@ -903,7 +904,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IStorageItem, 0x4207a996, 0xca2f, 0x42f7, 0xbd,0xe8, 0x8b,0x10,0x45,0x7a,0x7f,0x30)
+#define __x_ABI_CWindows_CStorage_CIStorageItem  ABI::Windows::Storage::IStorageItem
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIStorageItem, 0x4207a996, 0xca2f, 0x42f7, 0xbd,0xe8, 0x8b,0x10,0x45,0x7a,0x7f,0x30)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIStorageItemVtbl {
@@ -1132,7 +1134,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IKnownFoldersStatics, 0x5a2a7520, 0x4802, 0x452d, 0x9a,0xd9, 0x43,0x51,0xad,0xa7,0xec,0x35)
+#define __x_ABI_CWindows_CStorage_CIKnownFoldersStatics  ABI::Windows::Storage::IKnownFoldersStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIKnownFoldersStatics, 0x5a2a7520, 0x4802, 0x452d, 0x9a,0xd9, 0x43,0x51,0xad,0xa7,0xec,0x35)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIKnownFoldersStaticsVtbl {
@@ -1328,13 +1331,13 @@ namespace ABI {
 
                 virtual HRESULT STDMETHODCALLTYPE CreateStreamedFileAsync(
                     HSTRING displayNameWithExtension,
-                    IStreamedFileDataRequestedHandler *dataRequested,
+                    ABI::Windows::Storage::IStreamedFileDataRequestedHandler *dataRequested,
                     ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
                     ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE ReplaceWithStreamedFileAsync(
                     ABI::Windows::Storage::IStorageFile *fileToReplace,
-                    IStreamedFileDataRequestedHandler *dataRequested,
+                    ABI::Windows::Storage::IStreamedFileDataRequestedHandler *dataRequested,
                     ABI::Windows::Storage::Streams::IRandomAccessStreamReference *thumbnail,
                     ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*> **operation) = 0;
 
@@ -1356,7 +1359,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IStorageFileStatics, 0x5984c710, 0xdaf2, 0x43c8, 0x8b,0xb4, 0xa4,0xd3,0xea,0xcf,0xd0,0x3f)
+#define __x_ABI_CWindows_CStorage_CIStorageFileStatics  ABI::Windows::Storage::IStorageFileStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIStorageFileStatics, 0x5984c710, 0xdaf2, 0x43c8, 0x8b,0xb4, 0xa4,0xd3,0xea,0xcf,0xd0,0x3f)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIStorageFileStaticsVtbl {
@@ -1590,7 +1594,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IStorageFile, 0xfa3f6186, 0x4214, 0x428c, 0xa6,0x4c, 0x14,0xc9,0xac,0x73,0x15,0xea)
+#define __x_ABI_CWindows_CStorage_CIStorageFile  ABI::Windows::Storage::IStorageFile
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIStorageFile, 0xfa3f6186, 0x4214, 0x428c, 0xa6,0x4c, 0x14,0xc9,0xac,0x73,0x15,0xea)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIStorageFileVtbl {
@@ -1865,7 +1870,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IStorageFolder, 0x72d1cb78, 0xb3ef, 0x4f75, 0xa8,0x0b, 0x6f,0xd9,0xda,0xe2,0x94,0x4b)
+#define __x_ABI_CWindows_CStorage_CIStorageFolder  ABI::Windows::Storage::IStorageFolder
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIStorageFolder, 0x72d1cb78, 0xb3ef, 0x4f75, 0xa8,0x0b, 0x6f,0xd9,0xda,0xe2,0x94,0x4b)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIStorageFolderVtbl {
@@ -2128,7 +2134,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IApplicationDataContainer, 0xc5aefd1e, 0xf467, 0x40ba, 0x85,0x66, 0xab,0x64,0x0a,0x44,0x1e,0x1d)
+#define __x_ABI_CWindows_CStorage_CIApplicationDataContainer  ABI::Windows::Storage::IApplicationDataContainer
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIApplicationDataContainer, 0xc5aefd1e, 0xf467, 0x40ba, 0x85,0x66, 0xab,0x64,0x0a,0x44,0x1e,0x1d)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataContainerVtbl {
@@ -2322,7 +2329,7 @@ namespace ABI {
                     ABI::Windows::Storage::IStorageFolder **value) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE add_DataChanged(
-                    ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> *handler,
+                    ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> *handler,
                     EventRegistrationToken *token) = 0;
 
                 virtual HRESULT STDMETHODCALLTYPE remove_DataChanged(
@@ -2340,7 +2347,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IApplicationData, 0xc3da6fb7, 0xb744, 0x4b45, 0xb0,0xb8, 0x22,0x3a,0x09,0x38,0xd0,0xdc)
+#define __x_ABI_CWindows_CStorage_CIApplicationData  ABI::Windows::Storage::IApplicationData
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIApplicationData, 0xc3da6fb7, 0xb744, 0x4b45, 0xb0,0xb8, 0x22,0x3a,0x09,0x38,0xd0,0xdc)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataVtbl {
@@ -2590,7 +2598,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IApplicationData2, 0x9e65cd69, 0x0ba3, 0x4e32, 0xbe,0x29, 0xb0,0x2d,0xe6,0x60,0x76,0x38)
+#define __x_ABI_CWindows_CStorage_CIApplicationData2  ABI::Windows::Storage::IApplicationData2
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIApplicationData2, 0x9e65cd69, 0x0ba3, 0x4e32, 0xbe,0x29, 0xb0,0x2d,0xe6,0x60,0x76,0x38)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIApplicationData2Vtbl {
@@ -2715,7 +2724,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IApplicationDataStatics, 0x5612147b, 0xe843, 0x45e3, 0x94,0xd8, 0x06,0x16,0x9e,0x3c,0x8e,0x17)
+#define __x_ABI_CWindows_CStorage_CIApplicationDataStatics  ABI::Windows::Storage::IApplicationDataStatics
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIApplicationDataStatics, 0x5612147b, 0xe843, 0x45e3, 0x94,0xd8, 0x06,0x16,0x9e,0x3c,0x8e,0x17)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataStaticsVtbl {
@@ -2840,7 +2850,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::IApplicationDataSetVersionHandler, 0xa05791e6, 0xcc9f, 0x4687, 0xac,0xab, 0xa3,0x64,0xfd,0x78,0x54,0x63)
+#define __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler  ABI::Windows::Storage::IApplicationDataSetVersionHandler
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandler, 0xa05791e6, 0xcc9f, 0x4687, 0xac,0xab, 0xa3,0x64,0xfd,0x78,0x54,0x63)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CIApplicationDataSetVersionHandlerVtbl {
@@ -2940,7 +2951,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::ISetVersionRequest, 0xb9c76b9b, 0x1056, 0x4e69, 0x83,0x30, 0x16,0x26,0x19,0x95,0x6f,0x9b)
+#define __x_ABI_CWindows_CStorage_CISetVersionRequest  ABI::Windows::Storage::ISetVersionRequest
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CISetVersionRequest, 0xb9c76b9b, 0x1056, 0x4e69, 0x83,0x30, 0x16,0x26,0x19,0x95,0x6f,0x9b)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CISetVersionRequestVtbl {
@@ -3083,7 +3095,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Storage::ISetVersionDeferral, 0x033508a2, 0x781a, 0x437a, 0xb0,0x78, 0x3f,0x32,0xba,0xdc,0xfe,0x47)
+#define __x_ABI_CWindows_CStorage_CISetVersionDeferral  ABI::Windows::Storage::ISetVersionDeferral
+__CRT_UUID_DECL(__x_ABI_CWindows_CStorage_CISetVersionDeferral, 0x033508a2, 0x781a, 0x437a, 0xb0,0x78, 0x3f,0x32,0xba,0xdc,0xfe,0x47)
 #endif
 #else
 typedef struct __x_ABI_CWindows_CStorage_CISetVersionDeferralVtbl {
@@ -3204,7 +3217,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*>, 0x5e52f8ce, 0xaced, 0x5a42, 0x95,0xb4, 0xf6,0x74,0xdd,0x84,0x88,0x5e)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFile  ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFile*>
+__CRT_UUID_DECL(__FIAsyncOperation_1_Windows__CStorage__CStorageFile, 0x5e52f8ce, 0xaced, 0x5a42, 0x95,0xb4, 0xf6,0x74,0xdd,0x84,0x88,0x5e)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_Windows__CStorage__CStorageFileVtbl {
@@ -3344,7 +3358,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*>, 0x6be9e7d7, 0xe83a, 0x5cbc, 0x80,0x2c, 0x17,0x68,0x96,0x0b,0x52,0xc3)
+#define __FIAsyncOperation_1_Windows__CStorage__CStorageFolder  ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::StorageFolder*>
+__CRT_UUID_DECL(__FIAsyncOperation_1_Windows__CStorage__CStorageFolder, 0x6be9e7d7, 0xe83a, 0x5cbc, 0x80,0x2c, 0x17,0x68,0x96,0x0b,0x52,0xc3)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_Windows__CStorage__CStorageFolderVtbl {
@@ -3484,7 +3499,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*>, 0x5fc9c137, 0xebb7, 0x5e6c, 0x9c,0xba, 0x68,0x6f,0x2e,0xc2,0xb0,0xbb)
+#define __FIAsyncOperation_1_Windows__CStorage__CIStorageItem  ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::IStorageItem*>
+__CRT_UUID_DECL(__FIAsyncOperation_1_Windows__CStorage__CIStorageItem, 0x5fc9c137, 0xebb7, 0x5e6c, 0x9c,0xba, 0x68,0x6f,0x2e,0xc2,0xb0,0xbb)
 #endif
 #else
 typedef struct __FIAsyncOperation_1_Windows__CStorage__CIStorageItemVtbl {
@@ -3624,7 +3640,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*>, 0xe521c894, 0x2c26, 0x5946, 0x9e,0x61, 0x2b,0x5e,0x18,0x8d,0x01,0xed)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFile*>
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFile, 0xe521c894, 0x2c26, 0x5946, 0x9e,0x61, 0x2b,0x5e,0x18,0x8d,0x01,0xed)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFileVtbl {
@@ -3716,7 +3733,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*>, 0xc211026e, 0x9e63, 0x5452, 0xba,0x54, 0x3a,0x07,0xd6,0xa9,0x68,0x74)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::StorageFolder*>
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder, 0xc211026e, 0x9e63, 0x5452, 0xba,0x54, 0x3a,0x07,0xd6,0xa9,0x68,0x74)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolderVtbl {
@@ -3808,7 +3826,8 @@ namespace ABI {
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*>, 0x92c3102f, 0xa327, 0x5318, 0xa6,0xc1, 0x76,0xf6,0xb2,0xa0,0xab,0xfb)
+#define __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem  ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::IStorageItem*>
+__CRT_UUID_DECL(__FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem, 0x92c3102f, 0xa327, 0x5318, 0xa6,0xc1, 0x76,0xf6,0xb2,0xa0,0xab,0xfb)
 #endif
 #else
 typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItemVtbl {
@@ -3879,7 +3898,7 @@ static FORCEINLINE HRESULT __FIAsyncOperationCompletedHandler_1_Windows__CStorag
 #endif  /* ____FIAsyncOperationCompletedHandler_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__ */
 
 /*****************************************************************************
- * ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> interface
+ * ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> interface
  *
  */
 #ifndef ____FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_INTERFACE_DEFINED__
@@ -3893,14 +3912,15 @@ namespace ABI {
         namespace Foundation {
             template<>
             MIDL_INTERFACE("149afa12-66cd-539f-85dd-8487ea2cd113")
-            ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::ApplicationData*, ABI::Windows::Storage::IApplicationData*>ABI::IInspectable*>
+            ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Storage::ApplicationData*, ABI::Windows::Storage::IApplicationData*>, IInspectable*>
             {};
         }
     }
 }
 extern "C" {
 #ifdef __CRT_UUID_DECL
-__CRT_UUID_DECL(ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*>, 0x149afa12, 0x66cd, 0x539f, 0x85,0xdd, 0x84,0x87,0xea,0x2c,0xd1,0x13)
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable  ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*>
+__CRT_UUID_DECL(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable, 0x149afa12, 0x66cd, 0x539f, 0x85,0xdd, 0x84,0x87,0xea,0x2c,0xd1,0x13)
 #endif
 #else
 typedef struct __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl {
@@ -3918,11 +3938,11 @@ typedef struct __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInsp
     ULONG (STDMETHODCALLTYPE *Release)(
         __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This);
 
-    /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
+    /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This,
-        __x_ABI_CWindows_CStorage_CIApplicationData *args,
-        IInspectable *sender);
+        IInspectable *sender,
+        __x_ABI_CWindows_CStorage_CIApplicationData *args);
 
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl;
@@ -3937,8 +3957,8 @@ interface __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectab
 #define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
 #define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_AddRef(This) (This)->lpVtbl->AddRef(This)
 #define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Release(This) (This)->lpVtbl->Release(This)
-/*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
-#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(This,args,sender) (This)->lpVtbl->Invoke(This,args,sender)
+/*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> methods ***/
+#define __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(This,sender,args) (This)->lpVtbl->Invoke(This,sender,args)
 #else
 /*** IUnknown methods ***/
 static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_QueryInterface(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,REFIID riid,void **ppvObject) {
@@ -3950,9 +3970,9 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplication
 static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Release(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This) {
     return This->lpVtbl->Release(This);
 }
-/*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,ABI::IInspectable*> methods ***/
-static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,__x_ABI_CWindows_CStorage_CIApplicationData *args,IInspectable *sender) {
-    return This->lpVtbl->Invoke(This,args,sender);
+/*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> methods ***/
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CStorage_CIApplicationData *args) {
+    return This->lpVtbl->Invoke(This,sender,args);
 }
 #endif
 #ifdef WIDL_USING_ITYPEDEVENTHANDLER_2_WINDOWS_STORAGE_APPLICATIONDATA_IINSPECTABLE
