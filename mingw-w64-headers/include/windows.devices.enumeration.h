@@ -1692,8 +1692,8 @@ typedef struct __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceW
     /*** ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformation*> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation *This,
-        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation *sender,
-        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *args);
+        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *sender,
+        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation *args);
 
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationVtbl;
@@ -1722,7 +1722,7 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CDevices__CEnumeration
     return This->lpVtbl->Release(This);
 }
 /*** ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformation*> methods ***/
-static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_Invoke(__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation* This,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation *sender,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *args) {
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_Invoke(__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation* This,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *sender,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformation *args) {
     return This->lpVtbl->Invoke(This,sender,args);
 }
 #endif
@@ -1785,8 +1785,8 @@ typedef struct __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceW
     /*** ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate *This,
-        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationUpdate *sender,
-        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *args);
+        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *sender,
+        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationUpdate *args);
 
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdateVtbl;
@@ -1815,7 +1815,7 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CDevices__CEnumeration
     return This->lpVtbl->Release(This);
 }
 /*** ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,ABI::Windows::Devices::Enumeration::DeviceInformationUpdate*> methods ***/
-static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_Invoke(__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate* This,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationUpdate *sender,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *args) {
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_Invoke(__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate* This,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *sender,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationUpdate *args) {
     return This->lpVtbl->Invoke(This,sender,args);
 }
 #endif
@@ -1878,8 +1878,8 @@ typedef struct __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceW
     /*** ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,IInspectable*> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable *This,
-        IInspectable *sender,
-        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *args);
+        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *sender,
+        IInspectable *args);
 
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectableVtbl;
@@ -1908,7 +1908,7 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CDevices__CEnumeration
     return This->lpVtbl->Release(This);
 }
 /*** ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher*,IInspectable*> methods ***/
-static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *args) {
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable* This,__x_ABI_CWindows_CDevices_CEnumeration_CIDeviceWatcher *sender,IInspectable *args) {
     return This->lpVtbl->Invoke(This,sender,args);
 }
 #endif

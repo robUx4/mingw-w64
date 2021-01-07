@@ -112,11 +112,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TArgs, class TSender>
+            template <class TSender, class TArgs>
             struct ITypedEventHandler_impl;
 
-            template <class TArgs, class TSender>
-            struct ITypedEventHandler : ITypedEventHandler_impl<TArgs, TSender>
+            template <class TSender, class TArgs>
+            struct ITypedEventHandler : ITypedEventHandler_impl<TSender, TArgs>
             {};
 
         }
@@ -914,14 +914,14 @@ extern "C" {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TArgs, class TSender>
+            template <class TSender, class TArgs>
             struct ITypedEventHandler_impl : IUnknown
             {
             private:
-                typedef typename Windows::Foundation::Internal::GetAbiType<TArgs>::type     TArgs_abi;
-                typedef typename Windows::Foundation::Internal::GetLogicalType<TArgs>::type TArgs_logical;
                 typedef typename Windows::Foundation::Internal::GetAbiType<TSender>::type     TSender_abi;
                 typedef typename Windows::Foundation::Internal::GetLogicalType<TSender>::type TSender_logical;
+                typedef typename Windows::Foundation::Internal::GetAbiType<TArgs>::type     TArgs_abi;
+                typedef typename Windows::Foundation::Internal::GetLogicalType<TArgs>::type TArgs_logical;
             public:
                 virtual HRESULT STDMETHODCALLTYPE  Invoke(TSender_abi sender,TArgs_abi args) = 0;
             };

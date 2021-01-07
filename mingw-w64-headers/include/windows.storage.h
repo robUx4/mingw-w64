@@ -3941,8 +3941,8 @@ typedef struct __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInsp
     /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
         __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable *This,
-        IInspectable *sender,
-        __x_ABI_CWindows_CStorage_CIApplicationData *args);
+        __x_ABI_CWindows_CStorage_CIApplicationData *sender,
+        IInspectable *args);
 
     END_INTERFACE
 } __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectableVtbl;
@@ -3971,7 +3971,7 @@ static FORCEINLINE ULONG __FITypedEventHandler_2_Windows__CStorage__CApplication
     return This->lpVtbl->Release(This);
 }
 /*** ITypedEventHandler<ABI::Windows::Storage::ApplicationData*,IInspectable*> methods ***/
-static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,IInspectable *sender,__x_ABI_CWindows_CStorage_CIApplicationData *args) {
+static FORCEINLINE HRESULT __FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_Invoke(__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable* This,__x_ABI_CWindows_CStorage_CIApplicationData *sender,IInspectable *args) {
     return This->lpVtbl->Invoke(This,sender,args);
 }
 #endif

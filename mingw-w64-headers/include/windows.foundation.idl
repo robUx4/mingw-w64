@@ -134,7 +134,7 @@ namespace Windows {
             uuid(9de1c534-6ae1-11e0-84e1-18a905bcc53f)
         ]
         // parameter order seems inverted for TypedEventHandler<DeviceWatcher*, DeviceInformation*>
-        delegate HRESULT TypedEventHandler<TSender,TArgs>(TSender sender, TArgs args);
+        delegate HRESULT TypedEventHandler<TArgs,TSender>(TSender sender, TArgs args);
 
         namespace Collections
         {
