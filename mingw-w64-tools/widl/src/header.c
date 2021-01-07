@@ -1129,15 +1129,18 @@ static void write_parameterized_implementation(FILE *header, type_t *type, int d
   type_t *iface;
   type_t *methods;
   type_t *parent;
+  type_list_t *params;
   if (type->name[0] == 'I')
   {
     iface = type;
+    params = type->details.parameterized.params;
     methods = type->details.parameterized.type;
     parent = type_iface_get_inherit(type->details.parameterized.type);
   }
   else
   {
     iface = type->details.parameterized.type;
+    params = type->details.parameterized.params;
     if (type_get_type(iface) == TYPE_DELEGATE)
       iface = type_delegate_get_iface(iface);
     methods = iface;
@@ -1148,15 +1151,25 @@ static void write_parameterized_implementation(FILE *header, type_t *type, int d
   indent(header, 0);
   fprintf(header, "template <class ");
 
+#if 1
   fprintf(header, "TResult"); // TODO use the original parameter name
-//   type_list_t *entry;
-//   for (entry = type->attrs; entry; entry = entry->next)
-//   {
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
-//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
-//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
-//   }
+#else
+  size_t len = 0, pos = 0;
+  char *buf = NULL;
+  type_list_t *entry;
+  for (entry = params; entry; entry = entry->next)
+  {
+    for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {
+        assert(0);
+    }
+    pos += strappend(&buf, &len, pos, "%s", entry->type->name);
+    // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
+    // for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
+    if (entry->next) pos += strappend(&buf, &len, pos, ",");
+  }
+  assert(buf);
+  fprintf(header, buf);
+#endif
   fprintf(header, ">\n");
   write_line(header, 0, "struct %s_impl : %s", iface->name, parent->name);
   write_line(header, 0, "{");
@@ -1638,24 +1651,19 @@ static void write_function_proto(FILE *header, const type_t *iface, const var_t 
 
 static void write_forward_parameterized(FILE *header, type_t *type)
 {
-    // TODO generate the template declaration
-    // TODO generate the template implementation
   fprintf(header, "#if defined(__cplusplus) && !defined(CINTERFACE)\n");
   write_namespace_start(header, type->namespace);
-  indent(header, 0);
-  fprintf(header, "template <class ");
 
-  fprintf(header, "TResult"); // TODO use the original parameter name
-//   type_list_t *entry;
-//   for (entry = type->attrs; entry; entry = entry->next)
-//   {
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
-//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
-//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
-//   }
-  fprintf(header, ">\n");
-  indent(header, 0);
+  size_t len = 0, pos = 0;
+  char *buf = NULL;
+  type_list_t *entry;
+  for (entry = type->details.parameterized.params; entry; entry = entry->next)
+  {
+    assert(entry->type->type_type != TYPE_POINTER);
+    pos += strappend(&buf, &len, pos, "class %s", entry->type->name);
+    if (entry->next) pos += strappend(&buf, &len, pos, ", ");
+  }
+  write_line(header, 0, "template <%s>", buf);
 
   type_t *iface;
   if (type->name[0] == 'I')
@@ -1666,24 +1674,28 @@ static void write_forward_parameterized(FILE *header, type_t *type)
     if (type_get_type(iface) == TYPE_DELEGATE)
       iface = type_delegate_get_iface(iface);
   }
-  fprintf(header, "struct %s_impl;\n\n", iface->name);
+  write_line(header, 0, "struct %s_impl;\n", iface->name);
 
 #if 1
+#if 0
   indent(header, 0);
   fprintf(header, "template <class ");
-
   fprintf(header, "TResult"); // TODO use the original parameter name
-//   type_list_t *entry;
-//   for (entry = type->attrs; entry; entry = entry->next)
-//   {
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) {}
-//     // pos += append_namespaces(&buf, &len, pos, type->namespace, "", "::", type->name, type->namespace && use_abi_namespace ? "ABI" : NULL);
-//     for (type = entry->type; type->type_type == TYPE_POINTER; type = type_pointer_get_ref_type(type)) pos += strappend(&buf, &len, pos, "*");
-//     if (entry->next) pos += strappend(&buf, &len, pos, ",");
-//   }
   fprintf(header, ">\n");
+#else
+  write_line(header, 0, "template <%s>", buf);
+#endif
 
-  write_line(header, 0, "struct %s : %s_impl<TResult>", iface->name, iface->name);
+  free(buf);
+  buf = NULL; pos = 0; len = 0;
+  for (entry = type->details.parameterized.params; entry; entry = entry->next)
+  {
+    assert(entry->type->type_type != TYPE_POINTER);
+    pos += strappend(&buf, &len, pos, "%s", entry->type->name);
+    if (entry->next) pos += strappend(&buf, &len, pos, ", ");
+  }
+
+  write_line(header, 0, "struct %s : %s_impl<%s>", iface->name, iface->name, buf);
   write_line(header, 0, "{};");
   fprintf(header, "\n");
 #endif

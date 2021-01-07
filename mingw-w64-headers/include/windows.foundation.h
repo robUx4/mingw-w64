@@ -64,11 +64,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TResult>
+            template <class T>
             struct IAsyncOperationCompletedHandler_impl;
 
-            template <class TResult>
-            struct IAsyncOperationCompletedHandler : IAsyncOperationCompletedHandler_impl<TResult>
+            template <class T>
+            struct IAsyncOperationCompletedHandler : IAsyncOperationCompletedHandler_impl<T>
             {};
 
         }
@@ -80,11 +80,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TResult>
+            template <class T>
             struct IAsyncOperation_impl;
 
-            template <class TResult>
-            struct IAsyncOperation : IAsyncOperation_impl<TResult>
+            template <class T>
+            struct IAsyncOperation : IAsyncOperation_impl<T>
             {};
 
         }
@@ -96,11 +96,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TResult>
+            template <class T>
             struct IEventHandler_impl;
 
-            template <class TResult>
-            struct IEventHandler : IEventHandler_impl<TResult>
+            template <class T>
+            struct IEventHandler : IEventHandler_impl<T>
             {};
 
         }
@@ -112,11 +112,11 @@ namespace ABI {
 namespace ABI {
     namespace Windows {
         namespace Foundation {
-            template <class TResult>
+            template <class TResult, class TSender>
             struct ITypedEventHandler_impl;
 
-            template <class TResult>
-            struct ITypedEventHandler : ITypedEventHandler_impl<TResult>
+            template <class TResult, class TSender>
+            struct ITypedEventHandler : ITypedEventHandler_impl<TResult, TSender>
             {};
 
         }
@@ -129,11 +129,11 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class TResult>
+                template <class T>
                 struct IIterator_impl;
 
-                template <class TResult>
-                struct IIterator : IIterator_impl<TResult>
+                template <class T>
+                struct IIterator : IIterator_impl<T>
                 {};
 
             }
@@ -147,11 +147,11 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class TResult>
+                template <class T>
                 struct IIterable_impl;
 
-                template <class TResult>
-                struct IIterable : IIterable_impl<TResult>
+                template <class T>
+                struct IIterable : IIterable_impl<T>
                 {};
 
             }
@@ -165,11 +165,11 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
-                template <class TResult>
+                template <class T>
                 struct IVectorView_impl;
 
-                template <class TResult>
-                struct IVectorView : IVectorView_impl<TResult>
+                template <class T>
+                struct IVectorView : IVectorView_impl<T>
                 {};
 
             }
